@@ -488,6 +488,78 @@
       "HidingPlaceDrawsTheEye": {
         "Title": "Hiding Place Draws the Eye",
         "Description": "Resolve the normal critical failure for Conceal an Object first. There is no additional mechanical effect. The failed attempt makes one nearby hiding feature, container, fold, pocket, or piece of scenery look suspicious to a relevant observer. This does not create additional detection beyond the normal result. Keep this consequence GM-facing for a secret check."
+      },
+      "MechanismMemorized": {
+        "Title": "Mechanism Memorized",
+        "Description": "Resolve the normal critical success for Pick a Lock first. If the same lock is locked again within 1 hour, your next Pick a Lock check against it gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "QuietPassage": {
+        "Title": "Quiet Passage",
+        "Description": "Resolve the normal critical success for Pick a Lock first. There is no additional mechanical effect. The precise work reveals a small practical detail about the lock or the secured opening, such as recent use, unusual wear, a secondary latch, or the quietest way to operate it, if such a detail is present."
+      },
+      "DamagedCore": {
+        "Title": "Damaged Core",
+        "Description": "Resolve the normal critical failure for Pick a Lock first, including the broken toolkit and obvious damage. The damaged lock is now harder for you to read. Your next Pick a Lock check against the same lock within 10 minutes takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "MethodLeftBehind": {
+        "Title": "Method Left Behind",
+        "Description": "Resolve the normal critical failure for Pick a Lock first. There is no additional mechanical effect. The obvious damage also leaves a plausible clue about how and from which side the lock was attacked. Anyone later inspecting it can notice that clue if the GM considers it relevant."
+      },
+      "TriggerMapped": {
+        "Title": "Trigger Mapped",
+        "Description": "Resolve the normal critical success for Disable a Device first. There is no additional mechanical effect. If the device's construction makes it possible to tell, the GM identifies the trigger, pressure point, sequence, or component that mattered most to defeating it."
+      },
+      "SafeInspection": {
+        "Title": "Safe Inspection",
+        "Description": "Resolve the normal critical success for Disable a Device first. The first Recall Knowledge or Seek check made within 10 minutes specifically to understand or inspect the same device gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "SequenceRemembered": {
+        "Title": "Sequence Remembered",
+        "Description": "Resolve the normal critical success for Disable a Device first. If the same device is rearmed or reset within 1 hour, your next Disable a Device check against it gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "TriggerSignature": {
+        "Title": "Trigger Signature",
+        "Description": "Resolve the normal critical failure for Disable a Device first, including triggering the device. If the device can still be disabled or is reset within 10 minutes, your next Disable a Device check against that same device gains a +1 circumstance bonus because the trigger exposed part of its operating sequence. The bonus then ends."
+      },
+      "TamperingPlainToSee": {
+        "Title": "Tampering Plain to See",
+        "Description": "Resolve the normal critical failure for Disable a Device first. There is no additional mechanical effect. The failed attempt leaves a clear disturbance, displaced component, tool mark, or other sign of tampering that remains visible after the device triggers if the scene allows it."
+      },
+      "WrongSequenceRevealed": {
+        "Title": "Wrong Sequence Revealed",
+        "Description": "Resolve the normal critical failure for Disable a Device first. There is no additional mechanical effect. The way the device reacts makes one mistaken assumption in your approach obvious, such as the wrong wire, plate, timing, direction, or order of operations. It does not negate the trigger or grant an automatic success later."
+      },
+      "HandsStayInvisible": {
+        "Title": "Hands Stay Invisible",
+        "Description": "Resolve the normal critical success for Palm an Object first. Your next Palm an Object check before the end of your next turn gains a +1 circumstance bonus if substantially the same observers are still relevant. The bonus then ends."
+      },
+      "AttentionElsewhere": {
+        "Title": "Attention Elsewhere",
+        "Description": "Resolve the normal critical success for Palm an Object first. The first ally who attempts to Palm an Object or Create a Diversion before the start of your next turn gains a +1 circumstance bonus if substantially the same observers are involved and your unnoticed movement can plausibly help. The bonus then ends."
+      },
+      "FavoriteHandNoted": {
+        "Title": "Favorite Hand Noted",
+        "Description": "Resolve the normal critical failure for Palm an Object first. Your next Palm an Object or Steal check within 10 minutes against any of the same relevant observers takes a -1 circumstance penalty because your preferred movement has been noticed. The penalty then ends."
+      },
+      "SmallClueLeft": {
+        "Title": "Small Clue Left",
+        "Description": "Resolve the normal critical failure for Palm an Object first. There is no additional mechanical effect. A relevant observer notices one plausible detail about the attempt, such as which hand moved, where your attention went, or which nearby object shifted. This does not create extra detection beyond the normal failure."
+      },
+      "CleanTransfer": {
+        "Title": "Clean Transfer",
+        "Description": "Resolve the normal critical success for Steal first. Your next Conceal an Object check within 1 minute involving the item you just stole gains a +1 circumstance bonus if you have not openly displayed or handed off the item. The bonus then ends."
+      },
+      "WeightTellsAStory": {
+        "Title": "Weight Tells a Story",
+        "Description": "Resolve the normal critical success for Steal first. There is no additional mechanical effect. The clean removal lets you notice one broad physical detail about the pouch, pocket, sheath, bundle, or container the item came from, such as whether it was nearly empty, tightly packed, unusually weighted, or filled with loose objects. It does not reveal a complete inventory."
+      },
+      "ReachPatternSpotted": {
+        "Title": "Reach Pattern Spotted",
+        "Description": "Resolve the normal critical failure for Steal first. Your next Steal check against the same bearer within 10 minutes takes a -1 circumstance penalty because they have seen the angle and timing of your reach. The penalty then ends."
+      },
+      "ProtectiveReflex": {
+        "Title": "Protective Reflex",
+        "Description": "Resolve the normal critical failure for Steal first. There is no additional mechanical effect. In reacting to the attempt, the bearer or a relevant observer may instinctively guard, check, or glance toward another carried object or container they consider important, if the GM decides such a tell is plausible. This does not reveal exactly what it contains."
       }
     }
   }

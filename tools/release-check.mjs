@@ -62,10 +62,10 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 16 && allCards.length === 112) pass("development card inventory is 112 (52 physical + 44 social + 16 subterfuge)");
-else fail(`expected 52 physical + 44 social + 16 subterfuge cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 34 && allCards.length === 130) pass("development card inventory is 130 (52 physical + 44 social + 34 subterfuge)");
+else fail(`expected 52 physical + 44 social + 34 subterfuge cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length}`);
 
-if (new Set(allCards.map((card) => card.id)).size === 112 && new Set(allCards.map((card) => card.fallbackTitle)).size === 112) pass("all development card ids and fallback titles are unique");
+if (new Set(allCards.map((card) => card.id)).size === 130 && new Set(allCards.map((card) => card.fallbackTitle)).size === 130) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
 const densityMatches = (cards, actions, successCount, failureCount) => actions.every((action) => {
@@ -78,9 +78,9 @@ const physicalDensityOk = densityMatches(PHYSICAL_ACTION_CARDS, ["grapple", "tri
   && densityMatches(PHYSICAL_ACTION_CARDS, ["high-jump", "long-jump", "squeeze"], 1, 1);
 const socialDensityOk = densityMatches(SOCIAL_ACTION_CARDS, ["feint", "lie", "gather-information", "demoralize"], 3, 3)
   && densityMatches(SOCIAL_ACTION_CARDS, ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"], 2, 2);
-const subterfugeDensityOk = densityMatches(SUBTERFUGE_ACTION_CARDS, ["hide", "sneak"], 3, 3)
-  && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object"], 2, 2);
-if (physicalDensityOk && socialDensityOk && subterfugeDensityOk) pass("Physical, Social, and Subterfuge action density matches the dev.7 plan");
+const subterfugeDensityOk = densityMatches(SUBTERFUGE_ACTION_CARDS, ["hide", "sneak", "disable-a-device"], 3, 3)
+  && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object", "pick-a-lock", "palm-an-object", "steal"], 2, 2);
+if (physicalDensityOk && socialDensityOk && subterfugeDensityOk) pass("Physical, Social, and Subterfuge action density matches the dev.8 plan");
 else fail("action density does not match the dev.7 plan");
 
 const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
@@ -103,14 +103,12 @@ const socialFiltersOk = SOCIAL_ACTION_CARDS.every((card) => {
     && card.metadata.actionFamily === expectedSkill;
 });
 const stealthActions = new Set(["hide", "sneak", "conceal-an-object"]);
+const thieveryActions = new Set(["pick-a-lock", "disable-a-device", "palm-an-object", "steal"]);
 const subterfugeFiltersOk = SUBTERFUGE_ACTION_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
-  return stealthActions.has(action)
-    && card.filters.skillTypes?.length === 1
-    && card.filters.skillTypes[0] === "stealth"
-    && card.metadata.actionFamily === "stealth"
-    && card.tags.includes("secret-check")
-    && card.tags.includes("gm-facing");
+  const expectedSkill = stealthActions.has(action) ? "stealth" : thieveryActions.has(action) ? "thievery" : null;
+  if (!expectedSkill || card.filters.skillTypes?.length !== 1 || card.filters.skillTypes[0] !== expectedSkill || card.metadata.actionFamily !== expectedSkill) return false;
+  return expectedSkill !== "stealth" || (card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
 });
 if (physicalFiltersOk && socialFiltersOk && subterfugeFiltersOk) pass("Physical, Social, and Subterfuge skill/action filters are exact");
 else fail("skill or action-family filter mismatch detected");
@@ -124,13 +122,22 @@ if (gatherCards.length === 6
   pass("Gather Information secret-check boundary is explicit");
 } else fail("Gather Information secret-check boundary is incomplete");
 
-const stealthFailures = SUBTERFUGE_ACTION_CARDS.filter((card) => card.category === "skillCheckCriticalFailure");
-if (SUBTERFUGE_ACTION_CARDS.length === 16
-  && SUBTERFUGE_ACTION_CARDS.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing"))
+const stealthCards = SUBTERFUGE_ACTION_CARDS.filter((card) => card.metadata.actionFamily === "stealth");
+const stealthFailures = stealthCards.filter((card) => card.category === "skillCheckCriticalFailure");
+if (stealthCards.length === 16
+  && stealthCards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing"))
   && stealthFailures.length === 8
   && stealthFailures.every((card) => /Keep this consequence GM-facing|Keep this consequence GM-facing for a secret check/i.test(card.fallbackDescription))) {
   pass("Stealth secret-check presentation boundary is explicit");
 } else fail("Stealth secret-check presentation boundary is incomplete");
+
+const thieveryCards = SUBTERFUGE_ACTION_CARDS.filter((card) => card.metadata.actionFamily === "thievery");
+if (thieveryCards.length === 18
+  && densityMatches(thieveryCards, ["disable-a-device"], 3, 3)
+  && densityMatches(thieveryCards, ["pick-a-lock", "palm-an-object", "steal"], 2, 2)
+  && thieveryCards.every((card) => !card.tags.includes("equipment") && !card.tags.includes("toolkit"))) {
+  pass("Thievery density and Goblin Engineering separation are explicit");
+} else fail("Thievery density or equipment-separation boundary is incomplete");
 
 if (allCards.every((card) => card.metadata.preservesCoreOutcome === true && card.effect === null && card.metadata.resolution === "manual")) pass("all cards preserve PF2e core outcomes and use manual resolution");
 else fail("a card violates the core-outcome or manual-resolution boundary");
@@ -138,13 +145,13 @@ else fail("a card violates the core-outcome or manual-resolution boundary");
 if (SKILLFUL_PACK_CONFIGS.length === 4
   && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52
   && SKILLFUL_PACK_CONFIGS[1].metadata.implementedCards === 44
-  && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 16
+  && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 34
   && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 0) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();
 if (built.length === 4 && built[0].enabled && built[1].enabled && built[2].enabled && !built[3].enabled
-  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 16) pass("pack topology and development defaults are correct");
+  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 34) pass("pack topology and development defaults are correct");
 else fail("pack topology or development defaults are incorrect");
 
 const forbiddenNames = new Set([".DS_Store", "Thumbs.db", ".env"]);

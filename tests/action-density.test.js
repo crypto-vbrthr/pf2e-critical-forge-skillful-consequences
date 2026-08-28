@@ -82,3 +82,32 @@ test("Stealth cards mix follow-up, teamwork, route, and narrative consequences",
   assert.equal(byAction("conceal-an-object").some((card) => card.tags.includes("seek")), true);
   assert.equal(byAction("conceal-an-object").some((card) => card.tags.includes("narrative")), true);
 });
+
+
+test("frequent Thievery actions keep six-card density", () => {
+  assert.equal(count(SUBTERFUGE_ACTION_CARDS, "disable-a-device", "skillCheckCriticalSuccess"), 3);
+  assert.equal(count(SUBTERFUGE_ACTION_CARDS, "disable-a-device", "skillCheckCriticalFailure"), 3);
+});
+
+test("regular Thievery actions keep four-card density", () => {
+  for (const action of ["pick-a-lock", "palm-an-object", "steal"]) {
+    assert.equal(count(SUBTERFUGE_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
+    assert.equal(count(SUBTERFUGE_ACTION_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("Thievery consequences stay action-centered rather than equipment-centered", () => {
+  const byAction = (action) => SUBTERFUGE_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+  assert.equal(byAction("pick-a-lock").some((card) => card.tags.includes("same-lock")), true);
+  assert.equal(byAction("pick-a-lock").some((card) => card.tags.includes("evidence")), true);
+  assert.equal(byAction("disable-a-device").some((card) => card.tags.includes("trigger")), true);
+  assert.equal(byAction("disable-a-device").some((card) => card.tags.includes("inspection")), true);
+  assert.equal(byAction("palm-an-object").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("palm-an-object").some((card) => card.tags.includes("same-observers")), true);
+  assert.equal(byAction("steal").some((card) => card.tags.includes("same-bearer")), true);
+  assert.equal(byAction("steal").some((card) => card.tags.includes("behavioral-tell")), true);
+  for (const card of SUBTERFUGE_ACTION_CARDS.filter((card) => card.metadata.actionFamily === "thievery")) {
+    assert.equal(card.tags.includes("equipment"), false, card.id);
+    assert.equal(card.tags.includes("toolkit"), false, card.id);
+  }
+});

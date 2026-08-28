@@ -18,13 +18,13 @@ const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFU
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.7 contains one hundred twelve unique cards across Physical, Social, and Subterfuge Actions", () => {
+test("dev.8 contains one hundred thirty unique cards across Physical, Social, and Subterfuge Actions", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
   assert.equal(SOCIAL_ACTION_CARDS.length, 44);
-  assert.equal(SUBTERFUGE_ACTION_CARDS.length, 16);
-  assert.equal(ALL_CARDS.length, 112);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 112);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 112);
+  assert.equal(SUBTERFUGE_ACTION_CARDS.length, 34);
+  assert.equal(ALL_CARDS.length, 130);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 130);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 130);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -94,17 +94,22 @@ test("all current cards are exact skill-deck cards for their pack and skill fami
 
 
 
-test("subterfuge actions use exact Stealth action filters and preserve secret-check presentation", () => {
-  const supported = new Set(["hide", "sneak", "conceal-an-object"]);
+test("subterfuge actions use exact Stealth and Thievery action filters", () => {
+  const stealth = new Set(["hide", "sneak", "conceal-an-object"]);
+  const thievery = new Set(["pick-a-lock", "disable-a-device", "palm-an-object", "steal"]);
   for (const card of SUBTERFUGE_ACTION_CARDS) {
     assert.equal(card.packId, PACK_IDS.SUBTERFUGE_ACTIONS);
     assert.equal(card.deckType, "skill");
     assert.equal(card.filters.actionSlugs.length, 1, card.id);
-    assert.equal(supported.has(card.filters.actionSlugs[0]), true, card.id);
-    assert.deepEqual(card.filters.skillTypes, ["stealth"], card.id);
-    assert.equal(card.metadata.actionFamily, "stealth", card.id);
-    assert.equal(card.tags.includes("secret-check"), true, card.id);
-    assert.equal(card.tags.includes("gm-facing"), true, card.id);
+    const action = card.filters.actionSlugs[0];
+    const expectedSkill = stealth.has(action) ? "stealth" : thievery.has(action) ? "thievery" : null;
+    assert.ok(expectedSkill, card.id);
+    assert.deepEqual(card.filters.skillTypes, [expectedSkill], card.id);
+    assert.equal(card.metadata.actionFamily, expectedSkill, card.id);
+    if (expectedSkill === "stealth") {
+      assert.equal(card.tags.includes("secret-check"), true, card.id);
+      assert.equal(card.tags.includes("gm-facing"), true, card.id);
+    }
     assert.equal(card.effect, null, card.id);
     assert.equal(card.metadata.resolution, "manual", card.id);
     assert.equal(card.metadata.preservesCoreOutcome, true, card.id);
@@ -147,7 +152,7 @@ test("pack topology exposes Physical, Social, and Subterfuge Actions while Knowl
   assert.equal(packs[1].enabled, true);
   assert.equal(packs[1].decks.skill.cards.length, 44);
   assert.equal(packs[2].enabled, true);
-  assert.equal(packs[2].decks.skill.cards.length, 16);
+  assert.equal(packs[2].decks.skill.cards.length, 34);
   assert.equal(packs[3].enabled, false);
   assert.equal(packs[3].decks.skill.cards.length, 0);
 });

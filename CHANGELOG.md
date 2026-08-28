@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.8
+
+### Thievery I
+
+- Added 18 Subterfuge Actions cards, bringing the module to 130 cards total.
+- Added Pick a Lock with 2 critical-success and 2 critical-failure cards.
+- Added Disable a Device with 3 critical-success and 3 critical-failure cards.
+- Added Palm an Object with 2 critical-success and 2 critical-failure cards.
+- Added Steal with 2 critical-success and 2 critical-failure cards.
+- Kept the Thievery block focused on locks, devices, witnesses, carried objects, and action aftermath rather than equipment malfunctions.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for frequent and regular Thievery actions.
+- Added exact Thievery skill/action-family validation for all 18 new cards.
+- Expanded overlap checks against Goblin Engineering Equipment Incidents.
+- Expanded release checks to cover 130 cards and the dev.8 Subterfuge topology.
+- Updated the design guide, roadmap, and overlap review for Thievery.
+
 ## 0.1.0-dev.7
 
 ### Stealth I

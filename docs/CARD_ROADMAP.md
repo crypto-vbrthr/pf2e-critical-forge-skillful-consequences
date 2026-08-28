@@ -67,9 +67,16 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Conceal an Object: 2 success + 2 failure
 - Total after block: **112 cards**
 
+### 0.1.0-dev.8 - Thievery I
+
+- Pick a Lock: 2 success + 2 failure
+- Disable a Device: 3 success + 3 failure
+- Palm an Object: 2 success + 2 failure
+- Steal: 2 success + 2 failure
+- Total after block: **130 cards**
+
 ### Planned next blocks
 
-- Thievery
 - Medicine & Crafting
 - Knowledge actions
 - Survival, Performance, and selected utility actions

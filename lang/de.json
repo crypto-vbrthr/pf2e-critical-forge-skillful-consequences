@@ -488,6 +488,78 @@
       "HidingPlaceDrawsTheEye": {
         "Title": "Das Versteck zieht Blicke an",
         "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Gegenstand verbergen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Durch den misslungenen Versuch wirkt ein nahes Versteck, Behältnis, eine Falte, Tasche oder ein Teil der Umgebung für einen relevanten Beobachter verdächtig. Dadurch entsteht keine zusätzliche Entdeckung über das normale Ergebnis hinaus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "MechanismMemorized": {
+        "Title": "Mechanismus eingeprägt",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Schloss knacken ab. Wird dasselbe Schloss innerhalb von 1 Stunde erneut verschlossen, erhält dein nächster Wurf zum Schloss knacken gegen dieses Schloss einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "QuietPassage": {
+        "Title": "Leiser Zugang",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Schloss knacken ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die präzise Arbeit offenbart ein kleines praktisches Detail über das Schloss oder den gesicherten Zugang, etwa kürzliche Benutzung, ungewöhnliche Abnutzung, einen zweiten Riegel oder die leiseste Art, ihn zu bedienen, sofern ein solches Detail vorhanden ist."
+      },
+      "DamagedCore": {
+        "Title": "Beschädigter Kern",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Schloss knacken ab, einschließlich der zerbrochenen Werkzeuge und der offensichtlichen Schäden. Das beschädigte Schloss ist für dich nun schwerer zu lesen. Dein nächster Wurf zum Schloss knacken gegen dasselbe Schloss innerhalb von 10 Minuten erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "MethodLeftBehind": {
+        "Title": "Methode hinterlässt Spuren",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Schloss knacken ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die offensichtlichen Schäden hinterlassen außerdem einen plausiblen Hinweis darauf, wie und von welcher Seite das Schloss bearbeitet wurde. Wer es später untersucht, kann diesen Hinweis bemerken, wenn der SL ihn für relevant hält."
+      },
+      "TriggerMapped": {
+        "Title": "Auslöser erfasst",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Mechanismus ausschalten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Konstruktion des Mechanismus dies erkennen lässt, benennt der SL den Auslöser, Druckpunkt, Ablauf oder Bauteil, der für das Ausschalten am wichtigsten war."
+      },
+      "SafeInspection": {
+        "Title": "Sichere Untersuchung",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Mechanismus ausschalten ab. Der erste Wurf zum Wissen abrufen oder Suchen innerhalb von 10 Minuten, der ausdrücklich demselben Mechanismus und seinem Verständnis oder seiner Untersuchung gilt, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "SequenceRemembered": {
+        "Title": "Ablauf eingeprägt",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Mechanismus ausschalten ab. Wird derselbe Mechanismus innerhalb von 1 Stunde erneut scharf gemacht oder zurückgesetzt, erhält dein nächster Wurf zum Mechanismus ausschalten gegen ihn einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "TriggerSignature": {
+        "Title": "Signatur des Auslösers",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Mechanismus ausschalten ab, einschließlich des Auslösens des Mechanismus. Kann der Mechanismus noch ausgeschaltet werden oder wird er innerhalb von 10 Minuten zurückgesetzt, erhält dein nächster Wurf zum Mechanismus ausschalten gegen denselben Mechanismus einen Situationsbonus von +1, weil das Auslösen einen Teil seines Ablaufs offengelegt hat. Danach endet der Bonus."
+      },
+      "TamperingPlainToSee": {
+        "Title": "Manipulation deutlich sichtbar",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Mechanismus ausschalten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der gescheiterte Versuch hinterlässt eine deutliche Verschiebung, ein versetztes Bauteil, Werkzeugspuren oder ein anderes Zeichen der Manipulation, das nach dem Auslösen sichtbar bleibt, sofern die Szene dies zulässt."
+      },
+      "WrongSequenceRevealed": {
+        "Title": "Falscher Ablauf offenbart",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Mechanismus ausschalten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die Reaktion des Mechanismus macht eine falsche Annahme in deinem Vorgehen deutlich, etwa den falschen Draht, die falsche Platte, das falsche Timing, die falsche Richtung oder Reihenfolge. Dies verhindert das Auslösen nicht und gewährt später keinen automatischen Erfolg."
+      },
+      "HandsStayInvisible": {
+        "Title": "Hände bleiben unsichtbar",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Gegenstand einstecken ab. Dein nächster Wurf zum Gegenstand einstecken vor dem Ende deines nächsten Zuges erhält einen Situationsbonus von +1, sofern im Wesentlichen dieselben Beobachter relevant sind. Danach endet der Bonus."
+      },
+      "AttentionElsewhere": {
+        "Title": "Aufmerksamkeit woanders",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Gegenstand einstecken ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges Gegenstand einstecken oder Ablenkung erzeugen versucht, erhält einen Situationsbonus von +1, sofern im Wesentlichen dieselben Beobachter beteiligt sind und deine unbemerkte Bewegung plausibel helfen kann. Danach endet der Bonus."
+      },
+      "FavoriteHandNoted": {
+        "Title": "Bevorzugte Hand bemerkt",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Gegenstand einstecken ab. Dein nächster Wurf zum Gegenstand einstecken oder Stehlen innerhalb von 10 Minuten gegen dieselben relevanten Beobachter erhält einen Situationsmalus von -1, weil deine bevorzugte Bewegung aufgefallen ist. Danach endet der Malus."
+      },
+      "SmallClueLeft": {
+        "Title": "Kleine Spur hinterlassen",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Gegenstand einstecken ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein relevanter Beobachter bemerkt ein plausibles Detail des Versuchs, etwa welche Hand sich bewegte, wohin deine Aufmerksamkeit ging oder welcher nahe Gegenstand verrutschte. Dies erzeugt keine zusätzliche Entdeckung über den normalen Fehlschlag hinaus."
+      },
+      "CleanTransfer": {
+        "Title": "Saubere Übergabe",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Stehlen ab. Dein nächster Wurf zum Gegenstand verbergen innerhalb von 1 Minute, der den gerade gestohlenen Gegenstand betrifft, erhält einen Situationsbonus von +1, sofern du den Gegenstand nicht offen gezeigt oder weitergegeben hast. Danach endet der Bonus."
+      },
+      "WeightTellsAStory": {
+        "Title": "Das Gewicht erzählt eine Geschichte",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Stehlen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Durch das saubere Entfernen bemerkst du ein grobes physisches Detail über Beutel, Tasche, Scheide, Bündel oder Behälter, aus dem der Gegenstand stammt, etwa ob er fast leer, dicht gepackt, ungewöhnlich gewichtet oder mit losen Gegenständen gefüllt war. Dies offenbart kein vollständiges Inventar."
+      },
+      "ReachPatternSpotted": {
+        "Title": "Griffmuster erkannt",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Stehlen ab. Dein nächster Wurf zum Stehlen gegen denselben Träger innerhalb von 10 Minuten erhält einen Situationsmalus von -1, weil Winkel und Timing deines Zugriffs nun bekannt sind. Danach endet der Malus."
+      },
+      "ProtectiveReflex": {
+        "Title": "Schutzreflex",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Stehlen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Bei der Reaktion auf den Versuch kann der Träger oder ein relevanter Beobachter instinktiv einen anderen getragenen Gegenstand oder Behälter schützen, prüfen oder ansehen, den er für wichtig hält, sofern der SL einen solchen Hinweis für plausibel hält. Dies verrät nicht genau, was sich darin befindet."
       }
     }
   }

@@ -56,8 +56,8 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       category: "subterfuge-actions",
       scope: "stealth-thievery-action-critical-results",
       contentStatus: "development",
-      supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object"]),
-      implementedCards: 16
+      supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object", "pick-a-lock", "disable-a-device", "palm-an-object", "steal"]),
+      implementedCards: 34
     })
   }),
   Object.freeze({

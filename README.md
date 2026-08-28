@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.7**
+Version **0.1.0-dev.8**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,7 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.7` contains **112 cards** across three active packs.
+`0.1.0-dev.8` contains **130 cards** across three active packs.
 
 ### Physical Actions - 52 cards
 
@@ -55,7 +55,7 @@ Intimidation:
 - Demoralize: 3 + 3
 - Coerce: 2 + 2
 
-### Subterfuge Actions - 16 cards
+### Subterfuge Actions - 34 cards
 
 Stealth:
 
@@ -63,7 +63,14 @@ Stealth:
 - Sneak: 3 + 3
 - Conceal an Object: 2 + 2
 
-The first Subterfuge block emphasizes routes, cover, shared blind spots, traces, observer awareness, and follow-through between Hide and Sneak. It does not add extra detection beyond PF2e's normal result and it does not turn a failed secret check into public information.
+Thievery:
+
+- Pick a Lock: 2 critical-success + 2 critical-failure cards
+- Disable a Device: 3 + 3
+- Palm an Object: 2 + 2
+- Steal: 2 + 2
+
+The Subterfuge pack now covers both stealth and practical larceny. Stealth cards emphasize routes, cover, shared blind spots, traces, observer awareness, and follow-through between Hide and Sneak. Thievery cards focus on locks, device sequences, witnesses, carried objects, and the aftermath of successful or failed manipulation rather than on malfunctioning equipment.
 
 **Hide, Sneak, and Conceal an Object use secret checks.** All current Stealth cards are tagged `secret-check` and `gm-facing`. Critical Forge defaults to GM Blind card visibility; a GM-only visibility mode is strongly recommended so a card does not expose the hidden degree of success. Short modifiers can be tracked by the GM and applied to later secret checks without announcing why.
 
@@ -78,7 +85,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Planned families include Thievery, Medicine, Crafting, knowledge actions, Survival, Performance, and selected utility actions.
+Planned families now include Medicine, Crafting, knowledge actions, Survival, Performance, and selected utility actions.
 
 ## Critical Forge requirements
 

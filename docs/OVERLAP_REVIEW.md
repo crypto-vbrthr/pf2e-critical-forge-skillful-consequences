@@ -1,6 +1,6 @@
 # Overlap Review
 
-## 0.1.0-dev.7 scope
+## 0.1.0-dev.8 scope
 
 Three packs are currently active.
 
@@ -8,7 +8,7 @@ Three packs are currently active.
 
 **Social Actions** supports Deception (Feint, Create a Diversion, Lie, Impersonate), Diplomacy (Make an Impression, Request, Gather Information), and Intimidation (Demoralize, Coerce).
 
-**Subterfuge Actions** now supports Stealth (Hide, Sneak, Conceal an Object). Thievery remains planned for a later block.
+**Subterfuge Actions** supports Stealth (Hide, Sneak, Conceal an Object) and Thievery (Pick a Lock, Disable a Device, Palm an Object, Steal).
 
 ### Critical Forge Core
 
@@ -18,11 +18,11 @@ Critical Forge also controls card visibility. This matters for Gather Informatio
 
 ### Goblin Engineering
 
-Goblin Engineering's skill cards are equipment-centered and already touch Pick a Lock, Disable a Device, Crafting, Repair, and Medicine. The current Stealth block has no action-filter overlap with Goblin Engineering.
+Goblin Engineering's skill cards are equipment-centered and already touch Pick a Lock, Disable a Device, Crafting, Repair, and Medicine. The Thievery block intentionally shares the `pick-a-lock` and `disable-a-device` action filters with Goblin Engineering Equipment Incidents, so the content boundary is semantic rather than filter-based.
 
 The design distinction remains explicit: Skillful Consequences asks what the **action and its aftermath** create. Goblin Engineering asks what the **equipment** decides to do about the situation.
 
-This distinction will matter even more when Thievery is added. A future Skillful Consequences Pick a Lock card should focus on the lock, timing, discovered mechanism, access, noise, or tactical aftermath, while Goblin Engineering remains about picks, cases, gauges, or other equipment behaving strangely.
+In dev.8 that distinction is enforced directly. Skillful Consequences Pick a Lock cards focus on the lock, evidence, learned mechanism, or future access. Disable a Device cards focus on trigger sequences, visible tampering, inspection, and what the triggered device reveals. Goblin Engineering remains about picks, cases, gauges, probes, lamps, organizers, and other equipment behaving strangely.
 
 ### Martial Consequences and attack-oriented expansions
 
@@ -36,6 +36,14 @@ Martial Consequences, Ranged Mishaps, Arsenal, Arcane Backlash, and other attack
 - None of the cards grant additional hidden/undetected states beyond the normal PF2e result.
 - Critical-failure cards do not add extra automatic detection beyond the normal result.
 - All current Stealth cards are GM-facing so a visible card does not need to reveal a secret check's outcome.
+
+## Thievery design separation
+
+- **Pick a Lock** focuses on the lock itself, evidence of tampering, remembered mechanisms, and the aftermath of the normal broken-tool result.
+- **Disable a Device** focuses on trigger sequences, inspection, reset knowledge, visible tampering, and information exposed when a device triggers. Critical-failure additions remain light because the PF2e result can already trigger a hazard.
+- **Palm an Object** focuses on observer attention, hand movement, teamwork, and short-lived sleight-of-hand momentum.
+- **Steal** focuses on the bearer, carried containers, concealment follow-through, and behavioral tells after a failed attempt.
+- No Thievery card creates equipment malfunctions, strange tool behavior, or repairs broken thieves' tools. Those remain Goblin Engineering themes.
 
 ## Existing social design separation
 

@@ -47,6 +47,14 @@ Social cards should create credibility, suspicion, attention, conversational fol
 
 A social critical failure may reveal which detail looked wrong when that information is visible from the failed exchange, but should not use the card to expose hidden GM information.
 
+## Thievery consequences
+
+Thievery cards focus on what the successful or failed manipulation changes in the scene: lock state, device sequence, visible tampering, observer attention, carried objects, and follow-up opportunities.
+
+They should not personify or malfunction thieves' tools merely to create a consequence. That remains Goblin Engineering territory. A Pick a Lock critical failure may refer to the normal broken-tool result because PF2e already causes it, but the added Skillful Consequence should come from the lock, evidence, timing, or learned mechanism rather than from eccentric equipment.
+
+Disable a Device critical failures are deliberately restrained because the normal result can already trigger a hazard. Added consequences should favor information, evidence, or narrow follow-up rather than compounding hazard damage.
+
 ## Other expansions
 
 Skillful Consequences focuses on the **action and its aftermath**.
