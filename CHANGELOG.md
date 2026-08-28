@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-dev.2
+
+### Athletics II
+
+- Added 12 new Athletics cards, bringing Physical Actions to 24 cards.
+- Added Shove with 2 critical-success and 2 critical-failure cards.
+- Added Reposition with 2 critical-success and 2 critical-failure cards.
+- Added Disarm with 2 critical-success and 2 critical-failure cards.
+- Added new action-specific consequences covering forced-movement recovery, counterforce, positional leverage, item placement, and exposed grips.
+- Preserved the normal PF2e critical result on every new card.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for frequent and regular Athletics actions.
+- Expanded release checks to require 24 unique Physical Actions cards and the dev.2 action-density profile.
+- Updated the overlap review and roadmap for the expanded Athletics scope.
+
 ## 0.1.0-dev.1
 
 ### Action framework

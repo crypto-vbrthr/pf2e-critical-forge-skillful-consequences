@@ -88,6 +88,54 @@
       "SetupTelegraphsItself": {
         "Title": "Ansatz verrät sich",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Zu Fall bringen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Alle, die den Austausch genau beobachten, erkennen, wie du dem Ziel den Stand nehmen wolltest und an welcher Stelle dein Ansatz offensichtlich wurde."
+      },
+      "MomentumCarries": {
+        "Title": "Der Schwung wirkt nach",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Fortdrängen ab. Die Bewegungsrate des Ziels ist bis zum Beginn deines nächsten Zuges um 1,5 Meter reduziert, während es sich von der erzwungenen Bewegung fängt."
+      },
+      "BrokenLine": {
+        "Title": "Linie durchbrochen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Fortdrängen ab. Der erste Verbündete außer dir, der vor Beginn deines nächsten Zuges versucht, dasselbe Ziel zu Ergreifen, Neu zu positionieren oder Zu Fall zu bringen, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "OpenToCounterforce": {
+        "Title": "Offen für Gegenkraft",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Fortdrängen ab. Die erste Kreatur, die vor Beginn deines nächsten Zuges versucht, dich Fortzudrängen oder Neu zu positionieren, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "CommittedDirection": {
+        "Title": "Auf eine Richtung festgelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Fortdrängen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel und nahe Beobachter können klar erkennen, in welche Richtung du deine Kraft gelegt hast und wo dein Stoß seine Linie verlor."
+      },
+      "ControlledRotation": {
+        "Title": "Kontrollierte Drehung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Neu positionieren ab. Der erste Verbündete außer dir, der vor Beginn deines nächsten Zuges versucht, dasselbe Ziel Zu Fall zu bringen oder Zu entwaffnen, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "BaseKeptUnderYou": {
+        "Title": "Fester eigener Stand",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Neu positionieren ab. Bis zum Beginn deines nächsten Zuges erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG gegen Versuche dieses Ziels, dich Neu zu positionieren, Fortzudrängen oder Zu Fall zu bringen."
+      },
+      "FeetCrossed": {
+        "Title": "Füße über Kreuz",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Neu positionieren ab. Deine Bewegungsrate ist bis zum Ende deines nächsten Zuges um 1,5 Meter reduziert, während du deinen Stand wiederfindest."
+      },
+      "IntendedPathRevealed": {
+        "Title": "Beabsichtigter Weg offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Neu positionieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel und nahe Beobachter erkennen genau, wohin du das Ziel bewegen wolltest und welcher Hebel dabei versagte."
+      },
+      "SentClear": {
+        "Title": "Weit genug fortgeschleudert",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Entwaffnen ab. Falls das Ziel aufgrund dieses Ergebnisses den Gegenstand fallen lässt, darfst du ein freies, zulässiges Feld angrenzend an das Ziel bestimmen, auf dem der Gegenstand landet. Gibt es kein solches Feld, landet er wie üblich."
+      },
+      "HandsFreeToFollow": {
+        "Title": "Hände frei zum Nachsetzen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Entwaffnen ab. Deine nächste Probe zum Ergreifen oder Fortdrängen desselben Ziels vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "GripOpenedInstead": {
+        "Title": "Stattdessen den eigenen Griff geöffnet",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Entwaffnen ab. Die erste Kreatur, die vor Beginn deines nächsten Zuges versucht, dich Zu entwaffnen, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "IntentTelegraphed": {
+        "Title": "Absicht verraten",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Entwaffnen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel und alle, die genau hinsehen, erkennen, welchen Gegenstand, welche Hand oder welchen Griff du angreifen wolltest und wie du ihn lösen wolltest."
       }
     }
   }

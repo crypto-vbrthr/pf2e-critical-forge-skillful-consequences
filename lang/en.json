@@ -88,6 +88,54 @@
       "SetupTelegraphsItself": {
         "Title": "Setup Telegraphs Itself",
         "Description": "Resolve the normal critical failure for Trip first. There is no additional mechanical effect. Anyone closely watching the exchange can tell exactly how you tried to take the target's footing and where the setup became obvious."
+      },
+      "MomentumCarries": {
+        "Title": "Momentum Carries",
+        "Description": "Resolve the normal critical success for Shove first. The target's Speed is reduced by 5 feet until the start of your next turn as it recovers from the forced movement."
+      },
+      "BrokenLine": {
+        "Title": "Broken Line",
+        "Description": "Resolve the normal critical success for Shove first. The first ally other than you who attempts to Grapple, Reposition, or Trip the same target before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "OpenToCounterforce": {
+        "Title": "Open to Counterforce",
+        "Description": "Resolve the normal critical failure for Shove first. The first creature that attempts to Shove or Reposition you before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "CommittedDirection": {
+        "Title": "Committed Direction",
+        "Description": "Resolve the normal critical failure for Shove first. There is no additional mechanical effect. The target and nearby observers can plainly read the direction of force you committed to and where your push lost its line."
+      },
+      "ControlledRotation": {
+        "Title": "Controlled Rotation",
+        "Description": "Resolve the normal critical success for Reposition first. The first ally other than you who attempts to Trip or Disarm the same target before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "BaseKeptUnderYou": {
+        "Title": "Base Kept Under You",
+        "Description": "Resolve the normal critical success for Reposition first. Until the start of your next turn, you gain a +1 circumstance bonus to your Reflex DC against attempts by that target to Reposition, Shove, or Trip you."
+      },
+      "FeetCrossed": {
+        "Title": "Feet Crossed",
+        "Description": "Resolve the normal critical failure for Reposition first. Your Speed is reduced by 5 feet until the end of your next turn while you recover your stance."
+      },
+      "IntendedPathRevealed": {
+        "Title": "Intended Path Revealed",
+        "Description": "Resolve the normal critical failure for Reposition first. There is no additional mechanical effect. The target and close observers can tell exactly where you meant to put the target and which piece of leverage failed."
+      },
+      "SentClear": {
+        "Title": "Sent Clear",
+        "Description": "Resolve the normal critical success for Disarm first. If the target drops the item because of that result, you may choose an unoccupied legal space adjacent to the target for the item to land in. If no such space is available, it lands normally."
+      },
+      "HandsFreeToFollow": {
+        "Title": "Hands Free to Follow",
+        "Description": "Resolve the normal critical success for Disarm first. Your next Grapple or Shove check against the same target before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "GripOpenedInstead": {
+        "Title": "Grip Opened Instead",
+        "Description": "Resolve the normal critical failure for Disarm first. The first creature that attempts to Disarm you before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "IntentTelegraphed": {
+        "Title": "Intent Telegraphed",
+        "Description": "Resolve the normal critical failure for Disarm first. There is no additional mechanical effect. The target and anyone watching closely can see which item, hand, or grip you were trying to attack and how you meant to strip it away."
       }
     }
   }

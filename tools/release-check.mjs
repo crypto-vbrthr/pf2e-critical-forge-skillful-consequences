@@ -59,21 +59,26 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 12) pass("development card inventory is 12");
-else fail(`expected 12 development cards, found ${PHYSICAL_ACTION_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 24) pass("development card inventory is 24");
+else fail(`expected 24 development cards, found ${PHYSICAL_ACTION_CARDS.length}`);
 
-if (new Set(PHYSICAL_ACTION_CARDS.map((card) => card.id)).size === 12 && new Set(PHYSICAL_ACTION_CARDS.map((card) => card.fallbackTitle)).size === 12) pass("all development card ids and fallback titles are unique");
+if (new Set(PHYSICAL_ACTION_CARDS.map((card) => card.id)).size === 24 && new Set(PHYSICAL_ACTION_CARDS.map((card) => card.fallbackTitle)).size === 24) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
-const densityOk = ["grapple", "trip"].every((action) => {
+const frequentDensityOk = ["grapple", "trip"].every((action) => {
   const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
   return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === 3
     && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === 3;
 });
-if (densityOk) pass("Grapple and Trip each meet 3 success + 3 failure density");
-else fail("action density does not match the dev.1 plan");
+const regularDensityOk = ["shove", "reposition", "disarm"].every((action) => {
+  const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === 2
+    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === 2;
+});
+if (frequentDensityOk && regularDensityOk) pass("Athletics action density matches the dev.2 plan");
+else fail("action density does not match the dev.2 plan");
 
-if (SKILLFUL_PACK_CONFIGS.length === 4 && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 12 && SKILLFUL_PACK_CONFIGS.slice(1).every((config) => config.metadata.implementedCards === 0)) pass("pack development metadata is consistent");
+if (SKILLFUL_PACK_CONFIGS.length === 4 && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 24 && SKILLFUL_PACK_CONFIGS.slice(1).every((config) => config.metadata.implementedCards === 0)) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();

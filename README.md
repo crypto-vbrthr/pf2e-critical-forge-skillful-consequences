@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.1**
+Version **0.1.0-dev.2**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,12 +12,15 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.1` introduces the **Physical Actions** pack with **12 cards**:
+`0.1.0-dev.2` expands the **Physical Actions** pack to **24 Athletics cards**:
 
 - Grapple: 3 critical-success cards and 3 critical-failure cards
 - Trip: 3 critical-success cards and 3 critical-failure cards
+- Shove: 2 critical-success cards and 2 critical-failure cards
+- Reposition: 2 critical-success cards and 2 critical-failure cards
+- Disarm: 2 critical-success cards and 2 critical-failure cards
 
-The first development block deliberately completes a small six-card mini-deck for each supported action instead of spreading isolated cards across many skills.
+Frequent actions retain a six-card mini-deck. Regular actions begin with a four-card mini-deck so that every supported action already has multiple possible results on both sides of the degree-of-success line.
 
 ## Planned action density
 
@@ -28,7 +31,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Planned families include Athletics, Acrobatics, Deception, Diplomacy, Intimidation, Performance, Stealth, Thievery, Medicine, Crafting, knowledge actions, Survival, and selected utility actions.
+Planned families include the remaining Athletics actions, Acrobatics, Deception, Diplomacy, Intimidation, Performance, Stealth, Thievery, Medicine, Crafting, knowledge actions, Survival, and selected utility actions.
 
 ## Critical Forge requirements
 
@@ -59,7 +62,7 @@ Only packs that currently contain cards appear in Foundry's module settings. In 
 - The cards avoid replacing the base degree-of-success rules.
 - Repeated numeric modifiers are kept small and short-lived.
 - Narrative cards remain part of the mix so every draw does not become another modifier.
-- Action filters are specific. A Grapple card cannot appear for an unrelated Athletics check.
+- Action filters are specific. A Shove or Disarm card cannot appear for an unrelated Athletics check.
 - Equipment-centered failures remain the domain of Goblin Engineering where appropriate.
 
 See `docs/CARD_ROADMAP.md` and `docs/DESIGN_GUIDE.md` for the development plan.

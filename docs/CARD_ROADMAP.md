@@ -18,11 +18,18 @@ These are targets, not quotas. An action is not added merely to fill a table.
 
 - Grapple: 3 success + 3 failure
 - Trip: 3 success + 3 failure
-- Current total: **12 cards**
+- Total after block: **12 cards**
+
+### 0.1.0-dev.2 - Athletics II
+
+- Shove: 2 success + 2 failure
+- Reposition: 2 success + 2 failure
+- Disarm: 2 success + 2 failure
+- Current total: **24 cards**
 
 ### Planned next blocks
 
-- Athletics II: Shove, Reposition, Disarm, Climb, Swim, jumps where suitable
+- Athletics III: Climb, Swim, and jumps where suitable
 - Acrobatics: Balance, Tumble Through, Maneuver in Flight, Squeeze
 - Deception & Stealth
 - Diplomacy & Intimidation
