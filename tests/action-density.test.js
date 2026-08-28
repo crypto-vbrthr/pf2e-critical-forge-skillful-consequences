@@ -137,3 +137,35 @@ test("Medicine and Crafting mix follow-up and narrative consequences", () => {
   assert.equal(byAction("craft").some((card) => card.tags.includes("teamwork")), true);
   assert.equal(byAction("craft").some((card) => card.tags.includes("learning")), true);
 });
+
+
+test("knowledge actions keep frequent and regular mini-deck density", () => {
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "recall-knowledge", "skillCheckCriticalSuccess"), 3);
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "recall-knowledge", "skillCheckCriticalFailure"), 3);
+  for (const action of ["identify-magic", "identify-alchemy", "decipher-writing"]) {
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("knowledge actions remain GM-facing and preserve hidden misinformation", () => {
+  const actions = ["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"];
+  for (const action of actions) {
+    const cards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+    assert.ok(cards.length >= 4, action);
+    assert.equal(cards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing")), true, action);
+    const failures = cards.filter((card) => card.category === "skillCheckCriticalFailure");
+    assert.equal(failures.every((card) => card.impact === "narrative" && card.tags.includes("no-mechanical-effect")), true, action);
+  }
+});
+
+test("knowledge actions use intended skill-filter breadth", () => {
+  const recall = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("recall-knowledge"));
+  const decipher = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("decipher-writing"));
+  const magic = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("identify-magic"));
+  const alchemy = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("identify-alchemy"));
+  assert.equal(recall.every((card) => card.filters.skillTypes.length === 0), true);
+  assert.equal(decipher.every((card) => ["arcana", "society", "occultism", "religion"].every((skill) => card.filters.skillTypes.includes(skill))), true);
+  assert.equal(magic.every((card) => ["arcana", "nature", "occultism", "religion"].every((skill) => card.filters.skillTypes.includes(skill))), true);
+  assert.equal(alchemy.every((card) => card.filters.skillTypes.length === 1 && card.filters.skillTypes[0] === "crafting"), true);
+});

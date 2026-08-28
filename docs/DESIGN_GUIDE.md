@@ -71,3 +71,15 @@ Medicine cards should respect that PF2e's normal critical results can already he
 Crafting cards focus on the item or process being worked on, not on whimsical tool behavior. Repair consequences may expose damage patterns or influence a later attempt on the same item. Craft consequences may preserve useful process knowledge, notes, or lessons from failure, but they never refund materials, cancel downtime costs, or replace the action's normal critical result.
 
 This boundary keeps Medicine and Crafting distinct from Goblin Engineering: Skillful Consequences asks what the treatment, repair, or manufacturing attempt taught or changed in the situation; Goblin Engineering asks what the equipment itself decided to do.
+
+
+## Knowledge action boundary
+
+Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are secret checks. Cards for these actions therefore follow additional rules:
+
+- Every card is tagged `secret-check` and `gm-facing`.
+- Critical-failure cards never disclose the correct answer or say that the normal hidden result was wrong.
+- A failure card may make misinformation, misidentification, or a mistaken reading more coherent, but it may not overturn the normal PF2e outcome.
+- Small follow-up bonuses are tracked by the GM and should not be announced in a way that reveals the hidden degree of success.
+- Recall Knowledge uses action-first matching because the exact skill can vary widely with the subject, including Lore skills whose concrete statistic slug is campaign-specific.
+- Identify Magic accepts Arcana, Nature, Occultism, or Religion. Decipher Writing accepts Arcana, Society, Occultism, or Religion. Identify Alchemy is restricted to Crafting.

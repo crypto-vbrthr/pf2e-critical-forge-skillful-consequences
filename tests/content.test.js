@@ -19,14 +19,14 @@ const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFU
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.9 contains one hundred fifty unique cards across four active packs", () => {
+test("dev.10 contains one hundred sixty-eight unique cards across four active packs", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
   assert.equal(SOCIAL_ACTION_CARDS.length, 44);
   assert.equal(SUBTERFUGE_ACTION_CARDS.length, 34);
-  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 20);
-  assert.equal(ALL_CARDS.length, 150);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 150);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 150);
+  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 38);
+  assert.equal(ALL_CARDS.length, 168);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 168);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 168);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -119,18 +119,30 @@ test("subterfuge actions use exact Stealth and Thievery action filters", () => {
 });
 
 
-test("knowledge and utility actions use exact Medicine and Crafting filters", () => {
+test("knowledge and utility actions use deliberate Medicine, Crafting, and knowledge filters", () => {
   const medicine = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
   const crafting = new Set(["repair", "craft"]);
+  const knowledge = new Set(["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]);
   for (const card of KNOWLEDGE_UTILITY_CARDS) {
     assert.equal(card.packId, PACK_IDS.KNOWLEDGE_UTILITY);
     assert.equal(card.deckType, "skill");
     assert.equal(card.filters.actionSlugs.length, 1, card.id);
     const action = card.filters.actionSlugs[0];
-    const expectedSkill = medicine.has(action) ? "medicine" : crafting.has(action) ? "crafting" : null;
-    assert.ok(expectedSkill, card.id);
-    assert.deepEqual(card.filters.skillTypes, [expectedSkill], card.id);
-    assert.equal(card.metadata.actionFamily, expectedSkill, card.id);
+    if (medicine.has(action)) {
+      assert.deepEqual(card.filters.skillTypes, ["medicine"], card.id);
+      assert.equal(card.metadata.actionFamily, "medicine", card.id);
+    } else if (crafting.has(action)) {
+      assert.deepEqual(card.filters.skillTypes, ["crafting"], card.id);
+      assert.equal(card.metadata.actionFamily, "crafting", card.id);
+    } else if (knowledge.has(action)) {
+      assert.equal(card.metadata.actionFamily, "knowledge", card.id);
+      assert.equal(card.tags.includes("secret-check"), true, card.id);
+      assert.equal(card.tags.includes("gm-facing"), true, card.id);
+      if (action === "recall-knowledge") assert.deepEqual(card.filters.skillTypes, [], card.id);
+      if (action === "decipher-writing") assert.deepEqual(card.filters.skillTypes, ["arcana", "society", "occultism", "religion"], card.id);
+      if (action === "identify-magic") assert.deepEqual(card.filters.skillTypes, ["arcana", "nature", "occultism", "religion"], card.id);
+      if (action === "identify-alchemy") assert.deepEqual(card.filters.skillTypes, ["crafting"], card.id);
+    } else assert.fail(`unexpected Knowledge & Utility action: ${action}`);
     assert.equal(card.effect, null, card.id);
     assert.equal(card.metadata.resolution, "manual", card.id);
     assert.equal(card.metadata.preservesCoreOutcome, true, card.id);
@@ -149,6 +161,28 @@ test("Medicine and Crafting use the intended first-block density", () => {
     assert.equal(cards.length, 2, slug);
     assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 1, `${slug} success`);
     assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 1, `${slug} failure`);
+  }
+});
+
+
+test("knowledge actions use the intended first-block density and secret-check boundary", () => {
+  const recall = forAction(KNOWLEDGE_UTILITY_CARDS, "recall-knowledge");
+  assert.equal(recall.length, 6);
+  assert.equal(forOutcome(recall, "skillCheckCriticalSuccess").length, 3);
+  assert.equal(forOutcome(recall, "skillCheckCriticalFailure").length, 3);
+  for (const slug of ["identify-magic", "identify-alchemy", "decipher-writing"]) {
+    const cards = forAction(KNOWLEDGE_UTILITY_CARDS, slug);
+    assert.equal(cards.length, 4, slug);
+    assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 2, `${slug} success`);
+    assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 2, `${slug} failure`);
+  }
+  for (const card of [...recall, ...forAction(KNOWLEDGE_UTILITY_CARDS, "identify-magic"), ...forAction(KNOWLEDGE_UTILITY_CARDS, "identify-alchemy"), ...forAction(KNOWLEDGE_UTILITY_CARDS, "decipher-writing")]) {
+    assert.equal(card.tags.includes("secret-check"), true, card.id);
+    assert.equal(card.tags.includes("gm-facing"), true, card.id);
+  }
+  for (const card of KNOWLEDGE_UTILITY_CARDS.filter((card) => card.metadata.actionFamily === "knowledge" && card.category === "skillCheckCriticalFailure")) {
+    assert.equal(card.impact, "narrative", card.id);
+    assert.equal(card.tags.includes("no-mechanical-effect"), true, card.id);
   }
 });
 
@@ -201,5 +235,5 @@ test("pack topology exposes all four populated action packs", () => {
   assert.equal(packs[2].enabled, true);
   assert.equal(packs[2].decks.skill.cards.length, 34);
   assert.equal(packs[3].enabled, true);
-  assert.equal(packs[3].decks.skill.cards.length, 20);
+  assert.equal(packs[3].decks.skill.cards.length, 38);
 });

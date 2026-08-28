@@ -85,9 +85,17 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Craft: 2 success + 2 failure
 - Total after block: **150 cards**
 
+### 0.1.0-dev.10 - Knowledge Actions I
+
+- Recall Knowledge: 3 success + 3 failure
+- Identify Magic: 2 success + 2 failure
+- Identify Alchemy: 2 success + 2 failure
+- Decipher Writing: 2 success + 2 failure
+- All four actions are handled as GM-facing secret-check content.
+- Total after block: **168 cards**
+
 ### Planned next blocks
 
-- Knowledge actions
 - Survival, Performance, and selected utility actions
 
 ## Completeness review

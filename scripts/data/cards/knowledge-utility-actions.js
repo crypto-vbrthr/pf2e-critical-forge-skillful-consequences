@@ -31,6 +31,18 @@ function defineCrafting(options) {
   });
 }
 
+function defineKnowledge(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: KNOWLEDGE_UTILITY_PACK,
+    collection: "knowledge-utility",
+    actionFamily: "knowledge",
+    filters: {
+      ...(options.filters ?? {})
+    }
+  });
+}
+
 export const KNOWLEDGE_UTILITY_CARDS = Object.freeze([
   defineMedicine({
     id: "treat-wounds-success-001-treatment-pattern-recognized",
@@ -275,4 +287,236 @@ export const KNOWLEDGE_UTILITY_CARDS = Object.freeze([
     filters: { actionSlugs: ["craft"] },
     contentBatch: 9
   })
+,
+
+  defineKnowledge({
+    id: "recall-knowledge-success-001-connecting-principle",
+    localizationKey: "ConnectingPrinciple",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Connecting Principle",
+    fallbackDescription: "Resolve the normal critical success for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the subject supports it, the GM points out one useful connection between the facts learned and a related creature, place, event, tradition, or phenomenon that the character could reasonably infer.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "connection", "information", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "recall-knowledge-success-002-corroborating-detail",
+    localizationKey: "CorroboratingDetail",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Corroborating Detail",
+    fallbackDescription: "Resolve the normal critical success for Recall Knowledge first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Recall Knowledge check before the end of the next day about the same subject or a closely related subject. The bonus then ends.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "follow-up", "same-subject", "one-use"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "recall-knowledge-success-003-next-question-revealed",
+    localizationKey: "NextQuestionRevealed",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Next Question Revealed",
+    fallbackDescription: "Resolve the normal critical success for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM identifies one narrow follow-up question, source, or line of inquiry that would be especially productive next, without answering that question for free.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "lead", "research", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "recall-knowledge-failure-001-false-pattern-locks-in",
+    localizationKey: "FalsePatternLocksIn",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "False Pattern Locks In",
+    fallbackDescription: "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If useful, the GM frames the erroneous information as part of a coherent pattern and may let one harmless true detail appear to support it. Do not reveal that the conclusion is wrong.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "misinformation", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "recall-knowledge-failure-002-right-detail-wrong-conclusion",
+    localizationKey: "RightDetailWrongConclusion",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Right Detail, Wrong Conclusion",
+    fallbackDescription: "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may attach one true peripheral detail to the erroneous conclusion, provided the detail does not itself expose the mistake. The false information remains the normal result of the check.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "misinformation", "true-detail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "recall-knowledge-failure-003-authority-misremembered",
+    localizationKey: "AuthorityMisremembered",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Authority Misremembered",
+    fallbackDescription: "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may give the erroneous recollection a plausible remembered source, teacher, text, rumor, or tradition, adding narrative texture without confirming whether that source was ever reliable.",
+    tags: ["knowledge", "recall-knowledge", "secret-check", "gm-facing", "misinformation", "source", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["recall-knowledge"] },
+    contentBatch: 10
+  }),
+
+  defineKnowledge({
+    id: "identify-magic-success-001-resonance-fingerprint",
+    localizationKey: "ResonanceFingerprint",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Resonance Fingerprint",
+    fallbackDescription: "Resolve the normal critical success for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the magical signature supports it, the GM points out one contextual clue about origin, creator, repeated use, or a relationship to another magical effect already encountered.",
+    tags: ["knowledge", "identify-magic", "secret-check", "gm-facing", "magic", "information", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "nature", "occultism", "religion"], actionSlugs: ["identify-magic"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-magic-success-002-related-working-recognized",
+    localizationKey: "RelatedWorkingRecognized",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Related Working Recognized",
+    fallbackDescription: "Resolve the normal critical success for Identify Magic first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Identify Magic check within 24 hours on the same item, effect, creator's work, or a closely related magical working. The bonus then ends.",
+    tags: ["knowledge", "identify-magic", "secret-check", "gm-facing", "magic", "follow-up", "one-use"],
+    filters: { skillTypes: ["arcana", "nature", "occultism", "religion"], actionSlugs: ["identify-magic"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-magic-failure-001-familiar-signature-wrong-source",
+    localizationKey: "FamiliarSignatureWrongSource",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Familiar Signature, Wrong Source",
+    fallbackDescription: "Resolve the normal critical failure for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may present the mistaken identification as a convincing resemblance to a familiar magical source or effect. Do not reveal that the identification is incorrect.",
+    tags: ["knowledge", "identify-magic", "secret-check", "gm-facing", "magic", "misidentification", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "nature", "occultism", "religion"], actionSlugs: ["identify-magic"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-magic-failure-002-misleading-resonance",
+    localizationKey: "MisleadingResonance",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Misleading Resonance",
+    fallbackDescription: "Resolve the normal critical failure for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may include one genuine observable magical trait, sensation, or resonance that seems to support the mistaken identification without actually confirming it.",
+    tags: ["knowledge", "identify-magic", "secret-check", "gm-facing", "magic", "misidentification", "true-detail", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "nature", "occultism", "religion"], actionSlugs: ["identify-magic"] },
+    contentBatch: 10
+  }),
+
+  defineKnowledge({
+    id: "identify-alchemy-success-001-batch-signature",
+    localizationKey: "BatchSignature",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Batch Signature",
+    fallbackDescription: "Resolve the normal critical success for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the item permits the inference, the GM points out one clue that could link it to a batch, maker, workshop, formula tradition, or production method.",
+    tags: ["knowledge", "identify-alchemy", "secret-check", "gm-facing", "alchemy", "information", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["crafting"], actionSlugs: ["identify-alchemy"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-alchemy-success-002-process-trace",
+    localizationKey: "ProcessTrace",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Process Trace",
+    fallbackDescription: "Resolve the normal critical success for Identify Alchemy first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Identify Alchemy check within 1 week on an item from the same batch, formula, maker, or clearly related process. The bonus then ends.",
+    tags: ["knowledge", "identify-alchemy", "secret-check", "gm-facing", "alchemy", "follow-up", "one-use"],
+    filters: { skillTypes: ["crafting"], actionSlugs: ["identify-alchemy"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-alchemy-failure-001-contaminant-red-herring",
+    localizationKey: "ContaminantRedHerring",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Contaminant Red Herring",
+    fallbackDescription: "Resolve the normal critical failure for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may frame the mistaken identification around a plausible residue, contaminant, color, odor, or processing mark that appears to explain the item. Do not reveal the mistake.",
+    tags: ["knowledge", "identify-alchemy", "secret-check", "gm-facing", "alchemy", "misidentification", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["crafting"], actionSlugs: ["identify-alchemy"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "identify-alchemy-failure-002-correct-method-wrong-mixture",
+    localizationKey: "CorrectMethodWrongMixture",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Correct Method, Wrong Mixture",
+    fallbackDescription: "Resolve the normal critical failure for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may pair the mistaken identification with one true clue about how the substance was prepared, stabilized, bottled, or processed, provided that clue does not expose the actual item.",
+    tags: ["knowledge", "identify-alchemy", "secret-check", "gm-facing", "alchemy", "misidentification", "true-detail", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["crafting"], actionSlugs: ["identify-alchemy"] },
+    contentBatch: 10
+  }),
+
+  defineKnowledge({
+    id: "decipher-writing-success-001-authorial-habit",
+    localizationKey: "AuthorialHabit",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Authorial Habit",
+    fallbackDescription: "Resolve the normal critical success for Decipher Writing first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Decipher Writing check within 1 week involving the same author, script, cipher, notation system, or closely related body of writing. The bonus then ends.",
+    tags: ["knowledge", "decipher-writing", "secret-check", "gm-facing", "writing", "follow-up", "one-use"],
+    filters: { skillTypes: ["arcana", "society", "occultism", "religion"], actionSlugs: ["decipher-writing"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "decipher-writing-success-002-structure-behind-the-text",
+    localizationKey: "StructureBehindTheText",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Structure Behind the Text",
+    fallbackDescription: "Resolve the normal critical success for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the document supports it, the GM identifies one useful structural clue such as intended audience, document type, repeated notation, editorial layer, or how different sections relate, without translating additional hidden content for free.",
+    tags: ["knowledge", "decipher-writing", "secret-check", "gm-facing", "writing", "information", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "society", "occultism", "religion"], actionSlugs: ["decipher-writing"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "decipher-writing-failure-001-false-friend",
+    localizationKey: "FalseFriend",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "False Friend",
+    fallbackDescription: "Resolve the normal critical failure for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. A familiar-looking word, symbol, phrase, or convention appears to support the mistaken interpretation. Do not reveal that the reading is wrong.",
+    tags: ["knowledge", "decipher-writing", "secret-check", "gm-facing", "writing", "misinterpretation", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "society", "occultism", "religion"], actionSlugs: ["decipher-writing"] },
+    contentBatch: 10
+  }),
+  defineKnowledge({
+    id: "decipher-writing-failure-002-reading-order-misjudged",
+    localizationKey: "ReadingOrderMisjudged",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Reading Order Misjudged",
+    fallbackDescription: "Resolve the normal critical failure for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may let a heading, annotation, marginal mark, repeated symbol, or section boundary be interpreted in a way that reinforces the normal erroneous reading without exposing the error.",
+    tags: ["knowledge", "decipher-writing", "secret-check", "gm-facing", "writing", "misinterpretation", "structure", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["arcana", "society", "occultism", "religion"], actionSlugs: ["decipher-writing"] },
+    contentBatch: 10
+  })
+
 ]);

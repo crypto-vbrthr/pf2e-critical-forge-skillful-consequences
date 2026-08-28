@@ -73,3 +73,14 @@ The main neighboring expansion is **Goblin Engineering**, especially Equipment I
 - **Craft** cards concern process knowledge, formula repetition, and visible failure points, not runaway workshop devices.
 
 Critical failures in Medicine can already be dangerous, so the added consequences stay light or narrative. Critical failures in Crafting retain all normal material and downtime costs before any additional card text is applied.
+
+
+## Knowledge Actions I
+
+The dev.10 block adds Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing. These cards remain distinct from Critical Forge Core because Core supplies the skill-critical trigger and matching infrastructure, while Skillful Consequences supplies action-specific follow-through.
+
+The knowledge block also avoids Goblin Engineering's equipment-centered identity. Identify Alchemy cards concern interpretation, batch/process clues, and misidentification rather than tools or apparatus malfunctioning. Identify Magic does not duplicate Arcane Backlash because it reacts to a skill check used to understand magic, not to casting or spell-attack failures.
+
+All four supported knowledge actions are secret checks. Failure cards are GM-facing narrative consequences that preserve PF2e misinformation, misidentification, or mistaken interpretation without revealing the hidden degree of success.
+
+Supported actions in this block: Recall Knowledge, Identify Magic, Identify Alchemy, Decipher Writing.

@@ -63,10 +63,10 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 34 && KNOWLEDGE_UTILITY_CARDS.length === 20 && allCards.length === 150) pass("development card inventory is 150 (52 physical + 44 social + 34 subterfuge + 20 knowledge/utility)");
-else fail(`expected 52 physical + 44 social + 34 subterfuge + 20 knowledge/utility cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length} + ${KNOWLEDGE_UTILITY_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 34 && KNOWLEDGE_UTILITY_CARDS.length === 38 && allCards.length === 168) pass("development card inventory is 168 (52 physical + 44 social + 34 subterfuge + 38 knowledge/utility)");
+else fail(`expected 52 physical + 44 social + 34 subterfuge + 38 knowledge/utility cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length} + ${KNOWLEDGE_UTILITY_CARDS.length}`);
 
-if (new Set(allCards.map((card) => card.id)).size === 150 && new Set(allCards.map((card) => card.fallbackTitle)).size === 150) pass("all development card ids and fallback titles are unique");
+if (new Set(allCards.map((card) => card.id)).size === 168 && new Set(allCards.map((card) => card.fallbackTitle)).size === 168) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
 const densityMatches = (cards, actions, successCount, failureCount) => actions.every((action) => {
@@ -81,10 +81,11 @@ const socialDensityOk = densityMatches(SOCIAL_ACTION_CARDS, ["feint", "lie", "ga
   && densityMatches(SOCIAL_ACTION_CARDS, ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"], 2, 2);
 const subterfugeDensityOk = densityMatches(SUBTERFUGE_ACTION_CARDS, ["hide", "sneak", "disable-a-device"], 3, 3)
   && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object", "pick-a-lock", "palm-an-object", "steal"], 2, 2);
-const knowledgeUtilityDensityOk = densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-wounds", "administer-first-aid", "repair", "craft"], 2, 2)
-  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-disease", "treat-poison"], 1, 1);
-if (physicalDensityOk && socialDensityOk && subterfugeDensityOk && knowledgeUtilityDensityOk) pass("all four action packs match the dev.9 density plan");
-else fail("action density does not match the dev.9 plan");
+const knowledgeUtilityDensityOk = densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-wounds", "administer-first-aid", "repair", "craft", "identify-magic", "identify-alchemy", "decipher-writing"], 2, 2)
+  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-disease", "treat-poison"], 1, 1)
+  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["recall-knowledge"], 3, 3);
+if (physicalDensityOk && socialDensityOk && subterfugeDensityOk && knowledgeUtilityDensityOk) pass("all four action packs match the dev.10 density plan");
+else fail("action density does not match the dev.10 plan");
 
 const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
 const acrobaticsActions = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
@@ -115,13 +116,17 @@ const subterfugeFiltersOk = SUBTERFUGE_ACTION_CARDS.every((card) => {
 });
 const medicineActions = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
 const craftingActions = new Set(["repair", "craft"]);
+const knowledgeActions = new Set(["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]);
 const knowledgeUtilityFiltersOk = KNOWLEDGE_UTILITY_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
-  const expectedSkill = medicineActions.has(action) ? "medicine" : craftingActions.has(action) ? "crafting" : null;
-  return expectedSkill
-    && card.filters.skillTypes?.length === 1
-    && card.filters.skillTypes[0] === expectedSkill
-    && card.metadata.actionFamily === expectedSkill;
+  if (medicineActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "medicine" && card.metadata.actionFamily === "medicine";
+  if (craftingActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "crafting" && card.metadata.actionFamily === "crafting";
+  if (!knowledgeActions.has(action) || card.metadata.actionFamily !== "knowledge" || !card.tags.includes("secret-check") || !card.tags.includes("gm-facing")) return false;
+  if (action === "recall-knowledge") return card.filters.skillTypes?.length === 0;
+  if (action === "decipher-writing") return JSON.stringify(card.filters.skillTypes) === JSON.stringify(["arcana", "society", "occultism", "religion"]);
+  if (action === "identify-magic") return JSON.stringify(card.filters.skillTypes) === JSON.stringify(["arcana", "nature", "occultism", "religion"]);
+  if (action === "identify-alchemy") return JSON.stringify(card.filters.skillTypes) === JSON.stringify(["crafting"]);
+  return false;
 });
 if (physicalFiltersOk && socialFiltersOk && subterfugeFiltersOk && knowledgeUtilityFiltersOk) pass("all four packs use exact skill/action filters");
 else fail("skill or action-family filter mismatch detected");
@@ -163,6 +168,17 @@ if (medicineCards.length === 12
   pass("Medicine/Crafting density and Goblin Engineering separation are explicit");
 } else fail("Medicine/Crafting density or equipment-separation boundary is incomplete");
 
+const knowledgeCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.metadata.actionFamily === "knowledge");
+const knowledgeFailures = knowledgeCards.filter((card) => card.category === "skillCheckCriticalFailure");
+if (knowledgeCards.length === 18
+  && densityMatches(knowledgeCards, ["recall-knowledge"], 3, 3)
+  && densityMatches(knowledgeCards, ["identify-magic", "identify-alchemy", "decipher-writing"], 2, 2)
+  && knowledgeCards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing"))
+  && knowledgeFailures.length === 9
+  && knowledgeFailures.every((card) => card.impact === "narrative" && card.tags.includes("no-mechanical-effect"))) {
+  pass("Knowledge-action density and secret-check safety are explicit");
+} else fail("Knowledge-action density or secret-check safety is incomplete");
+
 if (allCards.every((card) => card.metadata.preservesCoreOutcome === true && card.effect === null && card.metadata.resolution === "manual")) pass("all cards preserve PF2e core outcomes and use manual resolution");
 else fail("a card violates the core-outcome or manual-resolution boundary");
 
@@ -170,12 +186,12 @@ if (SKILLFUL_PACK_CONFIGS.length === 4
   && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52
   && SKILLFUL_PACK_CONFIGS[1].metadata.implementedCards === 44
   && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 34
-  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 20) pass("pack development metadata is consistent");
+  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 38) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();
 if (built.length === 4 && built[0].enabled && built[1].enabled && built[2].enabled && built[3].enabled
-  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 34 && built[3].decks?.skill?.cards.length === 20) pass("pack topology and development defaults are correct");
+  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 34 && built[3].decks?.skill?.cards.length === 38) pass("pack topology and development defaults are correct");
 else fail("pack topology or development defaults are incorrect");
 
 const forbiddenNames = new Set([".DS_Store", "Thumbs.db", ".env"]);

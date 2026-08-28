@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-dev.10
+
+### Knowledge Actions I
+
+- Added 18 Knowledge & Utility cards, bringing the module to 168 cards total.
+- Added Recall Knowledge with 3 critical-success and 3 critical-failure cards.
+- Added Identify Magic, Identify Alchemy, and Decipher Writing with 2 + 2 cards each.
+- Marked every new knowledge-action card as `secret-check` and `gm-facing`.
+- Kept critical-failure cards compatible with PF2e hidden misinformation and misidentification by never revealing that the normal result was wrong.
+- Added action-first matching for Recall Knowledge, multi-skill matching for Identify Magic and Decipher Writing, and Crafting matching for Identify Alchemy.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density and exact-filter tests for the first knowledge-action block.
+- Added secret-check safety tests for all 18 knowledge cards.
+- Expanded release checks to cover 168 cards and 38 Knowledge & Utility cards.
+- Updated the design guide, roadmap, README, and overlap review for secret knowledge checks.
+
 ## 0.1.0-dev.9
 
 ### Medicine & Crafting I

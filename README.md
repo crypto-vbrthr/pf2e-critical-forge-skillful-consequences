@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.9**
+Version **0.1.0-dev.10**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,7 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.9` contains **150 cards** across four active packs.
+`0.1.0-dev.10` contains **168 cards** across four active packs.
 
 ### Physical Actions - 52 cards
 
@@ -72,7 +72,7 @@ Thievery:
 
 The Subterfuge pack now covers both stealth and practical larceny. Stealth cards emphasize routes, cover, shared blind spots, traces, observer awareness, and follow-through between Hide and Sneak. Thievery cards focus on locks, device sequences, witnesses, carried objects, and the aftermath of successful or failed manipulation rather than on malfunctioning equipment.
 
-### Knowledge & Utility - 20 cards
+### Knowledge & Utility - 38 cards
 
 Medicine:
 
@@ -86,11 +86,20 @@ Crafting:
 - Repair: 2 critical-success + 2 critical-failure cards
 - Craft: 2 + 2
 
-This first Knowledge & Utility block focuses on treatment follow-through, observable diagnostic information, learned repair patterns, and crafting process knowledge. It deliberately avoids malfunctioning healer's tools, repair kits, or workshops so Goblin Engineering retains the equipment-centered comedy niche.
+Knowledge actions:
+
+- Recall Knowledge: 3 critical-success + 3 critical-failure cards
+- Identify Magic: 2 + 2
+- Identify Alchemy: 2 + 2
+- Decipher Writing: 2 + 2
+
+The Knowledge & Utility pack now combines treatment follow-through, repair and crafting process knowledge, and secret knowledge-action consequences. Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are all written as GM-facing secret-check content so a card never needs to announce that a hidden conclusion or identification was wrong. Critical failures add texture to misinformation or misidentification rather than exposing it.
 
 **Hide, Sneak, and Conceal an Object use secret checks.** All current Stealth cards are tagged `secret-check` and `gm-facing`. Critical Forge defaults to GM Blind card visibility; a GM-only visibility mode is strongly recommended so a card does not expose the hidden degree of success. Short modifiers can be tracked by the GM and applied to later secret checks without announcing why.
 
 **Gather Information is also a Secret action.** Its critical-failure cards are deliberately GM-facing and tagged `secret-check` for the same reason.
+
+**Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are secret checks as well.** Every card for those actions is tagged `secret-check` and `gm-facing`. Their critical-failure cards never state the true answer or otherwise reveal that the normal hidden result was erroneous.
 
 ## Planned action density
 
@@ -101,7 +110,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Medicine and Crafting are now active. Planned families still include knowledge actions, Survival, Performance, and selected utility actions.
+Medicine, Crafting, and the first knowledge actions are now active. Planned families still include Survival, Performance, and selected utility actions.
 
 ## Critical Forge requirements
 

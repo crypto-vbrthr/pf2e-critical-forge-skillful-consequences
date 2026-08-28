@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Wissen & Nutzen aktivieren",
-        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen aus Medizin und Handwerk."
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen aus Medizin, Handwerk und Wissen."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Wissen & Nutzen",
-        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für unterstützte Handlungen aus Medizin und Handwerk."
+        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für unterstützte Handlungen aus Medizin, Handwerk und Wissen."
       }
     },
     "Cards": {
@@ -640,6 +640,78 @@
       "VisiblePointOfFailure": {
         "Title": "Sichtbarer Fehlerpunkt",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Herstellen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn das misslungene Projekt erkennen lässt, wo es scheiterte, nennt der SL den Arbeitsschritt, die Materialwechselwirkung, die Passung oder den Prozessschritt, an dem die Arbeit zuerst sichtbar schiefging. Dadurch werden keine Materialien oder anderen Kosten zurückerstattet."
+      },
+      "ConnectingPrinciple": {
+        "Title": "Verbindendes Prinzip",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Wissen abrufen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Wenn das Thema es hergibt, weist der SL auf eine nützliche Verbindung zwischen den gewonnenen Fakten und einer verwandten Kreatur, einem Ort, Ereignis, einer Tradition oder einem Phänomen hin, die der Charakter vernünftig ableiten kann."
+      },
+      "CorroboratingDetail": {
+        "Title": "Bestätigendes Detail",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Wissen abrufen ab. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann heimlich einen Situationsbonus von +1 auf deinen nächsten Wurf für Wissen abrufen bis zum Ende des nächsten Tages gewähren, wenn er dasselbe oder ein eng verwandtes Thema betrifft. Danach endet der Bonus."
+      },
+      "NextQuestionRevealed": {
+        "Title": "Die nächste Frage zeigt sich",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Wissen abrufen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL nennt eine eng gefasste Folgefrage, Quelle oder Nachforschungsrichtung, die als Nächstes besonders ergiebig wäre, ohne die Frage kostenlos zu beantworten."
+      },
+      "FalsePatternLocksIn": {
+        "Title": "Falsches Muster verfestigt sich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Wissen abrufen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Wenn es nützlich ist, bettet der SL die fehlerhafte Information in ein stimmiges Muster ein und kann ein harmloses wahres Detail so erscheinen lassen, als bestätige es dieses Muster. Verrate nicht, dass die Schlussfolgerung falsch ist."
+      },
+      "RightDetailWrongConclusion": {
+        "Title": "Richtiges Detail, falsche Schlussfolgerung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Wissen abrufen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann der fehlerhaften Schlussfolgerung ein wahres Randdetail hinzufügen, sofern dieses Detail den Irrtum nicht selbst offenlegt. Die falsche Information bleibt das normale Ergebnis der Probe."
+      },
+      "AuthorityMisremembered": {
+        "Title": "Autorität falsch erinnert",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Wissen abrufen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann der fehlerhaften Erinnerung eine plausible vermeintliche Quelle, Lehrperson, Schrift, ein Gerücht oder eine Tradition geben und so erzählerische Tiefe hinzufügen, ohne zu bestätigen, ob diese Quelle je zuverlässig war."
+      },
+      "ResonanceFingerprint": {
+        "Title": "Resonanzfingerabdruck",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Magie identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Wenn die magische Signatur es hergibt, weist der SL auf einen kontextuellen Hinweis zu Ursprung, Erschaffer, wiederholter Nutzung oder einer Beziehung zu einem bereits begegneten magischen Effekt hin."
+      },
+      "RelatedWorkingRecognized": {
+        "Title": "Verwandtes Wirken erkannt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Magie identifizieren ab. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann heimlich einen Situationsbonus von +1 auf deinen nächsten Wurf für Magie identifizieren innerhalb von 24 Stunden gewähren, wenn er denselben Gegenstand, Effekt, das Werk desselben Erschaffers oder ein eng verwandtes magisches Wirken betrifft. Danach endet der Bonus."
+      },
+      "FamiliarSignatureWrongSource": {
+        "Title": "Vertraute Signatur, falscher Ursprung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Magie identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann die falsche Identifikation als überzeugende Ähnlichkeit mit einer vertrauten magischen Quelle oder Wirkung darstellen. Verrate nicht, dass die Identifikation falsch ist."
+      },
+      "MisleadingResonance": {
+        "Title": "Irreführende Resonanz",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Magie identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann ein echtes beobachtbares magisches Merkmal, eine Empfindung oder Resonanz nennen, die die falsche Identifikation scheinbar stützt, ohne sie tatsächlich zu bestätigen."
+      },
+      "BatchSignature": {
+        "Title": "Chargensignatur",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Alchemistischen Gegenstand identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Wenn der Gegenstand den Schluss zulässt, weist der SL auf einen Hinweis hin, der ihn mit einer Charge, einem Hersteller, einer Werkstatt, einer Formeltradition oder einem Herstellungsverfahren verbinden könnte."
+      },
+      "ProcessTrace": {
+        "Title": "Prozessspur",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Alchemistischen Gegenstand identifizieren ab. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann heimlich einen Situationsbonus von +1 auf deinen nächsten Wurf für Alchemie identifizieren innerhalb von 1 Woche gewähren, wenn er einen Gegenstand aus derselben Charge, Formel, vom selben Hersteller oder aus einem eindeutig verwandten Prozess betrifft. Danach endet der Bonus."
+      },
+      "ContaminantRedHerring": {
+        "Title": "Verunreinigung als falsche Fährte",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Alchemistischen Gegenstand identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann die falsche Identifikation auf einen plausiblen Rückstand, eine Verunreinigung, Farbe, einen Geruch oder eine Verarbeitungsspur stützen, die den Gegenstand scheinbar erklärt. Verrate den Irrtum nicht."
+      },
+      "CorrectMethodWrongMixture": {
+        "Title": "Richtiges Verfahren, falsche Mischung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Alchemistischen Gegenstand identifizieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann die falsche Identifikation mit einem wahren Hinweis darauf verbinden, wie die Substanz vorbereitet, stabilisiert, abgefüllt oder verarbeitet wurde, sofern dieser Hinweis den tatsächlichen Gegenstand nicht offenlegt."
+      },
+      "AuthorialHabit": {
+        "Title": "Gewohnheit des Verfassers",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Schrift entziffern ab. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann heimlich einen Situationsbonus von +1 auf deinen nächsten Wurf für Schrift entziffern innerhalb von 1 Woche gewähren, wenn er denselben Verfasser, dieselbe Schrift, Chiffre, Notation oder einen eng verwandten Textbestand betrifft. Danach endet der Bonus."
+      },
+      "StructureBehindTheText": {
+        "Title": "Struktur hinter dem Text",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Schrift entziffern ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Wenn das Dokument es hergibt, nennt der SL einen nützlichen strukturellen Hinweis, etwa die Zielgruppe, Dokumentart, wiederkehrende Notation, eine redaktionelle Ebene oder die Beziehung verschiedener Abschnitte, ohne zusätzliche verborgene Inhalte kostenlos zu übersetzen."
+      },
+      "FalseFriend": {
+        "Title": "Falscher Freund",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Schrift entziffern ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Ein vertraut wirkendes Wort, Symbol, eine Wendung oder Konvention scheint die falsche Deutung zu stützen. Verrate nicht, dass die Lesart falsch ist."
+      },
+      "ReadingOrderMisjudged": {
+        "Title": "Lesereihenfolge falsch gedeutet",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Schrift entziffern ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann eine Überschrift, Anmerkung, Randmarkierung, ein wiederholtes Symbol oder eine Abschnittsgrenze so deuten lassen, dass sie die normale fehlerhafte Lesart verstärkt, ohne den Irrtum offenzulegen."
       }
     }
   }

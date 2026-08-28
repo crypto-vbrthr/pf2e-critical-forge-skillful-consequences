@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Enable Knowledge & Utility",
-        "Hint": "Enable Skillful Consequences cards for supported Medicine and Crafting actions."
+        "Hint": "Enable Skillful Consequences cards for supported Medicine, Crafting, and knowledge actions."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Knowledge & Utility",
-        "Description": "Action-specific critical successes and critical failures for supported Medicine and Crafting actions."
+        "Description": "Action-specific critical successes and critical failures for supported Medicine, Crafting, and knowledge actions."
       }
     },
     "Cards": {
@@ -640,6 +640,78 @@
       "VisiblePointOfFailure": {
         "Title": "Visible Point of Failure",
         "Description": "Resolve the normal critical failure for Craft first. There is no additional mechanical effect. If the failed project makes it possible to tell, the GM identifies the stage, material interaction, fitting, or process step where the work first visibly went wrong. This does not refund materials or other costs."
+      },
+      "ConnectingPrinciple": {
+        "Title": "Connecting Principle",
+        "Description": "Resolve the normal critical success for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the subject supports it, the GM points out one useful connection between the facts learned and a related creature, place, event, tradition, or phenomenon that the character could reasonably infer."
+      },
+      "CorroboratingDetail": {
+        "Title": "Corroborating Detail",
+        "Description": "Resolve the normal critical success for Recall Knowledge first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Recall Knowledge check before the end of the next day about the same subject or a closely related subject. The bonus then ends."
+      },
+      "NextQuestionRevealed": {
+        "Title": "Next Question Revealed",
+        "Description": "Resolve the normal critical success for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM identifies one narrow follow-up question, source, or line of inquiry that would be especially productive next, without answering that question for free."
+      },
+      "FalsePatternLocksIn": {
+        "Title": "False Pattern Locks In",
+        "Description": "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If useful, the GM frames the erroneous information as part of a coherent pattern and may let one harmless true detail appear to support it. Do not reveal that the conclusion is wrong."
+      },
+      "RightDetailWrongConclusion": {
+        "Title": "Right Detail, Wrong Conclusion",
+        "Description": "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may attach one true peripheral detail to the erroneous conclusion, provided the detail does not itself expose the mistake. The false information remains the normal result of the check."
+      },
+      "AuthorityMisremembered": {
+        "Title": "Authority Misremembered",
+        "Description": "Resolve the normal critical failure for Recall Knowledge first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may give the erroneous recollection a plausible remembered source, teacher, text, rumor, or tradition, adding narrative texture without confirming whether that source was ever reliable."
+      },
+      "ResonanceFingerprint": {
+        "Title": "Resonance Fingerprint",
+        "Description": "Resolve the normal critical success for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the magical signature supports it, the GM points out one contextual clue about origin, creator, repeated use, or a relationship to another magical effect already encountered."
+      },
+      "RelatedWorkingRecognized": {
+        "Title": "Related Working Recognized",
+        "Description": "Resolve the normal critical success for Identify Magic first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Identify Magic check within 24 hours on the same item, effect, creator's work, or a closely related magical working. The bonus then ends."
+      },
+      "FamiliarSignatureWrongSource": {
+        "Title": "Familiar Signature, Wrong Source",
+        "Description": "Resolve the normal critical failure for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may present the mistaken identification as a convincing resemblance to a familiar magical source or effect. Do not reveal that the identification is incorrect."
+      },
+      "MisleadingResonance": {
+        "Title": "Misleading Resonance",
+        "Description": "Resolve the normal critical failure for Identify Magic first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may include one genuine observable magical trait, sensation, or resonance that seems to support the mistaken identification without actually confirming it."
+      },
+      "BatchSignature": {
+        "Title": "Batch Signature",
+        "Description": "Resolve the normal critical success for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the item permits the inference, the GM points out one clue that could link it to a batch, maker, workshop, formula tradition, or production method."
+      },
+      "ProcessTrace": {
+        "Title": "Process Trace",
+        "Description": "Resolve the normal critical success for Identify Alchemy first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Identify Alchemy check within 1 week on an item from the same batch, formula, maker, or clearly related process. The bonus then ends."
+      },
+      "ContaminantRedHerring": {
+        "Title": "Contaminant Red Herring",
+        "Description": "Resolve the normal critical failure for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may frame the mistaken identification around a plausible residue, contaminant, color, odor, or processing mark that appears to explain the item. Do not reveal the mistake."
+      },
+      "CorrectMethodWrongMixture": {
+        "Title": "Correct Method, Wrong Mixture",
+        "Description": "Resolve the normal critical failure for Identify Alchemy first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may pair the mistaken identification with one true clue about how the substance was prepared, stabilized, bottled, or processed, provided that clue does not expose the actual item."
+      },
+      "AuthorialHabit": {
+        "Title": "Authorial Habit",
+        "Description": "Resolve the normal critical success for Decipher Writing first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Decipher Writing check within 1 week involving the same author, script, cipher, notation system, or closely related body of writing. The bonus then ends."
+      },
+      "StructureBehindTheText": {
+        "Title": "Structure Behind the Text",
+        "Description": "Resolve the normal critical success for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the document supports it, the GM identifies one useful structural clue such as intended audience, document type, repeated notation, editorial layer, or how different sections relate, without translating additional hidden content for free."
+      },
+      "FalseFriend": {
+        "Title": "False Friend",
+        "Description": "Resolve the normal critical failure for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. A familiar-looking word, symbol, phrase, or convention appears to support the mistaken interpretation. Do not reveal that the reading is wrong."
+      },
+      "ReadingOrderMisjudged": {
+        "Title": "Reading Order Misjudged",
+        "Description": "Resolve the normal critical failure for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may let a heading, annotation, marginal mark, repeated symbol, or section boundary be interpreted in a way that reinforces the normal erroneous reading without exposing the error."
       }
     }
   }
