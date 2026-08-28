@@ -784,6 +784,54 @@
       "TelltaleSign": {
         "Title": "Verräterisches Zeichen",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Spuren verwischen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der SL kann eine Art von Zeichen beschreiben, das dein Versuch zurücklässt, etwa verschobenen Schutt, wiederholte Bürstenspuren, eine unnatürliche Abwesenheit von Fußspuren oder einen anderen Hinweis, der erklärt, weshalb die Spur leichter zu lesen ist als beabsichtigt."
+      },
+      "EncoreMomentum": {
+        "Title": "Schwung für die Zugabe",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Auftreten ab. Deine nächste Probe für Auftreten vor im Wesentlichen demselben Publikum innerhalb von 10 Minuten erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "SharedSpotlight": {
+        "Title": "Geteiltes Rampenlicht",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Auftreten ab. Der erste Verbündete, der innerhalb von 10 Minuten vor im Wesentlichen demselben Publikum auftritt und sinnvoll an deine Darbietung anknüpft, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "AudienceRead": {
+        "Title": "Publikum gelesen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Auftreten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Reagiert das Publikum sichtbar oder hörbar, benennt der SL ein Thema, eine Technik, einen Inhalt oder einen Moment, der besonders deutlich Anklang fand."
+      },
+      "RhythmBroken": {
+        "Title": "Rhythmus gebrochen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Auftreten ab. Deine nächste Probe für Auftreten vor im Wesentlichen demselben Publikum innerhalb von 10 Minuten erhält einen Situationsmalus von -1, während du den misslungenen Rhythmus abschüttelst. Danach endet der Malus."
+      },
+      "AudienceTells": {
+        "Title": "Reaktion des Publikums",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Auftreten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Reagiert das Publikum sichtbar oder hörbar, weist der SL auf einen Teil der Darbietung hin, der Aufmerksamkeit verlor, mit Erwartungen kollidierte oder besonders schlecht ankam."
+      },
+      "MemorableMisstep": {
+        "Title": "Unvergesslicher Fehltritt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Auftreten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Beobachter erinnern sich an einen bestimmten Fehler, eine unbeholfene Entscheidung oder eine misslungene Einlage aus der Darbietung. Diese Erinnerung verändert nicht automatisch die Einstellung einer Kreatur und verleiht keinen regeltechnischen Modifikator."
+      },
+      "SharedMethod": {
+        "Title": "Geteilte Methode",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Jemand anderem helfen ab. Der Verbündete, den du unterstützt hast, erhält einen Situationsbonus von +1 auf die nächste Fertigkeitsprobe, mit der er dich innerhalb von 10 Minuten unterstützt. Danach endet der Bonus."
+      },
+      "CleanHandoff": {
+        "Title": "Saubere Übergabe",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Jemand anderem helfen ab. Deine nächste Fertigkeitsprobe, mit der du denselben Verbündeten innerhalb von 1 Minute unterstützt, erhält einen Situationsbonus von +1, weil ihr einen sauberen Arbeitsrhythmus gefunden habt. Danach endet der Bonus."
+      },
+      "WhyItWorked": {
+        "Title": "Warum es funktionierte",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Jemand anderem helfen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Zusammenarbeit es erkennen lässt, beschreibt der SL ein praktisches Detail bei Timing, Positionierung, Kommunikation oder Technik, das deine Hilfe besonders wirkungsvoll machte."
+      },
+      "CrossedSignals": {
+        "Title": "Gekreuzte Signale",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Jemand anderem helfen ab. Deine nächste Fertigkeitsprobe, mit der du denselben Verbündeten innerhalb von 1 Minute unterstützt, erhält einen Situationsmalus von -1, während ihr eure Abstimmung neu ordnet. Danach endet der Malus."
+      },
+      "ApproachesCollide": {
+        "Title": "Methoden geraten aneinander",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Jemand anderem helfen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der misslungene Versuch macht einen Konflikt zwischen deiner Methode und dem Vorgehen des Verbündeten deutlich, etwa bei Timing, Positionierung, Anweisungen oder widersprüchlichen Annahmen."
+      },
+      "MutualHesitation": {
+        "Title": "Gegenseitiges Zögern",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Jemand anderem helfen ab. Der Verbündete, den du unterstützen wolltest, erhält einen Situationsmalus von -1 auf die nächste Fertigkeitsprobe, mit der er dich innerhalb von 1 Minute unterstützt, weil die misslungene Abstimmung die Übergabe unsicher gemacht hat. Danach endet der Malus."
       }
     }
   }

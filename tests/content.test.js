@@ -13,20 +13,21 @@ const PHYSICAL_ACTIONS = new Set([...ATHLETICS_ACTIONS, ...ACROBATICS_ACTIONS]);
 const DECEPTION_ACTIONS = new Set(["feint", "create-a-diversion", "lie", "impersonate"]);
 const DIPLOMACY_ACTIONS = new Set(["make-an-impression", "request", "gather-information"]);
 const INTIMIDATION_ACTIONS = new Set(["demoralize", "coerce"]);
-const SOCIAL_ACTIONS = new Set([...DECEPTION_ACTIONS, ...DIPLOMACY_ACTIONS, ...INTIMIDATION_ACTIONS]);
+const PERFORMANCE_ACTIONS = new Set(["perform"]);
+const SOCIAL_ACTIONS = new Set([...DECEPTION_ACTIONS, ...DIPLOMACY_ACTIONS, ...INTIMIDATION_ACTIONS, ...PERFORMANCE_ACTIONS]);
 const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFUGE_ACTION_CARDS, ...KNOWLEDGE_UTILITY_CARDS];
 
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.11 contains one hundred eighty-six unique cards across four active packs", () => {
+test("dev.12 contains one hundred ninety-eight unique cards across four active packs", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
-  assert.equal(SOCIAL_ACTION_CARDS.length, 44);
+  assert.equal(SOCIAL_ACTION_CARDS.length, 50);
   assert.equal(SUBTERFUGE_ACTION_CARDS.length, 34);
-  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 56);
-  assert.equal(ALL_CARDS.length, 186);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 186);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 186);
+  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 62);
+  assert.equal(ALL_CARDS.length, 198);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 198);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 198);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -51,7 +52,7 @@ test("physical actions retain their intended mini-deck density", () => {
 });
 
 test("social actions follow frequent and regular mini-deck density", () => {
-  for (const slug of ["feint", "lie", "gather-information", "demoralize"]) {
+  for (const slug of ["feint", "lie", "gather-information", "demoralize", "perform"]) {
     const cards = forAction(SOCIAL_ACTION_CARDS, slug);
     assert.equal(cards.length, 6, slug);
     assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 3, `${slug} success`);
@@ -85,7 +86,8 @@ test("all current cards are exact skill-deck cards for their pack and skill fami
     assert.equal(card.filters.actionSlugs.length, 1, card.id);
     const action = card.filters.actionSlugs[0];
     assert.equal(SOCIAL_ACTIONS.has(action), true, card.id);
-    const expectedSkill = DECEPTION_ACTIONS.has(action) ? "deception" : DIPLOMACY_ACTIONS.has(action) ? "diplomacy" : "intimidation";
+    const expectedSkill = DECEPTION_ACTIONS.has(action) ? "deception" : DIPLOMACY_ACTIONS.has(action) ? "diplomacy" : INTIMIDATION_ACTIONS.has(action) ? "intimidation" : PERFORMANCE_ACTIONS.has(action) ? "performance" : null;
+    assert.ok(expectedSkill, card.id);
     assert.deepEqual(card.filters.skillTypes, [expectedSkill], card.id);
     assert.equal(card.metadata.actionFamily, expectedSkill, card.id);
     assert.equal(card.effect, null, card.id);
@@ -124,6 +126,7 @@ test("knowledge and utility actions use deliberate Medicine, Crafting, knowledge
   const crafting = new Set(["repair", "craft"]);
   const knowledge = new Set(["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]);
   const survival = new Set(["track", "sense-direction", "subsist", "cover-tracks"]);
+  const utility = new Set(["aid"]);
   for (const card of KNOWLEDGE_UTILITY_CARDS) {
     assert.equal(card.packId, PACK_IDS.KNOWLEDGE_UTILITY);
     assert.equal(card.deckType, "skill");
@@ -151,6 +154,9 @@ test("knowledge and utility actions use deliberate Medicine, Crafting, knowledge
         assert.equal(card.tags.includes("secret-check"), true, card.id);
         assert.equal(card.tags.includes("gm-facing"), true, card.id);
       }
+    } else if (utility.has(action)) {
+      assert.equal(card.metadata.actionFamily, "utility", card.id);
+      assert.deepEqual(card.filters.skillTypes, [], card.id);
     } else assert.fail(`unexpected Knowledge & Utility action: ${action}`);
     assert.equal(card.effect, null, card.id);
     assert.equal(card.metadata.resolution, "manual", card.id);
@@ -222,6 +228,26 @@ test("Sense Direction preserves secret-check information boundaries and Subsist 
   }
 });
 
+test("Perform and Aid use frequent-action density with deliberate filter boundaries", () => {
+  const perform = forAction(SOCIAL_ACTION_CARDS, "perform");
+  assert.equal(perform.length, 6);
+  assert.equal(forOutcome(perform, "skillCheckCriticalSuccess").length, 3);
+  assert.equal(forOutcome(perform, "skillCheckCriticalFailure").length, 3);
+  for (const card of perform) {
+    assert.deepEqual(card.filters.skillTypes, ["performance"], card.id);
+    assert.equal(card.metadata.actionFamily, "performance", card.id);
+  }
+
+  const aid = forAction(KNOWLEDGE_UTILITY_CARDS, "aid");
+  assert.equal(aid.length, 6);
+  assert.equal(forOutcome(aid, "skillCheckCriticalSuccess").length, 3);
+  assert.equal(forOutcome(aid, "skillCheckCriticalFailure").length, 3);
+  for (const card of aid) {
+    assert.deepEqual(card.filters.skillTypes, [], card.id);
+    assert.equal(card.metadata.actionFamily, "utility", card.id);
+  }
+});
+
 test("Medicine and Crafting consequences remain action-centered rather than equipment-centered", () => {
   for (const card of KNOWLEDGE_UTILITY_CARDS) {
     assert.equal(card.tags.includes("equipment"), false, card.id);
@@ -267,9 +293,9 @@ test("pack topology exposes all four populated action packs", () => {
   assert.equal(packs[0].enabled, true);
   assert.equal(packs[0].decks.skill.cards.length, 52);
   assert.equal(packs[1].enabled, true);
-  assert.equal(packs[1].decks.skill.cards.length, 44);
+  assert.equal(packs[1].decks.skill.cards.length, 50);
   assert.equal(packs[2].enabled, true);
   assert.equal(packs[2].decks.skill.cards.length, 34);
   assert.equal(packs[3].enabled, true);
-  assert.equal(packs[3].decks.skill.cards.length, 56);
+  assert.equal(packs[3].decks.skill.cards.length, 62);
 });

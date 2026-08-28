@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.11**
+Version **0.1.0-dev.12**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,7 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.11` contains **186 cards** across four active packs.
+`0.1.0-dev.12` contains **198 cards** across four active packs.
 
 ### Physical Actions - 52 cards
 
@@ -35,7 +35,7 @@ Acrobatics:
 - Maneuver in Flight: 2 + 2
 - Squeeze: 1 + 1
 
-### Social Actions - 44 cards
+### Social Actions - 50 cards
 
 Deception:
 
@@ -55,6 +55,10 @@ Intimidation:
 - Demoralize: 3 + 3
 - Coerce: 2 + 2
 
+Performance:
+
+- Perform: 3 critical-success + 3 critical-failure cards
+
 ### Subterfuge Actions - 34 cards
 
 Stealth:
@@ -72,7 +76,7 @@ Thievery:
 
 The Subterfuge pack now covers both stealth and practical larceny. Stealth cards emphasize routes, cover, shared blind spots, traces, observer awareness, and follow-through between Hide and Sneak. Thievery cards focus on locks, device sequences, witnesses, carried objects, and the aftermath of successful or failed manipulation rather than on malfunctioning equipment.
 
-### Knowledge & Utility - 56 cards
+### Knowledge & Utility - 62 cards
 
 Medicine:
 
@@ -100,7 +104,11 @@ Survival and exploration-facing skill actions:
 - Subsist: 2 + 2 (supports both Survival and Society variants)
 - Cover Tracks: 2 + 2
 
-The Knowledge & Utility pack now combines treatment follow-through, repair and crafting process knowledge, secret knowledge-action consequences, and Survival/exploration follow-through for tracking, navigation, subsistence, and concealment of trails. Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are all written as GM-facing secret-check content so a card never needs to announce that a hidden conclusion or identification was wrong. Critical failures add texture to misinformation or misidentification rather than exposing it.
+General utility:
+
+- Aid: 3 critical-success + 3 critical-failure cards
+
+The Knowledge & Utility pack now combines treatment follow-through, repair and crafting process knowledge, secret knowledge-action consequences, Survival/exploration follow-through, and general cooperative utility through Aid. Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are all written as GM-facing secret-check content so a card never needs to announce that a hidden conclusion or identification was wrong. Critical failures add texture to misinformation or misidentification rather than exposing it.
 
 **Hide, Sneak, and Conceal an Object use secret checks.** All current Stealth cards are tagged `secret-check` and `gm-facing`. Critical Forge defaults to GM Blind card visibility; a GM-only visibility mode is strongly recommended so a card does not expose the hidden degree of success. Short modifiers can be tracked by the GM and applied to later secret checks without announcing why.
 
@@ -112,6 +120,8 @@ The Knowledge & Utility pack now combines treatment follow-through, repair and c
 
 **Subsist can use Survival or Society.** The four Subsist cards intentionally match both skill types so the same action receives a consistent consequence deck in wilderness and settlement contexts.
 
+**Perform uses Performance and Aid is skill-agnostic.** Perform lives in Social Actions and receives a full 3 + 3 mini-deck. Aid lives in Knowledge & Utility and intentionally leaves `skillTypes` empty so any skill-based Aid check can receive the same cooperation-focused consequences.
+
 ## Planned action density
 
 Skillful Consequences is action-density driven rather than built around a fixed final card count.
@@ -121,7 +131,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Medicine, Crafting, knowledge actions, and the first Survival/exploration block are now active. Planned families still include Performance and selected utility actions.
+Medicine, Crafting, knowledge actions, Survival/exploration, Performance, and the first general utility action are now active. Remaining utility actions will be added only when their critical outcomes support distinct follow-through.
 
 ## Critical Forge requirements
 

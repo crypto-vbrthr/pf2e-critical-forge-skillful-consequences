@@ -1,6 +1,6 @@
 export const MODULE_ID = "pf2e-critical-forge-skillful-consequences";
 export const MODULE_TITLE = "PF2E Critical Forge: Skillful Consequences";
-export const MODULE_VERSION = "0.1.0-dev.11";
+export const MODULE_VERSION = "0.1.0-dev.12";
 export const API_VERSION = "0.1.0";
 
 export const REQUIRED_CRITICAL_FORGE_VERSION = ">=1.0.1-rc.6.1";

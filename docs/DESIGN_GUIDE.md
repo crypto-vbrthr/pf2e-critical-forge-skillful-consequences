@@ -88,3 +88,10 @@ Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are sec
 ## Survival and navigation
 
 Survival consequences should make routes, signs, terrain, resource assumptions, and follow-up choices more legible without replacing PF2e travel or exploration rules. Sense Direction remains GM-facing because its check is secret. Subsist is filtered by action first and may use either Survival or Society.
+
+## Performance and Aid
+
+Perform consequences focus on audience response, follow-up performances, shared spotlight, and visible fictional fallout. They do not automatically change NPC attitudes or convert a performance into a Make an Impression result.
+
+Aid is deliberately action-first and skill-agnostic because PF2e can use many different skills to help an ally. Skillful Consequences only applies these cards when Critical Forge reports a skill-check critical result with the `aid` action slug. The cards affect cooperation, handoffs, and later Aid attempts rather than replacing the normal bonus or penalty produced by Aid itself.
+

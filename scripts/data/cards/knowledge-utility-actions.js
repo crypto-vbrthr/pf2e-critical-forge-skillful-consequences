@@ -57,6 +57,18 @@ function defineKnowledge(options) {
   });
 }
 
+function defineUtility(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: KNOWLEDGE_UTILITY_PACK,
+    collection: "knowledge-utility",
+    actionFamily: "utility",
+    filters: {
+      ...(options.filters ?? {})
+    }
+  });
+}
+
 export const KNOWLEDGE_UTILITY_CARDS = Object.freeze([
   defineMedicine({
     id: "treat-wounds-success-001-treatment-pattern-recognized",
@@ -756,6 +768,77 @@ export const KNOWLEDGE_UTILITY_CARDS = Object.freeze([
     tags: ["survival", "cover-tracks", "evidence", "trail", "narrative", "no-mechanical-effect"],
     filters: { actionSlugs: ["cover-tracks"] },
     contentBatch: 11
+  }),
+
+  defineUtility({
+    id: "aid-success-001-shared-method",
+    localizationKey: "SharedMethod",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Shared Method",
+    fallbackDescription: "Resolve the normal critical success for Aid first. The ally you aided gains a +1 circumstance bonus to the next skill check they make to Aid you within 10 minutes. The bonus then ends.",
+    tags: ["utility", "aid", "teamwork", "same-ally", "reciprocal", "one-use"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
+  }),
+  defineUtility({
+    id: "aid-success-002-clean-handoff",
+    localizationKey: "CleanHandoff",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Clean Handoff",
+    fallbackDescription: "Resolve the normal critical success for Aid first. Your next skill check to Aid the same ally within 1 minute gains a +1 circumstance bonus because the two of you have established a clean working rhythm. The bonus then ends.",
+    tags: ["utility", "aid", "teamwork", "same-ally", "follow-up", "one-use"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
+  }),
+  defineUtility({
+    id: "aid-success-003-why-it-worked",
+    localizationKey: "WhyItWorked",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Why It Worked",
+    fallbackDescription: "Resolve the normal critical success for Aid first. There is no additional mechanical effect. If the cooperation makes it apparent, the GM describes one practical detail in timing, positioning, communication, or technique that made your help especially effective.",
+    tags: ["utility", "aid", "teamwork", "information", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
+  }),
+  defineUtility({
+    id: "aid-failure-001-crossed-signals",
+    localizationKey: "CrossedSignals",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Crossed Signals",
+    fallbackDescription: "Resolve the normal critical failure for Aid first. Your next skill check to Aid the same ally within 1 minute takes a -1 circumstance penalty while you both reset your coordination. The penalty then ends.",
+    tags: ["utility", "aid", "teamwork", "same-ally", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
+  }),
+  defineUtility({
+    id: "aid-failure-002-approaches-collide",
+    localizationKey: "ApproachesCollide",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Approaches Collide",
+    fallbackDescription: "Resolve the normal critical failure for Aid first. There is no additional mechanical effect. The failed attempt makes one conflict between your method and the ally's approach obvious, such as timing, positioning, instructions, or competing assumptions.",
+    tags: ["utility", "aid", "teamwork", "coordination", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
+  }),
+  defineUtility({
+    id: "aid-failure-003-mutual-hesitation",
+    localizationKey: "MutualHesitation",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Mutual Hesitation",
+    fallbackDescription: "Resolve the normal critical failure for Aid first. The ally you attempted to aid takes a -1 circumstance penalty to the next skill check they make to Aid you within 1 minute because the failed coordination has made the handoff uncertain. The penalty then ends.",
+    tags: ["utility", "aid", "teamwork", "same-ally", "reciprocal", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["aid"] },
+    contentBatch: 12
   })
 
 ]);

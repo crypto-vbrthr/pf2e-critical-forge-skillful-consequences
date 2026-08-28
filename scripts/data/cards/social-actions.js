@@ -5,6 +5,7 @@ const SOCIAL_PACK = PACK_IDS.SOCIAL_ACTIONS;
 const DECEPTION = Object.freeze({ skillTypes: ["deception"] });
 const DIPLOMACY = Object.freeze({ skillTypes: ["diplomacy"] });
 const INTIMIDATION = Object.freeze({ skillTypes: ["intimidation"] });
+const PERFORMANCE = Object.freeze({ skillTypes: ["performance"] });
 
 function defineDeception(options) {
   return defineSkillActionCard({
@@ -40,6 +41,19 @@ function defineIntimidation(options) {
     actionFamily: "intimidation",
     filters: {
       ...INTIMIDATION,
+      ...(options.filters ?? {})
+    }
+  });
+}
+
+function definePerformance(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: SOCIAL_PACK,
+    collection: "social-actions",
+    actionFamily: "performance",
+    filters: {
+      ...PERFORMANCE,
       ...(options.filters ?? {})
     }
   });
@@ -575,5 +589,79 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     tags: ["intimidation", "coerce", "witnesses", "different-target", "brief-setback", "one-use"],
     filters: { actionSlugs: ["coerce"] },
     contentBatch: 6
+  }),
+
+  definePerformance({
+    id: "perform-success-001-encore-momentum",
+    localizationKey: "EncoreMomentum",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Encore Momentum",
+    fallbackDescription: "Resolve the normal critical success for Perform first. Your next Perform check before substantially the same audience within 10 minutes gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["performance", "perform", "same-audience", "follow-up", "one-use"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
+  }),
+  definePerformance({
+    id: "perform-success-002-shared-spotlight",
+    localizationKey: "SharedSpotlight",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Shared Spotlight",
+    fallbackDescription: "Resolve the normal critical success for Perform first. The first ally who attempts to Perform before substantially the same audience within 10 minutes and meaningfully builds on your performance gains a +1 circumstance bonus to that check. The bonus then ends.",
+    tags: ["performance", "perform", "teamwork", "same-audience", "one-use"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
+  }),
+  definePerformance({
+    id: "perform-success-003-audience-read",
+    localizationKey: "AudienceRead",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Audience Read",
+    fallbackDescription: "Resolve the normal critical success for Perform first. There is no additional mechanical effect. If the audience gives visible or audible feedback, the GM identifies one theme, technique, subject, or moment that clearly resonated most strongly.",
+    tags: ["performance", "perform", "audience", "information", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
+  }),
+  definePerformance({
+    id: "perform-failure-001-rhythm-broken",
+    localizationKey: "RhythmBroken",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Rhythm Broken",
+    fallbackDescription: "Resolve the normal critical failure for Perform first. Your next Perform check before substantially the same audience within 10 minutes takes a -1 circumstance penalty while you work past the failed rhythm. The penalty then ends.",
+    tags: ["performance", "perform", "same-audience", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
+  }),
+  definePerformance({
+    id: "perform-failure-002-audience-tells",
+    localizationKey: "AudienceTells",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Audience Tells",
+    fallbackDescription: "Resolve the normal critical failure for Perform first. There is no additional mechanical effect. If the audience reacts visibly or audibly, the GM points out one part of the performance that lost attention, clashed with expectations, or landed particularly poorly.",
+    tags: ["performance", "perform", "audience", "information", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
+  }),
+  definePerformance({
+    id: "perform-failure-003-memorable-misstep",
+    localizationKey: "MemorableMisstep",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.2,
+    fallbackTitle: "Memorable Misstep",
+    fallbackDescription: "Resolve the normal critical failure for Perform first. There is no additional mechanical effect. Observers remember one specific mistake, awkward choice, or failed flourish from the performance. This memory does not automatically change anyone's attitude or grant a rules modifier.",
+    tags: ["performance", "perform", "audience", "reputation", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["perform"] },
+    contentBatch: 12
   })
+
 ]);

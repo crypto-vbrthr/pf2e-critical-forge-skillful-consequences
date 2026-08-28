@@ -1,3 +1,21 @@
+## 0.1.0-dev.12
+
+### Performance & Utility I
+
+- Added 12 cards, bringing the module to 198 cards total.
+- Added Perform with 3 critical-success and 3 critical-failure cards in Social Actions.
+- Added Aid with 3 critical-success and 3 critical-failure cards in Knowledge & Utility.
+- Kept Perform consequences focused on audience response, follow-up performances, shared spotlight, and memorable fictional fallout without automatically changing attitudes.
+- Kept Aid consequences skill-agnostic so any skill-based Aid check can use the same cooperation deck.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Added density and exact-filter coverage for Performance and Aid.
+- Added a generic-utility filter boundary requiring Aid to match by action slug without imposing a particular skill.
+- Expanded release checks to cover 198 cards, 50 Social cards, and 62 Knowledge & Utility cards.
+- Updated the roadmap, design guide, README, and overlap review for Performance and Aid.
+
 ## 0.1.0-dev.11
 
 ### Survival & Exploration I

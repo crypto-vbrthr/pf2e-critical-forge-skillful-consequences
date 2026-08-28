@@ -1,14 +1,16 @@
 # Overlap Review
 
-## 0.1.0-dev.11 scope
+## 0.1.0-dev.12 scope
 
-Three packs are currently active.
+Four packs are currently active.
 
 **Physical Actions** supports Grapple, Trip, Shove, Reposition, Disarm, Climb, Swim, High Jump, Long Jump, Balance, Tumble Through, Maneuver in Flight, and Squeeze.
 
-**Social Actions** supports Deception (Feint, Create a Diversion, Lie, Impersonate), Diplomacy (Make an Impression, Request, Gather Information), and Intimidation (Demoralize, Coerce).
+**Social Actions** now also supports Perform. Existing coverage supports Deception (Feint, Create a Diversion, Lie, Impersonate), Diplomacy (Make an Impression, Request, Gather Information), and Intimidation (Demoralize, Coerce).
 
 **Subterfuge Actions** supports Stealth (Hide, Sneak, Conceal an Object) and Thievery (Pick a Lock, Disable a Device, Palm an Object, Steal).
+
+**Knowledge & Utility** now also supports skill-based Aid. Existing coverage includes Medicine, Crafting, knowledge, and Survival/exploration actions.
 
 ### Critical Forge Core
 
@@ -93,3 +95,10 @@ Supported actions in this block: Recall Knowledge, Identify Magic, Identify Alch
 Sense Direction is treated as a GM-facing secret check so a critical-failure card never exposes a hidden wrong bearing. Subsist deliberately accepts both Survival and Society because PF2e presents it as a generic multi-skill action.
 
 The block remains distinct from **Goblin Engineering** because no card introduces malfunctioning compasses, survival kits, tools, or other equipment incidents.
+
+## dev.12 Performance and Aid boundary
+
+**Perform** stays in Social Actions and focuses on audience response, follow-up performances, teamwork between performers, and remembered fictional details. It does not silently alter attitudes or duplicate Make an Impression.
+
+**Aid** stays in Knowledge & Utility and matches the `aid` action without a fixed `skillTypes` filter. This is intentional: the consequences describe coordination and handoff quality rather than the subject matter of the skill used to help. The normal Aid critical-success bonus or critical-failure penalty is always resolved first.
+

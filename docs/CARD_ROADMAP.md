@@ -103,9 +103,15 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Cover Tracks: 2 success + 2 failure
 - Total after block: **186 cards**
 
+### 0.1.0-dev.12 - Performance & Utility I
+
+- Perform: 3 success + 3 failure
+- Aid: 3 success + 3 failure, action-first and skill-agnostic
+- Total after block: **198 cards**
+
 ### Planned next blocks
 
-- Performance and selected utility actions
+- Selected remaining utility actions, followed by completeness review
 
 ## Completeness review
 

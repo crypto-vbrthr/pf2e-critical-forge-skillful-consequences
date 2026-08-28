@@ -31,7 +31,7 @@ test("narrow physical actions keep two-card density", () => {
 });
 
 test("frequent social actions keep six-card density", () => {
-  for (const action of ["feint", "lie", "gather-information", "demoralize"]) {
+  for (const action of ["feint", "lie", "gather-information", "demoralize", "perform"]) {
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 3, `${action} success density`);
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalFailure"), 3, `${action} failure density`);
   }
@@ -188,3 +188,20 @@ test("Survival consequences mix route, information, teamwork, and secret navigat
   assert.equal(byAction("subsist").some((card) => card.tags.includes("resource")), true);
   assert.equal(byAction("cover-tracks").some((card) => card.tags.includes("misdirection")), true);
 });
+
+test("Performance and Aid use full six-card mini-decks", () => {
+  assert.equal(count(SOCIAL_ACTION_CARDS, "perform", "skillCheckCriticalSuccess"), 3);
+  assert.equal(count(SOCIAL_ACTION_CARDS, "perform", "skillCheckCriticalFailure"), 3);
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "aid", "skillCheckCriticalSuccess"), 3);
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "aid", "skillCheckCriticalFailure"), 3);
+});
+
+test("Performance and Aid mix teamwork, follow-up, and narrative consequences", () => {
+  const perform = SOCIAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes("perform"));
+  const aid = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("aid"));
+  assert.equal(perform.some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(perform.some((card) => card.tags.includes("narrative")), true);
+  assert.equal(aid.some((card) => card.tags.includes("reciprocal")), true);
+  assert.equal(aid.some((card) => card.tags.includes("narrative")), true);
+});
+
