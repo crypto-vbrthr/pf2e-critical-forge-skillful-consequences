@@ -62,3 +62,12 @@ Skillful Consequences focuses on the **action and its aftermath**.
 - Goblin Engineering focuses on equipment developing problems or strange side effects.
 - Martial Consequences and other attack packs focus on weapon attacks and combat criticals.
 - The normal PF2e result remains authoritative in all cases.
+
+
+## Medicine and Crafting consequences
+
+Medicine cards should respect that PF2e's normal critical results can already heal substantially or cause meaningful harm. Additional consequences therefore focus on follow-up treatment, observable diagnosis, timing, and brief same-patient modifiers. Treat Disease and Treat Poison remain deliberately narrow at 1 + 1 cards in the first block.
+
+Crafting cards focus on the item or process being worked on, not on whimsical tool behavior. Repair consequences may expose damage patterns or influence a later attempt on the same item. Craft consequences may preserve useful process knowledge, notes, or lessons from failure, but they never refund materials, cancel downtime costs, or replace the action's normal critical result.
+
+This boundary keeps Medicine and Crafting distinct from Goblin Engineering: Skillful Consequences asks what the treatment, repair, or manufacturing attempt taught or changed in the situation; Goblin Engineering asks what the equipment itself decided to do.

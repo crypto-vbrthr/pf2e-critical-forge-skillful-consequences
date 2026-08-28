@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-dev.9
+
+### Medicine & Crafting I
+
+- Added the first Knowledge & Utility content block with 20 cards, bringing the module to 150 cards total.
+- Added Treat Wounds with 2 critical-success and 2 critical-failure cards.
+- Added Administer First Aid with 2 + 2 cards.
+- Added Treat Disease and Treat Poison with 1 + 1 cards each.
+- Added Repair and Craft with 2 + 2 cards each.
+- Kept Medicine consequences restrained because their normal PF2e critical failures can already be dangerous.
+- Kept Repair and Craft action-centered, with damage patterns, process knowledge, and follow-up attempts rather than equipment malfunctions.
+- Knowledge & Utility is now visible in module settings and enabled by default.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Added exact Medicine and Crafting skill/action-family validation.
+- Added action-density tests for regular and narrow Medicine/Crafting actions.
+- Added explicit Goblin Engineering overlap boundaries for equipment-centered incidents.
+- Expanded release checks to cover 150 cards across four active packs.
+- Updated the design guide, roadmap, and overlap review for Medicine and Crafting.
+
 ## 0.1.0-dev.8
 
 ### Thievery I

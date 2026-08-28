@@ -4,6 +4,7 @@ import { PACK_IDS } from "../scripts/constants.js";
 import { PHYSICAL_ACTION_CARDS } from "../scripts/data/cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "../scripts/data/cards/social-actions.js";
 import { SUBTERFUGE_ACTION_CARDS } from "../scripts/data/cards/subterfuge-actions.js";
+import { KNOWLEDGE_UTILITY_CARDS } from "../scripts/data/cards/knowledge-utility-actions.js";
 import { buildSkillfulConsequencePacks } from "../scripts/data/packs.js";
 
 const ATHLETICS_ACTIONS = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
@@ -13,18 +14,19 @@ const DECEPTION_ACTIONS = new Set(["feint", "create-a-diversion", "lie", "impers
 const DIPLOMACY_ACTIONS = new Set(["make-an-impression", "request", "gather-information"]);
 const INTIMIDATION_ACTIONS = new Set(["demoralize", "coerce"]);
 const SOCIAL_ACTIONS = new Set([...DECEPTION_ACTIONS, ...DIPLOMACY_ACTIONS, ...INTIMIDATION_ACTIONS]);
-const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFUGE_ACTION_CARDS];
+const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFUGE_ACTION_CARDS, ...KNOWLEDGE_UTILITY_CARDS];
 
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.8 contains one hundred thirty unique cards across Physical, Social, and Subterfuge Actions", () => {
+test("dev.9 contains one hundred fifty unique cards across four active packs", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
   assert.equal(SOCIAL_ACTION_CARDS.length, 44);
   assert.equal(SUBTERFUGE_ACTION_CARDS.length, 34);
-  assert.equal(ALL_CARDS.length, 130);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 130);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 130);
+  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 20);
+  assert.equal(ALL_CARDS.length, 150);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 150);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 150);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -116,6 +118,51 @@ test("subterfuge actions use exact Stealth and Thievery action filters", () => {
   }
 });
 
+
+test("knowledge and utility actions use exact Medicine and Crafting filters", () => {
+  const medicine = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
+  const crafting = new Set(["repair", "craft"]);
+  for (const card of KNOWLEDGE_UTILITY_CARDS) {
+    assert.equal(card.packId, PACK_IDS.KNOWLEDGE_UTILITY);
+    assert.equal(card.deckType, "skill");
+    assert.equal(card.filters.actionSlugs.length, 1, card.id);
+    const action = card.filters.actionSlugs[0];
+    const expectedSkill = medicine.has(action) ? "medicine" : crafting.has(action) ? "crafting" : null;
+    assert.ok(expectedSkill, card.id);
+    assert.deepEqual(card.filters.skillTypes, [expectedSkill], card.id);
+    assert.equal(card.metadata.actionFamily, expectedSkill, card.id);
+    assert.equal(card.effect, null, card.id);
+    assert.equal(card.metadata.resolution, "manual", card.id);
+    assert.equal(card.metadata.preservesCoreOutcome, true, card.id);
+  }
+});
+
+test("Medicine and Crafting use the intended first-block density", () => {
+  for (const slug of ["treat-wounds", "administer-first-aid", "repair", "craft"]) {
+    const cards = forAction(KNOWLEDGE_UTILITY_CARDS, slug);
+    assert.equal(cards.length, 4, slug);
+    assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 2, `${slug} success`);
+    assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 2, `${slug} failure`);
+  }
+  for (const slug of ["treat-disease", "treat-poison"]) {
+    const cards = forAction(KNOWLEDGE_UTILITY_CARDS, slug);
+    assert.equal(cards.length, 2, slug);
+    assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 1, `${slug} success`);
+    assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 1, `${slug} failure`);
+  }
+});
+
+test("Medicine and Crafting consequences remain action-centered rather than equipment-centered", () => {
+  for (const card of KNOWLEDGE_UTILITY_CARDS) {
+    assert.equal(card.tags.includes("equipment"), false, card.id);
+    assert.equal(card.tags.includes("toolkit"), false, card.id);
+    assert.equal(card.tags.includes("malfunction"), false, card.id);
+  }
+  assert.equal(forAction(KNOWLEDGE_UTILITY_CARDS, "treat-wounds").some((card) => card.tags.includes("diagnosis")), true);
+  assert.equal(forAction(KNOWLEDGE_UTILITY_CARDS, "repair").some((card) => card.tags.includes("same-item")), true);
+  assert.equal(forAction(KNOWLEDGE_UTILITY_CARDS, "craft").some((card) => card.tags.includes("same-formula")), true);
+});
+
 test("every card explicitly preserves the normal PF2e critical result", () => {
   for (const card of ALL_CARDS) {
     if (card.category === "skillCheckCriticalSuccess") {
@@ -144,7 +191,7 @@ test("Gather Information failure cards remain GM-facing secret-check narrative t
   }
 });
 
-test("pack topology exposes Physical, Social, and Subterfuge Actions while Knowledge & Utility stays reserved", () => {
+test("pack topology exposes all four populated action packs", () => {
   const packs = buildSkillfulConsequencePacks();
   assert.equal(packs.length, 4);
   assert.equal(packs[0].enabled, true);
@@ -153,6 +200,6 @@ test("pack topology exposes Physical, Social, and Subterfuge Actions while Knowl
   assert.equal(packs[1].decks.skill.cards.length, 44);
   assert.equal(packs[2].enabled, true);
   assert.equal(packs[2].decks.skill.cards.length, 34);
-  assert.equal(packs[3].enabled, false);
-  assert.equal(packs[3].decks.skill.cards.length, 0);
+  assert.equal(packs[3].enabled, true);
+  assert.equal(packs[3].decks.skill.cards.length, 20);
 });

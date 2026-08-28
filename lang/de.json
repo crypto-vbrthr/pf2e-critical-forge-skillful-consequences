@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Wissen & Nutzen aktivieren",
-        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Wissens- und Nutzhandlungen, sobald dieses Paket Karten enthält."
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen aus Medizin und Handwerk."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Wissen & Nutzen",
-        "Description": "Reserviert für Wissen, Medizin, Handwerk, Überleben und weitere nützliche Handlungen."
+        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für unterstützte Handlungen aus Medizin und Handwerk."
       }
     },
     "Cards": {
@@ -560,6 +560,86 @@
       "ProtectiveReflex": {
         "Title": "Schutzreflex",
         "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Stehlen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Bei der Reaktion auf den Versuch kann der Träger oder ein relevanter Beobachter instinktiv einen anderen getragenen Gegenstand oder Behälter schützen, prüfen oder ansehen, den er für wichtig hält, sofern der SL einen solchen Hinweis für plausibel hält. Dies verrät nicht genau, was sich darin befindet."
+      },
+      "TreatmentPatternRecognized": {
+        "Title": "Behandlungsmuster erkannt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Wunden versorgen ab. Nachdem die Immunität des Ziels gegen Wunden versorgen aus dieser Behandlung geendet hat, erhält dein nächster Wurf für Wunden versorgen bei demselben Ziel innerhalb von 24 Stunden einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "UsefulDiagnosis": {
+        "Title": "Nützliche Diagnose",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Wunden versorgen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Verletzung einen sichtbaren oder medizinisch plausiblen Hinweis bietet, nennt der SL ein nützliches Detail über die Wunde, ihre Ursache oder die Reaktion des Ziels auf die Behandlung."
+      },
+      "AftercareComplication": {
+        "Title": "Komplizierte Nachbehandlung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Wunden versorgen ab. Dein nächster Wurf für Wunden versorgen bei demselben Ziel innerhalb von 24 Stunden erhält einen Situationsmalus von -1, weil die misslungene Behandlung deine Einschätzung der Verletzung erschwert hat. Danach endet der Malus."
+      },
+      "PainResponseMisread": {
+        "Title": "Schmerzreaktion falsch gedeutet",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Wunden versorgen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die Reaktion des Ziels macht deutlich, welches Zeichen, welche Bewegung oder welches Symptom du während der Behandlung falsch gedeutet hast, ohne eine Folge des misslungenen Wurfs rückgängig zu machen."
+      },
+      "CrisisRhythm": {
+        "Title": "Krisenrhythmus",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Erste Hilfe leisten ab. Dein nächster Wurf für Wunden versorgen bei demselben Ziel innerhalb von 1 Stunde erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "ImmediateCauseRead": {
+        "Title": "Unmittelbare Ursache erkannt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Erste Hilfe leisten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Situation es erkennen lässt, nennt der SL ein nützliches Detail über die unmittelbare Ursache, Richtung, Schwere oder das Muster der gerade behandelten Krise."
+      },
+      "HandsOutOfSequence": {
+        "Title": "Handgriffe außer Reihenfolge",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Erste Hilfe leisten ab. Dein nächster Wurf für Erste Hilfe leisten bei demselben Ziel vor dem Ende deines nächsten Zuges erhält einen Situationsmalus von -1, während du dein Vorgehen neu ordnest. Danach endet der Malus."
+      },
+      "InterventionRevealsTheProblem": {
+        "Title": "Eingriff legt das Problem offen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Erste Hilfe leisten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der misslungene Eingriff legt eine sichtbare Komplikation, ein Hindernis oder eine Reaktion offen, die erklärt, warum der Notfall schwerer zu kontrollieren war als erwartet, sofern ein solches Detail plausibel ist."
+      },
+      "SymptomMap": {
+        "Title": "Symptommuster",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Krankheit behandeln ab. Dein nächster Wurf für Krankheit behandeln bei demselben Ziel gegen dieselbe Krankheit innerhalb von 48 Stunden erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "MisleadingSymptom": {
+        "Title": "Irreführendes Symptom",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Krankheit behandeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein Symptom, Zeichen oder eine Reaktion erweist sich als weniger verlässlich, als es während der Behandlung schien. Der SL kann beschreiben, was dich in die Irre geführt hat, ohne Informationen preiszugeben, die der Charakter aus dem Versuch nicht plausibel gewinnen konnte."
+      },
+      "ToxinResponseMapped": {
+        "Title": "Giftreaktion erfasst",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Gift behandeln ab. Dein nächster Wurf für Gift behandeln bei demselben Ziel gegen dasselbe Gift innerhalb von 1 Stunde erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "CountermeasureWindowMissed": {
+        "Title": "Zeitfenster für Gegenmaßnahmen verpasst",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Gift behandeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der Versuch macht deutlich, dass ein Hinweis zum richtigen Zeitpunkt, eine Symptomveränderung oder eine körperliche Reaktion zu früh oder zu spät behandelt wurde, sofern der Charakter dies plausibel beobachten kann."
+      },
+      "FaultLineMapped": {
+        "Title": "Schadenslinie erfasst",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Reparieren ab. Dein nächster Wurf für Reparieren an demselben Gegenstand innerhalb von 24 Stunden erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "WeakPointUnderstood": {
+        "Title": "Schwachstelle verstanden",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Reparieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Konstruktion des Gegenstands es erkennen lässt, nennt der SL das Bauteil, die Verbindung, das Material oder die Belastungsstelle, die für den gerade behobenen Schaden am wichtigsten war."
+      },
+      "CorrectionGetsHarder": {
+        "Title": "Korrektur wird schwieriger",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Reparieren ab. Dein nächster Wurf für Reparieren an demselben Gegenstand innerhalb von 10 Minuten erhält einen Situationsmalus von -1, weil die misslungene Arbeit den Schaden für dich schwerer lesbar gemacht hat. Danach endet der Malus."
+      },
+      "DamagePatternExposed": {
+        "Title": "Schadensmuster offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Reparieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die misslungene Reparatur macht einen Aspekt des vorhandenen Schadensmusters leichter verständlich, etwa wohin sich Belastung fortsetzt oder welches Bauteil zuerst versagt hat, sofern sich das am Gegenstand ableiten lässt."
+      },
+      "RepeatableProcess": {
+        "Title": "Wiederholbarer Ablauf",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Herstellen ab. Dein nächster Wurf für Herstellen innerhalb von 1 Woche, um denselben Gegenstand anzufertigen oder dieselbe Formel zu verwenden, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "CleanDocumentation": {
+        "Title": "Saubere Dokumentation",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Herstellen ab. Der erste Verbündete, den du innerhalb von 1 Woche direkt anleitest, erhält einen Situationsbonus von +1 auf einen Wurf für Herstellen, um denselben Gegenstand anzufertigen oder dieselbe Formel zu verwenden, sofern deine Notizen oder Erklärungen verfügbar sind. Danach endet der Bonus."
+      },
+      "FailureTeachesTheSequence": {
+        "Title": "Fehlschlag lehrt den Ablauf",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Herstellen ab, einschließlich aller normalen Kosten und Folgen. Dein nächster Wurf für Herstellen innerhalb von 1 Woche, um denselben Gegenstand anzufertigen oder dieselbe Formel zu verwenden, erhält durch die Erkenntnisse aus dem Fehlschlag einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "VisiblePointOfFailure": {
+        "Title": "Sichtbarer Fehlerpunkt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Herstellen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn das misslungene Projekt erkennen lässt, wo es scheiterte, nennt der SL den Arbeitsschritt, die Materialwechselwirkung, die Passung oder den Prozessschritt, an dem die Arbeit zuerst sichtbar schiefging. Dadurch werden keine Materialien oder anderen Kosten zurückerstattet."
       }
     }
   }

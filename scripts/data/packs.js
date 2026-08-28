@@ -2,8 +2,7 @@ import { MODULE_ID, MODULE_VERSION, PACK_IDS, SETTING_KEYS } from "../constants.
 import { PHYSICAL_ACTION_CARDS } from "./cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "./cards/social-actions.js";
 import { SUBTERFUGE_ACTION_CARDS } from "./cards/subterfuge-actions.js";
-
-const EMPTY = Object.freeze([]);
+import { KNOWLEDGE_UTILITY_CARDS } from "./cards/knowledge-utility-actions.js";
 
 export const SKILLFUL_PACK_CONFIGS = Object.freeze([
   Object.freeze({
@@ -65,17 +64,17 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "KnowledgeUtility",
     id: PACK_IDS.KNOWLEDGE_UTILITY,
     fallbackTitle: "Skillful Consequences: Knowledge & Utility",
-    fallbackDescription: "Reserved for knowledge, medicine, crafting, survival, and other utility actions that benefit from action-specific critical follow-through.",
-    cards: EMPTY,
-    defaultEnabled: false,
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Medicine and Crafting actions, with the normal PF2e result always resolved first.",
+    cards: KNOWLEDGE_UTILITY_CARDS,
+    defaultEnabled: true,
     metadata: Object.freeze({
       theme: "skillful-consequences",
       family: "skillful-consequences",
       category: "knowledge-utility",
       scope: "knowledge-utility-action-critical-results",
-      contentStatus: "planned",
-      supportedActions: Object.freeze([]),
-      implementedCards: 0
+      contentStatus: "development",
+      supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft"]),
+      implementedCards: 20
     })
   })
 ]);

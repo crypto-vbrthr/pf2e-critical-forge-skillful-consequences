@@ -6,13 +6,14 @@ import { SKILLFUL_PACK_CONFIGS, buildSkillfulConsequencePacks } from "../scripts
 import { PHYSICAL_ACTION_CARDS } from "../scripts/data/cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "../scripts/data/cards/social-actions.js";
 import { SUBTERFUGE_ACTION_CARDS } from "../scripts/data/cards/subterfuge-actions.js";
+import { KNOWLEDGE_UTILITY_CARDS } from "../scripts/data/cards/knowledge-utility-actions.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const allowDev = process.argv.includes("--allow-dev");
 const readJson = (path) => JSON.parse(readFileSync(join(root, path), "utf8"));
 const fail = (message) => { console.error(`RELEASE CHECK FAILED: ${message}`); process.exitCode = 1; };
 const pass = (message) => console.log(`✓ ${message}`);
-const allCards = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFUGE_ACTION_CARDS];
+const allCards = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFUGE_ACTION_CARDS, ...KNOWLEDGE_UTILITY_CARDS];
 
 const manifest = readJson("module.json");
 const pkg = readJson("package.json");
@@ -62,10 +63,10 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 34 && allCards.length === 130) pass("development card inventory is 130 (52 physical + 44 social + 34 subterfuge)");
-else fail(`expected 52 physical + 44 social + 34 subterfuge cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 44 && SUBTERFUGE_ACTION_CARDS.length === 34 && KNOWLEDGE_UTILITY_CARDS.length === 20 && allCards.length === 150) pass("development card inventory is 150 (52 physical + 44 social + 34 subterfuge + 20 knowledge/utility)");
+else fail(`expected 52 physical + 44 social + 34 subterfuge + 20 knowledge/utility cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length} + ${KNOWLEDGE_UTILITY_CARDS.length}`);
 
-if (new Set(allCards.map((card) => card.id)).size === 130 && new Set(allCards.map((card) => card.fallbackTitle)).size === 130) pass("all development card ids and fallback titles are unique");
+if (new Set(allCards.map((card) => card.id)).size === 150 && new Set(allCards.map((card) => card.fallbackTitle)).size === 150) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
 const densityMatches = (cards, actions, successCount, failureCount) => actions.every((action) => {
@@ -80,8 +81,10 @@ const socialDensityOk = densityMatches(SOCIAL_ACTION_CARDS, ["feint", "lie", "ga
   && densityMatches(SOCIAL_ACTION_CARDS, ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"], 2, 2);
 const subterfugeDensityOk = densityMatches(SUBTERFUGE_ACTION_CARDS, ["hide", "sneak", "disable-a-device"], 3, 3)
   && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object", "pick-a-lock", "palm-an-object", "steal"], 2, 2);
-if (physicalDensityOk && socialDensityOk && subterfugeDensityOk) pass("Physical, Social, and Subterfuge action density matches the dev.8 plan");
-else fail("action density does not match the dev.7 plan");
+const knowledgeUtilityDensityOk = densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-wounds", "administer-first-aid", "repair", "craft"], 2, 2)
+  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-disease", "treat-poison"], 1, 1);
+if (physicalDensityOk && socialDensityOk && subterfugeDensityOk && knowledgeUtilityDensityOk) pass("all four action packs match the dev.9 density plan");
+else fail("action density does not match the dev.9 plan");
 
 const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
 const acrobaticsActions = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
@@ -110,7 +113,17 @@ const subterfugeFiltersOk = SUBTERFUGE_ACTION_CARDS.every((card) => {
   if (!expectedSkill || card.filters.skillTypes?.length !== 1 || card.filters.skillTypes[0] !== expectedSkill || card.metadata.actionFamily !== expectedSkill) return false;
   return expectedSkill !== "stealth" || (card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
 });
-if (physicalFiltersOk && socialFiltersOk && subterfugeFiltersOk) pass("Physical, Social, and Subterfuge skill/action filters are exact");
+const medicineActions = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
+const craftingActions = new Set(["repair", "craft"]);
+const knowledgeUtilityFiltersOk = KNOWLEDGE_UTILITY_CARDS.every((card) => {
+  const action = card.filters.actionSlugs?.[0];
+  const expectedSkill = medicineActions.has(action) ? "medicine" : craftingActions.has(action) ? "crafting" : null;
+  return expectedSkill
+    && card.filters.skillTypes?.length === 1
+    && card.filters.skillTypes[0] === expectedSkill
+    && card.metadata.actionFamily === expectedSkill;
+});
+if (physicalFiltersOk && socialFiltersOk && subterfugeFiltersOk && knowledgeUtilityFiltersOk) pass("all four packs use exact skill/action filters");
 else fail("skill or action-family filter mismatch detected");
 
 const gatherCards = SOCIAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs?.includes("gather-information"));
@@ -139,6 +152,17 @@ if (thieveryCards.length === 18
   pass("Thievery density and Goblin Engineering separation are explicit");
 } else fail("Thievery density or equipment-separation boundary is incomplete");
 
+const medicineCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.metadata.actionFamily === "medicine");
+const craftingCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.metadata.actionFamily === "crafting");
+if (medicineCards.length === 12
+  && craftingCards.length === 8
+  && KNOWLEDGE_UTILITY_CARDS.every((card) => !card.tags.includes("equipment") && !card.tags.includes("toolkit") && !card.tags.includes("malfunction"))
+  && densityMatches(medicineCards, ["treat-wounds", "administer-first-aid"], 2, 2)
+  && densityMatches(medicineCards, ["treat-disease", "treat-poison"], 1, 1)
+  && densityMatches(craftingCards, ["repair", "craft"], 2, 2)) {
+  pass("Medicine/Crafting density and Goblin Engineering separation are explicit");
+} else fail("Medicine/Crafting density or equipment-separation boundary is incomplete");
+
 if (allCards.every((card) => card.metadata.preservesCoreOutcome === true && card.effect === null && card.metadata.resolution === "manual")) pass("all cards preserve PF2e core outcomes and use manual resolution");
 else fail("a card violates the core-outcome or manual-resolution boundary");
 
@@ -146,12 +170,12 @@ if (SKILLFUL_PACK_CONFIGS.length === 4
   && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52
   && SKILLFUL_PACK_CONFIGS[1].metadata.implementedCards === 44
   && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 34
-  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 0) pass("pack development metadata is consistent");
+  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 20) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();
-if (built.length === 4 && built[0].enabled && built[1].enabled && built[2].enabled && !built[3].enabled
-  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 34) pass("pack topology and development defaults are correct");
+if (built.length === 4 && built[0].enabled && built[1].enabled && built[2].enabled && built[3].enabled
+  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 44 && built[2].decks?.skill?.cards.length === 34 && built[3].decks?.skill?.cards.length === 20) pass("pack topology and development defaults are correct");
 else fail("pack topology or development defaults are incorrect");
 
 const forbiddenNames = new Set([".DS_Store", "Thumbs.db", ".env"]);

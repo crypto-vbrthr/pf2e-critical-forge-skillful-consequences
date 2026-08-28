@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { PHYSICAL_ACTION_CARDS } from "../scripts/data/cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "../scripts/data/cards/social-actions.js";
 import { SUBTERFUGE_ACTION_CARDS } from "../scripts/data/cards/subterfuge-actions.js";
+import { KNOWLEDGE_UTILITY_CARDS } from "../scripts/data/cards/knowledge-utility-actions.js";
 
 function count(cards, action, category) {
   return cards.filter((card) => card.filters.actionSlugs.includes(action) && card.category === category).length;
@@ -110,4 +111,29 @@ test("Thievery consequences stay action-centered rather than equipment-centered"
     assert.equal(card.tags.includes("equipment"), false, card.id);
     assert.equal(card.tags.includes("toolkit"), false, card.id);
   }
+});
+
+
+test("regular Medicine and Crafting actions keep four-card density", () => {
+  for (const action of ["treat-wounds", "administer-first-aid", "repair", "craft"]) {
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("narrow Medicine actions keep two-card density", () => {
+  for (const action of ["treat-disease", "treat-poison"]) {
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalSuccess"), 1, `${action} success density`);
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalFailure"), 1, `${action} failure density`);
+  }
+});
+
+test("Medicine and Crafting mix follow-up and narrative consequences", () => {
+  const byAction = (action) => KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+  assert.equal(byAction("treat-wounds").some((card) => card.tags.includes("follow-up")), true);
+  assert.equal(byAction("treat-wounds").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("administer-first-aid").some((card) => card.tags.includes("diagnosis")), true);
+  assert.equal(byAction("repair").some((card) => card.tags.includes("information")), true);
+  assert.equal(byAction("craft").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("craft").some((card) => card.tags.includes("learning")), true);
 });

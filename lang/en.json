@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Enable Knowledge & Utility",
-        "Hint": "Enable Skillful Consequences cards for supported knowledge and utility actions when this pack contains cards."
+        "Hint": "Enable Skillful Consequences cards for supported Medicine and Crafting actions."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Knowledge & Utility",
-        "Description": "Reserved for knowledge, medicine, crafting, survival, and other utility actions."
+        "Description": "Action-specific critical successes and critical failures for supported Medicine and Crafting actions."
       }
     },
     "Cards": {
@@ -560,6 +560,86 @@
       "ProtectiveReflex": {
         "Title": "Protective Reflex",
         "Description": "Resolve the normal critical failure for Steal first. There is no additional mechanical effect. In reacting to the attempt, the bearer or a relevant observer may instinctively guard, check, or glance toward another carried object or container they consider important, if the GM decides such a tell is plausible. This does not reveal exactly what it contains."
+      },
+      "TreatmentPatternRecognized": {
+        "Title": "Treatment Pattern Recognized",
+        "Description": "Resolve the normal critical success for Treat Wounds first. After the target's Treat Wounds immunity from this treatment has ended, your next Treat Wounds check on the same target within 24 hours gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "UsefulDiagnosis": {
+        "Title": "Useful Diagnosis",
+        "Description": "Resolve the normal critical success for Treat Wounds first. There is no additional mechanical effect. If the injury offers a visible or medically plausible clue, the GM points out one useful detail about the wound, its cause, or the way the target responded to treatment."
+      },
+      "AftercareComplication": {
+        "Title": "Aftercare Complication",
+        "Description": "Resolve the normal critical failure for Treat Wounds first. Your next Treat Wounds check on the same target within 24 hours takes a -1 circumstance penalty because the failed treatment has complicated your read of the injury. The penalty then ends."
+      },
+      "PainResponseMisread": {
+        "Title": "Pain Response Misread",
+        "Description": "Resolve the normal critical failure for Treat Wounds first. There is no additional mechanical effect. The target's reaction makes it clear which sign, movement, or symptom you misread during the treatment, without undoing any consequence of the failed check."
+      },
+      "CrisisRhythm": {
+        "Title": "Crisis Rhythm",
+        "Description": "Resolve the normal critical success for Administer First Aid first. Your next Treat Wounds check on the same target within 1 hour gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "ImmediateCauseRead": {
+        "Title": "Immediate Cause Read",
+        "Description": "Resolve the normal critical success for Administer First Aid first. There is no additional mechanical effect. If the scene makes it observable, the GM identifies one useful detail about the immediate cause, direction, severity, or pattern of the crisis you just treated."
+      },
+      "HandsOutOfSequence": {
+        "Title": "Hands Out of Sequence",
+        "Description": "Resolve the normal critical failure for Administer First Aid first. Your next Administer First Aid check on the same target before the end of your next turn takes a -1 circumstance penalty while you reset your approach. The penalty then ends."
+      },
+      "InterventionRevealsTheProblem": {
+        "Title": "Intervention Reveals the Problem",
+        "Description": "Resolve the normal critical failure for Administer First Aid first. There is no additional mechanical effect. The failed intervention exposes one visible complication, obstruction, or response that explains why the emergency was harder to control than expected, if such a detail is plausible."
+      },
+      "SymptomMap": {
+        "Title": "Symptom Map",
+        "Description": "Resolve the normal critical success for Treat Disease first. Your next Treat Disease check on the same target against the same disease within 48 hours gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "MisleadingSymptom": {
+        "Title": "Misleading Symptom",
+        "Description": "Resolve the normal critical failure for Treat Disease first. There is no additional mechanical effect. One symptom, sign, or response proves less reliable than it appeared during treatment. The GM may describe what misled you without revealing information the character could not plausibly learn from the attempt."
+      },
+      "ToxinResponseMapped": {
+        "Title": "Toxin Response Mapped",
+        "Description": "Resolve the normal critical success for Treat Poison first. Your next Treat Poison check on the same target against the same poison within 1 hour gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "CountermeasureWindowMissed": {
+        "Title": "Countermeasure Window Missed",
+        "Description": "Resolve the normal critical failure for Treat Poison first. There is no additional mechanical effect. The attempt makes it clear that one timing cue, symptom change, or physiological response was handled too early or too late, if that is something the character could plausibly observe."
+      },
+      "FaultLineMapped": {
+        "Title": "Fault Line Mapped",
+        "Description": "Resolve the normal critical success for Repair first. Your next Repair check on the same item within 24 hours gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "WeakPointUnderstood": {
+        "Title": "Weak Point Understood",
+        "Description": "Resolve the normal critical success for Repair first. There is no additional mechanical effect. If the item's construction makes it apparent, the GM points out the component, join, material, or stress point that was most important to the damage you just repaired."
+      },
+      "CorrectionGetsHarder": {
+        "Title": "Correction Gets Harder",
+        "Description": "Resolve the normal critical failure for Repair first. Your next Repair check on the same item within 10 minutes takes a -1 circumstance penalty because the failed work has made the damage harder for you to read. The penalty then ends."
+      },
+      "DamagePatternExposed": {
+        "Title": "Damage Pattern Exposed",
+        "Description": "Resolve the normal critical failure for Repair first. There is no additional mechanical effect. The failed repair makes one aspect of the existing damage pattern easier to understand, such as where stress is traveling or which component failed first, if that can be inferred from the item."
+      },
+      "RepeatableProcess": {
+        "Title": "Repeatable Process",
+        "Description": "Resolve the normal critical success for Craft first. Your next Craft check within 1 week to create the same item or use the same formula gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "CleanDocumentation": {
+        "Title": "Clean Documentation",
+        "Description": "Resolve the normal critical success for Craft first. The first ally you directly advise within 1 week gains a +1 circumstance bonus to a Craft check to create the same item or use the same formula, provided your notes or explanation are available. The bonus then ends."
+      },
+      "FailureTeachesTheSequence": {
+        "Title": "Failure Teaches the Sequence",
+        "Description": "Resolve the normal critical failure for Craft first, including all normal costs and consequences. Your next Craft check within 1 week to create the same item or use the same formula gains a +1 circumstance bonus from what the failure taught you. The bonus then ends."
+      },
+      "VisiblePointOfFailure": {
+        "Title": "Visible Point of Failure",
+        "Description": "Resolve the normal critical failure for Craft first. There is no additional mechanical effect. If the failed project makes it possible to tell, the GM identifies the stage, material interaction, fitting, or process step where the work first visibly went wrong. This does not refund materials or other costs."
       }
     }
   }

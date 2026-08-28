@@ -58,3 +58,18 @@ Martial Consequences, Ranged Mishaps, Arsenal, Arcane Backlash, and other attack
 - **Coerce** adds useful specifics, witnessed reputation, and defiance consequences without changing the target's normal PF2e attitude outcome or duration.
 
 All cards resolve the normal PF2e critical success or critical failure first.
+
+
+## Medicine & Crafting I
+
+The Knowledge & Utility pack now supports **Treat Wounds**, **Administer First Aid**, **Treat Disease**, **Treat Poison**, **Repair**, and **Craft**. Every card uses `skillCheckCriticalSuccess` or `skillCheckCriticalFailure` with an exact action slug and the corresponding Medicine or Crafting skill filter.
+
+The main neighboring expansion is **Goblin Engineering**, especially Equipment Incidents. The separation is explicit:
+
+- Skillful Consequences focuses on patient response, diagnosis, treatment timing, damage patterns, repair understanding, manufacturing process, and lessons carried into a later attempt.
+- Goblin Engineering focuses on healer's tools, repair kits, gauges, trays, locks, and other equipment behaving unpredictably.
+- No current Medicine or Crafting card in Skillful Consequences is tagged `equipment`, `toolkit`, or `malfunction`.
+- **Repair** cards concern the damaged item being repaired, not the repair kit.
+- **Craft** cards concern process knowledge, formula repetition, and visible failure points, not runaway workshop devices.
+
+Critical failures in Medicine can already be dangerous, so the added consequences stay light or narrative. Critical failures in Crafting retain all normal material and downtime costs before any additional card text is applied.

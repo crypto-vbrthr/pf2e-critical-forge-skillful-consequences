@@ -75,9 +75,18 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Steal: 2 success + 2 failure
 - Total after block: **130 cards**
 
+### 0.1.0-dev.9 - Medicine & Crafting I
+
+- Treat Wounds: 2 success + 2 failure
+- Administer First Aid: 2 success + 2 failure
+- Treat Disease: 1 success + 1 failure
+- Treat Poison: 1 success + 1 failure
+- Repair: 2 success + 2 failure
+- Craft: 2 success + 2 failure
+- Total after block: **150 cards**
+
 ### Planned next blocks
 
-- Medicine & Crafting
 - Knowledge actions
 - Survival, Performance, and selected utility actions
 
