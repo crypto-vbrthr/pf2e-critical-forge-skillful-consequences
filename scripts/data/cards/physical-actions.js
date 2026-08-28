@@ -284,6 +284,147 @@ export const PHYSICAL_ACTION_CARDS = Object.freeze([
     tags: ["athletics", "disarm", "narrative", "no-mechanical-effect"],
     filters: { actionSlugs: ["disarm"] },
     contentBatch: 2
-  })
-]);
 
+  }),
+  defineAthletics({
+    id: "climb-success-001-route-locked-in",
+    localizationKey: "RouteLockedIn",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Route Locked In",
+    fallbackDescription: "Resolve the normal critical success for Climb first. Your next Climb check on the same surface before the end of your next turn gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["athletics", "climb", "same-surface", "follow-up", "one-use"],
+    filters: { actionSlugs: ["climb"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "climb-success-002-handhold-for-the-next",
+    localizationKey: "HandholdForTheNext",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Handhold for the Next",
+    fallbackDescription: "Resolve the normal critical success for Climb first. The first ally who follows your route on the same surface before the start of your next turn gains a +1 circumstance bonus to their next Climb check there. The bonus then ends.",
+    tags: ["athletics", "climb", "teamwork", "same-surface", "one-use"],
+    filters: { actionSlugs: ["climb"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "climb-failure-001-forearms-flooded",
+    localizationKey: "ForearmsFlooded",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Forearms Flooded",
+    fallbackDescription: "Resolve the normal critical failure for Climb first. Your next Athletics check before the end of your next turn takes a -1 circumstance penalty as you recover your grip and breathing. The penalty then ends.",
+    tags: ["athletics", "climb", "fatigue", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["climb"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "climb-failure-002-bad-route-exposed",
+    localizationKey: "BadRouteExposed",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.25,
+    fallbackTitle: "Bad Route Exposed",
+    fallbackDescription: "Resolve the normal critical failure for Climb first. There is no additional mechanical effect. Your failed route makes the weak holds, awkward angle, or unstable section you trusted plainly visible to anyone watching.",
+    tags: ["athletics", "climb", "narrative", "route", "no-mechanical-effect"],
+    filters: { actionSlugs: ["climb"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "swim-success-001-efficient-stroke",
+    localizationKey: "EfficientStroke",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Efficient Stroke",
+    fallbackDescription: "Resolve the normal critical success for Swim first. On your next successful Swim before the end of your next turn, you may move 5 feet farther than that result would normally allow, if the route is legal. This benefit then ends.",
+    tags: ["athletics", "swim", "movement", "follow-up", "one-use"],
+    filters: { actionSlugs: ["swim"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "swim-success-002-wake-to-follow",
+    localizationKey: "WakeToFollow",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Wake to Follow",
+    fallbackDescription: "Resolve the normal critical success for Swim first. The first ally who follows roughly the same route through the water before the start of your next turn gains a +1 circumstance bonus to their next Swim check. The bonus then ends.",
+    tags: ["athletics", "swim", "teamwork", "route", "one-use"],
+    filters: { actionSlugs: ["swim"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "swim-failure-001-recovery-stroke",
+    localizationKey: "RecoveryStroke",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Recovery Stroke",
+    fallbackDescription: "Resolve the normal critical failure for Swim first. Before your next Swim check before the end of your next turn, you may spend 1 action steadying your breathing and stroke. If you do not, that Swim check takes a -1 circumstance penalty. This consequence then ends.",
+    tags: ["athletics", "swim", "recovery", "action-choice", "brief-setback"],
+    filters: { actionSlugs: ["swim"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "swim-failure-002-surface-gives-you-away",
+    localizationKey: "SurfaceGivesYouAway",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.25,
+    fallbackTitle: "Surface Gives You Away",
+    fallbackDescription: "Resolve the normal critical failure for Swim first. There is no additional mechanical effect. The churn, splash, or disturbed water makes the line you tried to take conspicuous to anyone able to observe the surface.",
+    tags: ["athletics", "swim", "narrative", "visibility", "no-mechanical-effect"],
+    filters: { actionSlugs: ["swim"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "high-jump-success-001-landing-window",
+    localizationKey: "LandingWindow",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Landing Window",
+    fallbackDescription: "Resolve the normal critical success for High Jump first. If you finish the jump standing on a legal surface, you may immediately Step up to 5 feet as a free action.",
+    tags: ["athletics", "high-jump", "movement", "landing"],
+    filters: { actionSlugs: ["high-jump"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "high-jump-failure-001-takeoff-mistimed",
+    localizationKey: "TakeoffMistimed",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.35,
+    fallbackTitle: "Takeoff Mistimed",
+    fallbackDescription: "Resolve the normal critical failure for High Jump first. There is no additional mechanical effect. Your takeoff makes it obvious whether the problem was footing, timing, or a badly judged launch point.",
+    tags: ["athletics", "high-jump", "narrative", "takeoff", "no-mechanical-effect"],
+    filters: { actionSlugs: ["high-jump"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "long-jump-success-001-flow-through-landing",
+    localizationKey: "FlowThroughLanding",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Flow Through the Landing",
+    fallbackDescription: "Resolve the normal critical success for Long Jump first. Your next Balance or Tumble Through check before the end of your next turn gains a +1 circumstance bonus as you carry the landing into controlled footwork. The bonus then ends.",
+    tags: ["athletics", "long-jump", "acrobatics", "follow-up", "one-use"],
+    filters: { actionSlugs: ["long-jump"] },
+    contentBatch: 3
+  }),
+  defineAthletics({
+    id: "long-jump-failure-001-landing-line-revealed",
+    localizationKey: "LandingLineRevealed",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.35,
+    fallbackTitle: "Landing Line Revealed",
+    fallbackDescription: "Resolve the normal critical failure for Long Jump first. There is no additional mechanical effect. The failed jump clearly reveals where you meant to land and how your momentum carried away from that line.",
+    tags: ["athletics", "long-jump", "narrative", "landing", "no-mechanical-effect"],
+    filters: { actionSlugs: ["long-jump"] },
+    contentBatch: 3
+  })
+
+]);

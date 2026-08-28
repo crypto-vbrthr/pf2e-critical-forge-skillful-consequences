@@ -21,7 +21,7 @@ test("Physical Action titles do not duplicate known supplied neighboring cards",
 
 test("overlap review records the skill/action boundary", () => {
   const review = fs.readFileSync(path.join(root, "docs/OVERLAP_REVIEW.md"), "utf8");
-  for (const phrase of ["Critical Forge Core", "Goblin Engineering", "Martial Consequences", "Grapple", "Trip", "Shove", "Reposition", "Disarm", "skillCheckCriticalSuccess", "skillCheckCriticalFailure"]) {
+  for (const phrase of ["Critical Forge Core", "Goblin Engineering", "Martial Consequences", "Grapple", "Trip", "Shove", "Reposition", "Disarm", "Climb", "Swim", "High Jump", "Long Jump", "skillCheckCriticalSuccess", "skillCheckCriticalFailure"]) {
     assert.match(review, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
   }
 });

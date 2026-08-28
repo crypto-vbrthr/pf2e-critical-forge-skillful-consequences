@@ -136,6 +136,54 @@
       "IntentTelegraphed": {
         "Title": "Absicht verraten",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Entwaffnen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel und alle, die genau hinsehen, erkennen, welchen Gegenstand, welche Hand oder welchen Griff du angreifen wolltest und wie du ihn lösen wolltest."
+      },
+      "RouteLockedIn": {
+        "Title": "Route verinnerlicht",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Klettern ab. Deine nächste Klettern-Probe an derselben Oberfläche vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "HandholdForTheNext": {
+        "Title": "Halt für den Nächsten",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Klettern ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges deiner Route an derselben Oberfläche folgt, erhält einen Situationsbonus von +1 auf seine nächste Klettern-Probe dort. Danach endet der Bonus."
+      },
+      "ForearmsFlooded": {
+        "Title": "Unterarme dicht",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Klettern ab. Deine nächste Athletikprobe vor Ende deines nächsten Zuges erhält einen Situationsmalus von -1, während du Griff und Atmung wieder unter Kontrolle bringst. Danach endet der Malus."
+      },
+      "BadRouteExposed": {
+        "Title": "Schlechte Route offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Klettern ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine gescheiterte Route macht schwache Griffe, den ungünstigen Winkel oder den instabilen Abschnitt, auf den du vertraut hast, für Beobachter deutlich sichtbar."
+      },
+      "EfficientStroke": {
+        "Title": "Effizienter Schwimmzug",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Schwimmen ab. Bei deinem nächsten erfolgreichen Schwimmen vor Ende deines nächsten Zuges darfst du dich 1,5 Meter weiter bewegen, als das Ergebnis normalerweise erlauben würde, sofern der Weg zulässig ist. Danach endet dieser Vorteil."
+      },
+      "WakeToFollow": {
+        "Title": "Fahrwasser zum Folgen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Schwimmen ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges ungefähr derselben Route durch das Wasser folgt, erhält einen Situationsbonus von +1 auf seine nächste Schwimmen-Probe. Danach endet der Bonus."
+      },
+      "RecoveryStroke": {
+        "Title": "Erholungsschwimmzug",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Schwimmen ab. Vor deiner nächsten Schwimmen-Probe vor Ende deines nächsten Zuges kannst du 1 Aktion aufwenden, um Atmung und Schwimmrhythmus zu stabilisieren. Tust du das nicht, erhält diese Schwimmen-Probe einen Situationsmalus von -1. Danach endet diese Konsequenz."
+      },
+      "SurfaceGivesYouAway": {
+        "Title": "Die Oberfläche verrät dich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Schwimmen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Aufgewühltes Wasser, Spritzer oder Wellen machen die Route, die du nehmen wolltest, für jeden deutlich erkennbar, der die Oberfläche beobachten kann."
+      },
+      "LandingWindow": {
+        "Title": "Fenster nach der Landung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg beim Hochsprung ab. Falls du den Sprung stehend auf einer zulässigen Oberfläche beendest, darfst du dich sofort als Freie Aktion bis zu 1,5 Meter vorsichtig bewegen."
+      },
+      "TakeoffMistimed": {
+        "Title": "Absprung falsch getimt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag beim Hochsprung ab. Es gibt keinen zusätzlichen mechanischen Effekt. Dein Absprung macht deutlich, ob das Problem der Stand, das Timing oder ein schlecht gewählter Absprungpunkt war."
+      },
+      "FlowThroughLanding": {
+        "Title": "Fließende Landung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg beim Weitsprung ab. Deine nächste Probe für Balancieren oder Hindurchturnen vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1, weil du die Landung in kontrollierte Beinarbeit überführst. Danach endet der Bonus."
+      },
+      "LandingLineRevealed": {
+        "Title": "Landungslinie offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag beim Weitsprung ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der misslungene Sprung zeigt deutlich, wo du landen wolltest und wie dein Schwung dich von dieser Linie weggetragen hat."
       }
     }
   }

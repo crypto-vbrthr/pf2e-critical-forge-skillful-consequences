@@ -27,9 +27,16 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Disarm: 2 success + 2 failure
 - Current total: **24 cards**
 
+### 0.1.0-dev.3 - Athletics III
+
+- Climb: 2 success + 2 failure
+- Swim: 2 success + 2 failure
+- High Jump: 1 success + 1 failure
+- Long Jump: 1 success + 1 failure
+- Current total: **36 cards**
+
 ### Planned next blocks
 
-- Athletics III: Climb, Swim, and jumps where suitable
 - Acrobatics: Balance, Tumble Through, Maneuver in Flight, Squeeze
 - Deception & Stealth
 - Diplomacy & Intimidation

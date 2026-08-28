@@ -14,9 +14,16 @@ test("frequent actions keep six-card density", () => {
 });
 
 test("regular Athletics actions begin at four-card density", () => {
-  for (const action of ["shove", "reposition", "disarm"]) {
+  for (const action of ["shove", "reposition", "disarm", "climb", "swim"]) {
     assert.equal(count(action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
     assert.equal(count(action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("narrow jump actions begin at two-card density", () => {
+  for (const action of ["high-jump", "long-jump"]) {
+    assert.equal(count(action, "skillCheckCriticalSuccess"), 1, `${action} success density`);
+    assert.equal(count(action, "skillCheckCriticalFailure"), 1, `${action} failure density`);
   }
 });
 
@@ -32,4 +39,12 @@ test("each supported action has more than one consequence mode", () => {
   assert.equal(byAction("reposition").some((card) => card.tags.includes("narrative")), true);
   assert.equal(byAction("disarm").some((card) => card.tags.includes("positioning")), true);
   assert.equal(byAction("disarm").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("climb").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("climb").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("swim").some((card) => card.tags.includes("movement")), true);
+  assert.equal(byAction("swim").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("high-jump").some((card) => card.tags.includes("movement")), true);
+  assert.equal(byAction("high-jump").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("long-jump").some((card) => card.tags.includes("acrobatics")), true);
+  assert.equal(byAction("long-jump").some((card) => card.tags.includes("narrative")), true);
 });

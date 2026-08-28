@@ -136,6 +136,54 @@
       "IntentTelegraphed": {
         "Title": "Intent Telegraphed",
         "Description": "Resolve the normal critical failure for Disarm first. There is no additional mechanical effect. The target and anyone watching closely can see which item, hand, or grip you were trying to attack and how you meant to strip it away."
+      },
+      "RouteLockedIn": {
+        "Title": "Route Locked In",
+        "Description": "Resolve the normal critical success for Climb first. Your next Climb check on the same surface before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "HandholdForTheNext": {
+        "Title": "Handhold for the Next",
+        "Description": "Resolve the normal critical success for Climb first. The first ally who follows your route on the same surface before the start of your next turn gains a +1 circumstance bonus to their next Climb check there. The bonus then ends."
+      },
+      "ForearmsFlooded": {
+        "Title": "Forearms Flooded",
+        "Description": "Resolve the normal critical failure for Climb first. Your next Athletics check before the end of your next turn takes a -1 circumstance penalty as you recover your grip and breathing. The penalty then ends."
+      },
+      "BadRouteExposed": {
+        "Title": "Bad Route Exposed",
+        "Description": "Resolve the normal critical failure for Climb first. There is no additional mechanical effect. Your failed route makes the weak holds, awkward angle, or unstable section you trusted plainly visible to anyone watching."
+      },
+      "EfficientStroke": {
+        "Title": "Efficient Stroke",
+        "Description": "Resolve the normal critical success for Swim first. On your next successful Swim before the end of your next turn, you may move 5 feet farther than that result would normally allow, if the route is legal. This benefit then ends."
+      },
+      "WakeToFollow": {
+        "Title": "Wake to Follow",
+        "Description": "Resolve the normal critical success for Swim first. The first ally who follows roughly the same route through the water before the start of your next turn gains a +1 circumstance bonus to their next Swim check. The bonus then ends."
+      },
+      "RecoveryStroke": {
+        "Title": "Recovery Stroke",
+        "Description": "Resolve the normal critical failure for Swim first. Before your next Swim check before the end of your next turn, you may spend 1 action steadying your breathing and stroke. If you do not, that Swim check takes a -1 circumstance penalty. This consequence then ends."
+      },
+      "SurfaceGivesYouAway": {
+        "Title": "Surface Gives You Away",
+        "Description": "Resolve the normal critical failure for Swim first. There is no additional mechanical effect. The churn, splash, or disturbed water makes the line you tried to take conspicuous to anyone able to observe the surface."
+      },
+      "LandingWindow": {
+        "Title": "Landing Window",
+        "Description": "Resolve the normal critical success for High Jump first. If you finish the jump standing on a legal surface, you may immediately Step up to 5 feet as a free action."
+      },
+      "TakeoffMistimed": {
+        "Title": "Takeoff Mistimed",
+        "Description": "Resolve the normal critical failure for High Jump first. There is no additional mechanical effect. Your takeoff makes it obvious whether the problem was footing, timing, or a badly judged launch point."
+      },
+      "FlowThroughLanding": {
+        "Title": "Flow Through the Landing",
+        "Description": "Resolve the normal critical success for Long Jump first. Your next Balance or Tumble Through check before the end of your next turn gains a +1 circumstance bonus as you carry the landing into controlled footwork. The bonus then ends."
+      },
+      "LandingLineRevealed": {
+        "Title": "Landing Line Revealed",
+        "Description": "Resolve the normal critical failure for Long Jump first. There is no additional mechanical effect. The failed jump clearly reveals where you meant to land and how your momentum carried away from that line."
       }
     }
   }
