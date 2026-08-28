@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Wissen & Nutzen aktivieren",
-        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen aus Medizin, Handwerk und Wissen."
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen aus Medizin, Handwerk, Wissen und Überlebenskunst."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Wissen & Nutzen",
-        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für unterstützte Handlungen aus Medizin, Handwerk und Wissen."
+        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für unterstützte Handlungen aus Medizin, Handwerk, Wissen und Überlebenskunst. Das normale PF2e-Ergebnis wird immer zuerst abgewickelt."
       }
     },
     "Cards": {
@@ -712,6 +712,78 @@
       "ReadingOrderMisjudged": {
         "Title": "Lesereihenfolge falsch gedeutet",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Schrift entziffern ab. Es gibt keinen zusätzlichen mechanischen Effekt. Halte diese Folge wegen der geheimen Probe auf SL-Seite. Der SL kann eine Überschrift, Anmerkung, Randmarkierung, ein wiederholtes Symbol oder eine Abschnittsgrenze so deuten lassen, dass sie die normale fehlerhafte Lesart verstärkt, ohne den Irrtum offenzulegen."
+      },
+      "TrailRhythmRecognized": {
+        "Title": "Rhythmus der Fährte erkannt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Fährte verfolgen ab. Deine nächste Probe zum Fährte verfolgen auf derselben Spur innerhalb von 1 Stunde erhält einen Situationsbonus von +1, weil du Tempo und Spurenmuster des Verfolgten erkannt hast. Danach endet der Bonus."
+      },
+      "MoreThanFootprints": {
+        "Title": "Mehr als nur Fußspuren",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Fährte verfolgen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn die Spur einen solchen Schluss zulässt, nennt der SL ein nützliches beiläufiges Detail über Tempo, Zustand, Last, Anzahl, Verhalten oder den jüngsten Durchzug des Verfolgten."
+      },
+      "TrailShared": {
+        "Title": "Fährte geteilt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Fährte verfolgen ab. Der erste Verbündete, der innerhalb der nächsten 10 Minuten dieselbe Spur verfolgt, erhält einen Situationsbonus von +1 auf diese Probe durch die Zeichen und den Weg, auf die du hinweist. Danach endet der Bonus."
+      },
+      "SignOverread": {
+        "Title": "Spur überinterpretiert",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Fährte verfolgen ab. Wenn du innerhalb von 1 Stunde erneut versuchst, derselben Spur zu folgen, erhält diese nächste Probe einen Situationsmalus von -1, weil du dich erst von dem falsch gelesenen Muster lösen musst. Danach endet der Malus."
+      },
+      "FalseBranchFeelsCertain": {
+        "Title": "Der falsche Abzweig wirkt sicher",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Fährte verfolgen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn ein falscher Abzweig, eine kreuzende Spur, ein verwittertes Zeichen oder eine aufgewühlte Stelle den Irrtum erklären könnte, beschreibt der SL das irreführende Zeichen, das deine Aufmerksamkeit auf sich gezogen hat."
+      },
+      "SearchPatternExposed": {
+        "Title": "Suchmuster offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Fährte verfolgen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine Suche hinterlässt ein auffälliges Muster aus Pausen, zurückgegangenen Schritten, gestörter Vegetation oder ähnlichen Zeichen, an denen ein späterer Beobachter erkennen kann, dass jemand diese Spur aktiv verfolgt hat."
+      },
+      "LandmarkChain": {
+        "Title": "Kette von Orientierungspunkten",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Orientierungssinn ab. Behandle diese Folge wegen der geheimen Probe nur auf SL-Seite. Der SL kann deiner nächsten Probe auf Orientierungssinn in derselben Region innerhalb von 24 Stunden heimlich einen Situationsbonus von +1 geben, weil du eine verlässliche Kette von Richtungsbezügen aufgebaut hast. Danach endet der Bonus."
+      },
+      "ReliableAnchor": {
+        "Title": "Verlässlicher Ankerpunkt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Orientierungssinn ab. Es gibt keinen zusätzlichen mechanischen Effekt. Behandle diese Folge wegen der geheimen Probe nur auf SL-Seite. Wenn die Umgebung es zulässt, nennt der SL einen verlässlichen Orientierungspunkt, Himmelskörper, Hangverlauf, eine Strömung, Windrichtung oder einen anderen Anker, den der Charakter in diesem Gebiet zur Navigation nutzen kann."
+      },
+      "ConvincingWrongBearing": {
+        "Title": "Überzeugend falsche Richtung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Orientierungssinn ab. Es gibt keinen zusätzlichen mechanischen Effekt. Behandle diese Folge wegen der geheimen Probe nur auf SL-Seite. Der SL kann die falsche Richtung mit einem plausiblen Umgebungsmerkmal begründen, sodass der verborgene Irrtum überzeugend bleibt, ohne einen weiteren mechanischen Malus hinzuzufügen."
+      },
+      "TrueLandmarkFalseBearing": {
+        "Title": "Echter Orientierungspunkt, falsche Richtung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Orientierungssinn ab. Es gibt keinen zusätzlichen mechanischen Effekt. Behandle diese Folge wegen der geheimen Probe nur auf SL-Seite. Der SL kann einen echten Orientierungspunkt oder ein reales Naturmerkmal so erscheinen lassen, als bestätige es die falsche Richtung, solange dadurch nicht verraten wird, dass das normale Ergebnis falsch ist."
+      },
+      "SustainableSource": {
+        "Title": "Nachhaltige Quelle",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Lebensunterhalt bestreiten ab. Deine nächste Probe zum Lebensunterhalt bestreiten in derselben Siedlung, demselben Bezirk oder Wildnisgebiet innerhalb von 1 Woche erhält einen Situationsbonus von +1, weil du eine verlässliche örtliche Quelle oder Routine gefunden hast. Danach endet der Bonus."
+      },
+      "UsefulLocalRoutine": {
+        "Title": "Nützliche örtliche Routine",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Lebensunterhalt bestreiten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn passend, nennt der SL eine nützliche örtliche Gewohnheit oder Ressource für Nahrung und Unterkunft, etwa eine verlässliche Wasserstelle, einen trockenen Lagerplatz, Marktrhythmus, eine wohltätige Gepflogenheit, ein gutes Sammelgebiet oder ein ähnliches praktisches Detail."
+      },
+      "ResourceAssumptionBreaks": {
+        "Title": "Ressourcenannahme bricht zusammen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Lebensunterhalt bestreiten ab. Deine nächste Probe zum Lebensunterhalt bestreiten in derselben Siedlung, demselben Bezirk oder Wildnisgebiet innerhalb von 24 Stunden erhält einen Situationsmalus von -1, weil du dich noch auf eine schlechte Quelle, Route, Kontaktperson oder falsches Timing verlässt. Danach endet der Malus."
+      },
+      "WhatWasMissing": {
+        "Title": "Was gefehlt hat",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Lebensunterhalt bestreiten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn es aus der Situation erkennbar ist, nennt der SL einen praktischen Grund für das Scheitern, etwa Knappheit, Verunreinigung, schlechtes Timing, örtliche Gepflogenheiten, Wetter, Konkurrenz oder eine falsche Annahme über verfügbare Unterkunft."
+      },
+      "BestGroundChosen": {
+        "Title": "Den besten Boden gewählt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Spuren verwischen ab. Deine nächste Probe zum Spuren verwischen in derselben Geländeart innerhalb von 1 Stunde erhält einen Situationsbonus von +1, weil du erkannt hast, welche Flächen und Wege deine Passage am besten verbergen. Danach endet der Bonus."
+      },
+      "MisdirectionWithoutDelay": {
+        "Title": "Irreführung ohne Verzögerung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Spuren verwischen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn plausibel, beschreibt der SL ein irreführendes Zeichen, eine falsche Fortsetzung oder eine Wegwahl, die deine sorgfältige Passage natürlich erzeugt, ohne die normale Schwierigkeit des Fährtenlesens erneut zu verändern."
+      },
+      "RepeatedHabit": {
+        "Title": "Wiederholte Gewohnheit",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Spuren verwischen ab. Deine nächste Probe zum Spuren verwischen innerhalb von 1 Stunde erhält einen Situationsmalus von -1, weil du dieselbe Verschleierungsgewohnheit wiederholst. Danach endet der Malus."
+      },
+      "TelltaleSign": {
+        "Title": "Verräterisches Zeichen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Spuren verwischen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der SL kann eine Art von Zeichen beschreiben, das dein Versuch zurücklässt, etwa verschobenen Schutt, wiederholte Bürstenspuren, eine unnatürliche Abwesenheit von Fußspuren oder einen anderen Hinweis, der erklärt, weshalb die Spur leichter zu lesen ist als beabsichtigt."
       }
     }
   }

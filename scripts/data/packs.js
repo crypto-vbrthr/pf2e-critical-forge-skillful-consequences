@@ -64,7 +64,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "KnowledgeUtility",
     id: PACK_IDS.KNOWLEDGE_UTILITY,
     fallbackTitle: "Skillful Consequences: Knowledge & Utility",
-    fallbackDescription: "Action-specific critical successes and critical failures for supported Medicine, Crafting, and knowledge actions, with the normal PF2e result always resolved first.",
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Medicine, Crafting, knowledge, and Survival actions, with the normal PF2e result always resolved first.",
     cards: KNOWLEDGE_UTILITY_CARDS,
     defaultEnabled: true,
     metadata: Object.freeze({
@@ -73,8 +73,8 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       category: "knowledge-utility",
       scope: "knowledge-utility-action-critical-results",
       contentStatus: "development",
-      supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft", "recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]),
-      implementedCards: 38
+      supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft", "recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing", "track", "sense-direction", "subsist", "cover-tracks"]),
+      implementedCards: 56
     })
   })
 ]);

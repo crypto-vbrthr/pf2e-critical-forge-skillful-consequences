@@ -19,14 +19,14 @@ const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFU
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.10 contains one hundred sixty-eight unique cards across four active packs", () => {
+test("dev.11 contains one hundred eighty-six unique cards across four active packs", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
   assert.equal(SOCIAL_ACTION_CARDS.length, 44);
   assert.equal(SUBTERFUGE_ACTION_CARDS.length, 34);
-  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 38);
-  assert.equal(ALL_CARDS.length, 168);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 168);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 168);
+  assert.equal(KNOWLEDGE_UTILITY_CARDS.length, 56);
+  assert.equal(ALL_CARDS.length, 186);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 186);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 186);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -119,10 +119,11 @@ test("subterfuge actions use exact Stealth and Thievery action filters", () => {
 });
 
 
-test("knowledge and utility actions use deliberate Medicine, Crafting, and knowledge filters", () => {
+test("knowledge and utility actions use deliberate Medicine, Crafting, knowledge, and Survival filters", () => {
   const medicine = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
   const crafting = new Set(["repair", "craft"]);
   const knowledge = new Set(["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]);
+  const survival = new Set(["track", "sense-direction", "subsist", "cover-tracks"]);
   for (const card of KNOWLEDGE_UTILITY_CARDS) {
     assert.equal(card.packId, PACK_IDS.KNOWLEDGE_UTILITY);
     assert.equal(card.deckType, "skill");
@@ -142,6 +143,14 @@ test("knowledge and utility actions use deliberate Medicine, Crafting, and knowl
       if (action === "decipher-writing") assert.deepEqual(card.filters.skillTypes, ["arcana", "society", "occultism", "religion"], card.id);
       if (action === "identify-magic") assert.deepEqual(card.filters.skillTypes, ["arcana", "nature", "occultism", "religion"], card.id);
       if (action === "identify-alchemy") assert.deepEqual(card.filters.skillTypes, ["crafting"], card.id);
+    } else if (survival.has(action)) {
+      assert.equal(card.metadata.actionFamily, "survival", card.id);
+      if (action === "subsist") assert.deepEqual(card.filters.skillTypes, ["survival", "society"], card.id);
+      else assert.deepEqual(card.filters.skillTypes, ["survival"], card.id);
+      if (action === "sense-direction") {
+        assert.equal(card.tags.includes("secret-check"), true, card.id);
+        assert.equal(card.tags.includes("gm-facing"), true, card.id);
+      }
     } else assert.fail(`unexpected Knowledge & Utility action: ${action}`);
     assert.equal(card.effect, null, card.id);
     assert.equal(card.metadata.resolution, "manual", card.id);
@@ -183,6 +192,33 @@ test("knowledge actions use the intended first-block density and secret-check bo
   for (const card of KNOWLEDGE_UTILITY_CARDS.filter((card) => card.metadata.actionFamily === "knowledge" && card.category === "skillCheckCriticalFailure")) {
     assert.equal(card.impact, "narrative", card.id);
     assert.equal(card.tags.includes("no-mechanical-effect"), true, card.id);
+  }
+});
+
+
+
+test("Survival and exploration actions use the intended mini-deck density", () => {
+  const track = forAction(KNOWLEDGE_UTILITY_CARDS, "track");
+  assert.equal(track.length, 6);
+  assert.equal(forOutcome(track, "skillCheckCriticalSuccess").length, 3);
+  assert.equal(forOutcome(track, "skillCheckCriticalFailure").length, 3);
+  for (const slug of ["sense-direction", "subsist", "cover-tracks"]) {
+    const cards = forAction(KNOWLEDGE_UTILITY_CARDS, slug);
+    assert.equal(cards.length, 4, slug);
+    assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 2, `${slug} success`);
+    assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 2, `${slug} failure`);
+  }
+});
+
+test("Sense Direction preserves secret-check information boundaries and Subsist supports both skills", () => {
+  const senseDirection = forAction(KNOWLEDGE_UTILITY_CARDS, "sense-direction");
+  assert.equal(senseDirection.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing")), true);
+  for (const card of forOutcome(senseDirection, "skillCheckCriticalFailure")) {
+    assert.equal(card.impact, "narrative", card.id);
+    assert.equal(card.tags.includes("no-mechanical-effect"), true, card.id);
+  }
+  for (const card of forAction(KNOWLEDGE_UTILITY_CARDS, "subsist")) {
+    assert.deepEqual(card.filters.skillTypes, ["survival", "society"], card.id);
   }
 });
 
@@ -235,5 +271,5 @@ test("pack topology exposes all four populated action packs", () => {
   assert.equal(packs[2].enabled, true);
   assert.equal(packs[2].decks.skill.cards.length, 34);
   assert.equal(packs[3].enabled, true);
-  assert.equal(packs[3].decks.skill.cards.length, 38);
+  assert.equal(packs[3].decks.skill.cards.length, 56);
 });

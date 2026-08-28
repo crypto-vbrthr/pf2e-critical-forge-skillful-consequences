@@ -15,7 +15,7 @@
       },
       "KnowledgeUtility": {
         "Name": "Enable Knowledge & Utility",
-        "Hint": "Enable Skillful Consequences cards for supported Medicine, Crafting, and knowledge actions."
+        "Hint": "Enable Skillful Consequences cards for supported Medicine, Crafting, knowledge, and Survival actions."
       }
     },
     "Notifications": {
@@ -37,7 +37,7 @@
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Knowledge & Utility",
-        "Description": "Action-specific critical successes and critical failures for supported Medicine, Crafting, and knowledge actions."
+        "Description": "Action-specific critical successes and critical failures for supported Medicine, Crafting, knowledge, and Survival actions. The normal PF2e result is always resolved first."
       }
     },
     "Cards": {
@@ -712,6 +712,78 @@
       "ReadingOrderMisjudged": {
         "Title": "Reading Order Misjudged",
         "Description": "Resolve the normal critical failure for Decipher Writing first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may let a heading, annotation, marginal mark, repeated symbol, or section boundary be interpreted in a way that reinforces the normal erroneous reading without exposing the error."
+      },
+      "TrailRhythmRecognized": {
+        "Title": "Trail Rhythm Recognized",
+        "Description": "Resolve the normal critical success for Track first. Your next Track check on the same trail within 1 hour gains a +1 circumstance bonus because you have learned the quarry's pace and sign pattern. The bonus then ends."
+      },
+      "MoreThanFootprints": {
+        "Title": "More Than Footprints",
+        "Description": "Resolve the normal critical success for Track first. There is no additional mechanical effect. If the trail can support the inference, the GM points out one useful incidental clue about the quarry's pace, condition, burden, numbers, behavior, or recent passage."
+      },
+      "TrailShared": {
+        "Title": "Trail Shared",
+        "Description": "Resolve the normal critical success for Track first. The first ally who attempts to Track the same trail within the next 10 minutes gains a +1 circumstance bonus to that check from the signs and route you point out. The bonus then ends."
+      },
+      "SignOverread": {
+        "Title": "Sign Overread",
+        "Description": "Resolve the normal critical failure for Track first. If you attempt to Track the same trail again within 1 hour, that next check takes a -1 circumstance penalty as you struggle to discard the pattern you misread. The penalty then ends."
+      },
+      "FalseBranchFeelsCertain": {
+        "Title": "False Branch Feels Certain",
+        "Description": "Resolve the normal critical failure for Track first. There is no additional mechanical effect. If a false branch, overlapping trail, weathered mark, or disturbed patch could explain the mistake, the GM describes the misleading sign that drew your attention."
+      },
+      "SearchPatternExposed": {
+        "Title": "Search Pattern Exposed",
+        "Description": "Resolve the normal critical failure for Track first. There is no additional mechanical effect. Your search leaves a noticeable pattern of pauses, doubled-back steps, disturbed vegetation, or other signs that can reveal to a later observer that someone was actively trying to follow this trail."
+      },
+      "LandmarkChain": {
+        "Title": "Landmark Chain",
+        "Description": "Resolve the normal critical success for Sense Direction first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Sense Direction check in the same region within 24 hours because you have established a reliable chain of bearings. The bonus then ends."
+      },
+      "ReliableAnchor": {
+        "Title": "Reliable Anchor",
+        "Description": "Resolve the normal critical success for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the environment supports it, the GM identifies one reliable landmark, celestial cue, slope, current, wind pattern, or other navigational anchor the character can now use in this area."
+      },
+      "ConvincingWrongBearing": {
+        "Title": "Convincing Wrong Bearing",
+        "Description": "Resolve the normal critical failure for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may frame the mistaken bearing around a plausible environmental cue so the hidden error remains convincing without adding a second mechanical penalty."
+      },
+      "TrueLandmarkFalseBearing": {
+        "Title": "True Landmark, False Bearing",
+        "Description": "Resolve the normal critical failure for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may let one genuine landmark or natural feature appear to support the mistaken direction, provided it does not reveal that the normal result is wrong."
+      },
+      "SustainableSource": {
+        "Title": "Sustainable Source",
+        "Description": "Resolve the normal critical success for Subsist first. Your next Subsist check in the same settlement, district, or wilderness area within 1 week gains a +1 circumstance bonus because you have identified a dependable local source or routine. The bonus then ends."
+      },
+      "UsefulLocalRoutine": {
+        "Title": "Useful Local Routine",
+        "Description": "Resolve the normal critical success for Subsist first. There is no additional mechanical effect. If appropriate, the GM points out one useful local routine or resource tied to obtaining food and shelter, such as a reliable water source, dry camp, market rhythm, charitable custom, safe foraging patch, or similar practical detail."
+      },
+      "ResourceAssumptionBreaks": {
+        "Title": "Resource Assumption Breaks",
+        "Description": "Resolve the normal critical failure for Subsist first. Your next Subsist check in the same settlement, district, or wilderness area within 24 hours takes a -1 circumstance penalty because the failed attempt has left you relying on a poor source, route, contact, or timing assumption. The penalty then ends."
+      },
+      "WhatWasMissing": {
+        "Title": "What Was Missing",
+        "Description": "Resolve the normal critical failure for Subsist first. There is no additional mechanical effect. If the situation makes it apparent, the GM identifies one practical reason the attempt failed, such as scarcity, contamination, poor timing, local custom, weather, competition, or a mistaken assumption about available shelter."
+      },
+      "BestGroundChosen": {
+        "Title": "Best Ground Chosen",
+        "Description": "Resolve the normal critical success for Cover Tracks first. Your next Cover Tracks check in the same kind of terrain within 1 hour gains a +1 circumstance bonus because you have identified which surfaces and routes hide passage most effectively. The bonus then ends."
+      },
+      "MisdirectionWithoutDelay": {
+        "Title": "Misdirection Without Delay",
+        "Description": "Resolve the normal critical success for Cover Tracks first. There is no additional mechanical effect. If plausible, the GM describes one misleading sign, false continuation, or route choice your careful passage naturally creates without changing the normal tracking difficulty again."
+      },
+      "RepeatedHabit": {
+        "Title": "Repeated Habit",
+        "Description": "Resolve the normal critical failure for Cover Tracks first. Your next Cover Tracks check within 1 hour takes a -1 circumstance penalty because you keep repeating the same concealment habit. The penalty then ends."
+      },
+      "TelltaleSign": {
+        "Title": "Telltale Sign",
+        "Description": "Resolve the normal critical failure for Cover Tracks first. There is no additional mechanical effect. The GM may describe one kind of sign your attempt leaves behind, such as displaced debris, repeated brush marks, an unnatural absence of tracks, or another clue that explains why the trail is easier to read than intended."
       }
     }
   }

@@ -169,3 +169,22 @@ test("knowledge actions use intended skill-filter breadth", () => {
   assert.equal(magic.every((card) => ["arcana", "nature", "occultism", "religion"].every((skill) => card.filters.skillTypes.includes(skill))), true);
   assert.equal(alchemy.every((card) => card.filters.skillTypes.length === 1 && card.filters.skillTypes[0] === "crafting"), true);
 });
+
+
+test("Survival actions keep frequent and regular mini-deck density", () => {
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "track", "skillCheckCriticalSuccess"), 3);
+  assert.equal(count(KNOWLEDGE_UTILITY_CARDS, "track", "skillCheckCriticalFailure"), 3);
+  for (const action of ["sense-direction", "subsist", "cover-tracks"]) {
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
+    assert.equal(count(KNOWLEDGE_UTILITY_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("Survival consequences mix route, information, teamwork, and secret navigation", () => {
+  const byAction = (action) => KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+  assert.equal(byAction("track").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("track").some((card) => card.tags.includes("information")), true);
+  assert.equal(byAction("sense-direction").every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing")), true);
+  assert.equal(byAction("subsist").some((card) => card.tags.includes("resource")), true);
+  assert.equal(byAction("cover-tracks").some((card) => card.tags.includes("misdirection")), true);
+});

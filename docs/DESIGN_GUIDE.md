@@ -83,3 +83,8 @@ Recall Knowledge, Identify Magic, Identify Alchemy, and Decipher Writing are sec
 - Small follow-up bonuses are tracked by the GM and should not be announced in a way that reveals the hidden degree of success.
 - Recall Knowledge uses action-first matching because the exact skill can vary widely with the subject, including Lore skills whose concrete statistic slug is campaign-specific.
 - Identify Magic accepts Arcana, Nature, Occultism, or Religion. Decipher Writing accepts Arcana, Society, Occultism, or Religion. Identify Alchemy is restricted to Crafting.
+
+
+## Survival and navigation
+
+Survival consequences should make routes, signs, terrain, resource assumptions, and follow-up choices more legible without replacing PF2e travel or exploration rules. Sense Direction remains GM-facing because its check is secret. Subsist is filtered by action first and may use either Survival or Society.

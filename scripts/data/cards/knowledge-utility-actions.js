@@ -4,6 +4,7 @@ import { defineSkillActionCard } from "./card-factory.js";
 const KNOWLEDGE_UTILITY_PACK = PACK_IDS.KNOWLEDGE_UTILITY;
 const MEDICINE = Object.freeze({ skillTypes: ["medicine"] });
 const CRAFTING = Object.freeze({ skillTypes: ["crafting"] });
+const SURVIVAL = Object.freeze({ skillTypes: ["survival"] });
 
 function defineMedicine(options) {
   return defineSkillActionCard({
@@ -26,6 +27,19 @@ function defineCrafting(options) {
     actionFamily: "crafting",
     filters: {
       ...CRAFTING,
+      ...(options.filters ?? {})
+    }
+  });
+}
+
+function defineSurvival(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: KNOWLEDGE_UTILITY_PACK,
+    collection: "knowledge-utility",
+    actionFamily: "survival",
+    filters: {
+      ...SURVIVAL,
       ...(options.filters ?? {})
     }
   });
@@ -517,6 +531,231 @@ export const KNOWLEDGE_UTILITY_CARDS = Object.freeze([
     tags: ["knowledge", "decipher-writing", "secret-check", "gm-facing", "writing", "misinterpretation", "structure", "narrative", "no-mechanical-effect"],
     filters: { skillTypes: ["arcana", "society", "occultism", "religion"], actionSlugs: ["decipher-writing"] },
     contentBatch: 10
+  })
+
+,
+
+  // 0.1.0-dev.11 - Survival & Exploration I
+  defineSurvival({
+    id: "track-success-001-trail-rhythm-recognized",
+    localizationKey: "TrailRhythmRecognized",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Trail Rhythm Recognized",
+    fallbackDescription: "Resolve the normal critical success for Track first. Your next Track check on the same trail within 1 hour gains a +1 circumstance bonus because you have learned the quarry's pace and sign pattern. The bonus then ends.",
+    tags: ["survival", "track", "same-trail", "follow-up", "one-use"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "track-success-002-more-than-footprints",
+    localizationKey: "MoreThanFootprints",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "More Than Footprints",
+    fallbackDescription: "Resolve the normal critical success for Track first. There is no additional mechanical effect. If the trail can support the inference, the GM points out one useful incidental clue about the quarry's pace, condition, burden, numbers, behavior, or recent passage.",
+    tags: ["survival", "track", "information", "trail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "track-success-003-trail-shared",
+    localizationKey: "TrailShared",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Trail Shared",
+    fallbackDescription: "Resolve the normal critical success for Track first. The first ally who attempts to Track the same trail within the next 10 minutes gains a +1 circumstance bonus to that check from the signs and route you point out. The bonus then ends.",
+    tags: ["survival", "track", "same-trail", "teamwork", "ally", "one-use"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "track-failure-001-sign-overread",
+    localizationKey: "SignOverread",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Sign Overread",
+    fallbackDescription: "Resolve the normal critical failure for Track first. If you attempt to Track the same trail again within 1 hour, that next check takes a -1 circumstance penalty as you struggle to discard the pattern you misread. The penalty then ends.",
+    tags: ["survival", "track", "same-trail", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "track-failure-002-false-branch-feels-certain",
+    localizationKey: "FalseBranchFeelsCertain",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "False Branch Feels Certain",
+    fallbackDescription: "Resolve the normal critical failure for Track first. There is no additional mechanical effect. If a false branch, overlapping trail, weathered mark, or disturbed patch could explain the mistake, the GM describes the misleading sign that drew your attention.",
+    tags: ["survival", "track", "misread-sign", "trail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "track-failure-003-search-pattern-exposed",
+    localizationKey: "SearchPatternExposed",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.05,
+    fallbackTitle: "Search Pattern Exposed",
+    fallbackDescription: "Resolve the normal critical failure for Track first. There is no additional mechanical effect. Your search leaves a noticeable pattern of pauses, doubled-back steps, disturbed vegetation, or other signs that can reveal to a later observer that someone was actively trying to follow this trail.",
+    tags: ["survival", "track", "evidence", "observer", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["track"] },
+    contentBatch: 11
+  }),
+
+  defineSurvival({
+    id: "sense-direction-success-001-landmark-chain",
+    localizationKey: "LandmarkChain",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Landmark Chain",
+    fallbackDescription: "Resolve the normal critical success for Sense Direction first. Keep this consequence GM-facing for the secret check. The GM may secretly grant a +1 circumstance bonus to your next Sense Direction check in the same region within 24 hours because you have established a reliable chain of bearings. The bonus then ends.",
+    tags: ["survival", "sense-direction", "secret-check", "gm-facing", "navigation", "follow-up", "one-use"],
+    filters: { actionSlugs: ["sense-direction"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "sense-direction-success-002-reliable-anchor",
+    localizationKey: "ReliableAnchor",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Reliable Anchor",
+    fallbackDescription: "Resolve the normal critical success for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If the environment supports it, the GM identifies one reliable landmark, celestial cue, slope, current, wind pattern, or other navigational anchor the character can now use in this area.",
+    tags: ["survival", "sense-direction", "secret-check", "gm-facing", "navigation", "information", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["sense-direction"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "sense-direction-failure-001-convincing-wrong-bearing",
+    localizationKey: "ConvincingWrongBearing",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Convincing Wrong Bearing",
+    fallbackDescription: "Resolve the normal critical failure for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may frame the mistaken bearing around a plausible environmental cue so the hidden error remains convincing without adding a second mechanical penalty.",
+    tags: ["survival", "sense-direction", "secret-check", "gm-facing", "navigation", "misdirection", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["sense-direction"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "sense-direction-failure-002-true-landmark-false-bearing",
+    localizationKey: "TrueLandmarkFalseBearing",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "True Landmark, False Bearing",
+    fallbackDescription: "Resolve the normal critical failure for Sense Direction first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may let one genuine landmark or natural feature appear to support the mistaken direction, provided it does not reveal that the normal result is wrong.",
+    tags: ["survival", "sense-direction", "secret-check", "gm-facing", "navigation", "misdirection", "true-detail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["sense-direction"] },
+    contentBatch: 11
+  }),
+
+  defineSurvival({
+    id: "subsist-success-001-sustainable-source",
+    localizationKey: "SustainableSource",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Sustainable Source",
+    fallbackDescription: "Resolve the normal critical success for Subsist first. Your next Subsist check in the same settlement, district, or wilderness area within 1 week gains a +1 circumstance bonus because you have identified a dependable local source or routine. The bonus then ends.",
+    tags: ["subsist", "survival", "society", "same-area", "follow-up", "one-use"],
+    filters: { skillTypes: ["survival", "society"], actionSlugs: ["subsist"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "subsist-success-002-useful-local-routine",
+    localizationKey: "UsefulLocalRoutine",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Useful Local Routine",
+    fallbackDescription: "Resolve the normal critical success for Subsist first. There is no additional mechanical effect. If appropriate, the GM points out one useful local routine or resource tied to obtaining food and shelter, such as a reliable water source, dry camp, market rhythm, charitable custom, safe foraging patch, or similar practical detail.",
+    tags: ["subsist", "survival", "society", "information", "resource", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["survival", "society"], actionSlugs: ["subsist"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "subsist-failure-001-resource-assumption-breaks",
+    localizationKey: "ResourceAssumptionBreaks",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Resource Assumption Breaks",
+    fallbackDescription: "Resolve the normal critical failure for Subsist first. Your next Subsist check in the same settlement, district, or wilderness area within 24 hours takes a -1 circumstance penalty because the failed attempt has left you relying on a poor source, route, contact, or timing assumption. The penalty then ends.",
+    tags: ["subsist", "survival", "society", "same-area", "brief-setback", "one-use"],
+    filters: { skillTypes: ["survival", "society"], actionSlugs: ["subsist"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "subsist-failure-002-what-was-missing",
+    localizationKey: "WhatWasMissing",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "What Was Missing",
+    fallbackDescription: "Resolve the normal critical failure for Subsist first. There is no additional mechanical effect. If the situation makes it apparent, the GM identifies one practical reason the attempt failed, such as scarcity, contamination, poor timing, local custom, weather, competition, or a mistaken assumption about available shelter.",
+    tags: ["subsist", "survival", "society", "information", "scarcity", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["survival", "society"], actionSlugs: ["subsist"] },
+    contentBatch: 11
+  }),
+
+  defineSurvival({
+    id: "cover-tracks-success-001-best-ground-chosen",
+    localizationKey: "BestGroundChosen",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Best Ground Chosen",
+    fallbackDescription: "Resolve the normal critical success for Cover Tracks first. Your next Cover Tracks check in the same kind of terrain within 1 hour gains a +1 circumstance bonus because you have identified which surfaces and routes hide passage most effectively. The bonus then ends.",
+    tags: ["survival", "cover-tracks", "same-terrain", "follow-up", "one-use"],
+    filters: { actionSlugs: ["cover-tracks"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "cover-tracks-success-002-misdirection-without-delay",
+    localizationKey: "MisdirectionWithoutDelay",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Misdirection Without Delay",
+    fallbackDescription: "Resolve the normal critical success for Cover Tracks first. There is no additional mechanical effect. If plausible, the GM describes one misleading sign, false continuation, or route choice your careful passage naturally creates without changing the normal tracking difficulty again.",
+    tags: ["survival", "cover-tracks", "misdirection", "trail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["cover-tracks"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "cover-tracks-failure-001-repeated-habit",
+    localizationKey: "RepeatedHabit",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Repeated Habit",
+    fallbackDescription: "Resolve the normal critical failure for Cover Tracks first. Your next Cover Tracks check within 1 hour takes a -1 circumstance penalty because you keep repeating the same concealment habit. The penalty then ends.",
+    tags: ["survival", "cover-tracks", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["cover-tracks"] },
+    contentBatch: 11
+  }),
+  defineSurvival({
+    id: "cover-tracks-failure-002-telltale-sign",
+    localizationKey: "TelltaleSign",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Telltale Sign",
+    fallbackDescription: "Resolve the normal critical failure for Cover Tracks first. There is no additional mechanical effect. The GM may describe one kind of sign your attempt leaves behind, such as displaced debris, repeated brush marks, an unnatural absence of tracks, or another clue that explains why the trail is easier to read than intended.",
+    tags: ["survival", "cover-tracks", "evidence", "trail", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["cover-tracks"] },
+    contentBatch: 11
   })
 
 ]);

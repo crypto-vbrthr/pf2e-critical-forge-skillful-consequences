@@ -94,9 +94,18 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - All four actions are handled as GM-facing secret-check content.
 - Total after block: **168 cards**
 
+
+### 0.1.0-dev.11 - Survival & Exploration I
+
+- Track: 3 success + 3 failure
+- Sense Direction: 2 success + 2 failure, GM-facing secret-check handling
+- Subsist: 2 success + 2 failure, matching Survival or Society
+- Cover Tracks: 2 success + 2 failure
+- Total after block: **186 cards**
+
 ### Planned next blocks
 
-- Survival, Performance, and selected utility actions
+- Performance and selected utility actions
 
 ## Completeness review
 

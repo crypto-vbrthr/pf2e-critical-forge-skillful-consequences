@@ -1,3 +1,23 @@
+## 0.1.0-dev.11
+
+### Survival & Exploration I
+
+- Added 18 Knowledge & Utility cards, bringing the module to 186 cards total.
+- Added Track with 3 critical-success and 3 critical-failure cards.
+- Added Sense Direction with 2 + 2 cards and explicit GM-facing secret-check handling.
+- Added Subsist with 2 + 2 cards, matching both Survival and Society variants of the generic action.
+- Added Cover Tracks with 2 + 2 cards.
+- Added follow-up tracking/navigation bonuses, environmental clues, route and evidence consequences, resource assumptions, and restrained narrative failures without replacing normal PF2e outcomes.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for frequent and regular Survival/exploration actions.
+- Added exact filter tests for Survival actions and the multi-skill Subsist boundary.
+- Added explicit secret-check safety tests for Sense Direction.
+- Expanded release checks to cover 186 cards and 56 Knowledge & Utility cards.
+- Updated README, roadmap, design guide, and overlap review for the new Survival block.
+
 # Changelog
 
 ## 0.1.0-dev.10

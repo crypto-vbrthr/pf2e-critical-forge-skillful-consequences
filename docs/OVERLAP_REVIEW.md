@@ -1,6 +1,6 @@
 # Overlap Review
 
-## 0.1.0-dev.8 scope
+## 0.1.0-dev.11 scope
 
 Three packs are currently active.
 
@@ -84,3 +84,12 @@ The knowledge block also avoids Goblin Engineering's equipment-centered identity
 All four supported knowledge actions are secret checks. Failure cards are GM-facing narrative consequences that preserve PF2e misinformation, misidentification, or mistaken interpretation without revealing the hidden degree of success.
 
 Supported actions in this block: Recall Knowledge, Identify Magic, Identify Alchemy, Decipher Writing.
+
+
+### Survival & exploration boundary
+
+`0.1.0-dev.11` adds Track, Sense Direction, Subsist, and Cover Tracks to Knowledge & Utility. These cards remain action-centered: they modify follow-up tracking/navigation/subsistence attempts, expose plausible environmental information, or add narrative evidence and misdirection. They do not create weather, travel, or resource-generation subsystems of their own.
+
+Sense Direction is treated as a GM-facing secret check so a critical-failure card never exposes a hidden wrong bearing. Subsist deliberately accepts both Survival and Society because PF2e presents it as a generic multi-skill action.
+
+The block remains distinct from **Goblin Engineering** because no card introduces malfunctioning compasses, survival kits, tools, or other equipment incidents.
