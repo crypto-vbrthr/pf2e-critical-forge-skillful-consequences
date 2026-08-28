@@ -1,0 +1,94 @@
+{
+  "PF2E_SKILLFUL_CONSEQUENCES": {
+    "Settings": {
+      "PhysicalActions": {
+        "Name": "Körperliche Handlungen aktivieren",
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen mit Athletik und Akrobatik."
+      },
+      "SocialActions": {
+        "Name": "Soziale Handlungen aktivieren",
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte soziale Handlungen, sobald dieses Paket Karten enthält."
+      },
+      "SubterfugeActions": {
+        "Name": "Heimliche Handlungen aktivieren",
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen mit Heimlichkeit und Diebeskunst, sobald dieses Paket Karten enthält."
+      },
+      "KnowledgeUtility": {
+        "Name": "Wissen & Nutzen aktivieren",
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Wissens- und Nutzhandlungen, sobald dieses Paket Karten enthält."
+      }
+    },
+    "Notifications": {
+      "PackSelectionUpdated": "Die Paketauswahl von Skillful Consequences wurde aktualisiert.",
+      "RegistrationFailed": "PF2E Critical Forge: Skillful Consequences konnte nicht bei Critical Forge registriert werden."
+    },
+    "Packs": {
+      "PhysicalActions": {
+        "Title": "Skillful Consequences: Körperliche Handlungen",
+        "Description": "Handlungsspezifische kritische Erfolge und Fehlschläge für Athletik und Akrobatik. Das normale PF2e-Ergebnis wird immer zuerst abgewickelt."
+      },
+      "SocialActions": {
+        "Title": "Skillful Consequences: Soziale Handlungen",
+        "Description": "Reserviert für handlungsspezifische Folgen für Täuschung, Diplomatie, Einschüchtern und Darbietung."
+      },
+      "SubterfugeActions": {
+        "Title": "Skillful Consequences: Heimliche Handlungen",
+        "Description": "Reserviert für handlungsspezifische Folgen für Heimlichkeit und Diebeskunst."
+      },
+      "KnowledgeUtility": {
+        "Title": "Skillful Consequences: Wissen & Nutzen",
+        "Description": "Reserviert für Wissen, Medizin, Handwerk, Überleben und weitere nützliche Handlungen."
+      }
+    },
+    "Cards": {
+      "ReadTheStruggle": {
+        "Title": "Den Widerstand lesen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Ergreifen ab. Falls sich dasselbe Ziel vor Ende deines nächsten Zuges Befreit und du es vor Ende deines nächsten Zuges erneut Ergreifst, erhältst du einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "LockedInLeverage": {
+        "Title": "Fester Hebel",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Ergreifen ab. Bis zum Beginn deines nächsten Zuges erhältst du einen Situationsbonus von +1 auf deinen Zähigkeits- und Reflex-SG gegen Versuche dieses Ziels, dich Fortzudrängen, Neu zu positionieren oder Zu Fall zu bringen."
+      },
+      "OpeningForTheTeam": {
+        "Title": "Öffnung für das Team",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Ergreifen ab. Der erste Verbündete außer dir, der vor Beginn deines nächsten Zuges versucht, dasselbe Ziel zu Ergreifen, Neu zu positionieren, Fortzudrängen oder Zu Fall zu bringen, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "OvercommittedHold": {
+        "Title": "Zu viel in den Griff gelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Ergreifen ab. Deine nächste Athletikprobe vor Ende deines nächsten Zuges erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "BreathLostInTheClinch": {
+        "Title": "Atem im Gerangel verloren",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Ergreifen ab. Das misslungene Gerangel bindet dich für einen Herzschlag; bis zum Beginn deines nächsten Zuges kannst du keine Reaktionen einsetzen."
+      },
+      "TechniqueLaidBare": {
+        "Title": "Technik offengelegt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Ergreifen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel und alle, die den Austausch genau beobachten, erkennen deutlich, wie du in den Griff gehen wolltest und wo dein Hebel versagte."
+      },
+      "CleanFollowThrough": {
+        "Title": "Sauber durchgezogen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Zu Fall bringen ab. Du darfst sofort als Freie Aktion bis zu 1,5 Meter Schritt ausführen, musst diesen Schritt aber angrenzend an das Ziel beenden."
+      },
+      "GroundedAdvantage": {
+        "Title": "Vorteil am Boden",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Zu Fall bringen ab. Deine nächste Probe zum Ergreifen oder Neu positionieren desselben Ziels vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "FootworkIntact": {
+        "Title": "Fester Stand",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Zu Fall bringen ab. Bis zum Beginn deines nächsten Zuges erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG gegen Versuche, dich Zu Fall zu bringen oder Neu zu positionieren."
+      },
+      "StanceCollapses": {
+        "Title": "Stand bricht zusammen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Zu Fall bringen ab. Bis zum Beginn deines nächsten Zuges erhältst du einen Situationsmalus von -1 auf Reflexwürfe und deinen Reflex-SG."
+      },
+      "RecoveryOutOfSequence": {
+        "Title": "Erholung in falscher Reihenfolge",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Zu Fall bringen ab. Falls du vor Ende deines nächsten Zuges Aufstehst, ist deine Bewegungsrate bis zum Ende des Zuges, in dem du aufstehst, um 1,5 Meter reduziert. Stehst du bis dahin nicht auf, endet diese Folge ohne zusätzlichen Effekt."
+      },
+      "SetupTelegraphsItself": {
+        "Title": "Ansatz verrät sich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Zu Fall bringen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Alle, die den Austausch genau beobachten, erkennen, wie du dem Ziel den Stand nehmen wolltest und an welcher Stelle dein Ansatz offensichtlich wurde."
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "PF2E_SKILLFUL_CONSEQUENCES": {
+    "Settings": {
+      "PhysicalActions": {
+        "Name": "Enable Physical Actions",
+        "Hint": "Enable Skillful Consequences cards for supported Athletics and Acrobatics actions."
+      },
+      "SocialActions": {
+        "Name": "Enable Social Actions",
+        "Hint": "Enable Skillful Consequences cards for supported social actions when this pack contains cards."
+      },
+      "SubterfugeActions": {
+        "Name": "Enable Subterfuge Actions",
+        "Hint": "Enable Skillful Consequences cards for supported Stealth and Thievery actions when this pack contains cards."
+      },
+      "KnowledgeUtility": {
+        "Name": "Enable Knowledge & Utility",
+        "Hint": "Enable Skillful Consequences cards for supported knowledge and utility actions when this pack contains cards."
+      }
+    },
+    "Notifications": {
+      "PackSelectionUpdated": "Skillful Consequences pack selection updated.",
+      "RegistrationFailed": "PF2E Critical Forge: Skillful Consequences could not register with Critical Forge."
+    },
+    "Packs": {
+      "PhysicalActions": {
+        "Title": "Skillful Consequences: Physical Actions",
+        "Description": "Action-specific critical successes and critical failures for Athletics and Acrobatics. The normal PF2e result is always resolved first."
+      },
+      "SocialActions": {
+        "Title": "Skillful Consequences: Social Actions",
+        "Description": "Reserved for action-specific consequences for Deception, Diplomacy, Intimidation, and Performance."
+      },
+      "SubterfugeActions": {
+        "Title": "Skillful Consequences: Subterfuge Actions",
+        "Description": "Reserved for action-specific consequences for Stealth and Thievery."
+      },
+      "KnowledgeUtility": {
+        "Title": "Skillful Consequences: Knowledge & Utility",
+        "Description": "Reserved for knowledge, medicine, crafting, survival, and other utility actions."
+      }
+    },
+    "Cards": {
+      "ReadTheStruggle": {
+        "Title": "Read the Struggle",
+        "Description": "Resolve the normal critical success for Grapple first. If the same target Escapes before the end of your next turn, your next Grapple check against that target before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "LockedInLeverage": {
+        "Title": "Locked-In Leverage",
+        "Description": "Resolve the normal critical success for Grapple first. Until the start of your next turn, you gain a +1 circumstance bonus to your Fortitude and Reflex DCs against attempts by that target to Shove, Reposition, or Trip you."
+      },
+      "OpeningForTheTeam": {
+        "Title": "Opening for the Team",
+        "Description": "Resolve the normal critical success for Grapple first. The first ally other than you who attempts to Grapple, Reposition, Shove, or Trip the same target before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "OvercommittedHold": {
+        "Title": "Overcommitted Hold",
+        "Description": "Resolve the normal critical failure for Grapple first. Your next Athletics check before the end of your next turn takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "BreathLostInTheClinch": {
+        "Title": "Breath Lost in the Clinch",
+        "Description": "Resolve the normal critical failure for Grapple first. The failed clinch leaves you committed for a heartbeat; you can't use reactions until the start of your next turn."
+      },
+      "TechniqueLaidBare": {
+        "Title": "Technique Laid Bare",
+        "Description": "Resolve the normal critical failure for Grapple first. There is no additional mechanical effect. The target and anyone closely observing the exchange can clearly see how you tried to enter the hold and where your leverage failed."
+      },
+      "CleanFollowThrough": {
+        "Title": "Clean Follow-Through",
+        "Description": "Resolve the normal critical success for Trip first. You may immediately Step up to 5 feet as a free action, but you must end this Step adjacent to the target."
+      },
+      "GroundedAdvantage": {
+        "Title": "Grounded Advantage",
+        "Description": "Resolve the normal critical success for Trip first. Your next Grapple or Reposition check against the same target before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "FootworkIntact": {
+        "Title": "Footwork Intact",
+        "Description": "Resolve the normal critical success for Trip first. Until the start of your next turn, you gain a +1 circumstance bonus to your Reflex DC against attempts to Trip or Reposition you."
+      },
+      "StanceCollapses": {
+        "Title": "Stance Collapses",
+        "Description": "Resolve the normal critical failure for Trip first. Until the start of your next turn, you take a -1 circumstance penalty to Reflex saves and Reflex DC."
+      },
+      "RecoveryOutOfSequence": {
+        "Title": "Recovery Out of Sequence",
+        "Description": "Resolve the normal critical failure for Trip first. If you Stand before the end of your next turn, your Speed is reduced by 5 feet until the end of the turn in which you Stand. If you don't Stand before then, this consequence ends with no additional effect."
+      },
+      "SetupTelegraphsItself": {
+        "Title": "Setup Telegraphs Itself",
+        "Description": "Resolve the normal critical failure for Trip first. There is no additional mechanical effect. Anyone closely watching the exchange can tell exactly how you tried to take the target's footing and where the setup became obvious."
+      }
+    }
+  }
+}
