@@ -28,29 +28,33 @@ test("narrow physical actions keep two-card density", () => {
   }
 });
 
-test("Deception I follows six-card frequent and four-card regular density", () => {
-  for (const action of ["feint", "lie"]) {
+test("frequent social actions keep six-card density", () => {
+  for (const action of ["feint", "lie", "gather-information", "demoralize"]) {
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 3, `${action} success density`);
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalFailure"), 3, `${action} failure density`);
   }
-  for (const action of ["create-a-diversion", "impersonate"]) {
+});
+
+test("regular social actions keep four-card density", () => {
+  for (const action of ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"]) {
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
     assert.equal(count(SOCIAL_ACTION_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
   }
 });
 
-test("Deception actions use varied consequence modes", () => {
+test("Diplomacy and Intimidation use varied consequence modes", () => {
   const byAction = (action) => SOCIAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
-  assert.equal(byAction("feint").some((card) => card.tags.includes("teamwork")), true);
-  assert.equal(byAction("feint").some((card) => card.tags.includes("movement")), true);
-  assert.equal(byAction("feint").some((card) => card.tags.includes("narrative")), true);
-  assert.equal(byAction("create-a-diversion").some((card) => card.tags.includes("teamwork")), true);
-  assert.equal(byAction("create-a-diversion").some((card) => card.tags.includes("stealth")), true);
-  assert.equal(byAction("create-a-diversion").some((card) => card.tags.includes("narrative")), true);
-  assert.equal(byAction("lie").some((card) => card.tags.includes("teamwork")), true);
-  assert.equal(byAction("lie").some((card) => card.tags.includes("same-story")), true);
-  assert.equal(byAction("lie").some((card) => card.tags.includes("narrative")), true);
-  assert.equal(byAction("impersonate").some((card) => card.tags.includes("information")), true);
-  assert.equal(byAction("impersonate").some((card) => card.tags.includes("recovery")), true);
-  assert.equal(byAction("impersonate").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("make-an-impression").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("make-an-impression").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("request").some((card) => card.tags.includes("information")), true);
+  assert.equal(byAction("request").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("gather-information").every((card) => card.tags.includes("secret-check")), true);
+  assert.equal(byAction("gather-information").some((card) => card.tags.includes("lead")), true);
+  assert.equal(byAction("gather-information").some((card) => card.tags.includes("misinformation")), true);
+  assert.equal(byAction("demoralize").some((card) => card.tags.includes("momentum")), true);
+  assert.equal(byAction("demoralize").some((card) => card.tags.includes("behavioral-tell")), true);
+  assert.equal(byAction("demoralize").some((card) => card.tags.includes("coerce")), true);
+  assert.equal(byAction("coerce").some((card) => card.tags.includes("information")), true);
+  assert.equal(byAction("coerce").some((card) => card.tags.includes("witnesses")), true);
+  assert.equal(byAction("coerce").some((card) => card.tags.includes("narrative")), true);
 });

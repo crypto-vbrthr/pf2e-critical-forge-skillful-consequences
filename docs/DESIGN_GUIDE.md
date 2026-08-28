@@ -45,3 +45,10 @@ Skillful Consequences focuses on the **action and its aftermath**.
 Social cards should create credibility, suspicion, attention, conversational follow-through, or useful fictional information without silently changing an NPC's attitude or granting knowledge the observer could not plausibly possess.
 
 A social critical failure may reveal which detail looked wrong when that information is visible from the failed exchange, but should not use the card to expose hidden GM information.
+
+
+## Secret social checks
+
+Actions with the `secret` trait need an additional presentation boundary. A card must not accidentally tell the player that the hidden roll critically failed.
+
+For **Gather Information**, critical-failure cards should therefore be GM-facing narrative tools. They may shape how misinformation spreads, who notices the inquiry, or how convincing the false lead appears, but they must not announce that the information is false. Critical Forge's default GM Blind visibility is the recommended presentation mode for these cards.

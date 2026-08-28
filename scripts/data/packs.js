@@ -37,8 +37,8 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       category: "social-actions",
       scope: "social-skill-action-critical-results",
       contentStatus: "development",
-      supportedActions: Object.freeze(["feint", "create-a-diversion", "lie", "impersonate"]),
-      implementedCards: 20
+      supportedActions: Object.freeze(["feint", "create-a-diversion", "lie", "impersonate", "make-an-impression", "request", "gather-information", "demoralize", "coerce"]),
+      implementedCards: 44
     })
   }),
   Object.freeze({

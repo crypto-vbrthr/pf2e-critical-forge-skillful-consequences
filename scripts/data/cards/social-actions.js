@@ -3,6 +3,8 @@ import { defineSkillActionCard } from "./card-factory.js";
 
 const SOCIAL_PACK = PACK_IDS.SOCIAL_ACTIONS;
 const DECEPTION = Object.freeze({ skillTypes: ["deception"] });
+const DIPLOMACY = Object.freeze({ skillTypes: ["diplomacy"] });
+const INTIMIDATION = Object.freeze({ skillTypes: ["intimidation"] });
 
 function defineDeception(options) {
   return defineSkillActionCard({
@@ -12,6 +14,32 @@ function defineDeception(options) {
     actionFamily: "deception",
     filters: {
       ...DECEPTION,
+      ...(options.filters ?? {})
+    }
+  });
+}
+
+function defineDiplomacy(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: SOCIAL_PACK,
+    collection: "social-actions",
+    actionFamily: "diplomacy",
+    filters: {
+      ...DIPLOMACY,
+      ...(options.filters ?? {})
+    }
+  });
+}
+
+function defineIntimidation(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: SOCIAL_PACK,
+    collection: "social-actions",
+    actionFamily: "intimidation",
+    filters: {
+      ...INTIMIDATION,
       ...(options.filters ?? {})
     }
   });
@@ -255,5 +283,297 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     tags: ["deception", "impersonate", "same-identity", "recovery", "brief-setback"],
     filters: { actionSlugs: ["impersonate"] },
     contentBatch: 5
+  }),
+
+  defineDiplomacy({
+    id: "make-an-impression-success-001-warm-introduction",
+    localizationKey: "WarmIntroduction",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Warm Introduction",
+    fallbackDescription: "Resolve the normal critical success for Make an Impression first. The first ally other than you who makes a Request of the same target during the current social interaction gains a +1 circumstance bonus to that check. The bonus then ends.",
+    tags: ["diplomacy", "make-an-impression", "teamwork", "request", "same-target", "one-use"],
+    filters: { actionSlugs: ["make-an-impression"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "make-an-impression-success-002-common-ground",
+    localizationKey: "CommonGround",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.15,
+    fallbackTitle: "Common Ground",
+    fallbackDescription: "Resolve the normal critical success for Make an Impression first. There is no additional mechanical effect. The GM identifies one minor preference, priority, concern, or conversational subject that genuinely helped the target warm to you, provided that detail could reasonably be inferred from the exchange.",
+    tags: ["diplomacy", "make-an-impression", "narrative", "social-read", "no-mechanical-effect"],
+    filters: { actionSlugs: ["make-an-impression"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "make-an-impression-failure-001-bad-first-read",
+    localizationKey: "BadFirstRead",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Bad First Read",
+    fallbackDescription: "Resolve the normal critical failure for Make an Impression first. Your next Make an Impression check against the same target during the current social interaction takes a -1 circumstance penalty. The penalty then ends.",
+    tags: ["diplomacy", "make-an-impression", "same-target", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["make-an-impression"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "make-an-impression-failure-002-the-room-notices",
+    localizationKey: "TheRoomNotices",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.15,
+    fallbackTitle: "The Room Notices",
+    fallbackDescription: "Resolve the normal critical failure for Make an Impression first. There is no additional mechanical effect. If another creature can meaningfully observe the interaction, it notices the moment the exchange turns against you. This does not automatically change that observer's attitude.",
+    tags: ["diplomacy", "make-an-impression", "narrative", "observers", "no-mechanical-effect"],
+    filters: { actionSlugs: ["make-an-impression"] },
+    contentBatch: 6
+  }),
+
+  defineDiplomacy({
+    id: "request-success-001-unasked-detail",
+    localizationKey: "UnaskedDetail",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Unasked Detail",
+    fallbackDescription: "Resolve the normal critical success for Request first. There is no additional mechanical effect. The target volunteers one minor practical detail, schedule, contact, limitation, or useful instruction relevant to fulfilling the request, if such a detail plausibly exists.",
+    tags: ["diplomacy", "request", "narrative", "information", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["request"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "request-success-002-favorable-momentum",
+    localizationKey: "FavorableMomentum",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Favorable Momentum",
+    fallbackDescription: "Resolve the normal critical success for Request first. The first ally other than you who makes a related Request of the same target within 10 minutes gains a +1 circumstance bonus to that check. The bonus then ends.",
+    tags: ["diplomacy", "request", "teamwork", "same-target", "related-request", "one-use"],
+    filters: { actionSlugs: ["request"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "request-failure-001-price-of-asking",
+    localizationKey: "PriceOfAsking",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Price of Asking",
+    fallbackDescription: "Resolve the normal critical failure for Request first. There is no additional mechanical effect. Your request makes one of your immediate priorities, needs, or pressures obvious to the target. The target can use that knowledge naturally, but gains no automatic attitude change or rules bonus from this card.",
+    tags: ["diplomacy", "request", "narrative", "revealed-priority", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["request"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "request-failure-002-ask-again-later",
+    localizationKey: "AskAgainLater",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Ask Again Later",
+    fallbackDescription: "Resolve the normal critical failure for Request first. Your next Request check against the same target within 1 hour takes a -1 circumstance penalty. The penalty then ends.",
+    tags: ["diplomacy", "request", "same-target", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["request"] },
+    contentBatch: 6
+  }),
+
+  defineDiplomacy({
+    id: "gather-information-success-001-best-lead-first",
+    localizationKey: "BestLeadFirst",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    fallbackTitle: "Best Lead First",
+    fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. Alongside the information normally gained, the GM identifies one promising person, place, group, or source that would be a sensible next lead, if the investigation has one.",
+    tags: ["diplomacy", "gather-information", "narrative", "information", "lead", "secret-check", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "gather-information-success-002-pattern-in-the-rumors",
+    localizationKey: "PatternInTheRumors",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    fallbackTitle: "Pattern in the Rumors",
+    fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. If plausible, the GM points out one connection, recurring detail, or meaningful contradiction between what you learned and information the group already possesses.",
+    tags: ["diplomacy", "gather-information", "narrative", "information", "connection", "secret-check", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "gather-information-success-003-familiar-face",
+    localizationKey: "FamiliarFace",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Familiar Face",
+    fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. One minor source involved in the search remembers you favorably enough to be approachable again later, subject to the fiction and the GM's judgment. This does not automatically improve an attitude step.",
+    tags: ["diplomacy", "gather-information", "narrative", "contact", "secret-check", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "gather-information-failure-001-questions-leave-a-wake",
+    localizationKey: "QuestionsLeaveAWake",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    fallbackTitle: "Questions Leave a Wake",
+    fallbackDescription: "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. The GM may decide that someone connected to the subject learns that questions are being asked. This consequence should remain GM-facing when Gather Information is rolled secretly and does not reveal whether any information gathered was true or false.",
+    tags: ["diplomacy", "gather-information", "narrative", "attention", "secret-check", "gm-facing", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "gather-information-failure-002-echo-chamber",
+    localizationKey: "EchoChamber",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    fallbackTitle: "Echo Chamber",
+    fallbackDescription: "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. When presenting the incorrect information required by the normal result, the GM may have a second plausible source repeat or reinforce one part of it. Keep this consequence GM-facing for a secret check.",
+    tags: ["diplomacy", "gather-information", "narrative", "misinformation", "secret-check", "gm-facing", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+  defineDiplomacy({
+    id: "gather-information-failure-003-wrong-thread-real-detail",
+    localizationKey: "WrongThreadRealDetail",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 0.9,
+    fallbackTitle: "Wrong Thread, Real Detail",
+    fallbackDescription: "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. The GM may embed one incidental true name, place, custom, or background detail inside the incorrect information, provided it does not expose the misinformation or negate the normal critical failure. Keep this consequence GM-facing for a secret check.",
+    tags: ["diplomacy", "gather-information", "narrative", "misinformation", "incidental-truth", "secret-check", "gm-facing", "no-mechanical-effect"],
+    filters: { actionSlugs: ["gather-information"] },
+    contentBatch: 6
+  }),
+
+  defineIntimidation({
+    id: "demoralize-success-001-voice-carries",
+    localizationKey: "VoiceCarries",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Voice Carries",
+    fallbackDescription: "Resolve the normal critical success for Demoralize first. Your next Demoralize check against a different creature before the end of your next turn gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["intimidation", "demoralize", "momentum", "different-target", "one-use"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "demoralize-success-002-panic-tells",
+    localizationKey: "PanicTells",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Panic Tells",
+    fallbackDescription: "Resolve the normal critical success for Demoralize first. There is no additional mechanical effect. If the target's behavior makes it plausible, the GM identifies one immediate thing it instinctively looks toward, guards, backs away from, or treats as a source of safety when fear takes hold.",
+    tags: ["intimidation", "demoralize", "narrative", "behavioral-tell", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "demoralize-success-003-controlled-threat",
+    localizationKey: "ControlledThreat",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Controlled Threat",
+    fallbackDescription: "Resolve the normal critical success for Demoralize first. If you later attempt to Coerce the same target within 10 minutes and the circumstances allow a Coerce check, you gain a +1 circumstance bonus to that check. The bonus then ends.",
+    tags: ["intimidation", "demoralize", "coerce", "same-target", "follow-up", "one-use"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "demoralize-failure-001-voice-cracks-at-the-edge",
+    localizationKey: "VoiceCracksAtTheEdge",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Voice Cracks at the Edge",
+    fallbackDescription: "Resolve the normal critical failure for Demoralize first. Your next Demoralize check against a different creature before the end of your next turn takes a -1 circumstance penalty. The penalty then ends.",
+    tags: ["intimidation", "demoralize", "different-target", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "demoralize-failure-002-measure-taken",
+    localizationKey: "MeasureTaken",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Measure Taken",
+    fallbackDescription: "Resolve the normal critical failure for Demoralize first. The target gains a +1 circumstance bonus to its Will DC against your next Coerce check within 10 minutes. The bonus then ends.",
+    tags: ["intimidation", "demoralize", "coerce", "same-target", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "demoralize-failure-003-threat-reveals-priority",
+    localizationKey: "ThreatRevealsPriority",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Threat Reveals Priority",
+    fallbackDescription: "Resolve the normal critical failure for Demoralize first. There is no additional mechanical effect. The target learns something about what you want, fear, protect, or consider important from the threat you chose to make. It gains no automatic rules bonus from this knowledge.",
+    tags: ["intimidation", "demoralize", "narrative", "revealed-priority", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["demoralize"] },
+    contentBatch: 6
+  }),
+
+  defineIntimidation({
+    id: "coerce-success-001-useful-specifics",
+    localizationKey: "UsefulSpecifics",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    fallbackTitle: "Useful Specifics",
+    fallbackDescription: "Resolve the normal critical success for Coerce first. There is no additional mechanical effect. If plausible, the target volunteers one minor practical detail, warning, route, schedule, or limitation that makes following your demand easier or less ambiguous.",
+    tags: ["intimidation", "coerce", "narrative", "information", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["coerce"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "coerce-success-002-reputation-precedes-you",
+    localizationKey: "ReputationPrecedesYou",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Reputation Precedes You",
+    fallbackDescription: "Resolve the normal critical success for Coerce first. The first Coerce check you make within 10 minutes against a different creature that meaningfully witnessed this exchange gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["intimidation", "coerce", "witnesses", "different-target", "one-use"],
+    filters: { actionSlugs: ["coerce"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "coerce-failure-001-threat-catalogued",
+    localizationKey: "ThreatCatalogued",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Threat Catalogued",
+    fallbackDescription: "Resolve the normal critical failure for Coerce first. There is no additional mechanical effect. The target can now describe the substance, style, and apparent intent of your threat with unusual clarity to anyone it later speaks with. This does not automatically change another creature's attitude.",
+    tags: ["intimidation", "coerce", "narrative", "reputation", "same-target", "no-mechanical-effect"],
+    filters: { actionSlugs: ["coerce"] },
+    contentBatch: 6
+  }),
+  defineIntimidation({
+    id: "coerce-failure-002-witnessed-defiance",
+    localizationKey: "WitnessedDefiance",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Witnessed Defiance",
+    fallbackDescription: "Resolve the normal critical failure for Coerce first. Your next Coerce check within 10 minutes against a different creature that meaningfully witnessed the failed attempt takes a -1 circumstance penalty. The penalty then ends.",
+    tags: ["intimidation", "coerce", "witnesses", "different-target", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["coerce"] },
+    contentBatch: 6
   })
 ]);

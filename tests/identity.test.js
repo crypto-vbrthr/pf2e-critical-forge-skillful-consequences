@@ -24,7 +24,7 @@ test("overlap review records the physical, social, and extension boundaries", ()
   const review = fs.readFileSync(path.join(root, "docs/OVERLAP_REVIEW.md"), "utf8");
   for (const phrase of [
     "Critical Forge Core", "Goblin Engineering", "Martial Consequences",
-    "Grapple", "Trip", "Tumble Through", "Feint", "Create a Diversion", "Lie", "Impersonate",
+    "Grapple", "Trip", "Tumble Through", "Feint", "Create a Diversion", "Lie", "Impersonate", "Make an Impression", "Request", "Gather Information", "Demoralize", "Coerce",
     "skillCheckCriticalSuccess", "skillCheckCriticalFailure"
   ]) {
     assert.match(review, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));

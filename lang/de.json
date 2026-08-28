@@ -328,6 +328,102 @@
       "RoleDrift": {
         "Title": "Rolle gerät ins Rutschen",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Imitieren ab. Deine nächste Probe für Imitieren mit derselben angenommenen Identität innerhalb von 10 Minuten erhält einen Situationsmalus von -1, sofern du nicht zuvor 1 Minute aufwendest, um Verkleidung, Manierismen oder Geschichte zu korrigieren. Nach einem der beiden Ereignisse endet diese Konsequenz."
+      },
+      "WarmIntroduction": {
+        "Title": "Warmer Einstieg",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Beeindrucken ab. Der erste Verbündete außer dir, der während der aktuellen gesellschaftlichen Interaktion dieselbe Kreatur um etwas erbittet, erhält einen Situationsbonus von +1 auf diesen Wurf. Danach endet der Bonus."
+      },
+      "CommonGround": {
+        "Title": "Gemeinsame Basis",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Beeindrucken ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der SL nennt eine kleine Vorliebe, Priorität, Sorge oder ein Gesprächsthema, das tatsächlich dazu beigetragen hat, dass das Ziel dir gegenüber aufgeschlossener wurde, sofern dies aus dem Gespräch vernünftig ableitbar ist."
+      },
+      "BadFirstRead": {
+        "Title": "Schlechter erster Eindruck",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Beeindrucken ab. Dein nächster Fertigkeitswurf zum Beeindrucken gegen dasselbe Ziel während der aktuellen gesellschaftlichen Interaktion erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "TheRoomNotices": {
+        "Title": "Der Raum bemerkt es",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Beeindrucken ab. Es gibt keinen zusätzlichen mechanischen Effekt. Kann eine andere Kreatur die Interaktion sinnvoll beobachten, bemerkt sie den Moment, in dem das Gespräch gegen dich kippt. Dadurch verändert sich ihre Einstellung nicht automatisch."
+      },
+      "UnaskedDetail": {
+        "Title": "Ungefragtes Detail",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Erbitten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel nennt freiwillig ein kleines praktisches Detail, einen Zeitplan, einen Kontakt, eine Einschränkung oder eine nützliche Anweisung, die für die Erfüllung der Bitte relevant ist, sofern so etwas plausibel existiert."
+      },
+      "FavorableMomentum": {
+        "Title": "Günstiger Schwung",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Erbitten ab. Der erste Verbündete außer dir, der innerhalb von 10 Minuten eine damit zusammenhängende Bitte an dasselbe Ziel richtet, erhält einen Situationsbonus von +1 auf diesen Wurf. Danach endet der Bonus."
+      },
+      "PriceOfAsking": {
+        "Title": "Preis der Bitte",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Erbitten ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine Bitte macht dem Ziel eine deiner unmittelbaren Prioritäten, Bedürfnisse oder Belastungen deutlich. Das Ziel kann dieses Wissen auf natürliche Weise nutzen, erhält durch diese Karte aber weder automatisch eine veränderte Einstellung noch einen Regelbonus."
+      },
+      "AskAgainLater": {
+        "Title": "Später noch einmal fragen",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Erbitten ab. Dein nächster Fertigkeitswurf zum Erbitten gegen dasselbe Ziel innerhalb von 1 Stunde erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "BestLeadFirst": {
+        "Title": "Die beste Spur zuerst",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Zusätzlich zu den normalerweise erhaltenen Informationen nennt der SL eine vielversprechende Person, einen Ort, eine Gruppe oder eine Quelle als sinnvolle nächste Spur, sofern die Nachforschungen eine solche hergeben."
+      },
+      "PatternInTheRumors": {
+        "Title": "Muster in den Gerüchten",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Sofern plausibel weist der SL auf eine Verbindung, ein wiederkehrendes Detail oder einen bedeutsamen Widerspruch zwischen dem Erfahrenen und Informationen hin, die der Gruppe bereits vorliegen."
+      },
+      "FamiliarFace": {
+        "Title": "Ein bekanntes Gesicht",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Eine unbedeutende Quelle aus den Nachforschungen erinnert sich so positiv an dich, dass sie später erneut ansprechbar ist, sofern dies zur Geschichte passt und der SL zustimmt. Dadurch verbessert sich ihre Einstellung nicht automatisch um eine Stufe."
+      },
+      "QuestionsLeaveAWake": {
+        "Title": "Fragen hinterlassen eine Spur",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der SL kann entscheiden, dass jemand mit Verbindung zum Thema erfährt, dass Fragen gestellt werden. Wird Informationen sammeln verdeckt gewürfelt, sollte diese Folge beim SL bleiben und nicht verraten, ob gesammelte Informationen wahr oder falsch waren."
+      },
+      "EchoChamber": {
+        "Title": "Echokammer",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn der SL die vom normalen Ergebnis verlangten falschen Informationen präsentiert, kann eine zweite plausible Quelle einen Teil davon wiederholen oder bestätigen. Bei einer verdeckten Probe sollte diese Folge beim SL bleiben."
+      },
+      "WrongThreadRealDetail": {
+        "Title": "Falsche Spur, echtes Detail",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Informationen sammeln ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der SL kann in die falschen Informationen einen beiläufigen echten Namen, Ort, Brauch oder Hintergrundaspekt einbauen, sofern dies die Fehlinformation nicht entlarvt oder den normalen Kritischen Fehlschlag aufhebt. Bei einer verdeckten Probe sollte diese Folge beim SL bleiben."
+      },
+      "VoiceCarries": {
+        "Title": "Die Stimme trägt",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Demoralisieren ab. Dein nächster Fertigkeitswurf zum Demoralisieren gegen eine andere Kreatur vor dem Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "PanicTells": {
+        "Title": "Panik verrät etwas",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Demoralisieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Wenn das Verhalten des Zieles dies plausibel macht, nennt der SL eine unmittelbare Sache, zu der es instinktiv blickt, die es schützt, vor der es zurückweicht oder die es als Sicherheit betrachtet, sobald die Furcht greift."
+      },
+      "ControlledThreat": {
+        "Title": "Kontrollierte Drohung",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Demoralisieren ab. Versuchst du innerhalb von 10 Minuten später, dasselbe Ziel zu Bedrängen, und erlauben die Umstände einen entsprechenden Wurf, erhältst du einen Situationsbonus von +1 darauf. Danach endet der Bonus."
+      },
+      "VoiceCracksAtTheEdge": {
+        "Title": "Die Stimme bricht",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Demoralisieren ab. Dein nächster Fertigkeitswurf zum Demoralisieren gegen eine andere Kreatur vor dem Ende deines nächsten Zuges erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "MeasureTaken": {
+        "Title": "Maß genommen",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Demoralisieren ab. Das Ziel erhält einen Situationsbonus von +1 auf seinen Willens-SG gegen deinen nächsten Fertigkeitswurf zum Bedrängen innerhalb von 10 Minuten. Danach endet der Bonus."
+      },
+      "ThreatRevealsPriority": {
+        "Title": "Drohung verrät Priorität",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Demoralisieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Aus der gewählten Drohung erfährt das Ziel etwas darüber, was du willst, fürchtest, schützt oder für wichtig hältst. Durch dieses Wissen erhält es keinen automatischen Regelbonus."
+      },
+      "UsefulSpecifics": {
+        "Title": "Nützliche Einzelheiten",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Bedrängen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Sofern plausibel nennt das Ziel freiwillig ein kleines praktisches Detail, eine Warnung, Route, einen Zeitplan oder eine Einschränkung, wodurch deine Forderung leichter oder eindeutiger zu erfüllen ist."
+      },
+      "ReputationPrecedesYou": {
+        "Title": "Dein Ruf eilt dir voraus",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Bedrängen ab. Dein erster Fertigkeitswurf zum Bedrängen innerhalb von 10 Minuten gegen eine andere Kreatur, die diese Begegnung deutlich mitbekommen hat, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "ThreatCatalogued": {
+        "Title": "Drohung katalogisiert",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Bedrängen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel kann Inhalt, Art und erkennbare Absicht deiner Drohung später ungewöhnlich genau gegenüber anderen beschreiben. Dadurch verändert sich die Einstellung einer anderen Kreatur nicht automatisch."
+      },
+      "WitnessedDefiance": {
+        "Title": "Beobachteter Widerstand",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Bedrängen ab. Dein nächster Fertigkeitswurf zum Bedrängen innerhalb von 10 Minuten gegen eine andere Kreatur, die den gescheiterten Versuch deutlich mitbekommen hat, erhält einen Situationsmalus von -1. Danach endet der Malus."
       }
     }
   }

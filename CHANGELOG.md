@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.6
+
+### Diplomacy & Intimidation
+
+- Added 24 Social Actions cards, bringing the module to 96 cards total.
+- Added Make an Impression with 2 critical-success and 2 critical-failure cards.
+- Added Request with 2 critical-success and 2 critical-failure cards.
+- Added Gather Information with 3 critical-success and 3 critical-failure cards.
+- Added Demoralize with 3 critical-success and 3 critical-failure cards.
+- Added Coerce with 2 critical-success and 2 critical-failure cards.
+- Added social follow-through for contacts, leads, observers, conversational momentum, revealed priorities, fear, and reputation without changing PF2e attitude steps or replacing normal action outcomes.
+- Marked Gather Information cards as secret-check content and kept critical-failure consequences explicitly GM-facing so they do not expose the action's hidden misinformation result.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for Diplomacy and Intimidation.
+- Expanded exact skill/action-family validation to all 44 Social Actions cards.
+- Expanded release checks to cover 96 total cards and the dev.6 density profile.
+- Updated the design guide, roadmap, and overlap review for secret social checks and the new action families.
+
 ## 0.1.0-dev.5
 
 ### Deception I

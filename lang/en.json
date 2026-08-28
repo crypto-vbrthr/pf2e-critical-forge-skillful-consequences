@@ -328,6 +328,102 @@
       "RoleDrift": {
         "Title": "Role Drift",
         "Description": "Resolve the normal critical failure for Impersonate first. Your next Impersonate check using the same assumed identity within 10 minutes takes a -1 circumstance penalty unless you first spend 1 minute correcting the disguise, mannerisms, or story. After either event, this consequence ends."
+      },
+      "WarmIntroduction": {
+        "Title": "Warm Introduction",
+        "Description": "Resolve the normal critical success for Make an Impression first. The first ally other than you who makes a Request of the same target during the current social interaction gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "CommonGround": {
+        "Title": "Common Ground",
+        "Description": "Resolve the normal critical success for Make an Impression first. There is no additional mechanical effect. The GM identifies one minor preference, priority, concern, or conversational subject that genuinely helped the target warm to you, provided that detail could reasonably be inferred from the exchange."
+      },
+      "BadFirstRead": {
+        "Title": "Bad First Read",
+        "Description": "Resolve the normal critical failure for Make an Impression first. Your next Make an Impression check against the same target during the current social interaction takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "TheRoomNotices": {
+        "Title": "The Room Notices",
+        "Description": "Resolve the normal critical failure for Make an Impression first. There is no additional mechanical effect. If another creature can meaningfully observe the interaction, it notices the moment the exchange turns against you. This does not automatically change that observer's attitude."
+      },
+      "UnaskedDetail": {
+        "Title": "Unasked Detail",
+        "Description": "Resolve the normal critical success for Request first. There is no additional mechanical effect. The target volunteers one minor practical detail, schedule, contact, limitation, or useful instruction relevant to fulfilling the request, if such a detail plausibly exists."
+      },
+      "FavorableMomentum": {
+        "Title": "Favorable Momentum",
+        "Description": "Resolve the normal critical success for Request first. The first ally other than you who makes a related Request of the same target within 10 minutes gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "PriceOfAsking": {
+        "Title": "Price of Asking",
+        "Description": "Resolve the normal critical failure for Request first. There is no additional mechanical effect. Your request makes one of your immediate priorities, needs, or pressures obvious to the target. The target can use that knowledge naturally, but gains no automatic attitude change or rules bonus from this card."
+      },
+      "AskAgainLater": {
+        "Title": "Ask Again Later",
+        "Description": "Resolve the normal critical failure for Request first. Your next Request check against the same target within 1 hour takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "BestLeadFirst": {
+        "Title": "Best Lead First",
+        "Description": "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. Alongside the information normally gained, the GM identifies one promising person, place, group, or source that would be a sensible next lead, if the investigation has one."
+      },
+      "PatternInTheRumors": {
+        "Title": "Pattern in the Rumors",
+        "Description": "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. If plausible, the GM points out one connection, recurring detail, or meaningful contradiction between what you learned and information the group already possesses."
+      },
+      "FamiliarFace": {
+        "Title": "Familiar Face",
+        "Description": "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. One minor source involved in the search remembers you favorably enough to be approachable again later, subject to the fiction and the GM's judgment. This does not automatically improve an attitude step."
+      },
+      "QuestionsLeaveAWake": {
+        "Title": "Questions Leave a Wake",
+        "Description": "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. The GM may decide that someone connected to the subject learns that questions are being asked. This consequence should remain GM-facing when Gather Information is rolled secretly and does not reveal whether any information gathered was true or false."
+      },
+      "EchoChamber": {
+        "Title": "Echo Chamber",
+        "Description": "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. When presenting the incorrect information required by the normal result, the GM may have a second plausible source repeat or reinforce one part of it. Keep this consequence GM-facing for a secret check."
+      },
+      "WrongThreadRealDetail": {
+        "Title": "Wrong Thread, Real Detail",
+        "Description": "Resolve the normal critical failure for Gather Information first. There is no additional mechanical effect. The GM may embed one incidental true name, place, custom, or background detail inside the incorrect information, provided it does not expose the misinformation or negate the normal critical failure. Keep this consequence GM-facing for a secret check."
+      },
+      "VoiceCarries": {
+        "Title": "Voice Carries",
+        "Description": "Resolve the normal critical success for Demoralize first. Your next Demoralize check against a different creature before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "PanicTells": {
+        "Title": "Panic Tells",
+        "Description": "Resolve the normal critical success for Demoralize first. There is no additional mechanical effect. If the target's behavior makes it plausible, the GM identifies one immediate thing it instinctively looks toward, guards, backs away from, or treats as a source of safety when fear takes hold."
+      },
+      "ControlledThreat": {
+        "Title": "Controlled Threat",
+        "Description": "Resolve the normal critical success for Demoralize first. If you later attempt to Coerce the same target within 10 minutes and the circumstances allow a Coerce check, you gain a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "VoiceCracksAtTheEdge": {
+        "Title": "Voice Cracks at the Edge",
+        "Description": "Resolve the normal critical failure for Demoralize first. Your next Demoralize check against a different creature before the end of your next turn takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "MeasureTaken": {
+        "Title": "Measure Taken",
+        "Description": "Resolve the normal critical failure for Demoralize first. The target gains a +1 circumstance bonus to its Will DC against your next Coerce check within 10 minutes. The bonus then ends."
+      },
+      "ThreatRevealsPriority": {
+        "Title": "Threat Reveals Priority",
+        "Description": "Resolve the normal critical failure for Demoralize first. There is no additional mechanical effect. The target learns something about what you want, fear, protect, or consider important from the threat you chose to make. It gains no automatic rules bonus from this knowledge."
+      },
+      "UsefulSpecifics": {
+        "Title": "Useful Specifics",
+        "Description": "Resolve the normal critical success for Coerce first. There is no additional mechanical effect. If plausible, the target volunteers one minor practical detail, warning, route, schedule, or limitation that makes following your demand easier or less ambiguous."
+      },
+      "ReputationPrecedesYou": {
+        "Title": "Reputation Precedes You",
+        "Description": "Resolve the normal critical success for Coerce first. The first Coerce check you make within 10 minutes against a different creature that meaningfully witnessed this exchange gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "ThreatCatalogued": {
+        "Title": "Threat Catalogued",
+        "Description": "Resolve the normal critical failure for Coerce first. There is no additional mechanical effect. The target can now describe the substance, style, and apparent intent of your threat with unusual clarity to anyone it later speaks with. This does not automatically change another creature's attitude."
+      },
+      "WitnessedDefiance": {
+        "Title": "Witnessed Defiance",
+        "Description": "Resolve the normal critical failure for Coerce first. Your next Coerce check within 10 minutes against a different creature that meaningfully witnessed the failed attempt takes a -1 circumstance penalty. The penalty then ends."
       }
     }
   }

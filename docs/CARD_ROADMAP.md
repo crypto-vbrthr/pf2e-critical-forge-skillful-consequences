@@ -51,9 +51,17 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Impersonate: 2 success + 2 failure
 - Total after block: **72 cards**
 
+### 0.1.0-dev.6 - Diplomacy & Intimidation
+
+- Make an Impression: 2 success + 2 failure
+- Request: 2 success + 2 failure
+- Gather Information: 3 success + 3 failure
+- Demoralize: 3 success + 3 failure
+- Coerce: 2 success + 2 failure
+- Total after block: **96 cards**
+
 ### Planned next blocks
 
-- Diplomacy & Intimidation
 - Stealth
 - Thievery
 - Medicine & Crafting

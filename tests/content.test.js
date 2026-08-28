@@ -9,17 +9,20 @@ const ATHLETICS_ACTIONS = new Set(["grapple", "trip", "shove", "reposition", "di
 const ACROBATICS_ACTIONS = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
 const PHYSICAL_ACTIONS = new Set([...ATHLETICS_ACTIONS, ...ACROBATICS_ACTIONS]);
 const DECEPTION_ACTIONS = new Set(["feint", "create-a-diversion", "lie", "impersonate"]);
+const DIPLOMACY_ACTIONS = new Set(["make-an-impression", "request", "gather-information"]);
+const INTIMIDATION_ACTIONS = new Set(["demoralize", "coerce"]);
+const SOCIAL_ACTIONS = new Set([...DECEPTION_ACTIONS, ...DIPLOMACY_ACTIONS, ...INTIMIDATION_ACTIONS]);
 const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS];
 
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("dev.5 contains seventy-two unique cards across Physical and Social Actions", () => {
+test("dev.6 contains ninety-six unique cards across Physical and Social Actions", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 52);
-  assert.equal(SOCIAL_ACTION_CARDS.length, 20);
-  assert.equal(ALL_CARDS.length, 72);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 72);
-  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 72);
+  assert.equal(SOCIAL_ACTION_CARDS.length, 44);
+  assert.equal(ALL_CARDS.length, 96);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 96);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.fallbackTitle)).size, 96);
 });
 
 test("physical actions retain their intended mini-deck density", () => {
@@ -43,14 +46,14 @@ test("physical actions retain their intended mini-deck density", () => {
   }
 });
 
-test("Deception I gives frequent and regular social actions real mini-decks", () => {
-  for (const slug of ["feint", "lie"]) {
+test("social actions follow frequent and regular mini-deck density", () => {
+  for (const slug of ["feint", "lie", "gather-information", "demoralize"]) {
     const cards = forAction(SOCIAL_ACTION_CARDS, slug);
     assert.equal(cards.length, 6, slug);
     assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 3, `${slug} success`);
     assert.equal(forOutcome(cards, "skillCheckCriticalFailure").length, 3, `${slug} failure`);
   }
-  for (const slug of ["create-a-diversion", "impersonate"]) {
+  for (const slug of ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"]) {
     const cards = forAction(SOCIAL_ACTION_CARDS, slug);
     assert.equal(cards.length, 4, slug);
     assert.equal(forOutcome(cards, "skillCheckCriticalSuccess").length, 2, `${slug} success`);
@@ -76,9 +79,11 @@ test("all current cards are exact skill-deck cards for their pack and skill fami
     assert.equal(card.packId, PACK_IDS.SOCIAL_ACTIONS);
     assert.equal(card.deckType, "skill");
     assert.equal(card.filters.actionSlugs.length, 1, card.id);
-    assert.equal(DECEPTION_ACTIONS.has(card.filters.actionSlugs[0]), true, card.id);
-    assert.deepEqual(card.filters.skillTypes, ["deception"], card.id);
-    assert.equal(card.metadata.actionFamily, "deception", card.id);
+    const action = card.filters.actionSlugs[0];
+    assert.equal(SOCIAL_ACTIONS.has(action), true, card.id);
+    const expectedSkill = DECEPTION_ACTIONS.has(action) ? "deception" : DIPLOMACY_ACTIONS.has(action) ? "diplomacy" : "intimidation";
+    assert.deepEqual(card.filters.skillTypes, [expectedSkill], card.id);
+    assert.equal(card.metadata.actionFamily, expectedSkill, card.id);
     assert.equal(card.effect, null, card.id);
     assert.equal(card.metadata.resolution, "manual", card.id);
     assert.equal(card.metadata.preservesCoreOutcome, true, card.id);
@@ -95,9 +100,22 @@ test("every card explicitly preserves the normal PF2e critical result", () => {
   }
 });
 
-test("Deception I avoids strong consequences and keeps narrative social outcomes in the mix", () => {
+test("social consequences avoid strong results and preserve narrative variety", () => {
   assert.equal(SOCIAL_ACTION_CARDS.some((card) => card.impact === "strong"), false);
-  assert.ok(SOCIAL_ACTION_CARDS.filter((card) => card.impact === "narrative").length >= 6);
+  assert.ok(SOCIAL_ACTION_CARDS.filter((card) => card.impact === "narrative").length >= 18);
+});
+
+test("Gather Information failure cards remain GM-facing secret-check narrative tools", () => {
+  const cards = forAction(SOCIAL_ACTION_CARDS, "gather-information");
+  assert.equal(cards.length, 6);
+  for (const card of cards) assert.equal(card.tags.includes("secret-check"), true, card.id);
+  const failures = forOutcome(cards, "skillCheckCriticalFailure");
+  assert.equal(failures.length, 3);
+  for (const card of failures) {
+    assert.equal(card.impact, "narrative", card.id);
+    assert.equal(card.tags.includes("gm-facing"), true, card.id);
+    assert.equal(card.tags.includes("no-mechanical-effect"), true, card.id);
+  }
 });
 
 test("pack topology exposes Physical and Social Actions while future families stay reserved", () => {
@@ -106,7 +124,7 @@ test("pack topology exposes Physical and Social Actions while future families st
   assert.equal(packs[0].enabled, true);
   assert.equal(packs[0].decks.skill.cards.length, 52);
   assert.equal(packs[1].enabled, true);
-  assert.equal(packs[1].decks.skill.cards.length, 20);
+  assert.equal(packs[1].decks.skill.cards.length, 44);
   assert.equal(packs[2].enabled, false);
   assert.equal(packs[2].decks.skill.cards.length, 0);
   assert.equal(packs[3].enabled, false);

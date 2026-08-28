@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.5**
+Version **0.1.0-dev.6**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,7 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.5` contains **72 cards** across two active packs.
+`0.1.0-dev.6` contains **96 cards** across two active packs.
 
 ### Physical Actions - 52 cards
 
@@ -35,14 +35,29 @@ Acrobatics:
 - Maneuver in Flight: 2 + 2
 - Squeeze: 1 + 1
 
-### Social Actions - Deception I - 20 cards
+### Social Actions - 44 cards
+
+Deception:
 
 - Feint: 3 critical-success + 3 critical-failure cards
 - Create a Diversion: 2 + 2
 - Lie: 3 + 3
 - Impersonate: 2 + 2
 
-The Deception block mixes tactical follow-through with social and narrative consequences. Feint can open a moment for an ally or shift the user's position, while Lie and Impersonate lean more strongly on credibility, suspicion, maintained stories, and useful fictional information. No card changes the normal degree-of-success result.
+Diplomacy:
+
+- Make an Impression: 2 + 2
+- Request: 2 + 2
+- Gather Information: 3 + 3
+
+Intimidation:
+
+- Demoralize: 3 + 3
+- Coerce: 2 + 2
+
+The Social Actions pack now covers Deception, Diplomacy, and Intimidation. Frequent actions such as Feint, Lie, Gather Information, and Demoralize receive six-card mini-decks, while the regular social actions receive four cards each. The consequences emphasize conversational momentum, observers, useful follow-up, revealed priorities, rumors, fear, and reputation without replacing the normal degree-of-success result.
+
+**Gather Information is a Secret action.** Its critical-failure cards are deliberately GM-facing and tagged `secret-check`. Critical Forge defaults to GM Blind card visibility; keeping a GM-only visibility mode is recommended whenever a secret action could otherwise reveal the hidden degree of success.
 
 ## Planned action density
 
