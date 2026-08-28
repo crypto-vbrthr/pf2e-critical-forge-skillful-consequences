@@ -11,7 +11,7 @@
       },
       "SubterfugeActions": {
         "Name": "Heimliche Handlungen aktivieren",
-        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen mit Heimlichkeit und Diebeskunst, sobald dieses Paket Karten enthält."
+        "Hint": "Aktiviert Skillful-Consequences-Karten für unterstützte Handlungen mit Heimlichkeit und Diebeskunst."
       },
       "KnowledgeUtility": {
         "Name": "Wissen & Nutzen aktivieren",
@@ -33,7 +33,7 @@
       },
       "SubterfugeActions": {
         "Title": "Skillful Consequences: Heimliche Handlungen",
-        "Description": "Reserviert für handlungsspezifische Folgen für Heimlichkeit und Diebeskunst."
+        "Description": "Handlungsspezifische Kritische Erfolge und Kritische Fehlschläge für unterstützte Handlungen mit Heimlichkeit und Diebeskunst. Das normale PF2e-Ergebnis wird immer zuerst abgewickelt."
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Wissen & Nutzen",
@@ -424,6 +424,70 @@
       "WitnessedDefiance": {
         "Title": "Beobachteter Widerstand",
         "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Bedrängen ab. Dein nächster Fertigkeitswurf zum Bedrängen innerhalb von 10 Minuten gegen eine andere Kreatur, die den gescheiterten Versuch deutlich mitbekommen hat, erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "ShadowedExit": {
+        "Title": "Schattenhafter Abgang",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Verbergen ab. Dein nächster Fertigkeitswurf zum Schleichen vor dem Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "SharedBlindSpot": {
+        "Title": "Gemeinsamer blinder Fleck",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Verbergen ab. Der erste Verbündete, der sich vor Beginn deines nächsten Zuges zu verbergen versucht und plausibel dieselbe Deckung, Tarnung oder Ablenkung nutzen kann, erhält einen Situationsbonus von +1 auf diesen Fertigkeitswurf. Danach endet der Bonus."
+      },
+      "EscapeRouteRead": {
+        "Title": "Fluchtweg erkannt",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Verbergen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Falls die unmittelbare Szene eine passende Möglichkeit bietet, weist der SL auf eine nahe Deckung, Tarnung, Schattenzone, Bewegung in einer Menge oder ein ähnliches Merkmal hin, das einen weiteren Versuch unterstützen könnte, ungesehen zu bleiben."
+      },
+      "CoverGivesYouAway": {
+        "Title": "Die Deckung verrät dich",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Verbergen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein relevanter Beobachter bemerkt den Winkel, die Silhouette, Bewegung, Spiegelung oder das gestörte Umgebungsmerkmal, das den Verbergungsversuch verraten hat. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "MovementBeforeStillness": {
+        "Title": "Bewegung vor der Ruhe",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Verbergen ab. Dein nächster Fertigkeitswurf zum Schleichen vor dem Ende deines nächsten Zuges erhält einen Situationsmalus von -1, weil die misslungene Vorbereitung deine Bewegung leichter vorhersehbar macht. Danach endet der Malus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "HidingHabitSpotted": {
+        "Title": "Verbergungsgewohnheit erkannt",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Verbergen ab. Dein nächster Fertigkeitswurf zum Verbergen innerhalb von 10 Minuten gegen dieselben relevanten Beobachter erhält einen Situationsmalus von -1. Danach endet der Malus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "QuietRhythm": {
+        "Title": "Leiser Rhythmus",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Schleichen ab. Dein nächster Fertigkeitswurf zum Schleichen vor dem Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "PathForAnother": {
+        "Title": "Pfad für einen Zweiten",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Schleichen ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges im Wesentlichen dieselbe Route entlangschleicht, erhält einen Situationsbonus von +1, sofern Route und Beobachter noch relevant sind. Danach endet der Bonus."
+      },
+      "PositionUnread": {
+        "Title": "Position nicht zu deuten",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Schleichen ab. Dein nächster Fertigkeitswurf zum Verbergen vor dem Ende deines nächsten Zuges erhält einen Situationsbonus von +1, sofern du deine neue Position weiterhin nutzen kannst, um die Beobachtung zu unterbrechen. Danach endet der Bonus."
+      },
+      "RouteBurned": {
+        "Title": "Route verbrannt",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Schleichen ab. Dein nächster Fertigkeitswurf zum Schleichen innerhalb von 1 Minute auf im Wesentlichen derselben Route gegen dieselben relevanten Beobachter erhält einen Situationsmalus von -1. Danach endet der Malus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "SoundCarriesAhead": {
+        "Title": "Das Geräusch eilt voraus",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Schleichen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein relevanter Beobachter kann aus Geräusch, Vibration, verschobenem Material oder der Bewegung, die dich verraten hat, etwas Plausibles über deine Bewegungsrichtung ableiten. Halte diese Folge bei einem geheimen Wurf zum Schleichen auf der SL-Seite."
+      },
+      "TrailTellsAStory": {
+        "Title": "Die Spur erzählt eine Geschichte",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Schleichen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine Bewegung hinterlässt eine kleine, aber plausible Spur, etwa gestörten Staub, einen verschobenen Gegenstand, eine Schramme, einen Geruch oder einen hängen gebliebenen Faden. Dadurch wird nicht automatisch mehr verraten, als der normale Kritische Fehlschlag ohnehin offenlegt. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "NaturalHidingPlace": {
+        "Title": "Natürliches Versteck",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Gegenstand verbergen ab. Dein nächster Fertigkeitswurf zum Gegenstand verbergen innerhalb von 10 Minuten im selben unmittelbaren Bereich erhält einen Situationsbonus von +1, sofern die Umgebung weiterhin ähnliche Versteckmöglichkeiten bietet. Danach endet der Bonus."
+      },
+      "MisdirectionLayer": {
+        "Title": "Zusätzliche Irreführung",
+        "Description": "Wickle zuerst den normalen Kritischen Erfolg für Gegenstand verbergen ab. Wenn eine Kreatur, die für den ursprünglichen Wurf relevant war, gezielt nach demselben Gegenstand sucht, bevor er bewegt wird, erhält ihr erster entsprechender Fertigkeitswurf zum Suchen einen Situationsmalus von -1, sofern deine Platzierung die Suche plausibel fehlleiten kann. Danach endet der Malus."
+      },
+      "ConcealmentHabitExposed": {
+        "Title": "Versteckmuster offengelegt",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Gegenstand verbergen ab. Dein nächster Fertigkeitswurf zum Gegenstand verbergen innerhalb von 10 Minuten gegen dieselben relevanten Beobachter erhält einen Situationsmalus von -1. Danach endet der Malus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
+      },
+      "HidingPlaceDrawsTheEye": {
+        "Title": "Das Versteck zieht Blicke an",
+        "Description": "Wickle zuerst den normalen Kritischen Fehlschlag für Gegenstand verbergen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Durch den misslungenen Versuch wirkt ein nahes Versteck, Behältnis, eine Falte, Tasche oder ein Teil der Umgebung für einen relevanten Beobachter verdächtig. Dadurch entsteht keine zusätzliche Entdeckung über das normale Ergebnis hinaus. Halte diese Folge bei einem geheimen Wurf auf der SL-Seite."
       }
     }
   }

@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.7
+
+### Stealth I
+
+- Added the first Subterfuge Actions content block with 16 Stealth cards, bringing the module to 112 cards total.
+- Added Hide with 3 critical-success and 3 critical-failure cards.
+- Added Sneak with 3 critical-success and 3 critical-failure cards.
+- Added Conceal an Object with 2 critical-success and 2 critical-failure cards.
+- Added stealth follow-through for routes, shared blind spots, cover, traces, observer awareness, and transitions between Hide and Sneak without replacing PF2e's normal detection results.
+- Marked every Stealth card as `secret-check` and `gm-facing` so Critical Forge can keep hidden degrees of success from leaking through card presentation.
+- Subterfuge Actions is now visible in module settings and enabled by default.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for frequent and regular Stealth actions.
+- Added exact Stealth skill/action-family validation for all 16 Subterfuge cards.
+- Added a release-check boundary for secret Stealth consequences.
+- Expanded release checks to cover 112 total cards and the dev.7 pack topology.
+- Updated the design guide, roadmap, and overlap review for secret Stealth checks.
+
 ## 0.1.0-dev.6
 
 ### Diplomacy & Intimidation

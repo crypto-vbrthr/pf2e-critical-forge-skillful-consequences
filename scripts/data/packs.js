@@ -1,6 +1,7 @@
 import { MODULE_ID, MODULE_VERSION, PACK_IDS, SETTING_KEYS } from "../constants.js";
 import { PHYSICAL_ACTION_CARDS } from "./cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "./cards/social-actions.js";
+import { SUBTERFUGE_ACTION_CARDS } from "./cards/subterfuge-actions.js";
 
 const EMPTY = Object.freeze([]);
 
@@ -46,17 +47,17 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "SubterfugeActions",
     id: PACK_IDS.SUBTERFUGE_ACTIONS,
     fallbackTitle: "Skillful Consequences: Subterfuge Actions",
-    fallbackDescription: "Reserved for action-specific consequences for Stealth and Thievery.",
-    cards: EMPTY,
-    defaultEnabled: false,
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Stealth and Thievery actions, with the normal PF2e result always resolved first.",
+    cards: SUBTERFUGE_ACTION_CARDS,
+    defaultEnabled: true,
     metadata: Object.freeze({
       theme: "skillful-consequences",
       family: "skillful-consequences",
       category: "subterfuge-actions",
       scope: "stealth-thievery-action-critical-results",
-      contentStatus: "planned",
-      supportedActions: Object.freeze([]),
-      implementedCards: 0
+      contentStatus: "development",
+      supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object"]),
+      implementedCards: 16
     })
   }),
   Object.freeze({

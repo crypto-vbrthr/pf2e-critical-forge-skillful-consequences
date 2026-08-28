@@ -10,11 +10,11 @@ A card may add a follow-up, opening, complication, clue, short modifier, movemen
 
 Cards should answer: **What is interesting about this exact action going exceptionally well or badly?**
 
-A generic `+1 to your next check` should be rare unless the follow-up is tightly tied to the same target, action family, or fictional situation.
+A generic `+1 to your next check` should be rare unless the follow-up is tightly tied to the same target, action family, route, observer group, or fictional situation.
 
 ## Mechanical weight
 
-For combat skill actions:
+For combat and exploration skill actions:
 
 - `narrative`: no additional mechanical effect;
 - `light`: small one-use modifier or narrow brief advantage/setback;
@@ -28,8 +28,24 @@ Frequent actions should generally receive six cards: three critical successes an
 A useful mix is:
 
 - one follow-up or setup card;
-- one positioning/defense/teamwork card;
+- one positioning, route, defense, or teamwork card;
 - one narrative or unusual card.
+
+## Secret checks
+
+Actions resolved secretly need a presentation boundary in addition to a mechanical boundary. A consequence card must not tell the player that a hidden roll critically succeeded or critically failed.
+
+For **Gather Information**, failure cards remain GM-facing narrative tools.
+
+For **Hide, Sneak, and Conceal an Object**, all current cards are tagged `secret-check` and `gm-facing`. GM Blind visibility is recommended. Short-lived modifiers can be tracked by the GM and applied to later secret checks without announcing the exact reason. Narrative consequences should reveal only information the character could plausibly observe, and only when doing so would not expose the hidden degree of success.
+
+A critical-failure Stealth card must never create extra automatic detection merely because a card was drawn. The normal PF2e result remains authoritative.
+
+## Social consequences
+
+Social cards should create credibility, suspicion, attention, conversational follow-through, or useful fictional information without silently changing an NPC's attitude or granting knowledge the observer could not plausibly possess.
+
+A social critical failure may reveal which detail looked wrong when that information is visible from the failed exchange, but should not use the card to expose hidden GM information.
 
 ## Other expansions
 
@@ -38,17 +54,3 @@ Skillful Consequences focuses on the **action and its aftermath**.
 - Goblin Engineering focuses on equipment developing problems or strange side effects.
 - Martial Consequences and other attack packs focus on weapon attacks and combat criticals.
 - The normal PF2e result remains authoritative in all cases.
-
-
-## Social consequences
-
-Social cards should create credibility, suspicion, attention, conversational follow-through, or useful fictional information without silently changing an NPC's attitude or granting knowledge the observer could not plausibly possess.
-
-A social critical failure may reveal which detail looked wrong when that information is visible from the failed exchange, but should not use the card to expose hidden GM information.
-
-
-## Secret social checks
-
-Actions with the `secret` trait need an additional presentation boundary. A card must not accidentally tell the player that the hidden roll critically failed.
-
-For **Gather Information**, critical-failure cards should therefore be GM-facing narrative tools. They may shape how misinformation spreads, who notices the inquiry, or how convincing the false lead appears, but they must not announce that the information is false. Critical Forge's default GM Blind visibility is the recommended presentation mode for these cards.

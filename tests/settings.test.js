@@ -14,8 +14,8 @@ test("registers four pack settings and only exposes packs that contain cards", (
     SETTING_KEYS.SUBTERFUGE_ACTIONS,
     SETTING_KEYS.KNOWLEDGE_UTILITY
   ]);
-  assert.deepEqual(registrations.map((entry) => entry.config.config), [true, true, false, false]);
-  assert.deepEqual(registrations.map((entry) => entry.config.default), [true, true, false, false]);
+  assert.deepEqual(registrations.map((entry) => entry.config.config), [true, true, true, false]);
+  assert.deepEqual(registrations.map((entry) => entry.config.default), [true, true, true, false]);
   for (const entry of registrations) {
     assert.equal(entry.moduleId, MODULE_ID);
     assert.equal(entry.config.scope, "world");
@@ -36,11 +36,11 @@ test("reads independent pack settings and falls back to development defaults", (
   const fallback = readPackSettings({ settings: { get: () => { throw new Error("not ready"); } } });
   assert.equal(fallback[SETTING_KEYS.PHYSICAL_ACTIONS], true);
   assert.equal(fallback[SETTING_KEYS.SOCIAL_ACTIONS], true);
-  assert.equal(fallback[SETTING_KEYS.SUBTERFUGE_ACTIONS], false);
+  assert.equal(fallback[SETTING_KEYS.SUBTERFUGE_ACTIONS], true);
   assert.equal(fallback[SETTING_KEYS.KNOWLEDGE_UTILITY], false);
 });
 
-test("reserved empty packs cannot be enabled by stale settings", () => {
+test("active packs honor settings while reserved empty packs cannot be enabled by stale settings", () => {
   const packs = buildSkillfulConsequencePacks({
     [SETTING_KEYS.PHYSICAL_ACTIONS]: true,
     [SETTING_KEYS.SOCIAL_ACTIONS]: true,
@@ -49,6 +49,6 @@ test("reserved empty packs cannot be enabled by stale settings", () => {
   });
   assert.equal(packs[0].enabled, true);
   assert.equal(packs[1].enabled, true);
-  assert.equal(packs[2].enabled, false);
+  assert.equal(packs[2].enabled, true);
   assert.equal(packs[3].enabled, false);
 });

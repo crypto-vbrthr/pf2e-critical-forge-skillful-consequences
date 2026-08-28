@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { PHYSICAL_ACTION_CARDS } from "../scripts/data/cards/physical-actions.js";
 import { SOCIAL_ACTION_CARDS } from "../scripts/data/cards/social-actions.js";
+import { SUBTERFUGE_ACTION_CARDS } from "../scripts/data/cards/subterfuge-actions.js";
 
 function count(cards, action, category) {
   return cards.filter((card) => card.filters.actionSlugs.includes(action) && card.category === category).length;
@@ -57,4 +58,27 @@ test("Diplomacy and Intimidation use varied consequence modes", () => {
   assert.equal(byAction("coerce").some((card) => card.tags.includes("information")), true);
   assert.equal(byAction("coerce").some((card) => card.tags.includes("witnesses")), true);
   assert.equal(byAction("coerce").some((card) => card.tags.includes("narrative")), true);
+});
+
+
+test("frequent Stealth actions keep six-card density", () => {
+  for (const action of ["hide", "sneak"]) {
+    assert.equal(count(SUBTERFUGE_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 3, `${action} success density`);
+    assert.equal(count(SUBTERFUGE_ACTION_CARDS, action, "skillCheckCriticalFailure"), 3, `${action} failure density`);
+  }
+});
+
+test("regular Stealth actions keep four-card density", () => {
+  assert.equal(count(SUBTERFUGE_ACTION_CARDS, "conceal-an-object", "skillCheckCriticalSuccess"), 2);
+  assert.equal(count(SUBTERFUGE_ACTION_CARDS, "conceal-an-object", "skillCheckCriticalFailure"), 2);
+});
+
+test("Stealth cards mix follow-up, teamwork, route, and narrative consequences", () => {
+  const byAction = (action) => SUBTERFUGE_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
+  assert.equal(byAction("hide").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("hide").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("sneak").some((card) => card.tags.includes("route")), true);
+  assert.equal(byAction("sneak").some((card) => card.tags.includes("trace")), true);
+  assert.equal(byAction("conceal-an-object").some((card) => card.tags.includes("seek")), true);
+  assert.equal(byAction("conceal-an-object").some((card) => card.tags.includes("narrative")), true);
 });

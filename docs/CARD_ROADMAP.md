@@ -60,9 +60,15 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Coerce: 2 success + 2 failure
 - Total after block: **96 cards**
 
+### 0.1.0-dev.7 - Stealth I
+
+- Hide: 3 success + 3 failure
+- Sneak: 3 success + 3 failure
+- Conceal an Object: 2 success + 2 failure
+- Total after block: **112 cards**
+
 ### Planned next blocks
 
-- Stealth
 - Thievery
 - Medicine & Crafting
 - Knowledge actions
@@ -76,4 +82,5 @@ Before a release candidate, every supported action will be checked for:
 2. repeated mechanics or near-duplicate prose;
 3. overlap with PF2e's normal degree-of-success result;
 4. overlap with other Critical Forge expansions;
-5. action-filter reliability in real PF2e chat contexts.
+5. action-filter reliability in real PF2e chat contexts;
+6. secret-check presentation where a visible card could reveal a hidden result.

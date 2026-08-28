@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.6**
+Version **0.1.0-dev.7**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,7 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.6` contains **96 cards** across two active packs.
+`0.1.0-dev.7` contains **112 cards** across three active packs.
 
 ### Physical Actions - 52 cards
 
@@ -55,9 +55,19 @@ Intimidation:
 - Demoralize: 3 + 3
 - Coerce: 2 + 2
 
-The Social Actions pack now covers Deception, Diplomacy, and Intimidation. Frequent actions such as Feint, Lie, Gather Information, and Demoralize receive six-card mini-decks, while the regular social actions receive four cards each. The consequences emphasize conversational momentum, observers, useful follow-up, revealed priorities, rumors, fear, and reputation without replacing the normal degree-of-success result.
+### Subterfuge Actions - 16 cards
 
-**Gather Information is a Secret action.** Its critical-failure cards are deliberately GM-facing and tagged `secret-check`. Critical Forge defaults to GM Blind card visibility; keeping a GM-only visibility mode is recommended whenever a secret action could otherwise reveal the hidden degree of success.
+Stealth:
+
+- Hide: 3 critical-success + 3 critical-failure cards
+- Sneak: 3 + 3
+- Conceal an Object: 2 + 2
+
+The first Subterfuge block emphasizes routes, cover, shared blind spots, traces, observer awareness, and follow-through between Hide and Sneak. It does not add extra detection beyond PF2e's normal result and it does not turn a failed secret check into public information.
+
+**Hide, Sneak, and Conceal an Object use secret checks.** All current Stealth cards are tagged `secret-check` and `gm-facing`. Critical Forge defaults to GM Blind card visibility; a GM-only visibility mode is strongly recommended so a card does not expose the hidden degree of success. Short modifiers can be tracked by the GM and applied to later secret checks without announcing why.
+
+**Gather Information is also a Secret action.** Its critical-failure cards are deliberately GM-facing and tagged `secret-check` for the same reason.
 
 ## Planned action density
 
@@ -68,7 +78,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Planned families include Diplomacy, Intimidation, Performance, Stealth, Thievery, Medicine, Crafting, knowledge actions, Survival, and selected utility actions.
+Planned families include Thievery, Medicine, Crafting, knowledge actions, Survival, Performance, and selected utility actions.
 
 ## Critical Forge requirements
 
@@ -91,7 +101,7 @@ The module reserves four thematic packs:
 - Subterfuge Actions
 - Knowledge & Utility
 
-Only packs that currently contain cards appear in Foundry's module settings. In this development release, **Physical Actions** and **Social Actions** are visible and enabled by default.
+Only packs that currently contain cards appear in Foundry's module settings. In this development release, **Physical Actions**, **Social Actions**, and **Subterfuge Actions** are visible and enabled by default.
 
 ## Design boundaries
 
@@ -99,7 +109,8 @@ Only packs that currently contain cards appear in Foundry's module settings. In 
 - The cards avoid replacing the base degree-of-success rules.
 - Repeated numeric modifiers are kept small and short-lived.
 - Narrative cards remain part of the mix so every draw does not become another modifier.
-- Action filters are specific. A Feint card cannot appear for a generic Deception check or a Lie.
+- Action filters are specific. A Hide card cannot appear for a generic Stealth check or a Sneak.
+- Secret actions are written so card presentation does not need to expose the hidden degree of success.
 - Social cards do not automatically change NPC attitudes, create conditions, or reveal knowledge an observer could not plausibly possess.
 - Equipment-centered failures remain the domain of Goblin Engineering where appropriate.
 

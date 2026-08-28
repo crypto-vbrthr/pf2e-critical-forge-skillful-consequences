@@ -11,7 +11,7 @@
       },
       "SubterfugeActions": {
         "Name": "Enable Subterfuge Actions",
-        "Hint": "Enable Skillful Consequences cards for supported Stealth and Thievery actions when this pack contains cards."
+        "Hint": "Enable Skillful Consequences cards for supported Stealth and Thievery actions."
       },
       "KnowledgeUtility": {
         "Name": "Enable Knowledge & Utility",
@@ -33,7 +33,7 @@
       },
       "SubterfugeActions": {
         "Title": "Skillful Consequences: Subterfuge Actions",
-        "Description": "Reserved for action-specific consequences for Stealth and Thievery."
+        "Description": "Action-specific critical successes and critical failures for supported Stealth and Thievery actions. The normal PF2e result is always resolved first."
       },
       "KnowledgeUtility": {
         "Title": "Skillful Consequences: Knowledge & Utility",
@@ -424,6 +424,70 @@
       "WitnessedDefiance": {
         "Title": "Witnessed Defiance",
         "Description": "Resolve the normal critical failure for Coerce first. Your next Coerce check within 10 minutes against a different creature that meaningfully witnessed the failed attempt takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "ShadowedExit": {
+        "Title": "Shadowed Exit",
+        "Description": "Resolve the normal critical success for Hide first. Your next Sneak check before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "SharedBlindSpot": {
+        "Title": "Shared Blind Spot",
+        "Description": "Resolve the normal critical success for Hide first. The first ally who attempts to Hide before the start of your next turn and can plausibly use the same cover, concealment, or distraction gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "EscapeRouteRead": {
+        "Title": "Escape Route Read",
+        "Description": "Resolve the normal critical success for Hide first. There is no additional mechanical effect. If the immediate scene offers one, the GM points out a nearby piece of cover, concealment, shadow, crowd movement, or similar feature that could plausibly support your next attempt to remain unseen."
+      },
+      "CoverGivesYouAway": {
+        "Title": "Cover Gives You Away",
+        "Description": "Resolve the normal critical failure for Hide first. There is no additional mechanical effect. One relevant observer notices the angle, silhouette, movement, reflection, or disturbed feature that betrayed the hiding attempt. Keep this consequence GM-facing when Hide is rolled secretly."
+      },
+      "MovementBeforeStillness": {
+        "Title": "Movement Before Stillness",
+        "Description": "Resolve the normal critical failure for Hide first. Your next Sneak check before the end of your next turn takes a -1 circumstance penalty because the failed setup has made your movement easier to anticipate. The penalty then ends. Keep this consequence GM-facing when the check is secret."
+      },
+      "HidingHabitSpotted": {
+        "Title": "Hiding Habit Spotted",
+        "Description": "Resolve the normal critical failure for Hide first. Your next Hide check within 10 minutes against any of the same relevant observers takes a -1 circumstance penalty. The penalty then ends. Keep this consequence GM-facing when the check is secret."
+      },
+      "QuietRhythm": {
+        "Title": "Quiet Rhythm",
+        "Description": "Resolve the normal critical success for Sneak first. Your next Sneak check before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "PathForAnother": {
+        "Title": "Path for Another",
+        "Description": "Resolve the normal critical success for Sneak first. The first ally who attempts to Sneak before the start of your next turn along substantially the same route gains a +1 circumstance bonus if the route and observers are still relevant. The bonus then ends."
+      },
+      "PositionUnread": {
+        "Title": "Position Unread",
+        "Description": "Resolve the normal critical success for Sneak first. Your next Hide check before the end of your next turn gains a +1 circumstance bonus if you can still use your new position to break observation. The bonus then ends."
+      },
+      "RouteBurned": {
+        "Title": "Route Burned",
+        "Description": "Resolve the normal critical failure for Sneak first. Your next Sneak check within 1 minute along substantially the same route against any of the same relevant observers takes a -1 circumstance penalty. The penalty then ends. Keep this consequence GM-facing when the check is secret."
+      },
+      "SoundCarriesAhead": {
+        "Title": "Sound Carries Ahead",
+        "Description": "Resolve the normal critical failure for Sneak first. There is no additional mechanical effect. A relevant observer can infer something plausible about your direction of travel from the sound, vibration, displaced material, or movement that exposed you. Keep this consequence GM-facing when Sneak is rolled secretly."
+      },
+      "TrailTellsAStory": {
+        "Title": "Trail Tells a Story",
+        "Description": "Resolve the normal critical failure for Sneak first. There is no additional mechanical effect. Your movement leaves a minor but plausible clue such as disturbed dust, a shifted object, a scuff, a scent, or a snagged thread. It does not automatically reveal more than the normal critical failure already does. Keep this consequence GM-facing for a secret check."
+      },
+      "NaturalHidingPlace": {
+        "Title": "Natural Hiding Place",
+        "Description": "Resolve the normal critical success for Conceal an Object first. Your next Conceal an Object check within 10 minutes in the same immediate area gains a +1 circumstance bonus if the surroundings still provide similar hiding opportunities. The bonus then ends."
+      },
+      "MisdirectionLayer": {
+        "Title": "Misdirection Layer",
+        "Description": "Resolve the normal critical success for Conceal an Object first. If a creature that was relevant to the original check specifically Seeks the same object before it is moved, its first such Seek check takes a -1 circumstance penalty if your placement can plausibly misdirect the search. The penalty then ends."
+      },
+      "ConcealmentHabitExposed": {
+        "Title": "Concealment Habit Exposed",
+        "Description": "Resolve the normal critical failure for Conceal an Object first. Your next Conceal an Object check within 10 minutes against any of the same relevant observers takes a -1 circumstance penalty. The penalty then ends. Keep this consequence GM-facing when the check is secret."
+      },
+      "HidingPlaceDrawsTheEye": {
+        "Title": "Hiding Place Draws the Eye",
+        "Description": "Resolve the normal critical failure for Conceal an Object first. There is no additional mechanical effect. The failed attempt makes one nearby hiding feature, container, fold, pocket, or piece of scenery look suspicious to a relevant observer. This does not create additional detection beyond the normal result. Keep this consequence GM-facing for a secret check."
       }
     }
   }
