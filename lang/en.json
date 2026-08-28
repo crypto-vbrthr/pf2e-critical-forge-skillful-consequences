@@ -29,7 +29,7 @@
       },
       "SocialActions": {
         "Title": "Skillful Consequences: Social Actions",
-        "Description": "Reserved for action-specific consequences for Deception, Diplomacy, Intimidation, and Performance."
+        "Description": "Action-specific critical successes and critical failures for supported Deception, Diplomacy, Intimidation, and Performance actions. The normal PF2e result is always resolved first."
       },
       "SubterfugeActions": {
         "Title": "Skillful Consequences: Subterfuge Actions",
@@ -248,6 +248,86 @@
       "WhatCaughtYou": {
         "Title": "What Caught You",
         "Description": "Resolve the normal critical failure for Squeeze first. There is no additional mechanical effect. Being stuck makes it obvious whether your posture, armor, pack, carried gear, or the shape of the passage caused the jam."
+      },
+      "SharedOpening": {
+        "Title": "Shared Opening",
+        "Description": "Resolve the normal critical success for Feint first. The first ally other than you who makes a melee Strike against the same target before the start of your next turn gains a +1 circumstance bonus to that attack roll. The bonus then ends."
+      },
+      "CleanPivot": {
+        "Title": "Clean Pivot",
+        "Description": "Resolve the normal critical success for Feint first. You may immediately Step up to 5 feet as a free action. This movement must leave you able to perceive the target and does not change the normal duration of the Feint result."
+      },
+      "ReadTheGuard": {
+        "Title": "Read the Guard",
+        "Description": "Resolve the normal critical success for Feint first. Your next Feint check against the same target before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "TellSpotted": {
+        "Title": "Tell Spotted",
+        "Description": "Resolve the normal critical failure for Feint first. The target gains a +1 circumstance bonus to its Perception DC against your next Feint before the end of your next turn. The bonus then ends."
+      },
+      "AttentionSnagged": {
+        "Title": "Attention Snagged",
+        "Description": "Resolve the normal critical failure for Feint first. Your next Create a Diversion or Hide check before the end of your next turn takes a -1 circumstance penalty because your failed deception has drawn attention to your movements. The penalty then ends."
+      },
+      "WrongAudience": {
+        "Title": "Wrong Audience",
+        "Description": "Resolve the normal critical failure for Feint first. There is no additional mechanical effect. Someone other than the target who can observe the exchange notices the tell, rhythm, or body language behind your deception and now knows what you were trying to sell."
+      },
+      "SharedDistraction": {
+        "Title": "Shared Distraction",
+        "Description": "Resolve the normal critical success for Create a Diversion first. The first ally who attempts to Hide before the start of your next turn and can plausibly exploit the same diversion gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "ExitCue": {
+        "Title": "Exit Cue",
+        "Description": "Resolve the normal critical success for Create a Diversion first. If you use the diversion to become Hidden, your first Sneak check before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "StoryTooSpecific": {
+        "Title": "Story Too Specific",
+        "Description": "Resolve the normal critical failure for Create a Diversion first. Your next Create a Diversion check against any of the same observers within 10 minutes takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "AttentionRedirected": {
+        "Title": "Attention Redirected",
+        "Description": "Resolve the normal critical failure for Create a Diversion first. There is no additional mechanical effect. The failed distraction makes the observers fixate on an unintended detail, person, sound, or part of the scene chosen by the GM; it does not undo the normal critical-failure result."
+      },
+      "ConsistentDetail": {
+        "Title": "Consistent Detail",
+        "Description": "Resolve the normal critical success for Lie first. Your next Deception check within 10 minutes to maintain, clarify, or extend the same lie gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "BorrowedCredibility": {
+        "Title": "Borrowed Credibility",
+        "Description": "Resolve the normal critical success for Lie first. The first ally who makes a Deception check within 10 minutes to reinforce the same story gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "SecondOrderBelief": {
+        "Title": "Second-Order Belief",
+        "Description": "Resolve the normal critical success for Lie first. There is no additional mechanical effect. The target draws one plausible additional conclusion from the lie beyond the exact statement you made. The GM chooses a conclusion consistent with what the target already knows; it may create an opportunity or a complication."
+      },
+      "LooseThread": {
+        "Title": "Loose Thread",
+        "Description": "Resolve the normal critical failure for Lie first. There is no additional mechanical effect. The target catches one specific inconsistency, omission, or detail that made the story fail. The GM should identify the point of suspicion without revealing information the target could not reasonably know."
+      },
+      "ContradictionCascade": {
+        "Title": "Contradiction Cascade",
+        "Description": "Resolve the normal critical failure for Lie first. Your next attempt to Lie to the same target about the same topic within 10 minutes takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "SuspicionSpreads": {
+        "Title": "Suspicion Spreads",
+        "Description": "Resolve the normal critical failure for Lie first. There is no additional mechanical effect. One nearby observer who can follow the conversation picks up on the target's skepticism and becomes wary of the same claim. This does not automatically change attitudes or impose a rules condition."
+      },
+      "MannerismLockedIn": {
+        "Title": "Mannerism Locked In",
+        "Description": "Resolve the normal critical success for Impersonate first. Your next Impersonate or Deception check within 10 minutes to maintain the same identity gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "BelievableRoutine": {
+        "Title": "Believable Routine",
+        "Description": "Resolve the normal critical success for Impersonate first. There is no additional mechanical effect. An observer treats your assumed role as ordinary enough to volunteer a minor contextual detail, expectation, name, or routine that someone in that role would plausibly know."
+      },
+      "DetailOutOfPlace": {
+        "Title": "Detail Out of Place",
+        "Description": "Resolve the normal critical failure for Impersonate first. There is no additional mechanical effect. The observer notices one concrete mismatch in voice, posture, clothing, manner, terminology, or local custom. The GM should reveal what looked wrong if the observer could reasonably make that judgment."
+      },
+      "RoleDrift": {
+        "Title": "Role Drift",
+        "Description": "Resolve the normal critical failure for Impersonate first. Your next Impersonate check using the same assumed identity within 10 minutes takes a -1 circumstance penalty unless you first spend 1 minute correcting the disguise, mannerisms, or story. After either event, this consequence ends."
       }
     }
   }

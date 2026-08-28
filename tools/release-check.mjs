@@ -4,12 +4,14 @@ import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILLFUL_PACK_CONFIGS, buildSkillfulConsequencePacks } from "../scripts/data/packs.js";
 import { PHYSICAL_ACTION_CARDS } from "../scripts/data/cards/physical-actions.js";
+import { SOCIAL_ACTION_CARDS } from "../scripts/data/cards/social-actions.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const allowDev = process.argv.includes("--allow-dev");
 const readJson = (path) => JSON.parse(readFileSync(join(root, path), "utf8"));
 const fail = (message) => { console.error(`RELEASE CHECK FAILED: ${message}`); process.exitCode = 1; };
 const pass = (message) => console.log(`✓ ${message}`);
+const allCards = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS];
 
 const manifest = readJson("module.json");
 const pkg = readJson("package.json");
@@ -59,39 +61,54 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 52) pass("development card inventory is 52");
-else fail(`expected 52 development cards, found ${PHYSICAL_ACTION_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 20 && allCards.length === 72) pass("development card inventory is 72 (52 physical + 20 social)");
+else fail(`expected 52 physical + 20 social cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length}`);
 
-if (new Set(PHYSICAL_ACTION_CARDS.map((card) => card.id)).size === 52 && new Set(PHYSICAL_ACTION_CARDS.map((card) => card.fallbackTitle)).size === 52) pass("all development card ids and fallback titles are unique");
+if (new Set(allCards.map((card) => card.id)).size === 72 && new Set(allCards.map((card) => card.fallbackTitle)).size === 72) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
-const densityMatches = (actions, successCount, failureCount) => actions.every((action) => {
-  const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
-  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === successCount
-    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === failureCount;
+const densityMatches = (cards, actions, successCount, failureCount) => actions.every((action) => {
+  const matches = cards.filter((card) => card.filters.actionSlugs.includes(action));
+  return matches.filter((card) => card.category === "skillCheckCriticalSuccess").length === successCount
+    && matches.filter((card) => card.category === "skillCheckCriticalFailure").length === failureCount;
 });
-const frequentDensityOk = densityMatches(["grapple", "trip", "tumble-through"], 3, 3);
-const regularDensityOk = densityMatches(["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"], 2, 2);
-const narrowDensityOk = densityMatches(["high-jump", "long-jump", "squeeze"], 1, 1);
-if (frequentDensityOk && regularDensityOk && narrowDensityOk) pass("Physical Actions density matches the dev.4 plan");
-else fail("action density does not match the dev.4 plan");
+const physicalDensityOk = densityMatches(PHYSICAL_ACTION_CARDS, ["grapple", "trip", "tumble-through"], 3, 3)
+  && densityMatches(PHYSICAL_ACTION_CARDS, ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"], 2, 2)
+  && densityMatches(PHYSICAL_ACTION_CARDS, ["high-jump", "long-jump", "squeeze"], 1, 1);
+const socialDensityOk = densityMatches(SOCIAL_ACTION_CARDS, ["feint", "lie"], 3, 3)
+  && densityMatches(SOCIAL_ACTION_CARDS, ["create-a-diversion", "impersonate"], 2, 2);
+if (physicalDensityOk && socialDensityOk) pass("Physical and Deception action density matches the dev.5 plan");
+else fail("action density does not match the dev.5 plan");
 
 const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
 const acrobaticsActions = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
-const skillFiltersOk = PHYSICAL_ACTION_CARDS.every((card) => {
+const physicalFiltersOk = PHYSICAL_ACTION_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
   if (athleticsActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "athletics" && card.metadata.actionFamily === "athletics";
   if (acrobaticsActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "acrobatics" && card.metadata.actionFamily === "acrobatics";
   return false;
 });
-if (skillFiltersOk) pass("Athletics and Acrobatics action filters are exact");
+const deceptionActions = new Set(["feint", "create-a-diversion", "lie", "impersonate"]);
+const socialFiltersOk = SOCIAL_ACTION_CARDS.every((card) => deceptionActions.has(card.filters.actionSlugs?.[0])
+  && card.filters.skillTypes?.length === 1
+  && card.filters.skillTypes[0] === "deception"
+  && card.metadata.actionFamily === "deception");
+if (physicalFiltersOk && socialFiltersOk) pass("Physical and Deception skill/action filters are exact");
 else fail("skill or action-family filter mismatch detected");
 
-if (SKILLFUL_PACK_CONFIGS.length === 4 && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52 && SKILLFUL_PACK_CONFIGS.slice(1).every((config) => config.metadata.implementedCards === 0)) pass("pack development metadata is consistent");
+if (allCards.every((card) => card.metadata.preservesCoreOutcome === true && card.effect === null && card.metadata.resolution === "manual")) pass("all cards preserve PF2e core outcomes and use manual resolution");
+else fail("a card violates the core-outcome or manual-resolution boundary");
+
+if (SKILLFUL_PACK_CONFIGS.length === 4
+  && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52
+  && SKILLFUL_PACK_CONFIGS[1].metadata.implementedCards === 20
+  && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 0
+  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 0) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();
-if (built.length === 4 && built[0].enabled && built[0].decks?.skill && built.slice(1).every((pack) => !pack.enabled)) pass("pack topology and development defaults are correct");
+if (built.length === 4 && built[0].enabled && built[1].enabled && !built[2].enabled && !built[3].enabled
+  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 20) pass("pack topology and development defaults are correct");
 else fail("pack topology or development defaults are incorrect");
 
 const forbiddenNames = new Set([".DS_Store", "Thumbs.db", ".env"]);

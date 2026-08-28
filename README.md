@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.4**
+Version **0.1.0-dev.5**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,28 +12,37 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.4` expands the **Physical Actions** pack to **52 cards** across Athletics and Acrobatics.
+`0.1.0-dev.5` contains **72 cards** across two active packs.
 
-Athletics remains at 36 cards:
+### Physical Actions - 52 cards
 
-- Grapple: 3 critical-success cards and 3 critical-failure cards
-- Trip: 3 critical-success cards and 3 critical-failure cards
-- Shove: 2 critical-success cards and 2 critical-failure cards
-- Reposition: 2 critical-success cards and 2 critical-failure cards
-- Disarm: 2 critical-success cards and 2 critical-failure cards
-- Climb: 2 critical-success cards and 2 critical-failure cards
-- Swim: 2 critical-success cards and 2 critical-failure cards
-- High Jump: 1 critical-success card and 1 critical-failure card
-- Long Jump: 1 critical-success card and 1 critical-failure card
+Athletics:
 
-Acrobatics adds 16 cards:
+- Grapple: 3 critical-success + 3 critical-failure cards
+- Trip: 3 + 3
+- Shove: 2 + 2
+- Reposition: 2 + 2
+- Disarm: 2 + 2
+- Climb: 2 + 2
+- Swim: 2 + 2
+- High Jump: 1 + 1
+- Long Jump: 1 + 1
 
-- Balance: 2 critical-success cards and 2 critical-failure cards
-- Tumble Through: 3 critical-success cards and 3 critical-failure cards
-- Maneuver in Flight: 2 critical-success cards and 2 critical-failure cards
-- Squeeze: 1 critical-success card and 1 critical-failure card
+Acrobatics:
 
-Frequent actions use six-card mini-decks, regular actions use four-card mini-decks, and narrow exploration actions begin at 1 + 1. Acrobatics critical failures that already carry severe PF2e consequences remain deliberately light or narrative.
+- Balance: 2 + 2
+- Tumble Through: 3 + 3
+- Maneuver in Flight: 2 + 2
+- Squeeze: 1 + 1
+
+### Social Actions - Deception I - 20 cards
+
+- Feint: 3 critical-success + 3 critical-failure cards
+- Create a Diversion: 2 + 2
+- Lie: 3 + 3
+- Impersonate: 2 + 2
+
+The Deception block mixes tactical follow-through with social and narrative consequences. Feint can open a moment for an ally or shift the user's position, while Lie and Impersonate lean more strongly on credibility, suspicion, maintained stories, and useful fictional information. No card changes the normal degree-of-success result.
 
 ## Planned action density
 
@@ -44,7 +53,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions should receive at least 1 + 1 card.
 - Actions are only added when their critical result can support a meaningful additional consequence.
 
-Planned families include Acrobatics, Deception, Diplomacy, Intimidation, Performance, Stealth, Thievery, Medicine, Crafting, knowledge actions, Survival, and selected utility actions.
+Planned families include Diplomacy, Intimidation, Performance, Stealth, Thievery, Medicine, Crafting, knowledge actions, Survival, and selected utility actions.
 
 ## Critical Forge requirements
 
@@ -67,7 +76,7 @@ The module reserves four thematic packs:
 - Subterfuge Actions
 - Knowledge & Utility
 
-Only packs that currently contain cards appear in Foundry's module settings. In this development release, only **Physical Actions** is visible and enabled by default.
+Only packs that currently contain cards appear in Foundry's module settings. In this development release, **Physical Actions** and **Social Actions** are visible and enabled by default.
 
 ## Design boundaries
 
@@ -75,7 +84,8 @@ Only packs that currently contain cards appear in Foundry's module settings. In 
 - The cards avoid replacing the base degree-of-success rules.
 - Repeated numeric modifiers are kept small and short-lived.
 - Narrative cards remain part of the mix so every draw does not become another modifier.
-- Action filters are specific. A Shove or Disarm card cannot appear for an unrelated Athletics check.
+- Action filters are specific. A Feint card cannot appear for a generic Deception check or a Lie.
+- Social cards do not automatically change NPC attitudes, create conditions, or reveal knowledge an observer could not plausibly possess.
 - Equipment-centered failures remain the domain of Goblin Engineering where appropriate.
 
 See `docs/CARD_ROADMAP.md` and `docs/DESIGN_GUIDE.md` for the development plan.

@@ -1,5 +1,6 @@
 import { MODULE_ID, MODULE_VERSION, PACK_IDS, SETTING_KEYS } from "../constants.js";
 import { PHYSICAL_ACTION_CARDS } from "./cards/physical-actions.js";
+import { SOCIAL_ACTION_CARDS } from "./cards/social-actions.js";
 
 const EMPTY = Object.freeze([]);
 
@@ -27,17 +28,17 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "SocialActions",
     id: PACK_IDS.SOCIAL_ACTIONS,
     fallbackTitle: "Skillful Consequences: Social Actions",
-    fallbackDescription: "Reserved for action-specific consequences for Deception, Diplomacy, Intimidation, and Performance.",
-    cards: EMPTY,
-    defaultEnabled: false,
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Deception, Diplomacy, Intimidation, and Performance actions, with the normal PF2e result always resolved first.",
+    cards: SOCIAL_ACTION_CARDS,
+    defaultEnabled: true,
     metadata: Object.freeze({
       theme: "skillful-consequences",
       family: "skillful-consequences",
       category: "social-actions",
       scope: "social-skill-action-critical-results",
-      contentStatus: "planned",
-      supportedActions: Object.freeze([]),
-      implementedCards: 0
+      contentStatus: "development",
+      supportedActions: Object.freeze(["feint", "create-a-diversion", "lie", "impersonate"]),
+      implementedCards: 20
     })
   }),
   Object.freeze({

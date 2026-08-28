@@ -29,7 +29,7 @@
       },
       "SocialActions": {
         "Title": "Skillful Consequences: Soziale Handlungen",
-        "Description": "Reserviert für handlungsspezifische Folgen für Täuschung, Diplomatie, Einschüchtern und Darbietung."
+        "Description": "Handlungsspezifische Folgen kritischer Erfolge und kritischer Fehlschläge für unterstützte Aktionen aus Täuschung, Diplomatie, Einschüchtern und Darbietung. Das normale PF2e-Ergebnis wird immer zuerst abgewickelt."
       },
       "SubterfugeActions": {
         "Title": "Skillful Consequences: Heimliche Handlungen",
@@ -248,6 +248,86 @@
       "WhatCaughtYou": {
         "Title": "Was dich festhält",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Hindurchzwängen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Dass du feststeckst, macht deutlich, ob deine Haltung, Rüstung, dein Rucksack, getragene Ausrüstung oder die Form der Engstelle die Ursache ist."
+      },
+      "SharedOpening": {
+        "Title": "Gemeinsame Öffnung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Finte ab. Der erste Verbündete außer dir, der vor Beginn deines nächsten Zuges einen Nahkampf-Angriff gegen dasselbe Ziel ausführt, erhält einen Situationsbonus von +1 auf diesen Angriffswurf. Danach endet der Bonus."
+      },
+      "CleanPivot": {
+        "Title": "Saubere Drehung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Finte ab. Du darfst dich sofort als Freie Aktion um bis zu 1,50 m mit einem Schritt bewegen. Nach der Bewegung musst du das Ziel weiterhin wahrnehmen können; die normale Wirkungsdauer der Finte ändert sich nicht."
+      },
+      "ReadTheGuard": {
+        "Title": "Deckung gelesen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Finte ab. Deine nächste Finte gegen dasselbe Ziel vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "TellSpotted": {
+        "Title": "Verräterisches Zeichen erkannt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Finte ab. Das Ziel erhält bis Ende deines nächsten Zuges einen Situationsbonus von +1 auf seinen Wahrnehmungs-SG gegen deine nächste Finte. Danach endet der Bonus."
+      },
+      "AttentionSnagged": {
+        "Title": "Aufmerksamkeit bleibt hängen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Finte ab. Deine nächste Probe für Ablenkung erzeugen oder Verstecken vor Ende deines nächsten Zuges erhält einen Situationsmalus von -1, weil deine misslungene Täuschung Aufmerksamkeit auf deine Bewegungen gelenkt hat. Danach endet der Malus."
+      },
+      "WrongAudience": {
+        "Title": "Falsches Publikum",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Finte ab. Es gibt keinen zusätzlichen mechanischen Effekt. Jemand außer dem Ziel, der den Austausch beobachten kann, erkennt das verräterische Muster, den Rhythmus oder die Körpersprache hinter deiner Täuschung und versteht nun, was du vortäuschen wolltest."
+      },
+      "SharedDistraction": {
+        "Title": "Geteilte Ablenkung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Ablenkung erzeugen ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges versucht sich zu verstecken und dieselbe Ablenkung plausibel nutzen kann, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "ExitCue": {
+        "Title": "Zeichen zum Abtauchen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Ablenkung erzeugen ab. Falls du die Ablenkung nutzt, um verborgen zu werden, erhält deine erste Schleichen-Probe vor Ende deines nächsten Zuges einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "StoryTooSpecific": {
+        "Title": "Geschichte zu genau",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Ablenkung erzeugen ab. Deine nächste Probe für Ablenkung erzeugen gegen einen der gleichen Beobachter innerhalb von 10 Minuten erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "AttentionRedirected": {
+        "Title": "Aufmerksamkeit fehlgeleitet",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Ablenkung erzeugen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die misslungene Ablenkung lässt die Beobachter auf ein unbeabsichtigtes Detail, eine Person, ein Geräusch oder einen Teil der Szene fixieren, den der SL bestimmt; das normale Ergebnis des kritischen Fehlschlags bleibt bestehen."
+      },
+      "ConsistentDetail": {
+        "Title": "Stimmiges Detail",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Lügen ab. Deine nächste Täuschungsprobe innerhalb von 10 Minuten, mit der du dieselbe Lüge aufrechterhältst, erläuterst oder erweiterst, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "BorrowedCredibility": {
+        "Title": "Geliehene Glaubwürdigkeit",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Lügen ab. Der erste Verbündete, der innerhalb von 10 Minuten mit einer Täuschungsprobe dieselbe Geschichte stützt, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "SecondOrderBelief": {
+        "Title": "Schlussfolgerung zweiter Ordnung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Lügen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel zieht aus der Lüge eine zusätzliche plausible Schlussfolgerung, die über deine genaue Aussage hinausgeht. Der SL wählt eine Schlussfolgerung, die zum bisherigen Wissen des Ziels passt; daraus kann sich eine Gelegenheit oder eine Komplikation ergeben."
+      },
+      "LooseThread": {
+        "Title": "Loser Faden",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Lügen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das Ziel bemerkt einen konkreten Widerspruch, eine Auslassung oder ein Detail, an dem die Geschichte scheitert. Der SL sollte den Punkt des Misstrauens benennen, ohne Wissen preiszugeben, das das Ziel vernünftigerweise nicht besitzen kann."
+      },
+      "ContradictionCascade": {
+        "Title": "Kaskade der Widersprüche",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Lügen ab. Dein nächster Versuch, dasselbe Ziel innerhalb von 10 Minuten zum selben Thema anzulügen, erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "SuspicionSpreads": {
+        "Title": "Misstrauen greift über",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Lügen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein naher Beobachter, der dem Gespräch folgen kann, bemerkt die Skepsis des Ziels und wird gegenüber derselben Behauptung ebenfalls vorsichtig. Dadurch ändern sich nicht automatisch Einstellungen und es entsteht kein regeltechnischer Zustand."
+      },
+      "MannerismLockedIn": {
+        "Title": "Manier sitzt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Imitieren ab. Deine nächste Probe für Imitieren oder Täuschung innerhalb von 10 Minuten, mit der du dieselbe Identität aufrechterhältst, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "BelievableRoutine": {
+        "Title": "Glaubhafte Routine",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Imitieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Ein Beobachter hält deine angenommene Rolle für so selbstverständlich, dass er beiläufig ein kleines Kontextdetail, eine Erwartung, einen Namen oder eine Routine erwähnt, die jemand in dieser Rolle plausibel kennen würde."
+      },
+      "DetailOutOfPlace": {
+        "Title": "Unpassendes Detail",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Imitieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der Beobachter bemerkt eine konkrete Unstimmigkeit bei Stimme, Haltung, Kleidung, Benehmen, Wortwahl oder örtlicher Gepflogenheit. Der SL sollte offenlegen, was falsch wirkte, sofern der Beobachter dies vernünftigerweise beurteilen kann."
+      },
+      "RoleDrift": {
+        "Title": "Rolle gerät ins Rutschen",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Imitieren ab. Deine nächste Probe für Imitieren mit derselben angenommenen Identität innerhalb von 10 Minuten erhält einen Situationsmalus von -1, sofern du nicht zuvor 1 Minute aufwendest, um Verkleidung, Manierismen oder Geschichte zu korrigieren. Nach einem der beiden Ereignisse endet diese Konsequenz."
       }
     }
   }

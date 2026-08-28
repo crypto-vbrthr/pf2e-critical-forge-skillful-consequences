@@ -38,3 +38,10 @@ Skillful Consequences focuses on the **action and its aftermath**.
 - Goblin Engineering focuses on equipment developing problems or strange side effects.
 - Martial Consequences and other attack packs focus on weapon attacks and combat criticals.
 - The normal PF2e result remains authoritative in all cases.
+
+
+## Social consequences
+
+Social cards should create credibility, suspicion, attention, conversational follow-through, or useful fictional information without silently changing an NPC's attitude or granting knowledge the observer could not plausibly possess.
+
+A social critical failure may reveal which detail looked wrong when that information is visible from the failed exchange, but should not use the card to expose hidden GM information.

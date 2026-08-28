@@ -25,7 +25,7 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Shove: 2 success + 2 failure
 - Reposition: 2 success + 2 failure
 - Disarm: 2 success + 2 failure
-- Current total: **24 cards**
+- Total after block: **24 cards**
 
 ### 0.1.0-dev.3 - Athletics III
 
@@ -33,7 +33,7 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Swim: 2 success + 2 failure
 - High Jump: 1 success + 1 failure
 - Long Jump: 1 success + 1 failure
-- Current total: **36 cards**
+- Total after block: **36 cards**
 
 ### 0.1.0-dev.4 - Acrobatics I
 
@@ -41,12 +41,20 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Tumble Through: 3 success + 3 failure
 - Maneuver in Flight: 2 success + 2 failure
 - Squeeze: 1 success + 1 failure
-- Current total: **52 cards**
+- Total after block: **52 cards**
+
+### 0.1.0-dev.5 - Deception I
+
+- Feint: 3 success + 3 failure
+- Create a Diversion: 2 success + 2 failure
+- Lie: 3 success + 3 failure
+- Impersonate: 2 success + 2 failure
+- Total after block: **72 cards**
 
 ### Planned next blocks
 
-- Deception & Stealth
 - Diplomacy & Intimidation
+- Stealth
 - Thievery
 - Medicine & Crafting
 - Knowledge actions

@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.5
+
+### Deception I
+
+- Added the first Social Actions content pack with 20 Deception cards.
+- Added Feint with 3 critical-success and 3 critical-failure cards.
+- Added Create a Diversion with 2 critical-success and 2 critical-failure cards.
+- Added Lie with 3 critical-success and 3 critical-failure cards.
+- Added Impersonate with 2 critical-success and 2 critical-failure cards.
+- Added tactical Feint follow-through, shared distractions, maintained-story consequences, suspicion outcomes, and assumed-identity follow-through without replacing PF2e's normal degree-of-success results.
+- Social Actions is now visible in module settings and enabled by default.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests for frequent and regular Deception actions.
+- Expanded release checks to cover 72 total cards across Physical and Social Actions.
+- Added exact Deception skill/action-filter checks and pack-topology checks.
+- Updated the design guide, roadmap, and overlap review for social consequences.
+
 ## 0.1.0-dev.4
 
 ### Acrobatics I
