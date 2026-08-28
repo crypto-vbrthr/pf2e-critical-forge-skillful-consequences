@@ -35,9 +35,16 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Long Jump: 1 success + 1 failure
 - Current total: **36 cards**
 
+### 0.1.0-dev.4 - Acrobatics I
+
+- Balance: 2 success + 2 failure
+- Tumble Through: 3 success + 3 failure
+- Maneuver in Flight: 2 success + 2 failure
+- Squeeze: 1 success + 1 failure
+- Current total: **52 cards**
+
 ### Planned next blocks
 
-- Acrobatics: Balance, Tumble Through, Maneuver in Flight, Squeeze
 - Deception & Stealth
 - Diplomacy & Intimidation
 - Thievery

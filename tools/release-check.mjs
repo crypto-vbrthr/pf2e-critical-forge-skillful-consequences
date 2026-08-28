@@ -59,31 +59,35 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 36) pass("development card inventory is 36");
-else fail(`expected 36 development cards, found ${PHYSICAL_ACTION_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 52) pass("development card inventory is 52");
+else fail(`expected 52 development cards, found ${PHYSICAL_ACTION_CARDS.length}`);
 
-if (new Set(PHYSICAL_ACTION_CARDS.map((card) => card.id)).size === 36 && new Set(PHYSICAL_ACTION_CARDS.map((card) => card.fallbackTitle)).size === 36) pass("all development card ids and fallback titles are unique");
+if (new Set(PHYSICAL_ACTION_CARDS.map((card) => card.id)).size === 52 && new Set(PHYSICAL_ACTION_CARDS.map((card) => card.fallbackTitle)).size === 52) pass("all development card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
-const frequentDensityOk = ["grapple", "trip"].every((action) => {
+const densityMatches = (actions, successCount, failureCount) => actions.every((action) => {
   const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
-  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === 3
-    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === 3;
+  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === successCount
+    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === failureCount;
 });
-const regularDensityOk = ["shove", "reposition", "disarm", "climb", "swim"].every((action) => {
-  const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
-  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === 2
-    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === 2;
-});
-const narrowDensityOk = ["high-jump", "long-jump"].every((action) => {
-  const cards = PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
-  return cards.filter((card) => card.category === "skillCheckCriticalSuccess").length === 1
-    && cards.filter((card) => card.category === "skillCheckCriticalFailure").length === 1;
-});
-if (frequentDensityOk && regularDensityOk && narrowDensityOk) pass("Athletics action density matches the dev.3 plan");
-else fail("action density does not match the dev.3 plan");
+const frequentDensityOk = densityMatches(["grapple", "trip", "tumble-through"], 3, 3);
+const regularDensityOk = densityMatches(["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"], 2, 2);
+const narrowDensityOk = densityMatches(["high-jump", "long-jump", "squeeze"], 1, 1);
+if (frequentDensityOk && regularDensityOk && narrowDensityOk) pass("Physical Actions density matches the dev.4 plan");
+else fail("action density does not match the dev.4 plan");
 
-if (SKILLFUL_PACK_CONFIGS.length === 4 && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 36 && SKILLFUL_PACK_CONFIGS.slice(1).every((config) => config.metadata.implementedCards === 0)) pass("pack development metadata is consistent");
+const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
+const acrobaticsActions = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
+const skillFiltersOk = PHYSICAL_ACTION_CARDS.every((card) => {
+  const action = card.filters.actionSlugs?.[0];
+  if (athleticsActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "athletics" && card.metadata.actionFamily === "athletics";
+  if (acrobaticsActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "acrobatics" && card.metadata.actionFamily === "acrobatics";
+  return false;
+});
+if (skillFiltersOk) pass("Athletics and Acrobatics action filters are exact");
+else fail("skill or action-family filter mismatch detected");
+
+if (SKILLFUL_PACK_CONFIGS.length === 4 && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52 && SKILLFUL_PACK_CONFIGS.slice(1).every((config) => config.metadata.implementedCards === 0)) pass("pack development metadata is consistent");
 else fail("pack development metadata is inconsistent");
 
 const built = buildSkillfulConsequencePacks();

@@ -184,6 +184,70 @@
       "LandingLineRevealed": {
         "Title": "Landungslinie offengelegt",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag beim Weitsprung ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der misslungene Sprung zeigt deutlich, wo du landen wolltest und wie dein Schwung dich von dieser Linie weggetragen hat."
+      },
+      "StableRhythm": {
+        "Title": "Stabiler Rhythmus",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Balancieren ab. Deine nächste Probe für Balancieren oder Hindurchturnen vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "FootingMarked": {
+        "Title": "Trittfolge markiert",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Balancieren ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges deiner Route über dieselbe schmale oder unebene Oberfläche folgt, erhält einen Situationsbonus von +1 auf seine nächste Probe für Balancieren dort. Danach endet der Bonus."
+      },
+      "RhythmLost": {
+        "Title": "Rhythmus verloren",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Balancieren ab. Deine nächste Probe für Balancieren auf derselben Oberfläche vor Ende deines nächsten Zuges erhält einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "HazardRevealsItself": {
+        "Title": "Gefahrenstelle zeigt sich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Balancieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der Sturz oder Gleichgewichtsverlust macht den lockeren Stein, den nachgebenden Balken, die glatte Stelle oder das andere Merkmal, das dich aus dem Tritt gebracht hat, für jeden Beobachter deutlich erkennbar."
+      },
+      "ExitAngle": {
+        "Title": "Ausstiegswinkel",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Hindurchturnen ab. Wenn du diese Bewegung auf einem legalen Feld angrenzend an die Kreatur beendest, durch deren Angriffsfläche du dich bewegt hast, darfst du sofort als Freie Aktion einen Schritt um bis zu 1,50 m ausführen."
+      },
+      "MomentumPreserved": {
+        "Title": "Schwung bewahrt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Hindurchturnen ab. Deine nächste Probe für Balancieren, Hochsprung oder Weitsprung vor Ende deines aktuellen Zuges erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "GapDemonstrated": {
+        "Title": "Lücke aufgezeigt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Hindurchturnen ab. Der erste andere Verbündete, der vor Beginn deines nächsten Zuges versucht, durch die Angriffsfläche derselben Kreatur hindurchzuturnen, erhält einen Situationsbonus von +1 auf diese Probe. Danach endet der Bonus."
+      },
+      "FootworkSnarled": {
+        "Title": "Beinarbeit gerät durcheinander",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Hindurchturnen ab. Deine Bewegungsrate ist bis zum Ende deines nächsten Zuges um 1,50 m reduziert, während du deine Bewegungslinie wiederfindest."
+      },
+      "ReactionWindowOpens": {
+        "Title": "Reaktionsfenster öffnet sich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Hindurchturnen ab. Nach deinem misslungenen Einsatz bist du kurz ganz damit beschäftigt, wieder sicheren Stand zu finden; bis zum Beginn deines nächsten Zuges kannst du keine Reaktionen einsetzen."
+      },
+      "RouteAdvertised": {
+        "Title": "Route verraten",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Hindurchturnen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die Kreatur und nahe Beobachter erkennen deutlich, welche Lücke du nutzen wolltest und an welcher Stelle deine Route durch ihre Angriffsfläche zusammenbrach."
+      },
+      "AirflowRead": {
+        "Title": "Luftströmung gelesen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Im Flug manövrieren ab. Deine nächste Probe für Im Flug manövrieren vor Ende deines nächsten Zuges erhält einen Situationsbonus von +1, weil du dein gewonnenes Gefühl für die Luftströmung nutzt. Danach endet der Bonus."
+      },
+      "WingmatesLine": {
+        "Title": "Fluglinie zum Folgen",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Im Flug manövrieren ab. Der erste Verbündete, der vor Beginn deines nächsten Zuges ungefähr derselben Flugroute folgt, erhält einen Situationsbonus von +1 auf seine nächste Probe für Im Flug manövrieren. Danach endet der Bonus."
+      },
+      "ControlInputsCrossed": {
+        "Title": "Steuerimpulse verkreuzt",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Im Flug manövrieren ab. Falls du danach noch fliegst, erhält deine nächste Probe für Im Flug manövrieren vor Ende deines nächsten Zuges einen Situationsmalus von -1. Danach endet der Malus. Falls du nicht mehr fliegst, endet diese Folge ohne zusätzlichen Effekt."
+      },
+      "AirTellsOnYou": {
+        "Title": "Die Luft verrät dich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Im Flug manövrieren ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine misslungene Fluglinie macht problematischen Wind, Abwind, Turbulenzen oder deinen Steuerfehler für Beobachter deutlich leichter erkennbar."
+      },
+      "BestAngleFound": {
+        "Title": "Bester Winkel gefunden",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg bei Hindurchzwängen ab. Deine nächste Probe für Hindurchzwängen in derselben Engstelle innerhalb von 10 Minuten erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "WhatCaughtYou": {
+        "Title": "Was dich festhält",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Hindurchzwängen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Dass du feststeckst, macht deutlich, ob deine Haltung, Rüstung, dein Rucksack, getragene Ausrüstung oder die Form der Engstelle die Ursache ist."
       }
     }
   }

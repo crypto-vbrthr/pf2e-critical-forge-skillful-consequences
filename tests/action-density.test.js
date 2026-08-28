@@ -7,27 +7,27 @@ function count(action, category) {
 }
 
 test("frequent actions keep six-card density", () => {
-  for (const action of ["grapple", "trip"]) {
+  for (const action of ["grapple", "trip", "tumble-through"]) {
     assert.equal(count(action, "skillCheckCriticalSuccess"), 3, `${action} success density`);
     assert.equal(count(action, "skillCheckCriticalFailure"), 3, `${action} failure density`);
   }
 });
 
-test("regular Athletics actions begin at four-card density", () => {
-  for (const action of ["shove", "reposition", "disarm", "climb", "swim"]) {
+test("regular physical actions keep four-card density", () => {
+  for (const action of ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"]) {
     assert.equal(count(action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
     assert.equal(count(action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
   }
 });
 
-test("narrow jump actions begin at two-card density", () => {
-  for (const action of ["high-jump", "long-jump"]) {
+test("narrow physical actions keep two-card density", () => {
+  for (const action of ["high-jump", "long-jump", "squeeze"]) {
     assert.equal(count(action, "skillCheckCriticalSuccess"), 1, `${action} success density`);
     assert.equal(count(action, "skillCheckCriticalFailure"), 1, `${action} failure density`);
   }
 });
 
-test("each supported action has more than one consequence mode", () => {
+test("each supported action has more than one consequence mode where density permits it", () => {
   const byAction = (action) => PHYSICAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes(action));
   assert.equal(byAction("grapple").some((card) => card.tags.includes("teamwork")), true);
   assert.equal(byAction("grapple").some((card) => card.tags.includes("narrative")), true);
@@ -47,4 +47,13 @@ test("each supported action has more than one consequence mode", () => {
   assert.equal(byAction("high-jump").some((card) => card.tags.includes("narrative")), true);
   assert.equal(byAction("long-jump").some((card) => card.tags.includes("acrobatics")), true);
   assert.equal(byAction("long-jump").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("balance").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("balance").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("tumble-through").some((card) => card.tags.includes("movement")), true);
+  assert.equal(byAction("tumble-through").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("tumble-through").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("maneuver-in-flight").some((card) => card.tags.includes("teamwork")), true);
+  assert.equal(byAction("maneuver-in-flight").some((card) => card.tags.includes("narrative")), true);
+  assert.equal(byAction("squeeze").some((card) => card.tags.includes("exploration")), true);
+  assert.equal(byAction("squeeze").some((card) => card.tags.includes("narrative")), true);
 });

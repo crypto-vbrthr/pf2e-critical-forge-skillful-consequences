@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-dev.4
+
+### Acrobatics I
+
+- Added 16 new Acrobatics cards, bringing Physical Actions to 52 cards.
+- Added Balance with 2 critical-success and 2 critical-failure cards.
+- Added Tumble Through with 3 critical-success and 3 critical-failure cards.
+- Added Maneuver in Flight with 2 critical-success and 2 critical-failure cards.
+- Added Squeeze with 1 critical-success and 1 critical-failure card.
+- Kept Balance, Maneuver in Flight, and Squeeze critical-failure additions restrained because their normal PF2e outcomes can already include falling, hazardous flight consequences, or becoming stuck.
+- Added German and English localization for all new cards.
+
+### Quality
+
+- Expanded action-density tests to cover Acrobatics frequency tiers.
+- Expanded release checks to require 52 unique Physical Actions cards and the dev.4 Athletics/Acrobatics density profile.
+- Updated the overlap review and roadmap for the first Acrobatics block.
+
 ## 0.1.0-dev.3
 
 ### Athletics III

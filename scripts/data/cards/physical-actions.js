@@ -17,6 +17,21 @@ function defineAthletics(options) {
   });
 }
 
+const ACROBATICS = Object.freeze({ skillTypes: ["acrobatics"] });
+
+function defineAcrobatics(options) {
+  return defineSkillActionCard({
+    ...options,
+    packId: PHYSICAL_PACK,
+    collection: "physical-actions",
+    actionFamily: "acrobatics",
+    filters: {
+      ...ACROBATICS,
+      ...(options.filters ?? {})
+    }
+  });
+}
+
 export const PHYSICAL_ACTION_CARDS = Object.freeze([
   defineAthletics({
     id: "grapple-success-001-read-the-struggle",
@@ -425,6 +440,192 @@ export const PHYSICAL_ACTION_CARDS = Object.freeze([
     tags: ["athletics", "long-jump", "narrative", "landing", "no-mechanical-effect"],
     filters: { actionSlugs: ["long-jump"] },
     contentBatch: 3
+  }),
+  defineAcrobatics({
+    id: "balance-success-001-stable-rhythm",
+    localizationKey: "StableRhythm",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Stable Rhythm",
+    fallbackDescription: "Resolve the normal critical success for Balance first. Your next Balance or Tumble Through check before the end of your next turn gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["acrobatics", "balance", "follow-up", "one-use"],
+    filters: { actionSlugs: ["balance"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "balance-success-002-footing-marked",
+    localizationKey: "FootingMarked",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Footing Marked",
+    fallbackDescription: "Resolve the normal critical success for Balance first. The first ally who follows your route across the same narrow or uneven surface before the start of your next turn gains a +1 circumstance bonus to their next Balance check there. The bonus then ends.",
+    tags: ["acrobatics", "balance", "teamwork", "same-surface", "one-use"],
+    filters: { actionSlugs: ["balance"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "balance-failure-001-rhythm-lost",
+    localizationKey: "RhythmLost",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Rhythm Lost",
+    fallbackDescription: "Resolve the normal critical failure for Balance first. Your next Balance check on the same surface before the end of your next turn takes a -1 circumstance penalty. The penalty then ends.",
+    tags: ["acrobatics", "balance", "same-surface", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["balance"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "balance-failure-002-hazard-reveals-itself",
+    localizationKey: "HazardRevealsItself",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.3,
+    fallbackTitle: "Hazard Reveals Itself",
+    fallbackDescription: "Resolve the normal critical failure for Balance first. There is no additional mechanical effect. The fall or loss of footing makes the loose stone, shifting beam, slick patch, or other feature that betrayed you obvious to anyone able to observe it.",
+    tags: ["acrobatics", "balance", "narrative", "terrain", "no-mechanical-effect"],
+    filters: { actionSlugs: ["balance"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-success-001-exit-angle",
+    localizationKey: "ExitAngle",
+    category: "skillCheckCriticalSuccess",
+    impact: "moderate",
+    weight: 0.7,
+    fallbackTitle: "Exit Angle",
+    fallbackDescription: "Resolve the normal critical success for Tumble Through first. If you finish that movement on a legal space adjacent to the creature whose space you moved through, you may immediately Step up to 5 feet as a free action.",
+    tags: ["acrobatics", "tumble-through", "movement", "step", "same-target"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-success-002-momentum-preserved",
+    localizationKey: "MomentumPreserved",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Momentum Preserved",
+    fallbackDescription: "Resolve the normal critical success for Tumble Through first. Your next Balance, High Jump, or Long Jump check before the end of your current turn gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["acrobatics", "tumble-through", "follow-up", "movement", "one-use"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-success-003-gap-demonstrated",
+    localizationKey: "GapDemonstrated",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Gap Demonstrated",
+    fallbackDescription: "Resolve the normal critical success for Tumble Through first. The first ally other than you who attempts to Tumble Through the same creature before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends.",
+    tags: ["acrobatics", "tumble-through", "teamwork", "same-target", "one-use"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-failure-001-footwork-snarled",
+    localizationKey: "FootworkSnarled",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Footwork Snarled",
+    fallbackDescription: "Resolve the normal critical failure for Tumble Through first. Your Speed is reduced by 5 feet until the end of your next turn while you recover your line of movement.",
+    tags: ["acrobatics", "tumble-through", "speed", "brief-setback"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-failure-002-reaction-window-opens",
+    localizationKey: "ReactionWindowOpens",
+    category: "skillCheckCriticalFailure",
+    impact: "moderate",
+    weight: 0.75,
+    fallbackTitle: "Reaction Window Opens",
+    fallbackDescription: "Resolve the normal critical failure for Tumble Through first. Your failed commitment leaves your attention on recovering your footing; you can't use reactions until the start of your next turn.",
+    tags: ["acrobatics", "tumble-through", "reactions", "brief-setback"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "tumble-through-failure-003-route-advertised",
+    localizationKey: "RouteAdvertised",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.25,
+    fallbackTitle: "Route Advertised",
+    fallbackDescription: "Resolve the normal critical failure for Tumble Through first. There is no additional mechanical effect. The creature and nearby observers can clearly read the gap you tried to exploit and where your route through its space broke down.",
+    tags: ["acrobatics", "tumble-through", "narrative", "route", "no-mechanical-effect"],
+    filters: { actionSlugs: ["tumble-through"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "maneuver-in-flight-success-001-airflow-read",
+    localizationKey: "AirflowRead",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Airflow Read",
+    fallbackDescription: "Resolve the normal critical success for Maneuver in Flight first. Your next Maneuver in Flight check before the end of your next turn gains a +1 circumstance bonus as you carry forward what you learned about the air. The bonus then ends.",
+    tags: ["acrobatics", "maneuver-in-flight", "flight", "follow-up", "one-use"],
+    filters: { actionSlugs: ["maneuver-in-flight"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "maneuver-in-flight-success-002-wingmates-line",
+    localizationKey: "WingmatesLine",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Wingmate's Line",
+    fallbackDescription: "Resolve the normal critical success for Maneuver in Flight first. The first ally who follows roughly the same aerial route before the start of your next turn gains a +1 circumstance bonus to their next Maneuver in Flight check. The bonus then ends.",
+    tags: ["acrobatics", "maneuver-in-flight", "flight", "teamwork", "route", "one-use"],
+    filters: { actionSlugs: ["maneuver-in-flight"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "maneuver-in-flight-failure-001-control-inputs-crossed",
+    localizationKey: "ControlInputsCrossed",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Control Inputs Crossed",
+    fallbackDescription: "Resolve the normal critical failure for Maneuver in Flight first. If you are still flying afterward, your next Maneuver in Flight check before the end of your next turn takes a -1 circumstance penalty. The penalty then ends. If you are no longer flying, this consequence ends with no additional effect.",
+    tags: ["acrobatics", "maneuver-in-flight", "flight", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["maneuver-in-flight"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "maneuver-in-flight-failure-002-air-tells-on-you",
+    localizationKey: "AirTellsOnYou",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.3,
+    fallbackTitle: "The Air Tells on You",
+    fallbackDescription: "Resolve the normal critical failure for Maneuver in Flight first. There is no additional mechanical effect. Your failed vector makes the troublesome wind, downdraft, turbulence, or control mistake much easier for observers to identify.",
+    tags: ["acrobatics", "maneuver-in-flight", "flight", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["maneuver-in-flight"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "squeeze-success-001-best-angle-found",
+    localizationKey: "BestAngleFound",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Best Angle Found",
+    fallbackDescription: "Resolve the normal critical success for Squeeze first. Your next Squeeze check in the same constricted passage within 10 minutes gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["acrobatics", "squeeze", "exploration", "same-passage", "one-use"],
+    filters: { actionSlugs: ["squeeze"] },
+    contentBatch: 4
+  }),
+  defineAcrobatics({
+    id: "squeeze-failure-001-what-caught-you",
+    localizationKey: "WhatCaughtYou",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.35,
+    fallbackTitle: "What Caught You",
+    fallbackDescription: "Resolve the normal critical failure for Squeeze first. There is no additional mechanical effect. Being stuck makes it obvious whether your posture, armor, pack, carried gear, or the shape of the passage caused the jam.",
+    tags: ["acrobatics", "squeeze", "exploration", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["squeeze"] },
+    contentBatch: 4
   })
 
 ]);

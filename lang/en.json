@@ -184,6 +184,70 @@
       "LandingLineRevealed": {
         "Title": "Landing Line Revealed",
         "Description": "Resolve the normal critical failure for Long Jump first. There is no additional mechanical effect. The failed jump clearly reveals where you meant to land and how your momentum carried away from that line."
+      },
+      "StableRhythm": {
+        "Title": "Stable Rhythm",
+        "Description": "Resolve the normal critical success for Balance first. Your next Balance or Tumble Through check before the end of your next turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "FootingMarked": {
+        "Title": "Footing Marked",
+        "Description": "Resolve the normal critical success for Balance first. The first ally who follows your route across the same narrow or uneven surface before the start of your next turn gains a +1 circumstance bonus to their next Balance check there. The bonus then ends."
+      },
+      "RhythmLost": {
+        "Title": "Rhythm Lost",
+        "Description": "Resolve the normal critical failure for Balance first. Your next Balance check on the same surface before the end of your next turn takes a -1 circumstance penalty. The penalty then ends."
+      },
+      "HazardRevealsItself": {
+        "Title": "Hazard Reveals Itself",
+        "Description": "Resolve the normal critical failure for Balance first. There is no additional mechanical effect. The fall or loss of footing makes the loose stone, shifting beam, slick patch, or other feature that betrayed you obvious to anyone able to observe it."
+      },
+      "ExitAngle": {
+        "Title": "Exit Angle",
+        "Description": "Resolve the normal critical success for Tumble Through first. If you finish that movement on a legal space adjacent to the creature whose space you moved through, you may immediately Step up to 5 feet as a free action."
+      },
+      "MomentumPreserved": {
+        "Title": "Momentum Preserved",
+        "Description": "Resolve the normal critical success for Tumble Through first. Your next Balance, High Jump, or Long Jump check before the end of your current turn gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "GapDemonstrated": {
+        "Title": "Gap Demonstrated",
+        "Description": "Resolve the normal critical success for Tumble Through first. The first ally other than you who attempts to Tumble Through the same creature before the start of your next turn gains a +1 circumstance bonus to that check. The bonus then ends."
+      },
+      "FootworkSnarled": {
+        "Title": "Footwork Snarled",
+        "Description": "Resolve the normal critical failure for Tumble Through first. Your Speed is reduced by 5 feet until the end of your next turn while you recover your line of movement."
+      },
+      "ReactionWindowOpens": {
+        "Title": "Reaction Window Opens",
+        "Description": "Resolve the normal critical failure for Tumble Through first. Your failed commitment leaves your attention on recovering your footing; you can't use reactions until the start of your next turn."
+      },
+      "RouteAdvertised": {
+        "Title": "Route Advertised",
+        "Description": "Resolve the normal critical failure for Tumble Through first. There is no additional mechanical effect. The creature and nearby observers can clearly read the gap you tried to exploit and where your route through its space broke down."
+      },
+      "AirflowRead": {
+        "Title": "Airflow Read",
+        "Description": "Resolve the normal critical success for Maneuver in Flight first. Your next Maneuver in Flight check before the end of your next turn gains a +1 circumstance bonus as you carry forward what you learned about the air. The bonus then ends."
+      },
+      "WingmatesLine": {
+        "Title": "Wingmate's Line",
+        "Description": "Resolve the normal critical success for Maneuver in Flight first. The first ally who follows roughly the same aerial route before the start of your next turn gains a +1 circumstance bonus to their next Maneuver in Flight check. The bonus then ends."
+      },
+      "ControlInputsCrossed": {
+        "Title": "Control Inputs Crossed",
+        "Description": "Resolve the normal critical failure for Maneuver in Flight first. If you are still flying afterward, your next Maneuver in Flight check before the end of your next turn takes a -1 circumstance penalty. The penalty then ends. If you are no longer flying, this consequence ends with no additional effect."
+      },
+      "AirTellsOnYou": {
+        "Title": "The Air Tells on You",
+        "Description": "Resolve the normal critical failure for Maneuver in Flight first. There is no additional mechanical effect. Your failed vector makes the troublesome wind, downdraft, turbulence, or control mistake much easier for observers to identify."
+      },
+      "BestAngleFound": {
+        "Title": "Best Angle Found",
+        "Description": "Resolve the normal critical success for Squeeze first. Your next Squeeze check in the same constricted passage within 10 minutes gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "WhatCaughtYou": {
+        "Title": "What Caught You",
+        "Description": "Resolve the normal critical failure for Squeeze first. There is no additional mechanical effect. Being stuck makes it obvious whether your posture, armor, pack, carried gear, or the shape of the passage caused the jam."
       }
     }
   }

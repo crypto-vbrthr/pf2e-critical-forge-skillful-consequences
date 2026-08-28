@@ -18,8 +18,8 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       category: "physical-actions",
       scope: "athletics-acrobatics-action-critical-results",
       contentStatus: "development",
-      supportedActions: Object.freeze(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]),
-      implementedCards: 36
+      supportedActions: Object.freeze(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump", "balance", "tumble-through", "maneuver-in-flight", "squeeze"]),
+      implementedCards: 52
     })
   }),
   Object.freeze({

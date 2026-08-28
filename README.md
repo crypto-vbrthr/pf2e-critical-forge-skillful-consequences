@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-dev.3**
+Version **0.1.0-dev.4**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -12,7 +12,9 @@ This makes the deck suitable for actions whose critical result already matters, 
 
 ## Current content
 
-`0.1.0-dev.3` expands the **Physical Actions** pack to **36 Athletics cards**:
+`0.1.0-dev.4` expands the **Physical Actions** pack to **52 cards** across Athletics and Acrobatics.
+
+Athletics remains at 36 cards:
 
 - Grapple: 3 critical-success cards and 3 critical-failure cards
 - Trip: 3 critical-success cards and 3 critical-failure cards
@@ -24,7 +26,14 @@ This makes the deck suitable for actions whose critical result already matters, 
 - High Jump: 1 critical-success card and 1 critical-failure card
 - Long Jump: 1 critical-success card and 1 critical-failure card
 
-Frequent actions retain a six-card mini-deck. Regular actions begin with a four-card mini-deck so that every supported action already has multiple possible results on both sides of the degree-of-success line.
+Acrobatics adds 16 cards:
+
+- Balance: 2 critical-success cards and 2 critical-failure cards
+- Tumble Through: 3 critical-success cards and 3 critical-failure cards
+- Maneuver in Flight: 2 critical-success cards and 2 critical-failure cards
+- Squeeze: 1 critical-success card and 1 critical-failure card
+
+Frequent actions use six-card mini-decks, regular actions use four-card mini-decks, and narrow exploration actions begin at 1 + 1. Acrobatics critical failures that already carry severe PF2e consequences remain deliberately light or narrative.
 
 ## Planned action density
 
