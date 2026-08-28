@@ -626,6 +626,54 @@ export const PHYSICAL_ACTION_CARDS = Object.freeze([
     tags: ["acrobatics", "squeeze", "exploration", "narrative", "no-mechanical-effect"],
     filters: { actionSlugs: ["squeeze"] },
     contentBatch: 4
-  })
+  }),
 
+
+  defineAthletics({
+    id: "force-open-success-001-momentum-through",
+    localizationKey: "MomentumThrough",
+    category: "skillCheckCriticalSuccess",
+    impact: "moderate",
+    weight: 0.75,
+    fallbackTitle: "Momentum Through",
+    fallbackDescription: "Resolve the normal critical success for Force Open first. If the opened barrier creates a legal adjacent space directly beyond it, you may immediately move 5 feet into that space. This movement is not a Step and can trigger reactions normally.",
+    tags: ["athletics", "force-open", "movement", "follow-through"],
+    filters: { actionSlugs: ["force-open"] },
+    contentBatch: 13
+  }),
+  defineAthletics({
+    id: "force-open-success-002-construction-read",
+    localizationKey: "ConstructionRead",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Construction Read",
+    fallbackDescription: "Resolve the normal critical success for Force Open first. Your next Force Open check within 10 minutes against a barrier built in the same manner gains a +1 circumstance bonus. The bonus then ends.",
+    tags: ["athletics", "force-open", "same-construction", "follow-up", "one-use"],
+    filters: { actionSlugs: ["force-open"] },
+    contentBatch: 13
+  }),
+  defineAthletics({
+    id: "force-open-failure-001-rebound-through-the-arms",
+    localizationKey: "ReboundThroughTheArms",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Rebound Through the Arms",
+    fallbackDescription: "Resolve the normal critical failure for Force Open first. Your next Athletics check other than Force Open before the start of your next turn takes a -1 circumstance penalty from the failed leverage. The penalty then ends.",
+    tags: ["athletics", "force-open", "brief-setback", "one-use"],
+    filters: { actionSlugs: ["force-open"] },
+    contentBatch: 13
+  }),
+  defineAthletics({
+    id: "force-open-failure-002-jam-maps-the-weakness",
+    localizationKey: "JamMapsTheWeakness",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.15,
+    fallbackTitle: "Jam Maps the Weakness",
+    fallbackDescription: "Resolve the normal critical failure for Force Open first. There is no additional mechanical effect. The way the barrier jams makes one weak hinge, seam, latch, brace, or leverage point visibly apparent, without reducing the normal penalty caused by the jam.",
+    tags: ["athletics", "force-open", "information", "barrier", "narrative", "no-mechanical-effect"],
+    filters: { actionSlugs: ["force-open"] },
+    contentBatch: 13
+  }),
 ]);

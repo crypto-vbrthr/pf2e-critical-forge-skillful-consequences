@@ -832,6 +832,86 @@
       "MutualHesitation": {
         "Title": "Gegenseitiges Zögern",
         "Description": "Wickle zuerst den normalen kritischen Fehlschlag bei Jemand anderem helfen ab. Der Verbündete, den du unterstützen wolltest, erhält einen Situationsmalus von -1 auf die nächste Fertigkeitsprobe, mit der er dich innerhalb von 1 Minute unterstützt, weil die misslungene Abstimmung die Übergabe unsicher gemacht hat. Danach endet der Malus."
+      },
+      "MomentumThrough": {
+        "Title": "Mit dem Schwung hindurch",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Aufbrechen ab. Wenn die geöffnete Barriere direkt dahinter ein legales angrenzendes Feld freigibt, darfst du dich sofort 1,5 Meter auf dieses Feld bewegen. Diese Bewegung ist kein Vorsichtiger Schritt und kann wie üblich Reaktionen auslösen."
+      },
+      "ConstructionRead": {
+        "Title": "Konstruktion durchschaut",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Aufbrechen ab. Deine nächste Probe für Aufbrechen innerhalb von 10 Minuten gegen eine auf gleiche Weise gebaute Barriere erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "ReboundThroughTheArms": {
+        "Title": "Rückstoß bis in die Arme",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Aufbrechen ab. Deine nächste Athletikprobe außer Aufbrechen vor Beginn deines nächsten Zuges erleidet durch den misslungenen Hebelansatz einen Situationsmalus von -1. Danach endet der Malus."
+      },
+      "JamMapsTheWeakness": {
+        "Title": "Die Blockade zeigt die Schwachstelle",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Aufbrechen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Die Art, wie die Barriere blockiert, macht ein schwaches Scharnier, eine Fuge, einen Riegel, eine Verstrebung oder einen Ansatzpunkt sichtbar, ohne den normalen Malus durch die Blockade zu verringern."
+      },
+      "SupportingDetail": {
+        "Title": "Stützendes Detail",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Fälschung anfertigen ab. Behandle diese Konsequenz wegen der geheimen Probe SL-seitig. Die erste genaue Untersuchung dieser Fälschung erleidet einen Situationsmalus von -1, weil ein nebensächliches Detail, eine Konvention oder ein Kontextmerkmal besonders überzeugend ist. Danach endet der Malus."
+      },
+      "ConsistentPaperTrail": {
+        "Title": "Stimmige Papierlage",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Fälschung anfertigen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Behandle diese Konsequenz wegen der geheimen Probe SL-seitig. Falls passend, ergänzt der SL ein glaubwürdiges Nebendetail, das die Echtheit des Dokuments stützt, etwa eine korrekte Ablagegewohnheit, Amtsbezeichnung, Datumsform, Siegelplatzierung oder bürokratische Konvention."
+      },
+      "RepeatedTell": {
+        "Title": "Wiederkehrendes verräterisches Merkmal",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Fälschung anfertigen ab. Behandle diese Konsequenz wegen der geheimen Probe SL-seitig. Die erste Kreatur, die diese Fälschung genau untersucht, erhält einen Situationsbonus von +1 auf ihre Probe, weil sich ein Fehler erkennbar wiederholt. Danach endet der Bonus."
+      },
+      "WrongConvention": {
+        "Title": "Falsche Konvention",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Fälschung anfertigen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Behandle diese Konsequenz wegen der geheimen Probe SL-seitig. Der SL kann eine glaubwürdige, aber falsche Konvention im Dokument festlegen, etwa Wortwahl, Datierung, Siegelgebrauch, Titelreihenfolge oder Formatierung, die spätere Zweifel erklärt, ohne die Fälschung über das normale Ergebnis hinaus automatisch zu entlarven."
+      },
+      "ClearSignal": {
+        "Title": "Klares Signal",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Tier anweisen ab. Deine nächste Probe für Tier anweisen bei demselben Tier innerhalb von 1 Minute erhält einen Situationsbonus von +1, weil deine Signale besonders eindeutig sind. Danach endet der Bonus."
+      },
+      "AnimalReadsTheMood": {
+        "Title": "Das Tier versteht die Stimmung",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Tier anweisen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Falls nützlich, beschreibt der SL ein Signal in der Reaktion des Tieres, das eine offensichtliche Vorliebe, Angst, Ablenkung oder ein Zeichen von Vertrauen erkennen lässt, das für den Umgang mit ihm relevant ist."
+      },
+      "ConflictingCue": {
+        "Title": "Widersprüchliches Signal",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Tier anweisen ab, einschließlich des vom SL bestimmten Fehlverhaltens oder Missverständnisses. Deine nächste Probe für Tier anweisen bei demselben Tier innerhalb von 1 Minute erleidet einen Situationsmalus von -1, während du wieder eindeutige Signale etablierst. Danach endet der Malus."
+      },
+      "MisunderstandingRevealed": {
+        "Title": "Missverständnis wird sichtbar",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Tier anweisen ab, einschließlich des normalen Fehlverhaltens des Tieres. Es gibt keinen zusätzlichen mechanischen Effekt. Anschließend macht seine Reaktion besonders deutlich, welcher Teil deines Signals, Tons, deiner Geste oder der beabsichtigten Richtung das Missverständnis ausgelöst hat."
+      },
+      "TheoryLocksIn": {
+        "Title": "Die Theorie sitzt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Zauber erlernen ab. Deine nächste Probe für Wissen abrufen oder Magie identifizieren innerhalb von 1 Woche, die denselben Zauber oder einen direkt verwandten magischen Effekt betrifft, erhält einen Situationsbonus von +1. Danach endet der Bonus."
+      },
+      "ReusableNotation": {
+        "Title": "Wiederverwendbare Notation",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Zauber erlernen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Deine Notizen bewahren einen nützlichen Merksatz, eine Notationsgewohnheit, einen rituellen Hinweis oder eine gedankliche Abkürzung, die erklärt, warum die Struktur dieses Zaubers endlich Sinn ergab, ohne Kosten oder Zeit einer weiteren Aktivität Zauber erlernen zu senken."
+      },
+      "BadAssumptionPersists": {
+        "Title": "Die falsche Annahme hält sich",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Zauber erlernen ab, einschließlich des normalen Materialverbrauchs und der Einschränkung für einen erneuten Versuch mit diesem Zauber. Deine nächste Probe für Wissen abrufen oder Magie identifizieren innerhalb von 24 Stunden, die denselben Zauber betrifft, erleidet einen Situationsmalus von -1, weil das fehlerhafte Modell deine Deutung noch beeinflusst. Danach endet der Malus."
+      },
+      "FailureIsSpecific": {
+        "Title": "Der Fehler ist konkret",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Zauber erlernen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Das gescheiterte Studium macht ein grobes Hindernis deutlich, etwa eine Notationskonvention, Aussprache, ein magisches Prinzip, ein fehlendes Grundlagenkonzept oder eine Unstimmigkeit zwischen Quelle und Tradition, ohne den Zauber zu gewähren oder Material zu erstatten."
+      },
+      "RepeatBusiness": {
+        "Title": "Folgeauftrag",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Einkommen verdienen ab. Deine nächste Probe für Einkommen verdienen innerhalb von 1 Monat in derselben Gemeinschaft und derselben allgemeinen Tätigkeit erhält einen Situationsbonus von +1, weil deine Arbeit einen starken Eindruck hinterlassen hat. Danach endet der Bonus."
+      },
+      "ProfessionalContact": {
+        "Title": "Beruflicher Kontakt",
+        "Description": "Wickle zuerst den normalen kritischen Erfolg für Einkommen verdienen ab. Es gibt keinen zusätzlichen mechanischen Effekt und keine zusätzliche Bezahlung. Falls passend, kann der SL einen Kunden, Kollegen, Auftraggeber, Vorgesetzten oder Stammkunden etablieren, der sich an die Qualität deiner Arbeit erinnert und später plausibel wieder auftauchen kann."
+      },
+      "BurnedReference": {
+        "Title": "Verbrannte Referenz",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Einkommen verdienen ab, einschließlich ausbleibender Bezahlung, Verlust der Arbeit und normaler Rufschäden. Deine nächste Probe für Einkommen verdienen innerhalb von 1 Woche in derselben Gemeinschaft erleidet einen Situationsmalus von -1, solange sich die Geschichte des gescheiterten Auftrags noch hält. Danach endet der Malus."
+      },
+      "UsefulPostmortem": {
+        "Title": "Nützliche Nachbesprechung",
+        "Description": "Wickle zuerst den normalen kritischen Fehlschlag für Einkommen verdienen ab. Es gibt keinen zusätzlichen mechanischen Effekt. Der Fehlschlag macht eine Unstimmigkeit bei Erwartungen, Arbeitstempo, örtlichen Gepflogenheiten, beruflicher Etikette oder den Anforderungen der Tätigkeit besonders deutlich und gibt dem Rückschlag eine konkrete erzählerische Ursache, ohne Einkommen oder Stelle zurückzugeben."
       }
     }
   }

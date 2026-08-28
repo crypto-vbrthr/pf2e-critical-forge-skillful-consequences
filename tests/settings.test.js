@@ -23,7 +23,7 @@ test("registers four pack settings and only exposes packs that contain cards", (
   }
 });
 
-test("reads independent pack settings and falls back to development defaults", () => {
+test("reads independent pack settings and falls back to configured defaults", () => {
   const values = new Map([
     [SETTING_KEYS.PHYSICAL_ACTIONS, false],
     [SETTING_KEYS.SOCIAL_ACTIONS, true],

@@ -832,6 +832,86 @@
       "MutualHesitation": {
         "Title": "Mutual Hesitation",
         "Description": "Resolve the normal critical failure for Aid first. The ally you attempted to aid takes a -1 circumstance penalty to the next skill check they make to Aid you within 1 minute because the failed coordination has made the handoff uncertain. The penalty then ends."
+      },
+      "MomentumThrough": {
+        "Title": "Momentum Through",
+        "Description": "Resolve the normal critical success for Force Open first. If the opened barrier creates a legal adjacent space directly beyond it, you may immediately move 5 feet into that space. This movement is not a Step and can trigger reactions normally."
+      },
+      "ConstructionRead": {
+        "Title": "Construction Read",
+        "Description": "Resolve the normal critical success for Force Open first. Your next Force Open check within 10 minutes against a barrier built in the same manner gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "ReboundThroughTheArms": {
+        "Title": "Rebound Through the Arms",
+        "Description": "Resolve the normal critical failure for Force Open first. Your next Athletics check other than Force Open before the start of your next turn takes a -1 circumstance penalty from the failed leverage. The penalty then ends."
+      },
+      "JamMapsTheWeakness": {
+        "Title": "Jam Maps the Weakness",
+        "Description": "Resolve the normal critical failure for Force Open first. There is no additional mechanical effect. The way the barrier jams makes one weak hinge, seam, latch, brace, or leverage point visibly apparent, without reducing the normal penalty caused by the jam."
+      },
+      "SupportingDetail": {
+        "Title": "Supporting Detail",
+        "Description": "Resolve the normal critical success for Create Forgery first. Keep this consequence GM-facing for the secret check. The first close examination of this forgery takes a -1 circumstance penalty because one incidental detail, convention, or contextual feature is especially convincing. The penalty then ends."
+      },
+      "ConsistentPaperTrail": {
+        "Title": "Consistent Paper Trail",
+        "Description": "Resolve the normal critical success for Create Forgery first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If appropriate, the GM adds one plausible incidental detail that supports the document's authenticity, such as a correct filing habit, title, date format, seal placement, or bureaucratic convention."
+      },
+      "RepeatedTell": {
+        "Title": "Repeated Tell",
+        "Description": "Resolve the normal critical failure for Create Forgery first. Keep this consequence GM-facing for the secret check. The first creature that closely examines this forgery gains a +1 circumstance bonus to its check because one flaw repeats in a recognizable way. The bonus then ends."
+      },
+      "WrongConvention": {
+        "Title": "Wrong Convention",
+        "Description": "Resolve the normal critical failure for Create Forgery first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may establish one plausible but incorrect convention in the document, such as wording, dating, seal use, title order, or formatting, that can explain later suspicion without automatically exposing the forgery beyond the normal result."
+      },
+      "ClearSignal": {
+        "Title": "Clear Signal",
+        "Description": "Resolve the normal critical success for Command an Animal first. Your next Command an Animal check against the same animal within 1 minute gains a +1 circumstance bonus because your cues are especially clear. The bonus then ends."
+      },
+      "AnimalReadsTheMood": {
+        "Title": "Animal Reads the Mood",
+        "Description": "Resolve the normal critical success for Command an Animal first. There is no additional mechanical effect. If useful, the GM describes one cue in the animal's response that reveals an obvious preference, fear, distraction, or sign of trust relevant to handling it."
+      },
+      "ConflictingCue": {
+        "Title": "Conflicting Cue",
+        "Description": "Resolve the normal critical failure for Command an Animal first, including whatever misbehavior or misunderstanding the GM determines. Your next Command an Animal check against the same animal within 1 minute takes a -1 circumstance penalty while you re-establish clear cues. The penalty then ends."
+      },
+      "MisunderstandingRevealed": {
+        "Title": "Misunderstanding Revealed",
+        "Description": "Resolve the normal critical failure for Command an Animal first, including the animal's normal misbehavior. There is no additional mechanical effect. Afterward, its response makes one part of your cue, tone, gesture, or intended direction especially easy to identify as the source of the misunderstanding."
+      },
+      "TheoryLocksIn": {
+        "Title": "Theory Locks In",
+        "Description": "Resolve the normal critical success for Learn a Spell first. Your next Recall Knowledge or Identify Magic check within 1 week concerning the same spell or a directly related magical effect gains a +1 circumstance bonus. The bonus then ends."
+      },
+      "ReusableNotation": {
+        "Title": "Reusable Notation",
+        "Description": "Resolve the normal critical success for Learn a Spell first. There is no additional mechanical effect. Your notes preserve one useful mnemonic, notation habit, ritual cue, or conceptual shortcut that explains why this spell's structure finally made sense, without reducing the cost or time of another Learn a Spell activity."
+      },
+      "BadAssumptionPersists": {
+        "Title": "Bad Assumption Persists",
+        "Description": "Resolve the normal critical failure for Learn a Spell first, including the normal material expenditure and restriction on trying that spell again. Your next Recall Knowledge or Identify Magic check within 24 hours concerning that same spell takes a -1 circumstance penalty because the failed model is still coloring your interpretation. The penalty then ends."
+      },
+      "FailureIsSpecific": {
+        "Title": "Failure Is Specific",
+        "Description": "Resolve the normal critical failure for Learn a Spell first. There is no additional mechanical effect. The failed study makes one broad obstacle clear, such as a notation convention, pronunciation, magical principle, missing prerequisite concept, or mismatch between source and tradition, without granting the spell or refunding any materials."
+      },
+      "RepeatBusiness": {
+        "Title": "Repeat Business",
+        "Description": "Resolve the normal critical success for Earn Income first. Your next Earn Income check in the same community and the same general line of work within 1 month gains a +1 circumstance bonus because your work left a strong impression. The bonus then ends."
+      },
+      "ProfessionalContact": {
+        "Title": "Professional Contact",
+        "Description": "Resolve the normal critical success for Earn Income first. There is no additional mechanical effect or extra payment. If appropriate, the GM may establish one client, coworker, patron, supervisor, or regular customer who remembers the quality of your work and can plausibly reappear later."
+      },
+      "BurnedReference": {
+        "Title": "Burned Reference",
+        "Description": "Resolve the normal critical failure for Earn Income first, including earning nothing, losing the job, and any normal reputation consequences. Your next Earn Income check in the same community within 1 week takes a -1 circumstance penalty as word of the failed job lingers. The penalty then ends."
+      },
+      "UsefulPostmortem": {
+        "Title": "Useful Postmortem",
+        "Description": "Resolve the normal critical failure for Earn Income first. There is no additional mechanical effect. The failure makes one mismatch in expectations, pace, local practice, professional etiquette, or job requirements especially clear, giving the setback a concrete fictional cause without restoring the lost income or position."
       }
     }
   }

@@ -1,22 +1,22 @@
 # Overlap Review
 
-## 0.1.0-dev.12 scope
+## 0.1.0-rc.1 scope
 
 Four packs are currently active.
 
-**Physical Actions** supports Grapple, Trip, Shove, Reposition, Disarm, Climb, Swim, High Jump, Long Jump, Balance, Tumble Through, Maneuver in Flight, and Squeeze.
+**Physical Actions** supports Grapple, Trip, Shove, Reposition, Disarm, Climb, Swim, High Jump, Long Jump, Balance, Tumble Through, Maneuver in Flight, Squeeze, and Force Open.
 
 **Social Actions** now also supports Perform. Existing coverage supports Deception (Feint, Create a Diversion, Lie, Impersonate), Diplomacy (Make an Impression, Request, Gather Information), and Intimidation (Demoralize, Coerce).
 
-**Subterfuge Actions** supports Stealth (Hide, Sneak, Conceal an Object) and Thievery (Pick a Lock, Disable a Device, Palm an Object, Steal).
+**Subterfuge Actions** supports Stealth (Hide, Sneak, Conceal an Object), Thievery (Pick a Lock, Disable a Device, Palm an Object, Steal), and Society (Create Forgery).
 
-**Knowledge & Utility** now also supports skill-based Aid. Existing coverage includes Medicine, Crafting, knowledge, and Survival/exploration actions.
+**Knowledge & Utility** supports Medicine, Crafting, knowledge, Survival/exploration, skill-based Aid, Command an Animal, Learn a Spell, and Earn Income.
 
 ### Critical Forge Core
 
 Critical Forge Core supplies the skill-critical infrastructure but no action-specific consequence cards for these actions. Skillful Consequences therefore occupies the `skillCheckCriticalSuccess` / `skillCheckCriticalFailure` space without replacing Core content.
 
-Critical Forge also controls card visibility. This matters for Gather Information, Hide, Sneak, and Conceal an Object because their hidden or secret resolution can be compromised if the consequence card exposes the degree of success. Current Stealth cards are all tagged `secret-check` and `gm-facing`, and GM Blind visibility is recommended.
+Critical Forge also controls card visibility. This matters for secret actions because consequence presentation can compromise a hidden degree of success. All cards for Gather Information, Lie, Impersonate, Hide, Sneak, Conceal an Object, supported secret knowledge actions, Sense Direction, and Create Forgery use explicit `secret-check` / `gm-facing` handling. The rc.1 integration review confirmed that current Critical Forge defaults to GM Blind visibility. These tags do not themselves override a world configured for `public` or `self`, so GM Blind or GM Only remains the safe setting for secret checks.
 
 ### Goblin Engineering
 
@@ -102,3 +102,16 @@ The block remains distinct from **Goblin Engineering** because no card introduce
 
 **Aid** stays in Knowledge & Utility and matches the `aid` action without a fixed `skillTypes` filter. This is intentional: the consequences describe coordination and handoff quality rather than the subject matter of the skill used to help. The normal Aid critical-success bonus or critical-failure penalty is always resolved first.
 
+
+
+## dev.13 remaining core actions
+
+**Force Open** stays in Physical Actions and focuses on movement through a breached opening, construction reading, and leverage aftermath rather than weapon criticals.
+
+**Create Forgery** is action-centered Society content. It deals with the document and later examination, not with malfunctioning writing tools or equipment.
+
+**Command an Animal** focuses on communication with the animal. It does not replace companion automation or grant extra minion actions.
+
+**Learn a Spell** is about the learning process and follow-up magical understanding. It does not overlap Arcane Backlash, because no spell is being cast and no magical attack or spell-failure event is generated.
+
+**Earn Income** changes neither the normal payout nor task level. Its cards are narrow reputation and contact follow-through, keeping it separate from crafting and market systems.

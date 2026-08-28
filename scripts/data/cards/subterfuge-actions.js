@@ -476,6 +476,67 @@ export const SUBTERFUGE_ACTION_CARDS = Object.freeze([
     tags: ["thievery", "steal", "narrative", "behavioral-tell", "information", "no-mechanical-effect"],
     filters: { skillTypes: ["thievery"], actionSlugs: ["steal"] },
     contentBatch: 8
-  })
+  }),
+
+  defineSkillActionCard({
+    id: "create-forgery-success-001-supporting-detail",
+    packId: SUBTERFUGE_PACK,
+    collection: "subterfuge-actions",
+    actionFamily: "society",
+    localizationKey: "SupportingDetail",
+    category: "skillCheckCriticalSuccess",
+    impact: "light",
+    fallbackTitle: "Supporting Detail",
+    fallbackDescription: "Resolve the normal critical success for Create Forgery first. Keep this consequence GM-facing for the secret check. The first close examination of this forgery takes a -1 circumstance penalty because one incidental detail, convention, or contextual feature is especially convincing. The penalty then ends.",
+    tags: ["society", "create-forgery", "secret-check", "gm-facing", "document", "examination", "one-use"],
+    filters: { skillTypes: ["society"], actionSlugs: ["create-forgery"] },
+    contentBatch: 13
+  }),
+  defineSkillActionCard({
+    id: "create-forgery-success-002-consistent-paper-trail",
+    packId: SUBTERFUGE_PACK,
+    collection: "subterfuge-actions",
+    actionFamily: "society",
+    localizationKey: "ConsistentPaperTrail",
+    category: "skillCheckCriticalSuccess",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Consistent Paper Trail",
+    fallbackDescription: "Resolve the normal critical success for Create Forgery first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. If appropriate, the GM adds one plausible incidental detail that supports the document's authenticity, such as a correct filing habit, title, date format, seal placement, or bureaucratic convention.",
+    tags: ["society", "create-forgery", "secret-check", "gm-facing", "document", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["society"], actionSlugs: ["create-forgery"] },
+    contentBatch: 13
+  }),
+  defineSkillActionCard({
+    id: "create-forgery-failure-001-repeated-tell",
+    packId: SUBTERFUGE_PACK,
+    collection: "subterfuge-actions",
+    actionFamily: "society",
+    localizationKey: "RepeatedTell",
+    category: "skillCheckCriticalFailure",
+    impact: "light",
+    fallbackTitle: "Repeated Tell",
+    fallbackDescription: "Resolve the normal critical failure for Create Forgery first. Keep this consequence GM-facing for the secret check. The first creature that closely examines this forgery gains a +1 circumstance bonus to its check because one flaw repeats in a recognizable way. The bonus then ends.",
+    tags: ["society", "create-forgery", "secret-check", "gm-facing", "document", "examination", "brief-setback", "one-use"],
+    filters: { skillTypes: ["society"], actionSlugs: ["create-forgery"] },
+    contentBatch: 13
+  }),
+  defineSkillActionCard({
+    id: "create-forgery-failure-002-wrong-convention",
+    packId: SUBTERFUGE_PACK,
+    collection: "subterfuge-actions",
+    actionFamily: "society",
+    localizationKey: "WrongConvention",
+    category: "skillCheckCriticalFailure",
+    tone: "serious",
+    impact: "narrative",
+    weight: 1.1,
+    fallbackTitle: "Wrong Convention",
+    fallbackDescription: "Resolve the normal critical failure for Create Forgery first. There is no additional mechanical effect. Keep this consequence GM-facing for the secret check. The GM may establish one plausible but incorrect convention in the document, such as wording, dating, seal use, title order, or formatting, that can explain later suspicion without automatically exposing the forgery beyond the normal result.",
+    tags: ["society", "create-forgery", "secret-check", "gm-facing", "document", "error", "narrative", "no-mechanical-effect"],
+    filters: { skillTypes: ["society"], actionSlugs: ["create-forgery"] },
+    contentBatch: 13
+  }),
 ]);
 

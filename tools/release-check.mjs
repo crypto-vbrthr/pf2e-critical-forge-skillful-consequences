@@ -9,7 +9,7 @@ import { SUBTERFUGE_ACTION_CARDS } from "../scripts/data/cards/subterfuge-action
 import { KNOWLEDGE_UTILITY_CARDS } from "../scripts/data/cards/knowledge-utility-actions.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const allowDev = process.argv.includes("--allow-dev");
+const allowPrerelease = process.argv.includes("--allow-prerelease") || process.argv.includes("--allow-dev");
 const readJson = (path) => JSON.parse(readFileSync(join(root, path), "utf8"));
 const fail = (message) => { console.error(`RELEASE CHECK FAILED: ${message}`); process.exitCode = 1; };
 const pass = (message) => console.log(`✓ ${message}`);
@@ -26,7 +26,7 @@ if (manifest.version === pkg.version && pkg.version === moduleVersion) pass(`ver
 else fail(`version mismatch: manifest=${manifest.version}, package=${pkg.version}, constants=${moduleVersion}`);
 
 if (!String(manifest.version).includes("-")) pass("stable release version contains no prerelease suffix");
-else if (allowDev) pass("prerelease suffix accepted for quality check");
+else if (allowPrerelease) pass("prerelease suffix accepted for quality check");
 else fail("release version still contains a prerelease suffix");
 
 if (manifest.compatibility?.minimum === "14" && manifest.compatibility?.verified === "14") pass("Foundry 14 compatibility is explicit");
@@ -63,10 +63,10 @@ const missingEn = [...deKeys].filter((key) => !enKeys.has(key));
 if (!missingDe.length && !missingEn.length) pass(`localization parity (${deKeys.size} keys)`);
 else fail(`localization mismatch; missing DE: ${missingDe.join(", ") || "none"}; missing EN: ${missingEn.join(", ") || "none"}`);
 
-if (PHYSICAL_ACTION_CARDS.length === 52 && SOCIAL_ACTION_CARDS.length === 50 && SUBTERFUGE_ACTION_CARDS.length === 34 && KNOWLEDGE_UTILITY_CARDS.length === 62 && allCards.length === 198) pass("development card inventory is 198 (52 physical + 50 social + 34 subterfuge + 62 knowledge/utility)");
-else fail(`expected 52 physical + 50 social + 34 subterfuge + 62 knowledge/utility cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length} + ${KNOWLEDGE_UTILITY_CARDS.length}`);
+if (PHYSICAL_ACTION_CARDS.length === 56 && SOCIAL_ACTION_CARDS.length === 50 && SUBTERFUGE_ACTION_CARDS.length === 38 && KNOWLEDGE_UTILITY_CARDS.length === 74 && allCards.length === 218) pass("card inventory is 218 (56 physical + 50 social + 38 subterfuge + 74 knowledge/utility)");
+else fail(`expected 56 physical + 50 social + 38 subterfuge + 74 knowledge/utility cards, found ${PHYSICAL_ACTION_CARDS.length} + ${SOCIAL_ACTION_CARDS.length} + ${SUBTERFUGE_ACTION_CARDS.length} + ${KNOWLEDGE_UTILITY_CARDS.length}`);
 
-if (new Set(allCards.map((card) => card.id)).size === 198 && new Set(allCards.map((card) => card.fallbackTitle)).size === 198) pass("all development card ids and fallback titles are unique");
+if (new Set(allCards.map((card) => card.id)).size === 218 && new Set(allCards.map((card) => card.fallbackTitle)).size === 218) pass("all card ids and fallback titles are unique");
 else fail("duplicate card id or fallback title detected");
 
 const densityMatches = (cards, actions, successCount, failureCount) => actions.every((action) => {
@@ -75,19 +75,34 @@ const densityMatches = (cards, actions, successCount, failureCount) => actions.e
     && matches.filter((card) => card.category === "skillCheckCriticalFailure").length === failureCount;
 });
 const physicalDensityOk = densityMatches(PHYSICAL_ACTION_CARDS, ["grapple", "trip", "tumble-through"], 3, 3)
-  && densityMatches(PHYSICAL_ACTION_CARDS, ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"], 2, 2)
+  && densityMatches(PHYSICAL_ACTION_CARDS, ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight", "force-open"], 2, 2)
   && densityMatches(PHYSICAL_ACTION_CARDS, ["high-jump", "long-jump", "squeeze"], 1, 1);
 const socialDensityOk = densityMatches(SOCIAL_ACTION_CARDS, ["feint", "lie", "gather-information", "demoralize", "perform"], 3, 3)
   && densityMatches(SOCIAL_ACTION_CARDS, ["create-a-diversion", "impersonate", "make-an-impression", "request", "coerce"], 2, 2);
 const subterfugeDensityOk = densityMatches(SUBTERFUGE_ACTION_CARDS, ["hide", "sneak", "disable-a-device"], 3, 3)
-  && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object", "pick-a-lock", "palm-an-object", "steal"], 2, 2);
+  && densityMatches(SUBTERFUGE_ACTION_CARDS, ["conceal-an-object", "pick-a-lock", "palm-an-object", "steal", "create-forgery"], 2, 2);
 const knowledgeUtilityDensityOk = densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-wounds", "administer-first-aid", "repair", "craft", "identify-magic", "identify-alchemy", "decipher-writing", "sense-direction", "subsist", "cover-tracks"], 2, 2)
   && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["treat-disease", "treat-poison"], 1, 1)
-  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["recall-knowledge", "track", "aid"], 3, 3);
-if (physicalDensityOk && socialDensityOk && subterfugeDensityOk && knowledgeUtilityDensityOk) pass("all four action packs match the dev.12 density plan");
-else fail("action density does not match the dev.12 plan");
+  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["recall-knowledge", "track", "aid"], 3, 3)
+  && densityMatches(KNOWLEDGE_UTILITY_CARDS, ["command-an-animal", "learn-a-spell", "earn-income"], 2, 2);
+if (physicalDensityOk && socialDensityOk && subterfugeDensityOk && knowledgeUtilityDensityOk) pass("all four action packs match the reviewed density baseline");
+else fail("action density does not match the reviewed density baseline");
 
-const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump"]);
+const reviewedFrequentActions = Object.freeze(["aid", "demoralize", "disable-a-device", "feint", "gather-information", "grapple", "hide", "lie", "perform", "recall-knowledge", "sneak", "track", "trip", "tumble-through"]);
+const reviewedRegularActions = Object.freeze(["administer-first-aid", "balance", "climb", "coerce", "command-an-animal", "conceal-an-object", "cover-tracks", "craft", "create-a-diversion", "create-forgery", "decipher-writing", "disarm", "earn-income", "force-open", "identify-alchemy", "identify-magic", "impersonate", "learn-a-spell", "make-an-impression", "maneuver-in-flight", "palm-an-object", "pick-a-lock", "repair", "reposition", "request", "sense-direction", "shove", "steal", "subsist", "swim", "treat-wounds"]);
+const reviewedNarrowActions = Object.freeze(["high-jump", "long-jump", "squeeze", "treat-disease", "treat-poison"]);
+const reviewedActions = [...reviewedFrequentActions, ...reviewedRegularActions, ...reviewedNarrowActions].sort();
+const cardActions = [...new Set(allCards.flatMap((card) => card.filters.actionSlugs ?? []))].sort();
+const configuredActions = SKILLFUL_PACK_CONFIGS.flatMap((config) => config.metadata.supportedActions).sort();
+if (reviewedFrequentActions.length === 14 && reviewedRegularActions.length === 31 && reviewedNarrowActions.length === 5
+  && (reviewedFrequentActions.length * 6) + (reviewedRegularActions.length * 4) + (reviewedNarrowActions.length * 2) === 218
+  && JSON.stringify(cardActions) === JSON.stringify(reviewedActions)
+  && JSON.stringify(configuredActions) === JSON.stringify(reviewedActions)
+  && new Set(configuredActions).size === 50) {
+  pass("completeness baseline confirms 50 actions at 14 frequent / 31 regular / 5 narrow");
+} else fail("completeness baseline action surface or tier totals are inconsistent");
+
+const athleticsActions = new Set(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump", "force-open"]);
 const acrobaticsActions = new Set(["balance", "tumble-through", "maneuver-in-flight", "squeeze"]);
 const physicalFiltersOk = PHYSICAL_ACTION_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
@@ -109,17 +124,21 @@ const socialFiltersOk = SOCIAL_ACTION_CARDS.every((card) => {
 });
 const stealthActions = new Set(["hide", "sneak", "conceal-an-object"]);
 const thieveryActions = new Set(["pick-a-lock", "disable-a-device", "palm-an-object", "steal"]);
+const forgeryActions = new Set(["create-forgery"]);
 const subterfugeFiltersOk = SUBTERFUGE_ACTION_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
-  const expectedSkill = stealthActions.has(action) ? "stealth" : thieveryActions.has(action) ? "thievery" : null;
+  const expectedSkill = stealthActions.has(action) ? "stealth" : thieveryActions.has(action) ? "thievery" : forgeryActions.has(action) ? "society" : null;
   if (!expectedSkill || card.filters.skillTypes?.length !== 1 || card.filters.skillTypes[0] !== expectedSkill || card.metadata.actionFamily !== expectedSkill) return false;
-  return expectedSkill !== "stealth" || (card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
+  return !["stealth", "society"].includes(expectedSkill) || (card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
 });
 const medicineActions = new Set(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison"]);
 const craftingActions = new Set(["repair", "craft"]);
 const knowledgeActions = new Set(["recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing"]);
 const survivalActions = new Set(["track", "sense-direction", "subsist", "cover-tracks"]);
 const utilityActions = new Set(["aid"]);
+const natureActions = new Set(["command-an-animal"]);
+const magicLearningActions = new Set(["learn-a-spell"]);
+const downtimeActions = new Set(["earn-income"]);
 const knowledgeUtilityFiltersOk = KNOWLEDGE_UTILITY_CARDS.every((card) => {
   const action = card.filters.actionSlugs?.[0];
   if (medicineActions.has(action)) return card.filters.skillTypes?.length === 1 && card.filters.skillTypes[0] === "medicine" && card.metadata.actionFamily === "medicine";
@@ -131,6 +150,9 @@ const knowledgeUtilityFiltersOk = KNOWLEDGE_UTILITY_CARDS.every((card) => {
     return action !== "sense-direction" || (card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
   }
   if (utilityActions.has(action)) return card.metadata.actionFamily === "utility" && card.filters.skillTypes?.length === 0;
+  if (natureActions.has(action)) return card.metadata.actionFamily === "nature" && JSON.stringify(card.filters.skillTypes) === JSON.stringify(["nature"]);
+  if (magicLearningActions.has(action)) return card.metadata.actionFamily === "magic-learning" && JSON.stringify(card.filters.skillTypes) === JSON.stringify(["arcana", "nature", "occultism", "religion"]);
+  if (downtimeActions.has(action)) return card.metadata.actionFamily === "downtime" && card.filters.skillTypes?.length === 0;
   if (!knowledgeActions.has(action) || card.metadata.actionFamily !== "knowledge" || !card.tags.includes("secret-check") || !card.tags.includes("gm-facing")) return false;
   if (action === "recall-knowledge") return card.filters.skillTypes?.length === 0;
   if (action === "decipher-writing") return JSON.stringify(card.filters.skillTypes) === JSON.stringify(["arcana", "society", "occultism", "religion"]);
@@ -144,11 +166,18 @@ else fail("skill or action-family filter mismatch detected");
 const gatherCards = SOCIAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs?.includes("gather-information"));
 const gatherFailures = gatherCards.filter((card) => card.category === "skillCheckCriticalFailure");
 if (gatherCards.length === 6
-  && gatherCards.every((card) => card.tags.includes("secret-check"))
+  && gatherCards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing"))
   && gatherFailures.length === 3
   && gatherFailures.every((card) => card.impact === "narrative" && card.tags.includes("gm-facing") && card.tags.includes("no-mechanical-effect"))) {
   pass("Gather Information secret-check boundary is explicit");
 } else fail("Gather Information secret-check boundary is incomplete");
+
+const secretSocialActions = ["lie", "impersonate", "gather-information"];
+if (secretSocialActions.every((action) => {
+  const cards = SOCIAL_ACTION_CARDS.filter((card) => card.filters.actionSlugs?.includes(action));
+  return cards.length > 0 && cards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing"));
+})) pass("Lie, Impersonate, and Gather Information use consistent GM-facing secret-check presentation");
+else fail("social secret-check presentation is inconsistent");
 
 const stealthCards = SUBTERFUGE_ACTION_CARDS.filter((card) => card.metadata.actionFamily === "stealth");
 const stealthFailures = stealthCards.filter((card) => card.category === "skillCheckCriticalFailure");
@@ -213,20 +242,38 @@ if (performanceCards.length === 6
   pass("Performance and skill-agnostic Aid density/filter boundaries are explicit");
 } else fail("Performance or Aid density/filter boundary is incomplete");
 
+const forgeryCards = SUBTERFUGE_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes("create-forgery"));
+const commandAnimalCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("command-an-animal"));
+const learnSpellCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("learn-a-spell"));
+const earnIncomeCards = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("earn-income"));
+if (forgeryCards.length === 4
+  && forgeryCards.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing") && JSON.stringify(card.filters.skillTypes) === JSON.stringify(["society"]))
+  && commandAnimalCards.length === 4 && commandAnimalCards.every((card) => card.metadata.actionFamily === "nature" && JSON.stringify(card.filters.skillTypes) === JSON.stringify(["nature"]))
+  && learnSpellCards.length === 4 && learnSpellCards.every((card) => card.metadata.actionFamily === "magic-learning" && JSON.stringify(card.filters.skillTypes) === JSON.stringify(["arcana", "nature", "occultism", "religion"]))
+  && earnIncomeCards.length === 4 && earnIncomeCards.every((card) => card.metadata.actionFamily === "downtime" && card.filters.skillTypes?.length === 0)) {
+  pass("remaining-action review filter and secret-check boundaries are explicit");
+} else fail("remaining-action review filter or secret-check boundary is incomplete");
+
 if (allCards.every((card) => card.metadata.preservesCoreOutcome === true && card.effect === null && card.metadata.resolution === "manual")) pass("all cards preserve PF2e core outcomes and use manual resolution");
 else fail("a card violates the core-outcome or manual-resolution boundary");
 
+const expectedContentStatus = String(manifest.version).includes("-rc.")
+  ? "release-candidate"
+  : String(manifest.version).includes("-dev.")
+    ? "development"
+    : "stable";
 if (SKILLFUL_PACK_CONFIGS.length === 4
-  && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 52
+  && SKILLFUL_PACK_CONFIGS[0].metadata.implementedCards === 56
   && SKILLFUL_PACK_CONFIGS[1].metadata.implementedCards === 50
-  && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 34
-  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 62) pass("pack development metadata is consistent");
-else fail("pack development metadata is inconsistent");
+  && SKILLFUL_PACK_CONFIGS[2].metadata.implementedCards === 38
+  && SKILLFUL_PACK_CONFIGS[3].metadata.implementedCards === 74
+  && SKILLFUL_PACK_CONFIGS.every((config) => config.metadata.contentStatus === expectedContentStatus)) pass(`pack metadata is consistent for ${expectedContentStatus}`);
+else fail(`pack metadata is inconsistent for ${expectedContentStatus}`);
 
 const built = buildSkillfulConsequencePacks();
 if (built.length === 4 && built[0].enabled && built[1].enabled && built[2].enabled && built[3].enabled
-  && built[0].decks?.skill?.cards.length === 52 && built[1].decks?.skill?.cards.length === 50 && built[2].decks?.skill?.cards.length === 34 && built[3].decks?.skill?.cards.length === 62) pass("pack topology and development defaults are correct");
-else fail("pack topology or development defaults are incorrect");
+  && built[0].decks?.skill?.cards.length === 56 && built[1].decks?.skill?.cards.length === 50 && built[2].decks?.skill?.cards.length === 38 && built[3].decks?.skill?.cards.length === 74) pass("pack topology and defaults are correct");
+else fail("pack topology or defaults are incorrect");
 
 const forbiddenNames = new Set([".DS_Store", "Thumbs.db", ".env"]);
 const skippedRootDirs = new Set([".git", "node_modules", "coverage"]);
@@ -260,6 +307,16 @@ const readme = readFileSync(join(root, "README.md"), "utf8");
 const changelog = readFileSync(join(root, "CHANGELOG.md"), "utf8");
 if (readme.includes(`Version **${manifest.version}**`) && changelog.includes(`## ${manifest.version}`)) pass("README and changelog identify the current version");
 else fail("README or changelog does not identify the current version");
+
+const completenessReview = readFileSync(join(root, "docs/ACTION_COMPLETENESS_DENSITY_REVIEW.md"), "utf8");
+if (["218 cards", "50 supported action slugs", "14 frequent", "31 regular", "5 narrow", "Borrow an Arcane Spell", "Seek", "Sense Motive"].every((token) => completenessReview.toLowerCase().includes(token.toLowerCase()))) {
+  pass("completeness and density review document records the audited boundaries");
+} else fail("completeness and density review document is missing an audited boundary");
+
+const finalIntegrationReview = readFileSync(join(root, "docs/FINAL_INTEGRATION_REVIEW.md"), "utf8");
+if (["1.0.1-rc.6.1", "0.9.7", "218", "50 supported action slugs", "132 representative contexts", "355 / 355", "GM Blind", "borrowanarcanespell"].every((token) => finalIntegrationReview.toLowerCase().includes(token.toLowerCase()))) {
+  pass("release-candidate final integration review records the audited runtime boundaries");
+} else fail("release-candidate final integration review is missing an audited runtime boundary");
 
 if (process.exitCode) process.exit(process.exitCode);
 console.log("Skillful Consequences release-specific checks passed.");

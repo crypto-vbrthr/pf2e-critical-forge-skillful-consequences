@@ -10,7 +10,7 @@ Skillful Consequences uses an **action-density model** rather than a fixed final
 | Regular | 2 | 2 | 4 |
 | Narrow but useful | 1 | 1 | 2 |
 
-These are targets, not quotas. An action is not added merely to fill a table.
+These are targets, not quotas. An action is not added merely to fill a table. Density reflects both expected table frequency and the amount of safe consequence space left after the normal PF2e critical result resolves.
 
 ## Development sequence
 
@@ -109,13 +109,39 @@ These are targets, not quotas. An action is not added merely to fill a table.
 - Aid: 3 success + 3 failure, action-first and skill-agnostic
 - Total after block: **198 cards**
 
-### Planned next blocks
+### 0.1.0-dev.13 - Remaining Core Actions I
 
-- Selected remaining utility actions, followed by completeness review
+- Force Open: 2 success + 2 failure
+- Command an Animal: 2 + 2
+- Learn a Spell: 2 + 2
+- Create Forgery: 2 + 2, GM-facing secret-check handling
+- Earn Income: 2 + 2, action-first and skill-agnostic
+- Total after block: **218 cards**
+
+### 0.1.0-dev.14 - Action Completeness & Density Review
+
+- Revalidated the complete 50-action supported surface.
+- Confirmed 14 frequent, 31 regular, and 5 narrow action mini-decks.
+- Kept the total at **218 cards** with no padding increase.
+- Hardened secret-check presentation for Lie, Impersonate, and Gather Information.
+- Documented Borrow an Arcane Spell as infrastructure-blocked rather than silently missing.
+
+### 0.1.0-rc.1 - Release Candidate & Final Integration Review
+
+- Validated against Critical Forge 1.0.1-rc.6.1 / API 0.9.7 and extension contract 1.
+- Registered all four packs through the live extension controller with 218 cards intact.
+- Exercised all 50 supported action slugs across 132 representative matching contexts.
+- Verified independent pack refresh and ownership-safe replacement.
+- Added runtime contract tests and release-candidate pack metadata.
+- No content-density changes were required.
+
+### Planned next block
+
+- 0.1.0 stable release after final live Foundry smoke testing
 
 ## Completeness review
 
-Before a release candidate, every supported action will be checked for:
+The dev.14 review checked every supported action for:
 
 1. success/failure symmetry appropriate to its frequency;
 2. repeated mechanics or near-duplicate prose;

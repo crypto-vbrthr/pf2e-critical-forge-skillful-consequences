@@ -35,7 +35,7 @@ A useful mix is:
 
 Actions resolved secretly need a presentation boundary in addition to a mechanical boundary. A consequence card must not tell the player that a hidden roll critically succeeded or critically failed.
 
-For **Gather Information**, failure cards remain GM-facing narrative tools.
+For **Lie, Impersonate, and Gather Information**, every current card is tagged `secret-check` and `gm-facing`. Consequences can still describe observable social fallout, but card presentation must not tell the player which hidden degree of success occurred.
 
 For **Hide, Sneak, and Conceal an Object**, all current cards are tagged `secret-check` and `gm-facing`. GM Blind visibility is recommended. Short-lived modifiers can be tracked by the GM and applied to later secret checks without announcing the exact reason. Narrative consequences should reveal only information the character could plausibly observe, and only when doing so would not expose the hidden degree of success.
 
@@ -95,3 +95,16 @@ Perform consequences focus on audience response, follow-up performances, shared 
 
 Aid is deliberately action-first and skill-agnostic because PF2e can use many different skills to help an ally. Skillful Consequences only applies these cards when Critical Forge reports a skill-check critical result with the `aid` action slug. The cards affect cooperation, handoffs, and later Aid attempts rather than replacing the normal bonus or penalty produced by Aid itself.
 
+
+
+## Remaining core actions
+
+Force Open belongs to Physical Actions and can add follow-through, construction insight, or a brief leverage setback, but the normal jam and its penalty on a critical failure remain authoritative.
+
+Command an Animal cards apply only when a Nature check is actually rolled. They describe clarity, handling rhythm, or the aftermath of a misunderstanding. They never replace the GM's choice of misbehavior on a critical failure.
+
+Learn a Spell cards preserve all normal time, material, learning, and retry consequences. They may add a narrow follow-up insight or misconception but never alter whether the spell was learned.
+
+Create Forgery is secret and remains GM-facing. Cards can influence a later close examination or establish supporting/flawed document details, but they never announce whether the hidden creation check succeeded.
+
+Earn Income is action-first and skill-agnostic. Cards may create narrow reputation follow-through or fictional professional contacts, but they do not add extra income, restore a lost job, or replace the normal task-level result.

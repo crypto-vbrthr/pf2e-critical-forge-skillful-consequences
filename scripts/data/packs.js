@@ -10,7 +10,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "PhysicalActions",
     id: PACK_IDS.PHYSICAL_ACTIONS,
     fallbackTitle: "Skillful Consequences: Physical Actions",
-    fallbackDescription: "Action-specific critical successes and critical failures for Athletics and Acrobatics, with the normal PF2e result always resolved first.",
+    fallbackDescription: "Action-specific critical successes and critical failures for Athletics and Acrobatics, including Force Open, with the normal PF2e result always resolved first.",
     cards: PHYSICAL_ACTION_CARDS,
     defaultEnabled: true,
     metadata: Object.freeze({
@@ -18,9 +18,9 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "physical-actions",
       scope: "athletics-acrobatics-action-critical-results",
-      contentStatus: "development",
-      supportedActions: Object.freeze(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump", "balance", "tumble-through", "maneuver-in-flight", "squeeze"]),
-      implementedCards: 52
+      contentStatus: "release-candidate",
+      supportedActions: Object.freeze(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump", "balance", "tumble-through", "maneuver-in-flight", "squeeze", "force-open"]),
+      implementedCards: 56
     })
   }),
   Object.freeze({
@@ -36,7 +36,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "social-actions",
       scope: "social-skill-action-critical-results",
-      contentStatus: "development",
+      contentStatus: "release-candidate",
       supportedActions: Object.freeze(["feint", "create-a-diversion", "lie", "impersonate", "make-an-impression", "request", "gather-information", "demoralize", "coerce", "perform"]),
       implementedCards: 50
     })
@@ -46,17 +46,17 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "SubterfugeActions",
     id: PACK_IDS.SUBTERFUGE_ACTIONS,
     fallbackTitle: "Skillful Consequences: Subterfuge Actions",
-    fallbackDescription: "Action-specific critical successes and critical failures for supported Stealth and Thievery actions, with the normal PF2e result always resolved first.",
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Stealth, Thievery, and Society forgery actions, with the normal PF2e result always resolved first.",
     cards: SUBTERFUGE_ACTION_CARDS,
     defaultEnabled: true,
     metadata: Object.freeze({
       theme: "skillful-consequences",
       family: "skillful-consequences",
       category: "subterfuge-actions",
-      scope: "stealth-thievery-action-critical-results",
-      contentStatus: "development",
-      supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object", "pick-a-lock", "disable-a-device", "palm-an-object", "steal"]),
-      implementedCards: 34
+      scope: "stealth-thievery-forgery-action-critical-results",
+      contentStatus: "release-candidate",
+      supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object", "pick-a-lock", "disable-a-device", "palm-an-object", "steal", "create-forgery"]),
+      implementedCards: 38
     })
   }),
   Object.freeze({
@@ -64,7 +64,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
     settingToken: "KnowledgeUtility",
     id: PACK_IDS.KNOWLEDGE_UTILITY,
     fallbackTitle: "Skillful Consequences: Knowledge & Utility",
-    fallbackDescription: "Action-specific critical successes and critical failures for supported Medicine, Crafting, knowledge, Survival, and general utility actions, with the normal PF2e result always resolved first.",
+    fallbackDescription: "Action-specific critical successes and critical failures for supported Medicine, Crafting, knowledge, Nature, Survival, magic-learning, downtime, and general utility actions, with the normal PF2e result always resolved first.",
     cards: KNOWLEDGE_UTILITY_CARDS,
     defaultEnabled: true,
     metadata: Object.freeze({
@@ -72,9 +72,9 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "knowledge-utility",
       scope: "knowledge-utility-action-critical-results",
-      contentStatus: "development",
-      supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft", "recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing", "track", "sense-direction", "subsist", "cover-tracks", "aid"]),
-      implementedCards: 62
+      contentStatus: "release-candidate",
+      supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft", "recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing", "track", "sense-direction", "subsist", "cover-tracks", "aid", "command-an-animal", "learn-a-spell", "earn-income"]),
+      implementedCards: 74
     })
   })
 ]);

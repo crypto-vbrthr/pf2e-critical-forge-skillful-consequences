@@ -184,7 +184,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "light",
     fallbackTitle: "Consistent Detail",
     fallbackDescription: "Resolve the normal critical success for Lie first. Your next Deception check within 10 minutes to maintain, clarify, or extend the same lie gains a +1 circumstance bonus. The bonus then ends.",
-    tags: ["deception", "lie", "follow-up", "same-story", "one-use"],
+    tags: ["deception", "lie", "follow-up", "same-story", "one-use", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -195,7 +195,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "light",
     fallbackTitle: "Borrowed Credibility",
     fallbackDescription: "Resolve the normal critical success for Lie first. The first ally who makes a Deception check within 10 minutes to reinforce the same story gains a +1 circumstance bonus to that check. The bonus then ends.",
-    tags: ["deception", "lie", "teamwork", "same-story", "one-use"],
+    tags: ["deception", "lie", "teamwork", "same-story", "one-use", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -208,7 +208,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.1,
     fallbackTitle: "Second-Order Belief",
     fallbackDescription: "Resolve the normal critical success for Lie first. There is no additional mechanical effect. The target draws one plausible additional conclusion from the lie beyond the exact statement you made. The GM chooses a conclusion consistent with what the target already knows; it may create an opportunity or a complication.",
-    tags: ["deception", "lie", "narrative", "same-target", "no-mechanical-effect"],
+    tags: ["deception", "lie", "narrative", "same-target", "no-mechanical-effect", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -221,7 +221,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.1,
     fallbackTitle: "Loose Thread",
     fallbackDescription: "Resolve the normal critical failure for Lie first. There is no additional mechanical effect. The target catches one specific inconsistency, omission, or detail that made the story fail. The GM should identify the point of suspicion without revealing information the target could not reasonably know.",
-    tags: ["deception", "lie", "narrative", "same-target", "no-mechanical-effect"],
+    tags: ["deception", "lie", "narrative", "same-target", "no-mechanical-effect", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -232,7 +232,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "light",
     fallbackTitle: "Contradiction Cascade",
     fallbackDescription: "Resolve the normal critical failure for Lie first. Your next attempt to Lie to the same target about the same topic within 10 minutes takes a -1 circumstance penalty. The penalty then ends.",
-    tags: ["deception", "lie", "same-target", "same-topic", "brief-setback", "one-use"],
+    tags: ["deception", "lie", "same-target", "same-topic", "brief-setback", "one-use", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -245,7 +245,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.0,
     fallbackTitle: "Suspicion Spreads",
     fallbackDescription: "Resolve the normal critical failure for Lie first. There is no additional mechanical effect. One nearby observer who can follow the conversation picks up on the target's skepticism and becomes wary of the same claim. This does not automatically change attitudes or impose a rules condition.",
-    tags: ["deception", "lie", "narrative", "observers", "no-mechanical-effect"],
+    tags: ["deception", "lie", "narrative", "observers", "no-mechanical-effect", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["lie"] },
     contentBatch: 5
   }),
@@ -257,7 +257,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "light",
     fallbackTitle: "Mannerism Locked In",
     fallbackDescription: "Resolve the normal critical success for Impersonate first. Your next Impersonate or Deception check within 10 minutes to maintain the same identity gains a +1 circumstance bonus. The bonus then ends.",
-    tags: ["deception", "impersonate", "same-identity", "follow-up", "one-use"],
+    tags: ["deception", "impersonate", "same-identity", "follow-up", "one-use", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["impersonate"] },
     contentBatch: 5
   }),
@@ -270,7 +270,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.1,
     fallbackTitle: "Believable Routine",
     fallbackDescription: "Resolve the normal critical success for Impersonate first. There is no additional mechanical effect. An observer treats your assumed role as ordinary enough to volunteer a minor contextual detail, expectation, name, or routine that someone in that role would plausibly know.",
-    tags: ["deception", "impersonate", "narrative", "information", "no-mechanical-effect"],
+    tags: ["deception", "impersonate", "narrative", "information", "no-mechanical-effect", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["impersonate"] },
     contentBatch: 5
   }),
@@ -283,7 +283,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.1,
     fallbackTitle: "Detail Out of Place",
     fallbackDescription: "Resolve the normal critical failure for Impersonate first. There is no additional mechanical effect. The observer notices one concrete mismatch in voice, posture, clothing, manner, terminology, or local custom. The GM should reveal what looked wrong if the observer could reasonably make that judgment.",
-    tags: ["deception", "impersonate", "narrative", "observers", "no-mechanical-effect"],
+    tags: ["deception", "impersonate", "narrative", "observers", "no-mechanical-effect", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["impersonate"] },
     contentBatch: 5
   }),
@@ -294,7 +294,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "light",
     fallbackTitle: "Role Drift",
     fallbackDescription: "Resolve the normal critical failure for Impersonate first. Your next Impersonate check using the same assumed identity within 10 minutes takes a -1 circumstance penalty unless you first spend 1 minute correcting the disguise, mannerisms, or story. After either event, this consequence ends.",
-    tags: ["deception", "impersonate", "same-identity", "recovery", "brief-setback"],
+    tags: ["deception", "impersonate", "same-identity", "recovery", "brief-setback", "secret-check", "gm-facing"],
     filters: { actionSlugs: ["impersonate"] },
     contentBatch: 5
   }),
@@ -405,7 +405,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "narrative",
     fallbackTitle: "Best Lead First",
     fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. Alongside the information normally gained, the GM identifies one promising person, place, group, or source that would be a sensible next lead, if the investigation has one.",
-    tags: ["diplomacy", "gather-information", "narrative", "information", "lead", "secret-check", "no-mechanical-effect"],
+    tags: ["diplomacy", "gather-information", "narrative", "information", "lead", "secret-check", "gm-facing", "no-mechanical-effect"],
     filters: { actionSlugs: ["gather-information"] },
     contentBatch: 6
   }),
@@ -417,7 +417,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     impact: "narrative",
     fallbackTitle: "Pattern in the Rumors",
     fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. If plausible, the GM points out one connection, recurring detail, or meaningful contradiction between what you learned and information the group already possesses.",
-    tags: ["diplomacy", "gather-information", "narrative", "information", "connection", "secret-check", "no-mechanical-effect"],
+    tags: ["diplomacy", "gather-information", "narrative", "information", "connection", "secret-check", "gm-facing", "no-mechanical-effect"],
     filters: { actionSlugs: ["gather-information"] },
     contentBatch: 6
   }),
@@ -430,7 +430,7 @@ export const SOCIAL_ACTION_CARDS = Object.freeze([
     weight: 1.1,
     fallbackTitle: "Familiar Face",
     fallbackDescription: "Resolve the normal critical success for Gather Information first. There is no additional mechanical effect. One minor source involved in the search remembers you favorably enough to be approachable again later, subject to the fiction and the GM's judgment. This does not automatically improve an attitude step.",
-    tags: ["diplomacy", "gather-information", "narrative", "contact", "secret-check", "no-mechanical-effect"],
+    tags: ["diplomacy", "gather-information", "narrative", "contact", "secret-check", "gm-facing", "no-mechanical-effect"],
     filters: { actionSlugs: ["gather-information"] },
     contentBatch: 6
   }),

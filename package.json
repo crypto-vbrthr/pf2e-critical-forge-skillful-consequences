@@ -1,11 +1,11 @@
 {
   "name": "pf2e-critical-forge-skillful-consequences",
-  "version": "0.1.0-dev.12",
+  "version": "0.1.0-rc.1",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test --test-concurrency=1",
-    "quality:check": "npm test && node tools/release-check.mjs --allow-dev",
+    "quality:check": "npm test && node tools/release-check.mjs --allow-prerelease",
     "release:check": "npm test && node tools/release-check.mjs"
   },
   "engines": {

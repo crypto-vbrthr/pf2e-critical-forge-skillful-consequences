@@ -17,7 +17,7 @@ test("frequent physical actions keep six-card density", () => {
 });
 
 test("regular physical actions keep four-card density", () => {
-  for (const action of ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight"]) {
+  for (const action of ["shove", "reposition", "disarm", "climb", "swim", "balance", "maneuver-in-flight", "force-open"]) {
     assert.equal(count(PHYSICAL_ACTION_CARDS, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
     assert.equal(count(PHYSICAL_ACTION_CARDS, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
   }
@@ -50,7 +50,7 @@ test("Diplomacy and Intimidation use varied consequence modes", () => {
   assert.equal(byAction("make-an-impression").some((card) => card.tags.includes("narrative")), true);
   assert.equal(byAction("request").some((card) => card.tags.includes("information")), true);
   assert.equal(byAction("request").some((card) => card.tags.includes("teamwork")), true);
-  assert.equal(byAction("gather-information").every((card) => card.tags.includes("secret-check")), true);
+  assert.equal(byAction("gather-information").every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing")), true);
   assert.equal(byAction("gather-information").some((card) => card.tags.includes("lead")), true);
   assert.equal(byAction("gather-information").some((card) => card.tags.includes("misinformation")), true);
   assert.equal(byAction("demoralize").some((card) => card.tags.includes("momentum")), true);
@@ -205,3 +205,32 @@ test("Performance and Aid mix teamwork, follow-up, and narrative consequences", 
   assert.equal(aid.some((card) => card.tags.includes("narrative")), true);
 });
 
+
+
+test("remaining action review additions keep regular four-card density", () => {
+  const entries = [
+    [PHYSICAL_ACTION_CARDS, "force-open"],
+    [SUBTERFUGE_ACTION_CARDS, "create-forgery"],
+    [KNOWLEDGE_UTILITY_CARDS, "command-an-animal"],
+    [KNOWLEDGE_UTILITY_CARDS, "learn-a-spell"],
+    [KNOWLEDGE_UTILITY_CARDS, "earn-income"]
+  ];
+  for (const [cards, action] of entries) {
+    assert.equal(count(cards, action, "skillCheckCriticalSuccess"), 2, `${action} success density`);
+    assert.equal(count(cards, action, "skillCheckCriticalFailure"), 2, `${action} failure density`);
+  }
+});
+
+test("remaining action review additions keep their special information boundaries", () => {
+  const forgery = SUBTERFUGE_ACTION_CARDS.filter((card) => card.filters.actionSlugs.includes("create-forgery"));
+  assert.equal(forgery.every((card) => card.tags.includes("secret-check") && card.tags.includes("gm-facing")), true);
+
+  const command = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("command-an-animal"));
+  assert.equal(command.every((card) => card.filters.skillTypes.length === 1 && card.filters.skillTypes[0] === "nature"), true);
+
+  const learn = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("learn-a-spell"));
+  assert.equal(learn.every((card) => ["arcana", "nature", "occultism", "religion"].every((skill) => card.filters.skillTypes.includes(skill))), true);
+
+  const earn = KNOWLEDGE_UTILITY_CARDS.filter((card) => card.filters.actionSlugs.includes("earn-income"));
+  assert.equal(earn.every((card) => card.filters.skillTypes.length === 0), true);
+});

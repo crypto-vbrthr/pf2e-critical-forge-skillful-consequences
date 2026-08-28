@@ -1,3 +1,39 @@
+# Changelog
+
+## 0.1.0-rc.1 - Release Candidate & Final Integration Review
+
+- Promoted the completed 218-card, 50-action catalog to release-candidate status without changing card content or density.
+- Validated the add-on against PF2E Critical Forge 1.0.1-rc.6.1, public API 0.9.7, extension contract 1, card schema 1, and card-pack schema 1.
+- Ran a cross-repository integration smoke test that registered all four packs through the real Critical Forge extension controller and verified exact matching across 132 representative skill/action/category contexts.
+- Verified all 50 supported action slugs against the current PF2e context adapter and exercised normalization variants for key multi-word actions.
+- Verified independent pack settings can disable and re-enable a pack through ownership-safe `{ replace: true }` registration without leaving orphaned cards or damaging neighboring packs.
+- Verified extension registration diagnostics remain free of errors.
+- Added dedicated runtime contract tests covering compatibility negotiation, initial registration, pack refresh behavior, module API exposure, and diagnostics passthrough; the add-on suite now passes 56 / 56 tests.
+- Marked all four pack metadata records as `release-candidate`.
+- Confirmed the current Critical Forge baseline passes its own 355-test quality suite.
+- Kept Borrow an Arcane Spell deferred: the current Critical Forge normalizer handles spaced, kebab-case, and camelCase forms, but not the compact `borrowanarcanespell` form, so the dev.14 infrastructure boundary remains prudent.
+
+## 0.1.0-dev.14 - Action Completeness & Density Review
+
+- Completed the full action-completeness and density review for all 218 cards and 50 supported action slugs.
+- Confirmed the reviewed density split at 14 frequent actions (3 + 3), 31 regular actions (2 + 2), and 5 narrow actions (1 + 1).
+- Kept the total card count at 218; no density padding was warranted.
+- Added `docs/ACTION_COMPLETENESS_DENSITY_REVIEW.md` with completeness boundaries, borderline density decisions, and the remaining Borrow an Arcane Spell infrastructure dependency.
+- Hardened secret-check presentation for Lie and Impersonate by tagging all of their cards `secret-check` and `gm-facing`.
+- Hardened Gather Information by marking all six cards `gm-facing`, not only the critical-failure half.
+- Added cross-pack completeness tests for the exact 50-action surface, reviewed tier membership, total density math, and social secret-check visibility.
+
+## 0.1.0-dev.13 - Remaining Core Actions I
+
+- Added 20 cards across five remaining core skill actions.
+- Added Force Open (2 critical successes + 2 critical failures).
+- Added Command an Animal (2 + 2).
+- Added Learn a Spell (2 + 2).
+- Added Create Forgery (2 + 2) with GM-facing secret-check handling.
+- Added Earn Income (2 + 2) with skill-agnostic action matching.
+- Added `docs/REMAINING_ACTION_REVIEW.md` documenting deliberate exclusions for Perception-based actions and the Borrow an Arcane Spell infrastructure follow-up.
+- Total card count is now 218.
+
 ## 0.1.0-dev.12
 
 ### Performance & Utility I
@@ -35,8 +71,6 @@
 - Added explicit secret-check safety tests for Sense Direction.
 - Expanded release checks to cover 186 cards and 56 Knowledge & Utility cards.
 - Updated README, roadmap, design guide, and overlap review for the new Survival block.
-
-# Changelog
 
 ## 0.1.0-dev.10
 
