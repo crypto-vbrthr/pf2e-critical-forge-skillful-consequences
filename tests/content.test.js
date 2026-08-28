@@ -20,7 +20,7 @@ const ALL_CARDS = [...PHYSICAL_ACTION_CARDS, ...SOCIAL_ACTION_CARDS, ...SUBTERFU
 const forAction = (cards, slug) => cards.filter((card) => card.filters.actionSlugs.includes(slug));
 const forOutcome = (cards, category) => cards.filter((card) => card.category === category);
 
-test("release candidate contains two hundred eighteen unique cards across four active packs", () => {
+test("stable release contains two hundred eighteen unique cards across four active packs", () => {
   assert.equal(PHYSICAL_ACTION_CARDS.length, 56);
   assert.equal(SOCIAL_ACTION_CARDS.length, 50);
   assert.equal(SUBTERFUGE_ACTION_CARDS.length, 38);

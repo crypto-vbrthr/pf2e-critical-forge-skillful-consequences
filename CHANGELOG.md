@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0 - Stable Release
+
+- Promoted Skillful Consequences from 0.1.0-rc.1 to stable after successful live Foundry smoke testing.
+- Kept the reviewed catalog unchanged at 218 cards across 50 supported action slugs and four independently configurable packs.
+- Kept the reviewed density baseline unchanged at 14 frequent actions (3 + 3), 31 regular actions (2 + 2), and 5 narrow actions (1 + 1).
+- Marked all four pack metadata records as `stable`.
+- Updated manifest, package, runtime version metadata, release download URL, README, and roadmap for the stable release.
+- Preserved the rc.1 Critical Forge integration baseline and documented secret-check visibility boundary.
+- Final stable quality gate passes 56 / 56 tests plus release-specific archive, localization, metadata, density, and JavaScript syntax checks.
+
 ## 0.1.0-rc.1 - Release Candidate & Final Integration Review
 
 - Promoted the completed 218-card, 50-action catalog to release-candidate status without changing card content or density.

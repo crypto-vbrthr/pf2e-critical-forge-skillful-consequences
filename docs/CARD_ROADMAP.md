@@ -135,9 +135,11 @@ These are targets, not quotas. An action is not added merely to fill a table. De
 - Added runtime contract tests and release-candidate pack metadata.
 - No content-density changes were required.
 
-### Planned next block
+### 0.1.0 - Stable Release
 
-- 0.1.0 stable release after final live Foundry smoke testing
+- Promoted the successfully smoke-tested rc.1 build to stable with no card-content or density changes.
+- Retained 218 cards, 50 supported action slugs, and four independently configurable packs.
+- Marked pack metadata as stable and completed release metadata/hygiene updates.
 
 ## Completeness review
 

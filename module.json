@@ -2,7 +2,7 @@
   "id": "pf2e-critical-forge-skillful-consequences",
   "title": "PF2E Critical Forge: Skillful Consequences",
   "description": "Action-focused critical success and critical failure consequences for Pathfinder 2e skill checks, designed to add tactical and narrative follow-through without replacing the normal PF2e result.",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "authors": [
     {
       "name": "crypto-vbrthr"
@@ -51,5 +51,5 @@
   "readme": "README.md",
   "url": "https://github.com/crypto-vbrthr/pf2e-critical-forge-skillful-consequences",
   "manifest": "https://raw.githubusercontent.com/crypto-vbrthr/pf2e-critical-forge-skillful-consequences/main/module.json",
-  "download": "https://github.com/crypto-vbrthr/pf2e-critical-forge-skillful-consequences/releases/download/0.1.0-rc.1/pf2e-critical-forge-skillful-consequences.zip"
+  "download": "https://github.com/crypto-vbrthr/pf2e-critical-forge-skillful-consequences/releases/download/0.1.0/pf2e-critical-forge-skillful-consequences.zip"
 }

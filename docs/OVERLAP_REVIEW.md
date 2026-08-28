@@ -1,6 +1,6 @@
 # Overlap Review
 
-## 0.1.0-rc.1 scope
+## 0.1.0 stable scope
 
 Four packs are currently active.
 
@@ -16,7 +16,7 @@ Four packs are currently active.
 
 Critical Forge Core supplies the skill-critical infrastructure but no action-specific consequence cards for these actions. Skillful Consequences therefore occupies the `skillCheckCriticalSuccess` / `skillCheckCriticalFailure` space without replacing Core content.
 
-Critical Forge also controls card visibility. This matters for secret actions because consequence presentation can compromise a hidden degree of success. All cards for Gather Information, Lie, Impersonate, Hide, Sneak, Conceal an Object, supported secret knowledge actions, Sense Direction, and Create Forgery use explicit `secret-check` / `gm-facing` handling. The rc.1 integration review confirmed that current Critical Forge defaults to GM Blind visibility. These tags do not themselves override a world configured for `public` or `self`, so GM Blind or GM Only remains the safe setting for secret checks.
+Critical Forge also controls card visibility. This matters for secret actions because consequence presentation can compromise a hidden degree of success. All cards for Gather Information, Lie, Impersonate, Hide, Sneak, Conceal an Object, supported secret knowledge actions, Sense Direction, and Create Forgery use explicit `secret-check` / `gm-facing` handling. The rc.1 integration review, retained as the stable integration baseline, confirmed that current Critical Forge defaults to GM Blind visibility. These tags do not themselves override a world configured for `public` or `self`, so GM Blind or GM Only remains the safe setting for secret checks.
 
 ### Goblin Engineering
 

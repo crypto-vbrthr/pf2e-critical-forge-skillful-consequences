@@ -98,7 +98,7 @@ test("runtime negotiates the rc.6.1 / API 0.9.7 contract and registers all four 
   assert.equal(registration.packs.length, 4);
   assert.deepEqual(registration.packs.map((pack) => pack.decks.skill.cards.length), [56, 50, 38, 74]);
   assert.equal(registration.packs.every((pack) => pack.enabled), true);
-  assert.equal(registration.packs.every((pack) => pack.metadata.contentStatus === "release-candidate"), true);
+  assert.equal(registration.packs.every((pack) => pack.metadata.contentStatus === "stable"), true);
   assert.equal(runtime.listPacks().length, 4);
   assert.equal(module.api, runtime);
   assert.equal(getSkillfulConsequencesRuntime(), runtime);

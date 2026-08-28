@@ -4,6 +4,8 @@ Review target: **PF2E Critical Forge: Skillful Consequences 0.1.0-rc.1**
 
 Integration baseline: **PF2E Critical Forge 1.0.1-rc.6.1**, public API **0.9.7**, extension contract **1**, card schema **1**, card-pack schema **1**, Pathfinder 2e **8.1.2+**, Foundry VTT **14**.
 
+**Stable promotion note:** The subsequent live Foundry smoke test completed successfully. Version 0.1.0 therefore promotes this reviewed rc.1 catalog unchanged; no card-content, density, localization, or pack-topology changes were introduced during stable promotion.
+
 ## Review result
 
 The add-on is suitable for release-candidate testing. No card-content, action-density, localization, or pack-topology changes were required after the dev.14 completeness review.

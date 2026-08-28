@@ -18,7 +18,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "physical-actions",
       scope: "athletics-acrobatics-action-critical-results",
-      contentStatus: "release-candidate",
+      contentStatus: "stable",
       supportedActions: Object.freeze(["grapple", "trip", "shove", "reposition", "disarm", "climb", "swim", "high-jump", "long-jump", "balance", "tumble-through", "maneuver-in-flight", "squeeze", "force-open"]),
       implementedCards: 56
     })
@@ -36,7 +36,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "social-actions",
       scope: "social-skill-action-critical-results",
-      contentStatus: "release-candidate",
+      contentStatus: "stable",
       supportedActions: Object.freeze(["feint", "create-a-diversion", "lie", "impersonate", "make-an-impression", "request", "gather-information", "demoralize", "coerce", "perform"]),
       implementedCards: 50
     })
@@ -54,7 +54,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "subterfuge-actions",
       scope: "stealth-thievery-forgery-action-critical-results",
-      contentStatus: "release-candidate",
+      contentStatus: "stable",
       supportedActions: Object.freeze(["hide", "sneak", "conceal-an-object", "pick-a-lock", "disable-a-device", "palm-an-object", "steal", "create-forgery"]),
       implementedCards: 38
     })
@@ -72,7 +72,7 @@ export const SKILLFUL_PACK_CONFIGS = Object.freeze([
       family: "skillful-consequences",
       category: "knowledge-utility",
       scope: "knowledge-utility-action-critical-results",
-      contentStatus: "release-candidate",
+      contentStatus: "stable",
       supportedActions: Object.freeze(["treat-wounds", "administer-first-aid", "treat-disease", "treat-poison", "repair", "craft", "recall-knowledge", "identify-magic", "identify-alchemy", "decipher-writing", "track", "sense-direction", "subsist", "cover-tracks", "aid", "command-an-animal", "learn-a-spell", "earn-income"]),
       implementedCards: 74
     })

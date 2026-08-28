@@ -1,6 +1,6 @@
 # PF2E Critical Forge: Skillful Consequences
 
-Version **0.1.0-rc.1**
+Version **0.1.0**
 
 Skillful Consequences is an action-focused card expansion for **PF2E Critical Forge**. It adds additional consequences to critical successes and critical failures on selected Pathfinder 2e skill actions.
 
@@ -10,9 +10,19 @@ The design goal is not to replace or rewrite the PF2e result. Every card starts 
 
 This makes the deck suitable for actions whose critical result already matters, while still giving repeated rolls more texture than a single generic success or failure card.
 
+
+## Part of the Forge Suite
+
+**Critical Forge: Skillful Consequences** is part of the **Forge Suite**, a growing collection of Foundry VTT modules and add-ons built for the busy Game Master. The suite is designed to reduce preparation and bookkeeping, make common GM tasks easier, and add useful tools that help make running and playing campaigns smoother and more enjoyable.
+
+An overview of the Forge Suite, its modules, add-ons, and shared documentation is available here:
+
+**Forge Suite:** https://github.com/crypto-vbrthr/pf2e-forge-suite
+
+
 ## Current content
 
-`0.1.0-rc.1` contains **218 cards** across four active packs. The card catalog is unchanged from the completed dev.14 density baseline.
+`0.1.0` contains **218 cards** across four active packs. The stable catalog is unchanged from the completed dev.14 density baseline and the rc.1 integration candidate.
 
 ### Physical Actions - 56 cards
 
@@ -147,7 +157,7 @@ Skillful Consequences is action-density driven rather than built around a fixed 
 - Narrow but worthwhile actions receive 1 + 1 card.
 - Actions are only expanded when their critical result can support distinct follow-through without padding.
 
-The dev.14 completeness review remains the release-candidate content baseline: **14 frequent**, **31 regular**, and **5 narrow** actions across **50 supported action slugs**, for **218 cards** total. See `docs/ACTION_COMPLETENESS_DENSITY_REVIEW.md` for the full tier list and deliberate completeness boundaries.
+The dev.14 completeness review remains the stable content baseline: **14 frequent**, **31 regular**, and **5 narrow** actions across **50 supported action slugs**, for **218 cards** total. See `docs/ACTION_COMPLETENESS_DENSITY_REVIEW.md` for the full tier list and deliberate completeness boundaries.
 
 ## Critical Forge requirements
 
@@ -161,13 +171,13 @@ Skillful Consequences requires:
 
 Critical Forge's **Skill Check Critical Success** and/or **Skill Check Critical Failure** automation settings must be enabled for automatic or prompted draws.
 
-## Release candidate integration status
+## Stable release integration status
 
-`0.1.0-rc.1` was validated directly against **PF2E Critical Forge 1.0.1-rc.6.1**. The review registered all four packs through the real extension contract, verified all 218 cards, exercised all 50 supported action slugs across 132 representative skill/action/category contexts, and tested pack disable/re-enable refresh behavior. No card-content or density changes were required. The release-candidate add-on suite passes **56 / 56 tests**, while the supplied Critical Forge baseline passes **355 / 355**.
+`0.1.0` promotes the successfully smoke-tested rc.1 catalog unchanged. The release candidate was validated directly against **PF2E Critical Forge 1.0.1-rc.6.1**. The review registered all four packs through the real extension contract, verified all 218 cards, exercised all 50 supported action slugs across 132 representative skill/action/category contexts, and tested pack disable/re-enable refresh behavior. No card-content or density changes were required. The stable add-on suite passes **56 / 56 tests**, while the supplied Critical Forge baseline passes **355 / 355**.
 
 The current Critical Forge baseline defaults card visibility to **GM Blind**, which is safe for secret-check cards. The `secret-check` and `gm-facing` tags are content metadata rather than a per-card visibility override, so worlds that deliberately switch Critical Forge visibility to `public` or `self` should change it back to **GM Blind** or **GM Only** when using secret skill consequences.
 
-Borrow an Arcane Spell remains intentionally outside the release-candidate catalog. The current normalizer handles `Borrow an Arcane Spell`, `borrowAnArcaneSpell`, and `borrow-an-arcane-spell`, but the compact `borrowanarcanespell` representation does not canonicalize yet.
+Borrow an Arcane Spell remains intentionally outside the stable catalog. The current normalizer handles `Borrow an Arcane Spell`, `borrowAnArcaneSpell`, and `borrow-an-arcane-spell`, but the compact `borrowanarcanespell` representation does not canonicalize yet.
 
 ## Pack settings
 
@@ -178,7 +188,7 @@ The module reserves four thematic packs:
 - Subterfuge Actions
 - Knowledge & Utility
 
-Only packs that currently contain cards appear in Foundry's module settings. In this release candidate, **Physical Actions**, **Social Actions**, **Subterfuge Actions**, and **Knowledge & Utility** are visible and enabled by default.
+Only packs that currently contain cards appear in Foundry's module settings. In the stable release, **Physical Actions**, **Social Actions**, **Subterfuge Actions**, and **Knowledge & Utility** are visible and enabled by default.
 
 ## Design boundaries
 
